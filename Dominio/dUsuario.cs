@@ -1,0 +1,51 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Persistencia;
+using Entidades;
+using System.Data;
+
+namespace Dominio
+{
+    public class dUsuario
+    {
+        public eUsuario login(String userName, String pass)
+        {
+
+            pUsuario unPU = new pUsuario();
+            return unPU.login(userName, pass);
+
+        }
+
+        public eUsuario altaUsuario(eUsuario unDU)
+        {
+            pUsuario unPU = new pUsuario(); 
+            
+            return unPU.altaUsuario(unDU);
+        }
+
+        public eUsuario bajaUsuario(String username, String password)
+        {
+            pUsuario unPU = new pUsuario();
+            return unPU.bajaUsuario(username, password);
+
+        }
+
+        public DataTable listarUsuario()
+        {
+
+            pUsuario unPU = new pUsuario();
+
+            return unPU.listarUsuario();
+        }
+
+        public eUsuario modificarUsuario(eUsuario unDU, String NUAM)
+        {
+
+            pUsuario unPU = new pUsuario();
+            return unPU.modificarUsuario(unDU,NUAM);
+        }
+    }
+}
