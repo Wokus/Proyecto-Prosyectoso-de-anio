@@ -19,7 +19,7 @@ namespace Persistencia
             miConexion = "server=localhost; uid=Jesus ; password=Luca1234. ; database=BDprueba;";
             con = new MySqlConnection(miConexion);
             con.Open();
-
+            //jaja pinga
         }
 
         public void CerrarConexion()
