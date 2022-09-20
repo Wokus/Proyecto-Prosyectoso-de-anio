@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="eEquipo.cs" />
+    <Compile Include="ePersona.cs" />
     <Compile Include="eUsuario.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
