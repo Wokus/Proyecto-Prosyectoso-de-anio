@@ -84,7 +84,7 @@ namespace Persistencia
         {
             int stock;
             int id2 = 0;
-            string consultaSQL = "SELECT * FROM `inventario` WHERE `inventario`.`id` = '" + id + "';";
+            string consultaSQL = "SELECT * FROM `equipo` WHERE `equipo`.`id` = '" + id + "';";
             MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
             ejecutarSQL(consultaSQL);
             while (fila.Read())
@@ -95,11 +95,11 @@ namespace Persistencia
             }
             if (id2 != 0)
             { 
-                string consultaSQL2 = "DELETE FROM inventario WHERE `inventario`.`id` = '" + id + "';";
+                string consultaSQL2 = "DELETE FROM equipo WHERE `equipo`.`id` = '" + id + "';";
                 ejecutarSQL(consultaSQL2);
                 stock = fila.GetInt32("Stock");
                 int stock2 = stock - 1; 
-                consultaSQL = "UPDATE `inventario` SET `Stock` = '" + stock2 + "' WHERE `inventario`.`Stock` = '" + stock + "';";
+                consultaSQL = "UPDATE `equipo` SET `stock` = '" + stock2 + "' WHERE `equipo`.`stock` = '" + stock + "';";
                 ejecutarSQL(consultaSQL);
             }
 
