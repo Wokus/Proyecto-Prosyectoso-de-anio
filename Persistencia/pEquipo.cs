@@ -11,41 +11,73 @@ namespace Persistencia
 {
     public class pEquipo : clsPersistencia
     {
-        public void altaEquipo(eEquipo unPE)
+        public bool altaEquipo(eEquipo unPE)
         {
             int stock = 1;
             int id = 0;
             int idOcupado=0;
+            bool NStoken = false;
+            int tipoBOOLinf = 0;
+            int tipoBOOLfot = 0;
+            int tipoBOOLson = 0;
+            int tipoBOOLotr = 0;
+            if (unPE.tipo == "Informatica")
+            {
+                tipoBOOLinf = 1;
+            }
+            if (unPE.tipo == "Fotografia")
+            {
+                tipoBOOLfot = 1;
+            }
+            if (unPE.tipo == "Sonido")
+            {
+                tipoBOOLson = 1;
+            }
+            if (unPE.tipo == "Otros")
+            {
+                tipoBOOLotr = 1;
+            }
+            if (unPE.numeroSerie != null)
+            {
+                string consultaSQL = "SELECT * FROM `equipo` WHERE `equipo`.`numero_de_serie` = '" + unPE.numeroSerie + "'; ";
+                MySqlDataReader filaNS = ejecutarYdevolver(consultaSQL);
+                if (filaNS.Read() )
+                {
 
+                }else { NStoken = true; }
 
-                while (idOcupado == id) 
+            }else { NStoken = true; }
+
+            if (NStoken == true)
+            {
+                while (idOcupado == id)
                 {
                     id++;
-                    string consultaSQLid = "SELECT * FROM `inventario` WHERE `inventario`.`id` = '" + id + "'; ";
+                    string consultaSQLid = "SELECT * FROM `equipo` WHERE `equipo`.`id` = '" + id + "'; ";
                     MySqlDataReader filaid = ejecutarYdevolver(consultaSQLid);
-                     filaid = ejecutarYdevolver(consultaSQLid);
                     if (filaid.Read())
                     {
                         idOcupado = recrearIdEquipo(filaid);
-                    }else {  }
-                } 
-      
+                    }
+                }
 
-             string consultaSQL = "SELECT COUNT(*) FROM `inventario` WHERE `Nombre` = '" + unPE.nombre + "' AND `Numero de Serie` = '" + unPE.numeroSerie + "' AND `Precio` = '" + unPE.precio + "' AND `Tipo` = '" + unPE.tipo + "'; ";
-            MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
-            if (fila.Read())
-            {
-                stock = fila.GetInt32("COUNT(*)") + 1;
-               consultaSQL= "UPDATE `inventario` SET `Stock` = '" + stock + "' WHERE `inventario`.`Numero de Serie` = '" + unPE.numeroSerie + "' AND `inventario`.`Precio` = '" + unPE.precio + "' AND `inventario`.`Tipo` = '" + unPE.tipo + "';";
+
+                string consultaSQL = "SELECT COUNT(*) FROM `equipo` WHERE `nombre` = '" + unPE.nombre + "' AND `precio` = '" + unPE.precio + "'; ";
+                MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
+                if (fila.Read())
+                {
+                    stock = fila.GetInt32("COUNT(*)") + 1;
+                    consultaSQL = "UPDATE `equipo` SET `stock` = '" + stock + "' WHERE `equipo`.`nombre` = '" + unPE.nombre + "' AND `equipo`.`precio` = '" + unPE.precio + "';";
+                    ejecutarSQL(consultaSQL);
+
+                }
+                else { stock = 1; }
+
+                consultaSQL = "INSERT INTO `equipo` VALUES('" + id + "','" + unPE.nombre + "','" + unPE.numeroSerie + "','" + unPE.estado + "','" + unPE.fechaIngreso + "','" + unPE.asegurado + "','" + unPE.precio + "','" + tipoBOOLfot + "','" + tipoBOOLson + "','" + tipoBOOLinf + "','" + tipoBOOLotr + "','" + stock + "','" + unPE.observacion + "');";
                 ejecutarSQL(consultaSQL);
-
             }
-            else { stock = 1; }
 
-            consultaSQL = "INSERT INTO `inventario` VALUES('" + id + "','" + unPE.nombre + "','" + unPE.numeroSerie + "','" + unPE.estado + "','" + unPE.fechaIngreso + "','" + unPE.asegurado + "','" + unPE.precio + "','" + unPE.observacion + "','" + unPE.tipo + "','" + stock + "');";
-            ejecutarSQL(consultaSQL);
-
-            
+            return NStoken;
         }
 
         public int bajaEquipo(string id)

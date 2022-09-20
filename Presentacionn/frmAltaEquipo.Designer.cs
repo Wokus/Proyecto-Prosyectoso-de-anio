@@ -34,7 +34,6 @@
             this.txtAsegurado = new System.Windows.Forms.TextBox();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.btnAgregarEquipo = new System.Windows.Forms.Button();
-            this.cbxEstado = new System.Windows.Forms.ComboBox();
             this.mtxtFechaIngreso = new System.Windows.Forms.MaskedTextBox();
             this.cbxMoneda = new System.Windows.Forms.ComboBox();
             this.cbxTipo = new System.Windows.Forms.ComboBox();
@@ -46,6 +45,7 @@
             this.lblPrecio = new System.Windows.Forms.Label();
             this.lblTipo = new System.Windows.Forms.Label();
             this.lblObservaciones = new System.Windows.Forms.Label();
+            this.txtEstado = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtNombre
@@ -95,14 +95,6 @@
             this.btnAgregarEquipo.UseVisualStyleBackColor = true;
             this.btnAgregarEquipo.Click += new System.EventHandler(this.btnAgregarEquipo_Click);
             // 
-            // cbxEstado
-            // 
-            this.cbxEstado.FormattingEnabled = true;
-            this.cbxEstado.Location = new System.Drawing.Point(100, 179);
-            this.cbxEstado.Name = "cbxEstado";
-            this.cbxEstado.Size = new System.Drawing.Size(100, 21);
-            this.cbxEstado.TabIndex = 11;
-            // 
             // mtxtFechaIngreso
             // 
             this.mtxtFechaIngreso.Location = new System.Drawing.Point(100, 222);
@@ -119,14 +111,21 @@
             this.cbxMoneda.Name = "cbxMoneda";
             this.cbxMoneda.Size = new System.Drawing.Size(38, 21);
             this.cbxMoneda.TabIndex = 13;
+            this.cbxMoneda.Text = "$";
             // 
             // cbxTipo
             // 
             this.cbxTipo.FormattingEnabled = true;
+            this.cbxTipo.Items.AddRange(new object[] {
+            "Fotografia",
+            "Sonido",
+            "Informatica",
+            "Otros"});
             this.cbxTipo.Location = new System.Drawing.Point(305, 179);
             this.cbxTipo.Name = "cbxTipo";
             this.cbxTipo.Size = new System.Drawing.Size(100, 21);
             this.cbxTipo.TabIndex = 14;
+            this.cbxTipo.Text = "Fotografia";
             // 
             // Nombre
             // 
@@ -200,11 +199,19 @@
             this.lblObservaciones.TabIndex = 22;
             this.lblObservaciones.Text = "Observacioes";
             // 
+            // txtEstado
+            // 
+            this.txtEstado.Location = new System.Drawing.Point(100, 180);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(100, 20);
+            this.txtEstado.TabIndex = 23;
+            // 
             // frmAltaEquipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(494, 508);
+            this.Controls.Add(this.txtEstado);
             this.Controls.Add(this.lblObservaciones);
             this.Controls.Add(this.lblTipo);
             this.Controls.Add(this.lblPrecio);
@@ -216,7 +223,6 @@
             this.Controls.Add(this.cbxTipo);
             this.Controls.Add(this.cbxMoneda);
             this.Controls.Add(this.mtxtFechaIngreso);
-            this.Controls.Add(this.cbxEstado);
             this.Controls.Add(this.btnAgregarEquipo);
             this.Controls.Add(this.txtObservaciones);
             this.Controls.Add(this.txtPrecio);
@@ -240,7 +246,6 @@
         private System.Windows.Forms.TextBox txtAsegurado;
         private System.Windows.Forms.TextBox txtObservaciones;
         private System.Windows.Forms.Button btnAgregarEquipo;
-        private System.Windows.Forms.ComboBox cbxEstado;
         private System.Windows.Forms.MaskedTextBox mtxtFechaIngreso;
         private System.Windows.Forms.ComboBox cbxMoneda;
         private System.Windows.Forms.ComboBox cbxTipo;
@@ -252,5 +257,6 @@
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.Label lblTipo;
         private System.Windows.Forms.Label lblObservaciones;
+        private System.Windows.Forms.TextBox txtEstado;
     }
 }
