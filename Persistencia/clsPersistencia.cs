@@ -9,6 +9,7 @@ using System.Data;
 
 namespace Persistencia
 {
+    //CHOTAAAAAAAAAAAAAAAAAAAAAAAA
    public class clsPersistencia
     {
         public MySqlConnection con;
