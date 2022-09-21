@@ -125,6 +125,9 @@ namespace Presentacionn
 
         }
 
-       
+        private void sc1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
