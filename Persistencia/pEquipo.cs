@@ -45,7 +45,6 @@ namespace Persistencia
             consultaSQL = "INSERT INTO `inventario` VALUES('" + id + "','" + unPE.nombre + "','" + unPE.numeroSerie + "','" + unPE.estado + "','" + unPE.fechaIngreso + "','" + unPE.asegurado + "','" + unPE.precio + "','" + unPE.observacion + "','" + unPE.tipo + "','" + stock + "');";
             ejecutarSQL(consultaSQL);
 
-            
         }
 
         public int bajaEquipo(string id)
@@ -78,6 +77,47 @@ namespace Persistencia
         {
             int id = fila.GetInt32("id");
             return id;
+        }
+
+        public List<eEquipo> listarEquipo()
+        {
+
+            List<eEquipo> colEquipo = new List<eEquipo>();
+            string consultaSQL = "SELECT * FROM equipo;";
+            MySqlDataReader resultado = ejecutarYdevolver(consultaSQL);
+
+            while (resultado.Read())
+            {
+
+                colEquipo.Add(recrearEquipo(resultado));
+
+            }
+
+            return colEquipo;
+
+        }
+
+        private eEquipo recrearEquipo(MySqlDataReader fila)
+        {
+
+            eEquipo unEquipo = new eEquipo();
+
+            unEquipo.id = fila.GetInt16("id");
+            unEquipo.nombre = fila.GetString("nombre");
+            unEquipo.numeroSerie = fila.GetString("numero_de_serie");
+            unEquipo.estado = fila.GetString("estado");
+            unEquipo.fechaIngreso = fila.GetString("ingreso");
+            unEquipo.asegurado = fila.GetString("asegurado");
+            unEquipo.precio = fila.GetInt16("precio");
+            unEquipo.fotografia = fila.GetString("fotografia");
+            unEquipo.sonido = fila.GetString("sonido");
+            unEquipo.informatica = fila.GetString("informatica");
+            unEquipo.varios = fila.GetString("varios");
+            unEquipo.stock = fila.GetInt16("stock");
+            unEquipo.observacion = fila.GetString("observaciones");
+            
+            return unEquipo;
+
         }
 
     }

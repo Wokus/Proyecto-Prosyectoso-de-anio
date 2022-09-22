@@ -27,6 +27,13 @@ namespace Dominio
             return unPE.bajaEquipo(id);
         }
 
+        public List<eEquipo> listarEquipo()
+        {
+
+            pEquipo unPE = new pEquipo();
+            return unPE.listarEquipo();
+
+        }
 
     }
 }

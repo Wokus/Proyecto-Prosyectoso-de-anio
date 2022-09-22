@@ -15,9 +15,16 @@ namespace Presentacionn
  
     public partial class frmMenuInicial : Form
     {
+        private bool v;
+
         public frmMenuInicial()
         {
             InitializeComponent();
+        }
+
+        public frmMenuInicial(bool v)
+        {
+            this.v = v;
         }
 
         private void label3_Click(object sender, EventArgs e)
