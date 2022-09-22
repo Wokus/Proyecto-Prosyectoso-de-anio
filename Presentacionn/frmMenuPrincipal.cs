@@ -78,7 +78,11 @@ namespace Presentacionn
                 rellenarPanel1(new frmBajaEquipo());
 
             }
+            if (cbxAcciones.SelectedIndex == 3)
+            {
+                rellenarPanel1(new frmAltaPrestamoEquipo());
 
+            }
 
 
 
@@ -125,6 +129,9 @@ namespace Presentacionn
 
         }
 
-       
+        private void pnl1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Entidades;
 using MySql.Data.MySqlClient;
 
-
 namespace Persistencia
 {
     public class pEquipo : clsPersistencia

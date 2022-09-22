@@ -58,6 +58,12 @@
     <Compile Include="frmAltaEquipo.Designer.cs">
       <DependentUpon>frmAltaEquipo.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAltaPrestamoEquipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAltaPrestamoEquipo.Designer.cs">
+      <DependentUpon>frmAltaPrestamoEquipo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBajaEquipo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAltaEquipo.resx">
       <DependentUpon>frmAltaEquipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAltaPrestamoEquipo.resx">
+      <DependentUpon>frmAltaPrestamoEquipo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBajaEquipo.resx">
       <DependentUpon>frmBajaEquipo.cs</DependentUpon>
