@@ -64,7 +64,7 @@ namespace Presentacionn
         {
             if (cbxListados.SelectedIndex == 0)
             {
-                rellenarPanel2(());
+                rellenarPanel2(new frmListadoEquipo());
                 
             }
             
@@ -83,12 +83,7 @@ namespace Presentacionn
                 rellenarPanel1(new frmBajaEquipo());
 
             }
-
-
-
-
         }
-
 
         private Form formActivo = null;
         private void rellenarPanel1(Form formHijo)
@@ -121,10 +116,6 @@ namespace Presentacionn
             sc1.Panel2.Tag = formHijo2;
             formHijo2.Show();
         }
-
-
-
-
 
         private void splitContainer1_Panel2_Paint_1(object sender, PaintEventArgs e)
         {

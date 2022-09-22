@@ -13,6 +13,5 @@ namespace Entidades
         public string nombreCompleto { get; set; }
         public string telefono { get; set; }
 
-
     }
 }

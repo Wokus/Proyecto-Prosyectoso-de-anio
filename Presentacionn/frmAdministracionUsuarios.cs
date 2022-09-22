@@ -121,6 +121,16 @@ namespace Presentacionn
         {
 
         }
+
+        private void txtUsernameAgregar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvListarUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
     }
 

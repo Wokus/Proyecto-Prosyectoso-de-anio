@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.tbpModificarUsuario = new System.Windows.Forms.TabPage();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.txtNUAM = new System.Windows.Forms.TextBox();
             this.lblNDAM = new System.Windows.Forms.Label();
             this.mtxtTelefonoModificar = new System.Windows.Forms.MaskedTextBox();
@@ -41,14 +42,17 @@
             this.lblUsernameModificar = new System.Windows.Forms.Label();
             this.btnOkModificar = new System.Windows.Forms.Button();
             this.tbpListarUsuario = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.dgvListarUsuario = new System.Windows.Forms.DataGridView();
             this.tbpEliminarUsuario = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.txtUsernameEliminar = new System.Windows.Forms.TextBox();
             this.txtPasswordEliminar = new System.Windows.Forms.TextBox();
             this.lblPasswordEliminar = new System.Windows.Forms.Label();
             this.lblUsernameEliminar = new System.Windows.Forms.Label();
             this.btnOkEliminar = new System.Windows.Forms.Button();
             this.tbpAgregarUsuario = new System.Windows.Forms.TabPage();
+            this.pnl3 = new System.Windows.Forms.Panel();
             this.mtxtTelefonoAgregar = new System.Windows.Forms.MaskedTextBox();
             this.txtNombreCompletoAgregar = new System.Windows.Forms.TextBox();
             this.lblTelefonoAgregar = new System.Windows.Forms.Label();
@@ -59,10 +63,6 @@
             this.lblUsernameAgregar = new System.Windows.Forms.Label();
             this.btnOkAgregar = new System.Windows.Forms.Button();
             this.tbcUsuarios = new System.Windows.Forms.TabControl();
-            this.pnl3 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.tbpModificarUsuario.SuspendLayout();
             this.tbpListarUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarUsuario)).BeginInit();
@@ -92,6 +92,15 @@
             this.tbpModificarUsuario.Size = new System.Drawing.Size(388, 522);
             this.tbpModificarUsuario.TabIndex = 3;
             this.tbpModificarUsuario.Text = "Modificar";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(3, 468);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(382, 51);
+            this.panel3.TabIndex = 22;
             // 
             // txtNUAM
             // 
@@ -217,6 +226,15 @@
             this.tbpListarUsuario.Text = "Listar Informacion";
             this.tbpListarUsuario.Click += new System.EventHandler(this.tbpListarUsuario_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(3, 468);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(382, 51);
+            this.panel2.TabIndex = 12;
+            // 
             // dgvListarUsuario
             // 
             this.dgvListarUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -224,6 +242,7 @@
             this.dgvListarUsuario.Name = "dgvListarUsuario";
             this.dgvListarUsuario.Size = new System.Drawing.Size(334, 263);
             this.dgvListarUsuario.TabIndex = 11;
+            this.dgvListarUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListarUsuario_CellContentClick);
             // 
             // tbpEliminarUsuario
             // 
@@ -240,6 +259,15 @@
             this.tbpEliminarUsuario.Size = new System.Drawing.Size(388, 522);
             this.tbpEliminarUsuario.TabIndex = 1;
             this.tbpEliminarUsuario.Text = "Eliminar";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(3, 468);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(382, 51);
+            this.panel1.TabIndex = 15;
             // 
             // txtUsernameEliminar
             // 
@@ -311,6 +339,15 @@
             this.tbpAgregarUsuario.TabIndex = 0;
             this.tbpAgregarUsuario.Text = "Agregar";
             // 
+            // pnl3
+            // 
+            this.pnl3.BackColor = System.Drawing.SystemColors.Highlight;
+            this.pnl3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnl3.Location = new System.Drawing.Point(3, 468);
+            this.pnl3.Name = "pnl3";
+            this.pnl3.Size = new System.Drawing.Size(382, 51);
+            this.pnl3.TabIndex = 11;
+            // 
             // mtxtTelefonoAgregar
             // 
             this.mtxtTelefonoAgregar.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -359,6 +396,7 @@
             this.txtUsernameAgregar.Name = "txtUsernameAgregar";
             this.txtUsernameAgregar.Size = new System.Drawing.Size(107, 26);
             this.txtUsernameAgregar.TabIndex = 5;
+            this.txtUsernameAgregar.TextChanged += new System.EventHandler(this.txtUsernameAgregar_TextChanged);
             // 
             // txtPasswordAgregar
             // 
@@ -417,42 +455,6 @@
             this.tbcUsuarios.Size = new System.Drawing.Size(396, 548);
             this.tbcUsuarios.TabIndex = 0;
             this.tbcUsuarios.Click += new System.EventHandler(this.tbcUsuarios_Click);
-            // 
-            // pnl3
-            // 
-            this.pnl3.BackColor = System.Drawing.SystemColors.Highlight;
-            this.pnl3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnl3.Location = new System.Drawing.Point(3, 468);
-            this.pnl3.Name = "pnl3";
-            this.pnl3.Size = new System.Drawing.Size(382, 51);
-            this.pnl3.TabIndex = 11;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(3, 468);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(382, 51);
-            this.panel1.TabIndex = 15;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(3, 468);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(382, 51);
-            this.panel2.TabIndex = 12;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(3, 468);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(382, 51);
-            this.panel3.TabIndex = 22;
             // 
             // frmAdministracionUsuarios
             // 

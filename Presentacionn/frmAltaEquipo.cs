@@ -37,7 +37,7 @@ namespace Presentacionn
             unE.fechaIngreso = mtxtFechaIngreso.Text;
             unE.asegurado = txtAsegurado.Text;
             unE.precio = txtPrecio.Text + cbxMoneda.Text;
-            unE.tipo = cbxTipo.Text;
+            //unE.tipo = cbxTipo.Text;
             unE.observacion = txtObservaciones.Text;
 
             dEquipo unDE = new dEquipo();
@@ -48,6 +48,16 @@ namespace Presentacionn
         }
 
         private void txtAsegurado_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPrecio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
         {
 
         }

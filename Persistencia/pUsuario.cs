@@ -121,7 +121,7 @@ namespace Persistencia
             }
 
             if (elAdmin!=null)
-            { //"DELETE FROM administradores WHERE `administradores`.`Nombre de Usuario` = 'Pepe'"
+            {
                 string consultaSQL2 = "DELETE FROM administradores WHERE `administradores`.`Nombre de Usuario` = '" + username +"';";
                 
                 ejecutarSQL(consultaSQL2);
@@ -148,9 +148,5 @@ namespace Persistencia
 
             return dt;  
         }
-
-
-
-
         }
 }

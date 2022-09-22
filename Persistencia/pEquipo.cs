@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 
 namespace Persistencia
@@ -31,18 +32,18 @@ namespace Persistencia
                 } 
       
 
-             string consultaSQL = "SELECT COUNT(*) FROM `inventario` WHERE `Nombre` = '" + unPE.nombre + "' AND `Numero de Serie` = '" + unPE.numeroSerie + "' AND `Precio` = '" + unPE.precio + "' AND `Tipo` = '" + unPE.tipo + "'; ";
+             string consultaSQL = "SELECT COUNT(*) FROM `inventario` WHERE `Nombre` = '" + unPE.nombre + "' AND `Numero de Serie` = '" + unPE.numeroSerie + "' AND `Precio` = '" + unPE.precio + /*"' AND `Tipo` = '" + unPE.tipo + */"'; ";
             MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
             if (fila.Read())
             {
                 stock = fila.GetInt32("COUNT(*)") + 1;
-               consultaSQL= "UPDATE `inventario` SET `Stock` = '" + stock + "' WHERE `inventario`.`Numero de Serie` = '" + unPE.numeroSerie + "' AND `inventario`.`Precio` = '" + unPE.precio + "' AND `inventario`.`Tipo` = '" + unPE.tipo + "';";
+               consultaSQL= "UPDATE `inventario` SET `Stock` = '" + stock + "' WHERE `inventario`.`Numero de Serie` = '" + unPE.numeroSerie + "' AND `inventario`.`Precio` = '" + unPE.precio + /*"' AND `inventario`.`Tipo` = '" + unPE.tipo +*/ "';";
                 ejecutarSQL(consultaSQL);
 
             }
             else { stock = 1; }
 
-            consultaSQL = "INSERT INTO `inventario` VALUES('" + id + "','" + unPE.nombre + "','" + unPE.numeroSerie + "','" + unPE.estado + "','" + unPE.fechaIngreso + "','" + unPE.asegurado + "','" + unPE.precio + "','" + unPE.observacion + "','" + unPE.tipo + "','" + stock + "');";
+            consultaSQL = "INSERT INTO `inventario` VALUES('" + id + "','" + unPE.nombre + "','" + unPE.numeroSerie + "','" + unPE.estado + "','" + unPE.fechaIngreso + "','" + unPE.asegurado + "','" + unPE.precio + "','" + unPE.observacion + "','" + /*unPE.tipo +*/ "','" + stock + "');";
             ejecutarSQL(consultaSQL);
 
         }
@@ -79,46 +80,16 @@ namespace Persistencia
             return id;
         }
 
-        public List<eEquipo> listarEquipo()
+        public DataTable listarEquipo1()
         {
+            String consultaSQL = "SELECT * FROM equipo;";
 
-            List<eEquipo> colEquipo = new List<eEquipo>();
-            string consultaSQL = "SELECT * FROM equipo;";
-            MySqlDataReader resultado = ejecutarYdevolver(consultaSQL);
+            DataTable dt = listarAlgo(consultaSQL);
 
-            while (resultado.Read())
-            {
-
-                colEquipo.Add(recrearEquipo(resultado));
-
-            }
-
-            return colEquipo;
-
+            return dt;
         }
 
-        private eEquipo recrearEquipo(MySqlDataReader fila)
-        {
 
-            eEquipo unEquipo = new eEquipo();
-
-            unEquipo.id = fila.GetInt16("id");
-            unEquipo.nombre = fila.GetString("nombre");
-            unEquipo.numeroSerie = fila.GetString("numero_de_serie");
-            unEquipo.estado = fila.GetString("estado");
-            unEquipo.fechaIngreso = fila.GetString("ingreso");
-            unEquipo.asegurado = fila.GetString("asegurado");
-            unEquipo.precio = fila.GetInt16("precio");
-            unEquipo.fotografia = fila.GetString("fotografia");
-            unEquipo.sonido = fila.GetString("sonido");
-            unEquipo.informatica = fila.GetString("informatica");
-            unEquipo.varios = fila.GetString("varios");
-            unEquipo.stock = fila.GetInt16("stock");
-            unEquipo.observacion = fila.GetString("observaciones");
-            
-            return unEquipo;
-
-        }
 
     }
 }

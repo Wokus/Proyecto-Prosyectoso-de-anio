@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Entidades;
 using Persistencia;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace Dominio
 {
@@ -27,12 +28,12 @@ namespace Dominio
             return unPE.bajaEquipo(id);
         }
 
-        public List<eEquipo> listarEquipo()
+        public DataTable listarEquipo()
         {
 
             pEquipo unPE = new pEquipo();
-            return unPE.listarEquipo();
 
+            return unPE.listarEquipo1();
         }
 
     }

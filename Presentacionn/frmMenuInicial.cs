@@ -15,17 +15,17 @@ namespace Presentacionn
  
     public partial class frmMenuInicial : Form
     {
-        private bool v;
+        /*private bool v;*/
 
         public frmMenuInicial()
         {
             InitializeComponent();
         }
 
-        public frmMenuInicial(bool v)
+        /*public frmMenuInicial(bool v)
         {
             this.v = v;
-        }
+        }*/
 
         private void label3_Click(object sender, EventArgs e)
         {
@@ -84,6 +84,11 @@ namespace Presentacionn
             
             this.Hide();
             unMPI.Show();
+
+        }
+
+        private void txtUserName_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
