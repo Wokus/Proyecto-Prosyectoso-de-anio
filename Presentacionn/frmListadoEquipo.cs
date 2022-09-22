@@ -22,9 +22,14 @@ namespace Presentacionn
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+            
+
+        }
+
+        private void frmListadoEquipo_Load(object sender, EventArgs e)
+        {
             dEquipo unDE = new dEquipo();
             dataGridView1.DataSource = unDE.listarEquipo();
-
         }
     }
 }
