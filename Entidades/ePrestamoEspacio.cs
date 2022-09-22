@@ -8,5 +8,7 @@ namespace Entidades
 {
     class ePrestamoEspacio
     {
+        public int numeroEspacio { get; set; }
+        public String nombre { get; set; }
     }
 }
