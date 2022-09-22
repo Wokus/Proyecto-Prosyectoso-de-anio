@@ -22,8 +22,18 @@ namespace Presentacionn
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            dEquipo unDE = new dEquipo();
-            dataGridView1.DataSource = unDE.listarEquipo();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (cbxListadosInventario.SelectedIndex == 0)
+            {
+
+                dEquipo unDE = new dEquipo();
+                dataGridView1.DataSource = unDE.listarEquipo();
+
+            }
 
         }
     }
