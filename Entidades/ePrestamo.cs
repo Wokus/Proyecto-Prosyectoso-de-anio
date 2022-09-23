@@ -20,7 +20,7 @@ namespace Entidades
       public string cancelado { get; set; }
       public string devuelto { get; set; }
       public string profesorResponsable { get; set; }
-      public string alumnoResponsable { get; set}
+      public string alumnoResponsable { get; set; }
 
     }
 }

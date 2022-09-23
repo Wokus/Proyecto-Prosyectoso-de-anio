@@ -71,7 +71,7 @@ namespace Presentacionn
             if (cbxListados.SelectedIndex == 1)
             {
 
-                rellenarPanel2(new());
+                rellenarPanel2(new frmListadoPrestamo());
 
             }
             
