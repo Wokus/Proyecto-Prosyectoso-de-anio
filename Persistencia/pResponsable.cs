@@ -59,6 +59,30 @@ namespace Persistencia
 
             return unResponsable;
         }
+        public eUsuario bajaResponsable(string username)
+        {
+            eUsuario elAdmin = new eUsuario();
+            elAdmin = null;
+            string consultaSQL = "SELECT * FROM ` solicitante` WHERE `usuario`.`ci` = '" + username + "';";
 
+
+            MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
+            ejecutarSQL(consultaSQL);
+            while (fila.Read())
+            {
+                elAdmin = recrearResponsable(fila);
+
+            }
+
+            if (elAdmin != null)
+            {
+                string consultaSQL2 = "DELETE FROM solicitante WHERE ` solicitante`.`ci` = '" + username + "';";
+                ejecutarSQL(consultaSQL2);
+                consultaSQL2 = "DELETE FROM persona WHERE `persona`.`ci` = '" + username + "';";
+                ejecutarSQL(consultaSQL2);
+
+            }
+            return elAdmin;
+        }
     }
 }

@@ -30,6 +30,7 @@
         {
             this.tbcResponsable = new System.Windows.Forms.TabControl();
             this.alta = new System.Windows.Forms.TabPage();
+            this.cbxTipo = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,9 +40,11 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.btnAregar = new System.Windows.Forms.Button();
-            this.cbxTipo = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txteliminarRes = new System.Windows.Forms.TextBox();
             this.tbcResponsable.SuspendLayout();
             this.alta.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbcResponsable
@@ -71,6 +74,18 @@
             this.alta.TabIndex = 0;
             this.alta.Text = "Agregar";
             this.alta.UseVisualStyleBackColor = true;
+            // 
+            // cbxTipo
+            // 
+            this.cbxTipo.FormattingEnabled = true;
+            this.cbxTipo.Items.AddRange(new object[] {
+            "Estudiantes",
+            "Profesor"});
+            this.cbxTipo.Location = new System.Drawing.Point(178, 101);
+            this.cbxTipo.Name = "cbxTipo";
+            this.cbxTipo.Size = new System.Drawing.Size(100, 21);
+            this.cbxTipo.TabIndex = 5;
+            this.cbxTipo.SelectedIndexChanged += new System.EventHandler(this.cbxTipo_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -105,6 +120,7 @@
             this.txtCurso.Name = "txtCurso";
             this.txtCurso.Size = new System.Drawing.Size(100, 20);
             this.txtCurso.TabIndex = 1;
+            this.txtCurso.TextChanged += new System.EventHandler(this.txtCurso_TextChanged);
             // 
             // txtResCi
             // 
@@ -115,6 +131,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.txteliminarRes);
+            this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -153,17 +171,21 @@
             this.btnAregar.UseVisualStyleBackColor = true;
             this.btnAregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // cbxTipo
+            // label4
             // 
-            this.cbxTipo.FormattingEnabled = true;
-            this.cbxTipo.Items.AddRange(new object[] {
-            "Estudiantes",
-            "Profesor"});
-            this.cbxTipo.Location = new System.Drawing.Point(178, 101);
-            this.cbxTipo.Name = "cbxTipo";
-            this.cbxTipo.Size = new System.Drawing.Size(100, 21);
-            this.cbxTipo.TabIndex = 5;
-            this.cbxTipo.SelectedIndexChanged += new System.EventHandler(this.cbxTipo_SelectedIndexChanged);
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(30, 58);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(117, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Cedula del responsable";
+            // 
+            // txteliminarRes
+            // 
+            this.txteliminarRes.Location = new System.Drawing.Point(153, 58);
+            this.txteliminarRes.Name = "txteliminarRes";
+            this.txteliminarRes.Size = new System.Drawing.Size(100, 20);
+            this.txteliminarRes.TabIndex = 1;
             // 
             // FrmAdministracionResponsable
             // 
@@ -177,6 +199,8 @@
             this.tbcResponsable.ResumeLayout(false);
             this.alta.ResumeLayout(false);
             this.alta.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -195,5 +219,7 @@
         private System.Windows.Forms.TextBox txtCurso;
         private System.Windows.Forms.TextBox txtResCi;
         private System.Windows.Forms.ComboBox cbxTipo;
+        private System.Windows.Forms.TextBox txteliminarRes;
+        private System.Windows.Forms.Label label4;
     }
 }

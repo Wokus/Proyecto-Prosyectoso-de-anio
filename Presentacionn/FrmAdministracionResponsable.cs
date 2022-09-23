@@ -26,7 +26,7 @@ namespace Presentacionn
             unR.curso = txtCurso.Text;
             unR.tipo = cbxTipo.Text;
             dResponsable unDR = new dResponsable();
-           bool token = unDR.altaResponsable(unR);
+            bool token = unDR.altaResponsable(unR);
             if (token == true)
             {
 
@@ -40,6 +40,11 @@ namespace Presentacionn
         }
 
         private void cbxTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCurso_TextChanged(object sender, EventArgs e)
         {
 
         }

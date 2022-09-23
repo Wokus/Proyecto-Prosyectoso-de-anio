@@ -17,6 +17,12 @@ namespace Dominio
             return unPR.altaResponsable(unDR);
         }
 
+        public eResponsable bajaResponsable(String username)
+        {
+            pUsuario unPR = new pUsuario();
+            return unPR.bajaResponsable(username);
+
+        }
 
     }
 }
