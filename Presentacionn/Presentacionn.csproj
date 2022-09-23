@@ -64,12 +64,6 @@
     <Compile Include="frmAltaPrestamoEquipo.Designer.cs">
       <DependentUpon>frmAltaPrestamoEquipo.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAltaPrestamoEspacio.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAltaPrestamoEspacio.Designer.cs">
-      <DependentUpon>frmAltaPrestamoEspacio.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmBajaEquipo.cs">
       <SubType>Form</SubType>
     </Compile>
