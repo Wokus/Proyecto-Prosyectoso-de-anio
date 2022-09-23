@@ -46,6 +46,9 @@
   <ItemGroup>
     <Compile Include="dEquipo.cs" />
     <Compile Include="dPrestamo.cs" />
+    <Compile Include="dPrestamoDeEquipo.cs" />
+    <Compile Include="dPrestamoDeEspacio.cs" />
+    <Compile Include="dPrestamoEspontaneo.cs" />
     <Compile Include="dUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

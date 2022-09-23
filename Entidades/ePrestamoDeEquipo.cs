@@ -9,7 +9,8 @@ namespace Entidades
     public class ePrestamoDeEquipo
     {
 
-
+        public int prioridad { get; set; }
+        public string ejercicio { get; set; }
 
     }
 }

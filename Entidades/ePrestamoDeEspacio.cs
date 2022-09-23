@@ -9,8 +9,7 @@ namespace Entidades
     public class ePrestamoDeEspacio
     {
 
-        public int prioridad { get; set; }
-        public string 
+    //no hay atributos debido a que tiene lo que hereda de prestamo y su id propia que se aumenta en la base de datos
 
     }
 }
