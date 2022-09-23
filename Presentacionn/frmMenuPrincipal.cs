@@ -80,7 +80,7 @@ namespace Presentacionn
             }
             if (cbxAcciones.SelectedIndex == 3)
             {
-                rellenarPanel1(new frmAltaPrestamoEquipo());
+                rellenarPanel1(new frmAltaPrestamo());
 
             }
 

@@ -12,9 +12,9 @@ using Dominio;
 
 namespace Presentacionn
 {
-    public partial class frmAltaPrestamoEquipo : Form
+    public partial class frmAltaPrestamo : Form
     {
-        public frmAltaPrestamoEquipo()
+        public frmAltaPrestamo()
         {
             
             InitializeComponent();
@@ -24,6 +24,7 @@ namespace Presentacionn
         {
             ePrestamoEquipo unPRE = new ePrestamoEquipo();
             ePrestamoEspacio unPRES = new ePrestamoEspacio();
+            ePrestamoEspontaneos unPREX = new ePrestamoEspontaneos();
 
             if (cbxTipoPrestamo.Text == "De equipo(Formales)")
             {
@@ -71,6 +72,30 @@ namespace Presentacionn
 
                 dPrestamoEspacio unDPRE = new dPrestamoEspacio();
                 bool tokenEspacio = unDPRE.altaPrestamoEspacio(unPRES);
+
+                if (tokenEspacio == true)
+                {
+                    MessageBox.Show("Prestamo agregado de manera exitosa");
+                }
+                else { MessageBox.Show("Espacio no exitente"); }
+            }
+
+            if (cbxTipoPrestamo.Text == "Expontaneo")
+            {
+                unPREX.alumnoRespon = txtAlumno.Text;
+                unPREX.profeRespon = txtProfesor.Text;
+                unPREX.fechaSolicitada = mtxtFechaSolicitud.Text;
+                unPREX.fechaRetiro = mtxtFechaRetiro.Text;
+                unPREX.fechaDevolucion = mtxtFechaDevolucion.Text;
+                unPREX.horaRetiro = mtxtHoraRetiro.Text;
+                unPREX.estado = cbxEstado.Text;
+
+                unPREX.horaDevolucion = "Sex:ooo";
+                unPREX.cantidadDias = 69;
+                unPREX.idEquipo = txtEquipoID.Text; 
+
+                dPrestamoExpontaneo unDPREX = new dPrestamoExpontaneo();
+                bool tokenEspacio = unDPREX.altaPrestamoEspacio(unPREX);
 
                 if (tokenEspacio == true)
                 {
@@ -208,7 +233,7 @@ namespace Presentacionn
                 
                 lblIDSalon.Visible = false;
                 
-                //...
+               
 
                 txtTransporte.Visible = true;
                 txtEjercicio.Visible = true;
@@ -237,9 +262,6 @@ namespace Presentacionn
 
 
 
-
-                //...
-
                 txtIDSalon.Visible = true;
                 
                 lblIDSalon.Visible = true;
@@ -248,8 +270,18 @@ namespace Presentacionn
             }
             if (cbxTipoPrestamo.Text == "Expontaneo")
             {
+                txtIDSalon.Visible = false;
+                lblIDSalon.Visible = false;
 
+                txtTransporte.Visible = false;
+                txtEjercicio.Visible = false;
+              
+                txtLocacion.Visible = false;
 
+                lblTransporte.Visible = false;
+                lblEjercicio.Visible = false;
+                
+                lblLocacion.Visible = false;
 
 
 
