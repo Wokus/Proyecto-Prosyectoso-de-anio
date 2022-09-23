@@ -37,7 +37,10 @@
             // 
             this.cbxListadosPrestamos.FormattingEnabled = true;
             this.cbxListadosPrestamos.Items.AddRange(new object[] {
-            "Prestamo"});
+            "Prestamos generales",
+            "Prestamos de equipo",
+            "Prestamo espontaneo",
+            "Prestamo de espacio"});
             this.cbxListadosPrestamos.Location = new System.Drawing.Point(12, 12);
             this.cbxListadosPrestamos.Name = "cbxListadosPrestamos";
             this.cbxListadosPrestamos.Size = new System.Drawing.Size(121, 21);
