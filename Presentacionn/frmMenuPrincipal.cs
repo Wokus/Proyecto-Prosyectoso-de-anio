@@ -67,6 +67,13 @@ namespace Presentacionn
                 rellenarPanel2(new frmListadoEquipo());
                 
             }
+
+            if (cbxListados.SelectedIndex == 1)
+            {
+
+                rellenarPanel2(new());
+
+            }
             
 
         }
