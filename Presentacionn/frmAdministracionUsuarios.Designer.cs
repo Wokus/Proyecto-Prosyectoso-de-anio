@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.tbpModificarUsuario = new System.Windows.Forms.TabPage();
+            this.mtxtUsernameModificar = new System.Windows.Forms.MaskedTextBox();
+            this.mtxtNUAM = new System.Windows.Forms.MaskedTextBox();
+            this.txtApellidoModificar = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblNDAM = new System.Windows.Forms.Label();
             this.mtxtTelefonoModificar = new System.Windows.Forms.MaskedTextBox();
@@ -37,15 +41,20 @@
             this.lblNombreModificar = new System.Windows.Forms.Label();
             this.txtPasswordModificar = new System.Windows.Forms.TextBox();
             this.lblPasswordModificar = new System.Windows.Forms.Label();
+            this.lblUsernameModificar = new System.Windows.Forms.Label();
             this.btnOkModificar = new System.Windows.Forms.Button();
             this.tbpListarUsuario = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvListarUsuario = new System.Windows.Forms.DataGridView();
             this.tbpEliminarUsuario = new System.Windows.Forms.TabPage();
+            this.txtUsernameEliminar = new System.Windows.Forms.MaskedTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblUsernameEliminar = new System.Windows.Forms.Label();
             this.btnOkEliminar = new System.Windows.Forms.Button();
             this.tbpAgregarUsuario = new System.Windows.Forms.TabPage();
+            this.mtxtUsernameAgregar = new System.Windows.Forms.MaskedTextBox();
+            this.txtApellidoAgregar = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnl3 = new System.Windows.Forms.Panel();
             this.mtxtTelefonoAgregar = new System.Windows.Forms.MaskedTextBox();
             this.txtNombreAgregar = new System.Windows.Forms.TextBox();
@@ -56,15 +65,6 @@
             this.lblUsernameAgregar = new System.Windows.Forms.Label();
             this.btnOkAgregar = new System.Windows.Forms.Button();
             this.tbcUsuarios = new System.Windows.Forms.TabControl();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtApellidoAgregar = new System.Windows.Forms.TextBox();
-            this.txtApellidoModificar = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblUsernameModificar = new System.Windows.Forms.Label();
-            this.mtxtUsernameAgregar = new System.Windows.Forms.MaskedTextBox();
-            this.mtxtNUAM = new System.Windows.Forms.MaskedTextBox();
-            this.mtxtUsernameModificar = new System.Windows.Forms.MaskedTextBox();
-            this.txtUsernameEliminar = new System.Windows.Forms.MaskedTextBox();
             this.tbpModificarUsuario.SuspendLayout();
             this.tbpListarUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarUsuario)).BeginInit();
@@ -96,6 +96,46 @@
             this.tbpModificarUsuario.Size = new System.Drawing.Size(388, 522);
             this.tbpModificarUsuario.TabIndex = 3;
             this.tbpModificarUsuario.Text = "Modificar";
+            // 
+            // mtxtUsernameModificar
+            // 
+            this.mtxtUsernameModificar.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.mtxtUsernameModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtxtUsernameModificar.Location = new System.Drawing.Point(177, 134);
+            this.mtxtUsernameModificar.Mask = "0,000,000-0";
+            this.mtxtUsernameModificar.Name = "mtxtUsernameModificar";
+            this.mtxtUsernameModificar.Size = new System.Drawing.Size(107, 26);
+            this.mtxtUsernameModificar.TabIndex = 26;
+            // 
+            // mtxtNUAM
+            // 
+            this.mtxtNUAM.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.mtxtNUAM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtxtNUAM.Location = new System.Drawing.Point(177, 88);
+            this.mtxtNUAM.Mask = "0,000,000-0";
+            this.mtxtNUAM.Name = "mtxtNUAM";
+            this.mtxtNUAM.Size = new System.Drawing.Size(107, 26);
+            this.mtxtNUAM.TabIndex = 25;
+            // 
+            // txtApellidoModificar
+            // 
+            this.txtApellidoModificar.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.txtApellidoModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellidoModificar.Location = new System.Drawing.Point(178, 272);
+            this.txtApellidoModificar.Name = "txtApellidoModificar";
+            this.txtApellidoModificar.Size = new System.Drawing.Size(107, 26);
+            this.txtApellidoModificar.TabIndex = 24;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(106, 278);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 20);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Apelido";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel3
             // 
@@ -176,6 +216,17 @@
             this.lblPasswordModificar.TabIndex = 12;
             this.lblPasswordModificar.Text = "Contraseña";
             // 
+            // lblUsernameModificar
+            // 
+            this.lblUsernameModificar.AutoSize = true;
+            this.lblUsernameModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsernameModificar.Location = new System.Drawing.Point(26, 137);
+            this.lblUsernameModificar.Name = "lblUsernameModificar";
+            this.lblUsernameModificar.Size = new System.Drawing.Size(146, 20);
+            this.lblUsernameModificar.TabIndex = 11;
+            this.lblUsernameModificar.Text = "Nombre de Usuario";
+            this.lblUsernameModificar.Click += new System.EventHandler(this.lblUsernameModificar_Click);
+            // 
             // btnOkModificar
             // 
             this.btnOkModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -232,6 +283,16 @@
             this.tbpEliminarUsuario.TabIndex = 1;
             this.tbpEliminarUsuario.Text = "Eliminar";
             // 
+            // txtUsernameEliminar
+            // 
+            this.txtUsernameEliminar.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.txtUsernameEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsernameEliminar.Location = new System.Drawing.Point(178, 91);
+            this.txtUsernameEliminar.Mask = "0,000,000-0";
+            this.txtUsernameEliminar.Name = "txtUsernameEliminar";
+            this.txtUsernameEliminar.Size = new System.Drawing.Size(107, 26);
+            this.txtUsernameEliminar.TabIndex = 23;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
@@ -284,6 +345,37 @@
             this.tbpAgregarUsuario.Size = new System.Drawing.Size(388, 522);
             this.tbpAgregarUsuario.TabIndex = 0;
             this.tbpAgregarUsuario.Text = "Agregar";
+            // 
+            // mtxtUsernameAgregar
+            // 
+            this.mtxtUsernameAgregar.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.mtxtUsernameAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtxtUsernameAgregar.Location = new System.Drawing.Point(178, 88);
+            this.mtxtUsernameAgregar.Mask = "0,000,000-0";
+            this.mtxtUsernameAgregar.Name = "mtxtUsernameAgregar";
+            this.mtxtUsernameAgregar.Size = new System.Drawing.Size(107, 26);
+            this.mtxtUsernameAgregar.TabIndex = 22;
+            this.mtxtUsernameAgregar.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtxtUsernameAgregar_MaskInputRejected_1);
+            // 
+            // txtApellidoAgregar
+            // 
+            this.txtApellidoAgregar.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.txtApellidoAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellidoAgregar.Location = new System.Drawing.Point(177, 232);
+            this.txtApellidoAgregar.Name = "txtApellidoAgregar";
+            this.txtApellidoAgregar.Size = new System.Drawing.Size(107, 26);
+            this.txtApellidoAgregar.TabIndex = 21;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(100, 280);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 20);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Telefono";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnl3
             // 
@@ -391,97 +483,6 @@
             this.tbcUsuarios.Size = new System.Drawing.Size(396, 548);
             this.tbcUsuarios.TabIndex = 0;
             this.tbcUsuarios.Click += new System.EventHandler(this.tbcUsuarios_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(100, 280);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 20);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Telefono";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtApellidoAgregar
-            // 
-            this.txtApellidoAgregar.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.txtApellidoAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellidoAgregar.Location = new System.Drawing.Point(177, 232);
-            this.txtApellidoAgregar.Name = "txtApellidoAgregar";
-            this.txtApellidoAgregar.Size = new System.Drawing.Size(107, 26);
-            this.txtApellidoAgregar.TabIndex = 21;
-            // 
-            // txtApellidoModificar
-            // 
-            this.txtApellidoModificar.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.txtApellidoModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellidoModificar.Location = new System.Drawing.Point(178, 272);
-            this.txtApellidoModificar.Name = "txtApellidoModificar";
-            this.txtApellidoModificar.Size = new System.Drawing.Size(107, 26);
-            this.txtApellidoModificar.TabIndex = 24;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(106, 278);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 20);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "Apelido";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblUsernameModificar
-            // 
-            this.lblUsernameModificar.AutoSize = true;
-            this.lblUsernameModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsernameModificar.Location = new System.Drawing.Point(26, 137);
-            this.lblUsernameModificar.Name = "lblUsernameModificar";
-            this.lblUsernameModificar.Size = new System.Drawing.Size(146, 20);
-            this.lblUsernameModificar.TabIndex = 11;
-            this.lblUsernameModificar.Text = "Nombre de Usuario";
-            this.lblUsernameModificar.Click += new System.EventHandler(this.lblUsernameModificar_Click);
-            // 
-            // mtxtUsernameAgregar
-            // 
-            this.mtxtUsernameAgregar.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.mtxtUsernameAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtxtUsernameAgregar.Location = new System.Drawing.Point(178, 88);
-            this.mtxtUsernameAgregar.Mask = "0,000,000-0";
-            this.mtxtUsernameAgregar.Name = "mtxtUsernameAgregar";
-            this.mtxtUsernameAgregar.Size = new System.Drawing.Size(107, 26);
-            this.mtxtUsernameAgregar.TabIndex = 22;
-            // 
-            // mtxtNUAM
-            // 
-            this.mtxtNUAM.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.mtxtNUAM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtxtNUAM.Location = new System.Drawing.Point(177, 88);
-            this.mtxtNUAM.Mask = "0,000,000-0";
-            this.mtxtNUAM.Name = "mtxtNUAM";
-            this.mtxtNUAM.Size = new System.Drawing.Size(107, 26);
-            this.mtxtNUAM.TabIndex = 25;
-            // 
-            // mtxtUsernameModificar
-            // 
-            this.mtxtUsernameModificar.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.mtxtUsernameModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtxtUsernameModificar.Location = new System.Drawing.Point(177, 134);
-            this.mtxtUsernameModificar.Mask = "0,000,000-0";
-            this.mtxtUsernameModificar.Name = "mtxtUsernameModificar";
-            this.mtxtUsernameModificar.Size = new System.Drawing.Size(107, 26);
-            this.mtxtUsernameModificar.TabIndex = 26;
-            // 
-            // txtUsernameEliminar
-            // 
-            this.txtUsernameEliminar.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.txtUsernameEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsernameEliminar.Location = new System.Drawing.Point(178, 91);
-            this.txtUsernameEliminar.Mask = "0,000,000-0";
-            this.txtUsernameEliminar.Name = "txtUsernameEliminar";
-            this.txtUsernameEliminar.Size = new System.Drawing.Size(107, 26);
-            this.txtUsernameEliminar.TabIndex = 23;
             // 
             // frmAdministracionUsuarios
             // 

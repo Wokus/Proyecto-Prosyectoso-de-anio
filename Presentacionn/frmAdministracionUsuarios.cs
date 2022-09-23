@@ -128,6 +128,36 @@ namespace Presentacionn
         {
 
         }
+
+        private void tbpEliminarUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvListarUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void mtxtUsernameAgregar_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void lblUsernameAgregar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsernameEliminar_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void mtxtUsernameAgregar_MaskInputRejected_1(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
     }
     }
 
