@@ -46,6 +46,10 @@
   <ItemGroup>
     <Compile Include="clsPersistencia.cs" />
     <Compile Include="pEquipo.cs" />
+    <Compile Include="pPrestamo.cs" />
+    <Compile Include="pPrestamoDeEquipo.cs" />
+    <Compile Include="pPrestamoDeEspacio.cs" />
+    <Compile Include="pPrestamoEspontaneo.cs" />
     <Compile Include="pUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

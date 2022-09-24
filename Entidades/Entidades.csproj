@@ -44,6 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="eEquipo.cs" />
+    <Compile Include="ePrestamo.cs" />
+    <Compile Include="ePrestamoDeEquipo.cs" />
+    <Compile Include="ePrestamoDeEspacio.cs" />
+    <Compile Include="ePrestamoEspontaneo.cs" />
     <Compile Include="eUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
