@@ -53,7 +53,7 @@ namespace Persistencia
         }
         public DataTable listarAlgo(string consultaSQL)
         {
-            MySqlDataAdapter listado = new MySqlDataAdapter(consultaSQL, "server=localhost; uid=root ; password= ; database=begonesatan22;");
+            MySqlDataAdapter listado = new MySqlDataAdapter(consultaSQL, "server=localhost; uid=root ; password= ; database=begonesatan21;");
 
             DataTable dt = new DataTable();
 
@@ -63,7 +63,7 @@ namespace Persistencia
 
         public DataTable listarAlgo1(string consultaSQL)
         {
-            MySqlDataAdapter listado = new MySqlDataAdapter(consultaSQL, "server=localhost; uid=root ; password= ; database=begonesatan22;");
+            MySqlDataAdapter listado = new MySqlDataAdapter(consultaSQL, "server=localhost; uid=root ; password= ; database=begonesatan21;");
 
             DataTable dt = new DataTable();
 

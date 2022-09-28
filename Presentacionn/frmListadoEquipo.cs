@@ -22,19 +22,14 @@ namespace Presentacionn
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+            
+
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void frmListadoEquipo_Load(object sender, EventArgs e)
         {
-
-            if (cbxListadosInventario.SelectedIndex == 0)
-            {
-
-                dEquipo unDE = new dEquipo();
-                dataGridView1.DataSource = unDE.listarEquipo();
-
-            }
-
+            dEquipo unDE = new dEquipo();
+            dataGridView1.DataSource = unDE.listarEquipo();
         }
     }
 }
