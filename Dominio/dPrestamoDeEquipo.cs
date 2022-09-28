@@ -9,15 +9,15 @@ using Persistencia;
 
 namespace Dominio
 {
-    class dPrestamoDeEquipo
+    public class dPrestamoDeEquipo
     {
 
         public DataTable listarPrestamoDeEquipo()
         {
 
-            pPrestamo unPE = new pPrestamo();
+            pPrestamoDeEquipo unPE = new pPrestamoDeEquipo();
 
-            return unPE.listarPrestamo();
+            return unPE.listarPrestamoDeEquipo();
         }
 
     }

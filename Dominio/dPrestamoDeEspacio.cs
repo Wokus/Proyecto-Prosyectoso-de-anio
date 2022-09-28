@@ -9,7 +9,16 @@ using Persistencia;
 
 namespace Dominio
 {
-    class dPrestamoDeEspacio
+    public class dPrestamoDeEspacio
     {
+
+        public DataTable listarPrestamoDeEspacio()
+        {
+
+            pPrestamoDeEspacio unPE = new pPrestamoDeEspacio();
+
+            return unPE.listarPrestamoDeEspacio();
+        }
+
     }
 }

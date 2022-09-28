@@ -8,7 +8,7 @@ namespace Entidades
 {
     public class ePrestamoDeEquipo
     {
-
+        public int id_Prestamo { get; set; }
         public int prioridad { get; set; }
         public string ejercicio { get; set; }
 

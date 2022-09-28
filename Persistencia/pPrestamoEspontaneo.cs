@@ -9,7 +9,17 @@ using MySql.Data.MySqlClient;
 
 namespace Persistencia
 {
-    class pPrestamoEspontaneo : clsPersistencia
+    public class pPrestamoEspontaneo : clsPersistencia
     {
+
+        public DataTable listarPrestamoEspontaneo()
+        {
+            String consultaSQL = "SELECT * FROM prestamoEspontaneo;";
+
+            DataTable dt = listarAlgo(consultaSQL);
+
+            return dt;
+        }
+
     }
 }

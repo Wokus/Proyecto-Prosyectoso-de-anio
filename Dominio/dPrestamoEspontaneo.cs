@@ -9,7 +9,16 @@ using Persistencia;
 
 namespace Dominio
 {
-    class dPrestamoEspontaneo
+    public class dPrestamoEspontaneo
     {
+
+        public DataTable listarPrestamoEspontaneo()
+        {
+
+            pPrestamoEspontaneo unPE = new pPrestamoEspontaneo();
+
+            return unPE.listarPrestamoEspontaneo();
+        }
+
     }
 }
