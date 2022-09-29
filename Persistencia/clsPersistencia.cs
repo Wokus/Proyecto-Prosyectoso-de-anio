@@ -60,19 +60,5 @@ namespace Persistencia
             listado.Fill(dt);
             return dt;
         }
-
-        public DataTable listarAlgo1(string consultaSQL)
-        {
-            MySqlDataAdapter listado = new MySqlDataAdapter(consultaSQL, "server=localhost; uid=root ; password= ; database=begonesatan21;");
-
-            DataTable dt = new DataTable();
-
-            listado.Fill(dt);
-            return dt;
-        }
-
-
-
-
     }
 }

@@ -9,17 +9,18 @@ namespace Entidades
     public class eEquipo
     {
         public int id { get; set; } 
-        public string nombre { get; set; }
-        public string numeroSerie { get; set; }
-        public string estado { get; set; }
-        public string fechaIngreso { get; set; }
-        public string asegurado { get; set; }
-        public string precio { get; set; }
-        public string fotografia { get; set; }
-        public string sonido { get; set; }
-        public string informatica { get; set; }
-        public string varios { get; set; }
-        public string observacion { get; set; }
+        public String nombre { get; set; }
+        public String numeroSerie { get; set; }
+        public String estado { get; set; }
+        public String fechaIngreso { get; set; }
+        public String asegurado { get; set; }
+        public String precio { get; set; }
+        public String fotografia { get; set; }
+        public String sonido { get; set; }
+        public String informatica { get; set; }
+        public String varios { get; set; }
+        public String observacion { get; set; }
+        public int stock { get; set; }
 
     }
 }
