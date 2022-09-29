@@ -143,7 +143,8 @@ namespace Persistencia
         public DataTable listarUsuario()
         {
             String consultaSQL = "SELECT * FROM administradores;";
-            
+            //String consultaSQL = "SELECT persona.ci, persona.nombre, persona.apellido, usuario.password, usuario.telefono FROM persona RIGHT JOIN `usuario` ON persona.ci = usuario.ci; ";
+
             DataTable dt = listarAlgo(consultaSQL);
 
             return dt;  

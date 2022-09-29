@@ -353,7 +353,7 @@
             this.mtxtTelefonoAgregar.BackColor = System.Drawing.Color.LightSteelBlue;
             this.mtxtTelefonoAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtxtTelefonoAgregar.Location = new System.Drawing.Point(178, 226);
-            this.mtxtTelefonoAgregar.Mask = "000000000000";
+            this.mtxtTelefonoAgregar.Mask = "000000000";
             this.mtxtTelefonoAgregar.Name = "mtxtTelefonoAgregar";
             this.mtxtTelefonoAgregar.Size = new System.Drawing.Size(107, 26);
             this.mtxtTelefonoAgregar.TabIndex = 10;
