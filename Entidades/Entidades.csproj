@@ -44,11 +44,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="eEquipo.cs" />
-    <Compile Include="ePrestamo.cs" />
     <Compile Include="ePrestamoDeEquipo.cs" />
     <Compile Include="ePrestamoDeEspacio.cs" />
     <Compile Include="ePrestamoEspontaneo.cs" />
+    <Compile Include="ePersona.cs" />
+    <Compile Include="ePrestamo.cs" />
+    <Compile Include="ePrestamoEquipo.cs" />
+    <Compile Include="ePrestamoEspacio.cs" />
+    <Compile Include="ePrestamoEspontaneos.cs" />
     <Compile Include="eUsuario.cs" />
+    <Compile Include="eResponsable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

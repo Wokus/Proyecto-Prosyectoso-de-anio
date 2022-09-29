@@ -26,10 +26,10 @@ namespace Dominio
             return unPU.altaUsuario(unDU);
         }
 
-        public eUsuario bajaUsuario(String username, String password)
+        public eUsuario bajaUsuario(String username)
         {
             pUsuario unPU = new pUsuario();
-            return unPU.bajaUsuario(username, password);
+            return unPU.bajaUsuario(username);
 
         }
 

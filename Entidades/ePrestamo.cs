@@ -9,18 +9,16 @@ namespace Entidades
     public class ePrestamo
     {
 
-      public int id { get; set; }
-      public string fechaSolicitada { get; set; }
-      public string cantidadDias { get; set; }
-      public string fechaRetiro { get; set; }
-      public string fechaDevolucion { get; set; }
-      public string horaDevolucion { get; set; }
-      public string armado { get; set; }
-      public string levantado { get; set; }
-      public string cancelado { get; set; }
-      public string devuelto { get; set; }
-      public string profesorResponsable { get; set; }
-      public string alumnoResponsable { get; set; }
+        public int id { get; set; }
+        public String fechaSolicitada { get; set; }
+        public int cantidadDias { get; set; }
+        public String fechaRetiro { get; set; }
+        public String horaRetiro { get; set; }
+        public String fechaDevolucion { get; set; }
+        public String horaDevolucion { get; set; }
+        public String estado { get; set; }
+        public String alumnoRespon { get; set; }
+        public String profeRespon { get; set; }
 
     }
 }

@@ -44,12 +44,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="dEquipo.cs" />
     <Compile Include="dPrestamo.cs" />
     <Compile Include="dPrestamoDeEquipo.cs" />
     <Compile Include="dPrestamoDeEspacio.cs" />
     <Compile Include="dPrestamoEspontaneo.cs" />
+    <Compile Include="dResponsable.cs" />
+    <Compile Include="dEquipo.cs" />
+    <Compile Include="dPrestamoEspacio.cs" />
+    <Compile Include="dPrestamoExpontaneo.cs" />
     <Compile Include="dUsuario.cs" />
+    <Compile Include="dPrestamoEquipo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

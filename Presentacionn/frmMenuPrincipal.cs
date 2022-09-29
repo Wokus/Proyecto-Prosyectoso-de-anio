@@ -90,6 +90,14 @@ namespace Presentacionn
                 rellenarPanel1(new frmBajaEquipo());
 
             }
+            if (cbxAcciones.SelectedIndex == 3)
+            {
+                rellenarPanel1(new frmAltaPrestamo());
+
+            }
+
+
+
         }
 
         private Form formActivo = null;
@@ -145,6 +153,7 @@ namespace Presentacionn
         }
 
         private void sc1_Panel1_Paint(object sender, PaintEventArgs e)
+        private void pnl1_Paint(object sender, PaintEventArgs e)
         {
 
         }

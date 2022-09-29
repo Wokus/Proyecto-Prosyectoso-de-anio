@@ -17,11 +17,9 @@ namespace Persistencia
             
             eUsuario elAdmin = new eUsuario();
                 elAdmin = null;
-                string consultaSQL = "SELECT * FROM `administradores` WHERE `administradores`.`Nombre de Usuario` = '" + userName + "' AND `Clave`='" + pass + "';";
+                string consultaSQL = "SELECT * FROM `usuario` WHERE `usuario`.ci` = '" + userName + "' AND `password`='" + pass + "';";
 
                 MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
-
-                
 
                 while (fila.Read())
                 {
@@ -35,11 +33,10 @@ namespace Persistencia
         {
             eUsuario elAdmin = new eUsuario();
             elAdmin = null;
-            string consultaSQL = "SELECT * FROM `administradores` WHERE `administradores`.`Nombre de Usuario` = '" + unPU.username + "';";
+            string consultaSQL = "SELECT * FROM `usuario` WHERE `usuario`.`ci` = '" + unPU.ci + "';";
 
 
             MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
-            //ejecutarSQL(consultaSQL);
             while (fila.Read())
             {
                 elAdmin = recrearUsuario(fila);
@@ -49,7 +46,10 @@ namespace Persistencia
 
             if (elAdmin == null)
             {
-                string consultaSQL2 = "INSERT INTO administradores VALUES('" + unPU.username + "','" + unPU.password + "','" + unPU.nombreCompleto + "','" + unPU.telefono + "');"; 
+                string consultaSQL2 = "INSERT INTO persona VALUES('" + unPU.ci + "','"  + unPU.nombre + "','" + unPU.apellido + "');"; 
+                ejecutarSQL(consultaSQL2);
+
+                consultaSQL2 = "INSERT INTO usuario VALUES('" + unPU.ci + "','" + unPU.telefono + "','" +  unPU.password + "');";
                 ejecutarSQL(consultaSQL2);
             }
                 return elAdmin;
@@ -60,7 +60,7 @@ namespace Persistencia
             
             eUsuario elAdmin = new eUsuario();
             elAdmin = null;
-            string consultaSQL = "SELECT * FROM `administradores` WHERE `administradores`.`Nombre de Usuario` = '" + NUAM + "';";
+            string consultaSQL = "SELECT * FROM `usuario` WHERE `usuario`.`ci` = '" + NUAM + "';";
 
 
             MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
@@ -70,15 +70,13 @@ namespace Persistencia
                 elAdmin = recrearUsuario(fila);
             }
 
-            
-
             if (elAdmin != null)
             {
                 eUsuario token = new eUsuario();
                 token = elAdmin;
 
                 elAdmin = null;
-                consultaSQL = "SELECT * FROM `administradores` WHERE `administradores`.`Nombre de Usuario` = '" + unPU.username + "';";
+                consultaSQL = "SELECT * FROM `usuario` WHERE `usuario`.`ci` = '" + unPU.ci + "';";
 
 
                  fila = ejecutarYdevolver(consultaSQL);
@@ -91,25 +89,41 @@ namespace Persistencia
                 
                 if (elAdmin == null)
                 {
-                    String consultaSQL2 = "UPDATE `administradores` SET `Nombre de Usuario` = '" + unPU.username + "', `Clave` = '" + unPU.password + "', `Nombre y Apellido` = '" + unPU.nombreCompleto + "', `Telefono` = '" + unPU.telefono + "' WHERE `administradores`.`Nombre de Usuario` = '" + NUAM + "';";
+
+                    String consultaFK = "ALTER TABLE usuario DROP FOREIGN KEY fK_usuario_persona;";
+                    ejecutarSQL(consultaFK);
+
+                    String consultaSQL2 = "UPDATE `persona` SET `ci` ='" + unPU.ci  
+                    + "', `nombre` = '" + unPU.nombre + "', `apellido` = '" + unPU.apellido + "' WHERE `persona`.`ci` = '" + NUAM + "';";
                     ejecutarSQL(consultaSQL2);
+
+                    consultaSQL2 = "UPDATE `usuario` SET `ci` = '" + unPU.ci
+                    + "', `password` = '" + unPU.password + "', `telefono` = '" + unPU.telefono + "' WHERE `usuario`.`ci` = '" + NUAM + "';";
                     elAdmin = token;
+                    ejecutarSQL(consultaSQL2);
+
+
+                    consultaFK = "ALTER TABLE usuario ADD constraint fK_usuario_persona  FOREIGN KEY (ci) REFERENCES persona(ci);";
+                    ejecutarSQL(consultaFK);
+                    
+
+
+
+
                 }
-
-
-
-            }else
+            }
+            else
             {
                 elAdmin = null;
             }
             return elAdmin;
         }
 
-        public eUsuario bajaUsuario(string username, string password)
+        public eUsuario bajaUsuario(string username)
         {
             eUsuario elAdmin = new eUsuario();
             elAdmin = null;
-            string consultaSQL = "SELECT * FROM `administradores` WHERE `administradores`.`Nombre de Usuario` = '" + username + "' AND `Clave`='" + password + "';";
+            string consultaSQL = "SELECT * FROM `usuario` WHERE `usuario`.`ci` = '" + username + "';";
             
 
             MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
@@ -124,8 +138,12 @@ namespace Persistencia
             {
                 string consultaSQL2 = "DELETE FROM administradores WHERE `administradores`.`Nombre de Usuario` = '" + username +"';";
                 
+            { 
+                string consultaSQL2 = "DELETE FROM usuario WHERE `usuario`.`ci` = '" + username +"';";
                 ejecutarSQL(consultaSQL2);
-                
+                consultaSQL2 = "DELETE FROM persona WHERE `persona`.`ci` = '" + username + "';";
+                ejecutarSQL(consultaSQL2);
+
             }
             return elAdmin;
         }
@@ -133,8 +151,8 @@ namespace Persistencia
         public eUsuario recrearUsuario(MySqlDataReader fila)
             {
             eUsuario unUsuario = new eUsuario();
-                unUsuario.password = fila.GetString("Clave");
-                unUsuario.username = fila.GetString("Nombre de Usuario");
+                unUsuario.password = fila.GetString("password");
+                unUsuario.ci = fila.GetString("ci");
 
 
                 return unUsuario;
@@ -145,6 +163,8 @@ namespace Persistencia
             String consultaSQL = "SELECT * FROM administradores;";
             //String consultaSQL = "SELECT persona.ci, persona.nombre, persona.apellido, usuario.password, usuario.telefono FROM persona RIGHT JOIN `usuario` ON persona.ci = usuario.ci; ";
 
+            String consultaSQL = "SELECT persona.ci, persona.nombre, persona.apellido, usuario.password, usuario.telefono FROM persona RIGHT JOIN `usuario` ON persona.ci = usuario.ci; ";
+            
             DataTable dt = listarAlgo(consultaSQL);
 
             return dt;  

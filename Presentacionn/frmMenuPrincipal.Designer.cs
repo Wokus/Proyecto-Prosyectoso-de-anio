@@ -52,6 +52,7 @@
             this.pnl1.Name = "pnl1";
             this.pnl1.Size = new System.Drawing.Size(1020, 57);
             this.pnl1.TabIndex = 0;
+            this.pnl1.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl1_Paint);
             // 
             // button1
             // 

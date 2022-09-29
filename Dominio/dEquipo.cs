@@ -12,13 +12,14 @@ namespace Dominio
 {
     public class dEquipo
     {
-        public void altaEquipo(eEquipo unDE)
+        public bool altaEquipo(eEquipo unDE)
         {
 
             pEquipo unPE = new pEquipo();
 
-            unPE.altaEquipo(unDE);
-            
+           bool equipoCreado =  unPE.altaEquipo(unDE);
+
+            return equipoCreado;
         }
 
         public int bajaEquipo(String id)
