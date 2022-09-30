@@ -14,7 +14,7 @@ namespace Persistencia
 
         public DataTable listarPrestamoDeEquipo()
         {
-            String consultaSQL = "SELECT * FROM prestamoDeEquipo EQUI JOIN prestamo;";
+            String consultaSQL = "SELECT * FROM prestamoDeEquipo INNER JOIN prestamo ON prestamoDeEquipo.id_Prestamo=prestamo.id;";
 
             DataTable dt = listarAlgo(consultaSQL);
 
