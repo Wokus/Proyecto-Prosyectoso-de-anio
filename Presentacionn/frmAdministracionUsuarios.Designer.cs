@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.tbpModificarUsuario = new System.Windows.Forms.TabPage();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.txtNUAM = new System.Windows.Forms.TextBox();
             this.mtxtUsernameModificar = new System.Windows.Forms.MaskedTextBox();
             this.mtxtNUAM = new System.Windows.Forms.MaskedTextBox();
             this.txtApellidoModificar = new System.Windows.Forms.TextBox();
@@ -47,6 +49,13 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvListarUsuario = new System.Windows.Forms.DataGridView();
             this.tbpEliminarUsuario = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtUsernameEliminar = new System.Windows.Forms.TextBox();
+            this.txtPasswordEliminar = new System.Windows.Forms.TextBox();
+            this.lblPasswordEliminar = new System.Windows.Forms.Label();
+            this.lblUsernameEliminar = new System.Windows.Forms.Label();
+            this.btnOkEliminar = new System.Windows.Forms.Button();
+            this.tbpAgregarUsuario = new System.Windows.Forms.TabPage();
             this.txtUsernameEliminar = new System.Windows.Forms.MaskedTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblUsernameEliminar = new System.Windows.Forms.Label();
@@ -97,6 +106,16 @@
             this.tbpModificarUsuario.TabIndex = 3;
             this.tbpModificarUsuario.Text = "Modificar";
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(3, 468);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(382, 51);
+            this.panel3.TabIndex = 22;
+            // 
+            // txtNUAM
             // mtxtUsernameModificar
             // 
             this.mtxtUsernameModificar.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -268,6 +287,7 @@
             this.dgvListarUsuario.Name = "dgvListarUsuario";
             this.dgvListarUsuario.Size = new System.Drawing.Size(334, 263);
             this.dgvListarUsuario.TabIndex = 11;
+            this.dgvListarUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListarUsuario_CellContentClick);
             // 
             // tbpEliminarUsuario
             // 
@@ -282,6 +302,15 @@
             this.tbpEliminarUsuario.Size = new System.Drawing.Size(388, 522);
             this.tbpEliminarUsuario.TabIndex = 1;
             this.tbpEliminarUsuario.Text = "Eliminar";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(3, 468);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(382, 51);
+            this.panel1.TabIndex = 15;
             // 
             // txtUsernameEliminar
             // 
@@ -425,6 +454,16 @@
             this.lblNombreCompletoAgregar.Size = new System.Drawing.Size(69, 20);
             this.lblNombreCompletoAgregar.TabIndex = 6;
             this.lblNombreCompletoAgregar.Text = "Nombre ";
+            // 
+            // txtUsernameAgregar
+            // 
+            this.txtUsernameAgregar.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.txtUsernameAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsernameAgregar.Location = new System.Drawing.Point(178, 88);
+            this.txtUsernameAgregar.Name = "txtUsernameAgregar";
+            this.txtUsernameAgregar.Size = new System.Drawing.Size(107, 26);
+            this.txtUsernameAgregar.TabIndex = 5;
+            this.txtUsernameAgregar.TextChanged += new System.EventHandler(this.txtUsernameAgregar_TextChanged);
             // 
             // txtPasswordAgregar
             // 

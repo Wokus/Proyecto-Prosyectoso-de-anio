@@ -96,7 +96,7 @@
             this.cbxListados.Items.AddRange(new object[] {
             "Inventario",
             "Prestamos"});
-            this.cbxListados.Location = new System.Drawing.Point(887, 29);
+            this.cbxListados.Location = new System.Drawing.Point(887, 23);
             this.cbxListados.Name = "cbxListados";
             this.cbxListados.Size = new System.Drawing.Size(121, 21);
             this.cbxListados.TabIndex = 4;
@@ -139,6 +139,7 @@
             // sc1.Panel1
             // 
             this.sc1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(226)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.sc1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.sc1_Panel1_Paint);
             // 
             // sc1.Panel2
             // 

@@ -29,6 +29,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -41,6 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="eEquipo.cs" />
+    <Compile Include="ePrestamoDeEquipo.cs" />
+    <Compile Include="ePrestamoDeEspacio.cs" />
+    <Compile Include="ePrestamoEspontaneo.cs" />
     <Compile Include="ePersona.cs" />
     <Compile Include="ePrestamo.cs" />
     <Compile Include="ePrestamoEquipo.cs" />

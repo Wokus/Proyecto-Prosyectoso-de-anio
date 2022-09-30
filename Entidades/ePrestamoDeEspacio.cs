@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-   public class eUsuario : ePersona
+    public class ePrestamoDeEspacio
     {
-        
-        public string password { get; set; }
-        public string telefono { get; set; }
+
+    //no hay atributos debido a que tiene lo que hereda de prestamo y su id propia que se aumenta en la base de datos
 
     }
 }

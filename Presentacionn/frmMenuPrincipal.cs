@@ -62,7 +62,18 @@ namespace Presentacionn
 
         private void cbxListados_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            if (cbxListados.SelectedIndex == 0)
+            {
+                rellenarPanel2(new frmListadoEquipo());
+                
+            }
+
+            if (cbxListados.SelectedIndex == 1)
+            {
+
+                rellenarPanel2(new frmListadoPrestamo());
+
+            }
             
 
         }
@@ -71,6 +82,7 @@ namespace Presentacionn
             if (cbxAcciones.SelectedIndex == 0)
             {
                 rellenarPanel1(new frmAltaEquipo());
+                
 
             }
             if (cbxAcciones.SelectedIndex == 1)
@@ -88,7 +100,6 @@ namespace Presentacionn
 
         }
 
-
         private Form formActivo = null;
         private void rellenarPanel1(Form formHijo)
         {
@@ -105,9 +116,21 @@ namespace Presentacionn
             formHijo.Show();
         }
 
-    
-
-
+        private Form formActivo2 = null;
+        private void rellenarPanel2(Form formHijo2)
+        {
+            if (formActivo2 != null)
+            {
+                formActivo2.Close();
+            }
+            formActivo2 = formHijo2;
+            formHijo2.TopLevel = false;
+            formHijo2.FormBorderStyle = FormBorderStyle.None;
+            formHijo2.Dock = DockStyle.Fill;
+            sc1.Panel2.Controls.Add(formHijo2);
+            sc1.Panel2.Tag = formHijo2;
+            formHijo2.Show();
+        }
 
         private void splitContainer1_Panel2_Paint_1(object sender, PaintEventArgs e)
         {
@@ -129,6 +152,7 @@ namespace Presentacionn
 
         }
 
+        private void sc1_Panel1_Paint(object sender, PaintEventArgs e)
         private void pnl1_Paint(object sender, PaintEventArgs e)
         {
 

@@ -70,10 +70,10 @@
             // lblTiTulo
             // 
             this.lblTiTulo.AutoSize = true;
-            this.lblTiTulo.Font = new System.Drawing.Font("UD Digi Kyokasho N-B", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblTiTulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblTiTulo.Location = new System.Drawing.Point(485, 26);
             this.lblTiTulo.Name = "lblTiTulo";
-            this.lblTiTulo.Size = new System.Drawing.Size(84, 28);
+            this.lblTiTulo.Size = new System.Drawing.Size(85, 29);
             this.lblTiTulo.TabIndex = 5;
             this.lblTiTulo.Text = "Log In";
             this.lblTiTulo.Click += new System.EventHandler(this.label3_Click);
@@ -101,6 +101,7 @@
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(218, 37);
             this.txtUserName.TabIndex = 11;
+            this.txtUserName.TextChanged += new System.EventHandler(this.txtUserName_TextChanged);
             // 
             // btnIngresar
             // 
