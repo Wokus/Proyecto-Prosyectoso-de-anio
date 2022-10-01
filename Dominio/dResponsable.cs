@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 using Persistencia;
+using System.Data;
 
 namespace Dominio
 {
@@ -17,12 +18,22 @@ namespace Dominio
             return unPR.altaResponsable(unDR);
         }
 
-        public eResponsable bajaResponsable(String username)
+        public eResponsable bajaResponsable(string EliminarRes)
         {
-            pUsuario unPR = new pUsuario();
-            return unPR.bajaResponsable(username);
+            pResponsable unPR = new pResponsable();
+            return unPR.bajaResponsable(EliminarRes);
 
         }
+        public eResponsable modificarResponsable(eResponsable unDR, String OldCi)
+        {
+            pResponsable unPR = new pResponsable();
+            return unPR.modificarResponsable(unDR, OldCi);
+        }
 
+        public DataTable ListarResponsable()
+        {
+            pResponsable unPR = new pResponsable();
+            return unPR.listarResponsable();
+        }
     }
 }

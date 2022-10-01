@@ -158,6 +158,26 @@ namespace Presentacionn
         {
 
         }
+
+        private void dgvListarUsuario_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void mtxtNUAM_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void txtUsernameEliminar_MaskInputRejected_1(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
     }
     }
 

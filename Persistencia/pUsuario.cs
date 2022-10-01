@@ -28,7 +28,6 @@ namespace Persistencia
                 }
                 return elAdmin;
             }
-
         public eUsuario altaUsuario(eUsuario unPU)
         {
             eUsuario elAdmin = new eUsuario();

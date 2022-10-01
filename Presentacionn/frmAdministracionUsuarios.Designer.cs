@@ -116,6 +116,7 @@
             this.mtxtNUAM.Name = "mtxtNUAM";
             this.mtxtNUAM.Size = new System.Drawing.Size(107, 26);
             this.mtxtNUAM.TabIndex = 25;
+            this.mtxtNUAM.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtxtNUAM_MaskInputRejected);
             // 
             // txtApellidoModificar
             // 
@@ -222,9 +223,9 @@
             this.lblUsernameModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsernameModificar.Location = new System.Drawing.Point(26, 137);
             this.lblUsernameModificar.Name = "lblUsernameModificar";
-            this.lblUsernameModificar.Size = new System.Drawing.Size(146, 20);
+            this.lblUsernameModificar.Size = new System.Drawing.Size(140, 20);
             this.lblUsernameModificar.TabIndex = 11;
-            this.lblUsernameModificar.Text = "Nombre de Usuario";
+            this.lblUsernameModificar.Text = "Cedula de Usuario";
             this.lblUsernameModificar.Click += new System.EventHandler(this.lblUsernameModificar_Click);
             // 
             // btnOkModificar
@@ -260,6 +261,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(382, 51);
             this.panel2.TabIndex = 12;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // dgvListarUsuario
             // 
@@ -268,6 +270,7 @@
             this.dgvListarUsuario.Name = "dgvListarUsuario";
             this.dgvListarUsuario.Size = new System.Drawing.Size(334, 263);
             this.dgvListarUsuario.TabIndex = 11;
+            this.dgvListarUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListarUsuario_CellContentClick_1);
             // 
             // tbpEliminarUsuario
             // 
@@ -292,6 +295,7 @@
             this.txtUsernameEliminar.Name = "txtUsernameEliminar";
             this.txtUsernameEliminar.Size = new System.Drawing.Size(107, 26);
             this.txtUsernameEliminar.TabIndex = 23;
+            this.txtUsernameEliminar.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtUsernameEliminar_MaskInputRejected_1);
             // 
             // panel1
             // 

@@ -39,14 +39,61 @@ namespace Presentacionn
             }
         }
 
-        private void cbxTipo_SelectedIndexChanged(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dResponsable unDR = new dResponsable();
+            eResponsable elAdmin = unDR.bajaResponsable(txtEliminarRes.Text);
+            if (elAdmin == null)
+            {
+                MessageBox.Show("Usuario y/o clave incorrecto");
+
+            }
+            else
+            {
+                MessageBox.Show("Usuario eliminado correctamente");
+
+            }
+        }
+
+        private void dgvListarResponsable_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
-        private void txtCurso_TextChanged(object sender, EventArgs e)
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void btnModiRes_Click(object sender, EventArgs e)
+        {
+            eResponsable unR = new eResponsable();
+            unR.ci = txtNewCi.Text;
+            unR.curso = txtNewCi.Text;
+            unR.tipo = cbxNewTipo.Text;
+            dResponsable unDR = new dResponsable();
+            eResponsable elAdmin = unDR.modificarResponsable(unR,txtOldCi.Text);
+
+
+            if (elAdmin != null)
+            {
+                MessageBox.Show("Usuario modificado de manera exitosa");
+                //MessageBox.Show("Nuevo Nombre de Usuario ya existente");
+            }
+
+
+            if (elAdmin == null)
+            {
+                MessageBox.Show("Ocurrio un error en los datos ingresados");
+                //MessageBox.Show("Usuario a modificar no existente");
+            }
+
+        }
+        private void frmAdministracionResponsable_load (object sender, EventArgs e)
+        {
+            dResponsable unDR = new dResponsable();
+            dgvListarUsuario.DataSource = unDR.ListarResponsable();
+        }
+      
     }
-}
+  }
