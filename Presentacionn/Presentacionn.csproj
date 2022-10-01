@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAltaResponsable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAltaResponsable.Designer.cs">
+      <DependentUpon>frmAltaResponsable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBajaResponsable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBajaResponsable.Designer.cs">
+      <DependentUpon>frmBajaResponsable.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAdministracionResponsable.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,8 +100,20 @@
     <Compile Include="frmMenuPrincipal.Designer.cs">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmModificarResponsable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificarResponsable.Designer.cs">
+      <DependentUpon>frmModificarResponsable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAltaResponsable.resx">
+      <DependentUpon>frmAltaResponsable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBajaResponsable.resx">
+      <DependentUpon>frmBajaResponsable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAdministracionResponsable.resx">
       <DependentUpon>FrmAdministracionResponsable.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenuPrincipal.resx">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificarResponsable.resx">
+      <DependentUpon>frmModificarResponsable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

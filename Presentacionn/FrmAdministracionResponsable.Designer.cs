@@ -44,17 +44,15 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgvListarUsuario = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnModiRes = new System.Windows.Forms.Button();
-            this.txtOldCi = new System.Windows.Forms.TextBox();
+            this.cbxNewTipo = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtNewCurso = new System.Windows.Forms.TextBox();
             this.txtNewCi = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtNewCurso = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.cbxNewTipo = new System.Windows.Forms.ComboBox();
+            this.txtOldCi = new System.Windows.Forms.TextBox();
+            this.btnModiRes = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.tbcResponsable.SuspendLayout();
             this.alta.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -91,6 +89,7 @@
             this.alta.TabIndex = 0;
             this.alta.Text = "Agregar";
             this.alta.UseVisualStyleBackColor = true;
+            this.alta.Click += new System.EventHandler(this.alta_Click);
             // 
             // btnAregar
             // 
@@ -203,6 +202,7 @@
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Listar informacion";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // dgvListarUsuario
             // 
@@ -217,10 +217,8 @@
             // 
             this.tabPage3.Controls.Add(this.cbxNewTipo);
             this.tabPage3.Controls.Add(this.label10);
-            this.tabPage3.Controls.Add(this.label9);
             this.tabPage3.Controls.Add(this.label8);
             this.tabPage3.Controls.Add(this.txtNewCurso);
-            this.tabPage3.Controls.Add(this.label7);
             this.tabPage3.Controls.Add(this.txtNewCi);
             this.tabPage3.Controls.Add(this.label6);
             this.tabPage3.Controls.Add(this.txtOldCi);
@@ -233,33 +231,43 @@
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "Modificar";
             this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
-            // label5
+            // cbxNewTipo
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 64);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(171, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Cedula del responsable a modificar";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.cbxNewTipo.FormattingEnabled = true;
+            this.cbxNewTipo.Items.AddRange(new object[] {
+            "Estudiante",
+            "Profesor"});
+            this.cbxNewTipo.Location = new System.Drawing.Point(187, 139);
+            this.cbxNewTipo.Name = "cbxNewTipo";
+            this.cbxNewTipo.Size = new System.Drawing.Size(100, 21);
+            this.cbxNewTipo.TabIndex = 11;
             // 
-            // btnModiRes
+            // label10
             // 
-            this.btnModiRes.Location = new System.Drawing.Point(109, 389);
-            this.btnModiRes.Name = "btnModiRes";
-            this.btnModiRes.Size = new System.Drawing.Size(147, 41);
-            this.btnModiRes.TabIndex = 1;
-            this.btnModiRes.Text = "Modificar";
-            this.btnModiRes.UseVisualStyleBackColor = true;
-            this.btnModiRes.Click += new System.EventHandler(this.btnModiRes_Click);
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(144, 116);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(34, 13);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "Curso";
             // 
-            // txtOldCi
+            // label8
             // 
-            this.txtOldCi.Location = new System.Drawing.Point(187, 61);
-            this.txtOldCi.Name = "txtOldCi";
-            this.txtOldCi.Size = new System.Drawing.Size(100, 20);
-            this.txtOldCi.TabIndex = 2;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(150, 142);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(28, 13);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Tipo";
+            // 
+            // txtNewCurso
+            // 
+            this.txtNewCurso.Location = new System.Drawing.Point(187, 113);
+            this.txtNewCurso.Name = "txtNewCurso";
+            this.txtNewCurso.Size = new System.Drawing.Size(100, 20);
+            this.txtNewCurso.TabIndex = 6;
             // 
             // txtNewCi
             // 
@@ -277,57 +285,32 @@
             this.label6.TabIndex = 3;
             this.label6.Text = "Cedula nueva";
             // 
-            // txtNewCurso
+            // txtOldCi
             // 
-            this.txtNewCurso.Location = new System.Drawing.Point(187, 113);
-            this.txtNewCurso.Name = "txtNewCurso";
-            this.txtNewCurso.Size = new System.Drawing.Size(100, 20);
-            this.txtNewCurso.TabIndex = 6;
+            this.txtOldCi.Location = new System.Drawing.Point(187, 61);
+            this.txtOldCi.Name = "txtOldCi";
+            this.txtOldCi.Size = new System.Drawing.Size(100, 20);
+            this.txtOldCi.TabIndex = 2;
             // 
-            // label7
+            // btnModiRes
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(71, 116);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(0, 13);
-            this.label7.TabIndex = 5;
+            this.btnModiRes.Location = new System.Drawing.Point(109, 389);
+            this.btnModiRes.Name = "btnModiRes";
+            this.btnModiRes.Size = new System.Drawing.Size(147, 41);
+            this.btnModiRes.TabIndex = 1;
+            this.btnModiRes.Text = "Modificar";
+            this.btnModiRes.UseVisualStyleBackColor = true;
+            this.btnModiRes.Click += new System.EventHandler(this.btnModiRes_Click);
             // 
-            // label8
+            // label5
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(150, 142);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(28, 13);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Tipo";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(71, 116);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(0, 13);
-            this.label9.TabIndex = 9;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(144, 116);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(34, 13);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "Curso";
-            // 
-            // cbxNewTipo
-            // 
-            this.cbxNewTipo.FormattingEnabled = true;
-            this.cbxNewTipo.Items.AddRange(new object[] {
-            "Estudiante",
-            "Profesor"});
-            this.cbxNewTipo.Location = new System.Drawing.Point(187, 139);
-            this.cbxNewTipo.Name = "cbxNewTipo";
-            this.cbxNewTipo.Size = new System.Drawing.Size(100, 21);
-            this.cbxNewTipo.TabIndex = 11;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(7, 64);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(171, 13);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Cedula del responsable a modificar";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // FrmAdministracionResponsable
             // 
@@ -370,13 +353,11 @@
         private System.Windows.Forms.DataGridView dgvListarUsuario;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtNewCurso;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtNewCi;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtOldCi;
         private System.Windows.Forms.Button btnModiRes;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cbxNewTipo;
     }

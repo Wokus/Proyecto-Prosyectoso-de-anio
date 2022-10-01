@@ -94,6 +94,20 @@ namespace Presentacionn
             dResponsable unDR = new dResponsable();
             dgvListarUsuario.DataSource = unDR.ListarResponsable();
         }
-      
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void alta_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
   }
