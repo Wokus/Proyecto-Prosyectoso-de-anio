@@ -33,7 +33,7 @@ namespace Presentacionn
             if (cbxListadosPrestamos.SelectedIndex == 1)
             {
 
-                dPrestamoDeEquipo unDP = new dPrestamoDeEquipo();
+                dPrestamoEquipo unDP = new dPrestamoEquipo();
                 dataGridView1.DataSource = unDP.listarPrestamoDeEquipo();
 
             }
@@ -41,7 +41,7 @@ namespace Presentacionn
             if (cbxListadosPrestamos.SelectedIndex == 2)
             {
 
-                dPrestamoDeEspacio unDP = new dPrestamoDeEspacio();
+                dPrestamoEspacio unDP = new dPrestamoEspacio();
                 dataGridView1.DataSource = unDP.listarPrestamoDeEspacio();
 
             }
@@ -49,7 +49,7 @@ namespace Presentacionn
             if (cbxListadosPrestamos.SelectedIndex == 3)
             {
 
-                dPrestamoEspontaneo unDP = new dPrestamoEspontaneo();
+                dPrestamoExpontaneo unDP = new dPrestamoExpontaneo();
                 dataGridView1.DataSource = unDP.listarPrestamoEspontaneo();
 
             }

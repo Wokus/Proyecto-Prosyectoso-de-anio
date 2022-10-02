@@ -45,9 +45,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dPrestamo.cs" />
-    <Compile Include="dPrestamoDeEquipo.cs" />
-    <Compile Include="dPrestamoDeEspacio.cs" />
-    <Compile Include="dPrestamoEspontaneo.cs" />
     <Compile Include="dResponsable.cs" />
     <Compile Include="dEquipo.cs" />
     <Compile Include="dPrestamoEspacio.cs" />

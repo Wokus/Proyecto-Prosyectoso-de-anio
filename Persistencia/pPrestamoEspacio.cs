@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace Persistencia
 {
@@ -83,7 +84,14 @@ namespace Persistencia
             return id;
         }
 
+        public DataTable listarPrestamoDeEspacio()
+        {
+            String consultaSQL = "SELECT * FROM prestamoDeEspacio;";
 
+            DataTable dt = listarAlgo(consultaSQL);
+
+            return dt;
+        }
 
 
     }

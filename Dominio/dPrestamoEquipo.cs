@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 using Persistencia;
+using System.Data;
 
 namespace Dominio
 {
@@ -17,6 +18,14 @@ namespace Dominio
 
             bool tokenEquipo = unPPRE.altaPrestamo(unPRE);
             return tokenEquipo;
+        }
+
+        public DataTable listarPrestamoDeEquipo()
+        {
+
+            pPrestamoEquipo unPE = new pPrestamoEquipo();
+
+            return unPE.listarPrestamoDeEquipo();
         }
     }
 }

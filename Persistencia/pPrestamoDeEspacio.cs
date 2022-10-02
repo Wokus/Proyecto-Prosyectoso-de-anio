@@ -12,14 +12,7 @@ namespace Persistencia
     public class pPrestamoDeEspacio :clsPersistencia
     {
 
-        public DataTable listarPrestamoDeEspacio()
-        {
-            String consultaSQL = "SELECT * FROM prestamoDeEspacio;";
-
-            DataTable dt = listarAlgo(consultaSQL);
-
-            return dt;
-        }
+        
 
     }
 }

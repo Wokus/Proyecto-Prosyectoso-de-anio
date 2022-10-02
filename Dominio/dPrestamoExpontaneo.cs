@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 using Persistencia;
+using System.Data;
 
 namespace Dominio
 {
@@ -21,6 +22,14 @@ namespace Dominio
 
 
             
+        }
+
+        public DataTable listarPrestamoEspontaneo()
+        {
+
+            pPrestamoExpontaneo unPE = new pPrestamoExpontaneo();
+
+            return unPE.listarPrestamoEspontaneo();
         }
     }
 }
