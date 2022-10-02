@@ -456,9 +456,10 @@
             this.lblUsernameAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsernameAgregar.Location = new System.Drawing.Point(26, 94);
             this.lblUsernameAgregar.Name = "lblUsernameAgregar";
-            this.lblUsernameAgregar.Size = new System.Drawing.Size(146, 20);
+            this.lblUsernameAgregar.Size = new System.Drawing.Size(140, 20);
             this.lblUsernameAgregar.TabIndex = 2;
-            this.lblUsernameAgregar.Text = "Nombre de Usuario";
+            this.lblUsernameAgregar.Text = "Cedula de Usuario";
+            this.lblUsernameAgregar.Click += new System.EventHandler(this.lblUsernameAgregar_Click_1);
             // 
             // btnOkAgregar
             // 
