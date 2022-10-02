@@ -74,7 +74,12 @@ namespace Presentacionn
                 rellenarPanel2(new frmListadoPrestamo());
 
             }
-            
+            if (cbxListados.SelectedIndex == 2)
+            {
+
+                rellenarPanel2(new frmListadoResponsable());
+
+            }
 
         }
         private void cbxAcciones_SelectedIndexChanged(object sender, EventArgs e)
@@ -165,6 +170,9 @@ namespace Presentacionn
         }
 
         private void sc1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+        
+        }
         private void pnl1_Paint(object sender, PaintEventArgs e)
         {
 
