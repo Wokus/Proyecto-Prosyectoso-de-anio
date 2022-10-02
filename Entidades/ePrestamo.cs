@@ -8,6 +8,7 @@ namespace Entidades
 {
     public class ePrestamo
     {
+
         public int id { get; set; }
         public String fechaSolicitada { get; set; }
         public int cantidadDias { get; set; }
@@ -18,10 +19,6 @@ namespace Entidades
         public String estado { get; set; }
         public String alumnoRespon { get; set; }
         public String profeRespon { get; set; }
-    
 
-
-
-
-}
+    }
 }

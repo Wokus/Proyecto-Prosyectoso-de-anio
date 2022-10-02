@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.pnl1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnMenuUsuarios = new System.Windows.Forms.Button();
             this.pnl2 = new System.Windows.Forms.Panel();
             this.cbxListados = new System.Windows.Forms.ComboBox();
             this.cbxAcciones = new System.Windows.Forms.ComboBox();
             this.pnl3 = new System.Windows.Forms.Panel();
             this.sc1 = new System.Windows.Forms.SplitContainer();
-            this.button1 = new System.Windows.Forms.Button();
             this.pnl1.SuspendLayout();
             this.pnl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sc1)).BeginInit();
@@ -53,6 +53,20 @@
             this.pnl1.Size = new System.Drawing.Size(1020, 57);
             this.pnl1.TabIndex = 0;
             this.pnl1.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl1_Paint);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(156)))), ((int)(((byte)(200)))));
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(129)))), ((int)(((byte)(183)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::Presentacionn.Properties.Resources.ArrayanesLogo;
+            this.button1.Location = new System.Drawing.Point(12, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(410, 48);
+            this.button1.TabIndex = 3;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // btnMenuUsuarios
             // 
@@ -81,9 +95,8 @@
             this.cbxListados.FormattingEnabled = true;
             this.cbxListados.Items.AddRange(new object[] {
             "Inventario",
-            "Prestamos",
-            "Responsable"});
-            this.cbxListados.Location = new System.Drawing.Point(887, 29);
+            "Prestamos"});
+            this.cbxListados.Location = new System.Drawing.Point(887, 23);
             this.cbxListados.Name = "cbxListados";
             this.cbxListados.Size = new System.Drawing.Size(121, 21);
             this.cbxListados.TabIndex = 4;
@@ -99,10 +112,7 @@
             "Modificar Equipo",
             "Agregar Prestamo",
             "Eliminar Prestamo",
-            "Modificar Prestamo",
-            "Alta Responsable",
-            "Baja Responsable",
-            "Modificar Responsable"});
+            "Modificar Prestamo"});
             this.cbxAcciones.Location = new System.Drawing.Point(12, 23);
             this.cbxAcciones.Name = "cbxAcciones";
             this.cbxAcciones.Size = new System.Drawing.Size(121, 21);
@@ -129,6 +139,7 @@
             // sc1.Panel1
             // 
             this.sc1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(226)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.sc1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.sc1_Panel1_Paint);
             // 
             // sc1.Panel2
             // 
@@ -137,20 +148,6 @@
             this.sc1.Size = new System.Drawing.Size(1020, 496);
             this.sc1.SplitterDistance = 518;
             this.sc1.TabIndex = 3;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(156)))), ((int)(((byte)(200)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(129)))), ((int)(((byte)(183)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::Presentacionn.Properties.Resources.ArrayanesLogo;
-            this.button1.Location = new System.Drawing.Point(12, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(410, 48);
-            this.button1.TabIndex = 3;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // frmMenuPrincipal
             // 

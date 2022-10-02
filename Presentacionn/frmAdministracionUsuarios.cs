@@ -124,6 +124,7 @@ namespace Presentacionn
 
         }
 
+        private void txtUsernameAgregar_TextChanged(object sender, EventArgs e)
         private void lblUsernameModificar_Click(object sender, EventArgs e)
         {
 

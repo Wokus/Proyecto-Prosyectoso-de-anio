@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace Persistencia
 {
@@ -60,6 +61,13 @@ namespace Persistencia
                     }
                 }
 
+             string consultaSQL = "SELECT COUNT(*) FROM `inventario` WHERE `Nombre` = '" + unPE.nombre + "' AND `Numero de Serie` = '" + unPE.numeroSerie + "' AND `Precio` = '" + unPE.precio + /*"' AND `Tipo` = '" + unPE.tipo + */"'; ";
+            MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
+            if (fila.Read())
+            {
+                stock = fila.GetInt32("COUNT(*)") + 1;
+               consultaSQL= "UPDATE `inventario` SET `Stock` = '" + stock + "' WHERE `inventario`.`Numero de Serie` = '" + unPE.numeroSerie + "' AND `inventario`.`Precio` = '" + unPE.precio + /*"' AND `inventario`.`Tipo` = '" + unPE.tipo +*/ "';";
+                ejecutarSQL(consultaSQL);
 
                 string consultaSQL = "SELECT COUNT(*) FROM `equipo` WHERE `nombre` = '" + unPE.nombre + "' AND `precio` = '" + unPE.precio + "'; ";
                 MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
@@ -68,6 +76,9 @@ namespace Persistencia
                     stock = fila.GetInt32("COUNT(*)") + 1;
                     consultaSQL = "UPDATE `equipo` SET `stock` = '" + stock + "' WHERE `equipo`.`nombre` = '" + unPE.nombre + "' AND `equipo`.`precio` = '" + unPE.precio + "';";
                     ejecutarSQL(consultaSQL);
+
+            consultaSQL = "INSERT INTO `inventario` VALUES('" + id + "','" + unPE.nombre + "','" + unPE.numeroSerie + "','" + unPE.estado + "','" + unPE.fechaIngreso + "','" + unPE.asegurado + "','" + unPE.precio + "','" + unPE.observacion + "','" + /*unPE.tipo +*/ "','" + stock + "');";
+            ejecutarSQL(consultaSQL);
 
                 }
                 else { stock = 1; }
@@ -90,7 +101,6 @@ namespace Persistencia
             {
                 id2 = Convert.ToInt32(id);
                 id2 = recrearIdEquipo(fila);
-
             }
             if (id2 != 0)
             { 
@@ -110,6 +120,17 @@ namespace Persistencia
             int id = fila.GetInt32("id");
             return id;
         }
+
+        public DataTable listarEquipo1()
+        {
+            String consultaSQL = "SELECT * FROM equipo;";
+
+            DataTable dt = listarAlgo(consultaSQL);
+
+            return dt;
+        }
+
+
 
     }
 }

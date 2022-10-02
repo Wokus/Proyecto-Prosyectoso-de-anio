@@ -48,12 +48,44 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(100, 104);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.TabIndex = 1;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
+            // 
             // txtNumeroSerie
             // 
             this.txtNumeroSerie.Location = new System.Drawing.Point(100, 140);
             this.txtNumeroSerie.Name = "txtNumeroSerie";
             this.txtNumeroSerie.Size = new System.Drawing.Size(100, 20);
             this.txtNumeroSerie.TabIndex = 2;
+            // 
+            // txtPrecio
+            // 
+            this.txtPrecio.Location = new System.Drawing.Point(305, 145);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(100, 20);
+            this.txtPrecio.TabIndex = 7;
+            this.txtPrecio.TextChanged += new System.EventHandler(this.txtPrecio_TextChanged);
+            // 
+            // txtAsegurado
+            // 
+            this.txtAsegurado.Location = new System.Drawing.Point(305, 104);
+            this.txtAsegurado.Name = "txtAsegurado";
+            this.txtAsegurado.Size = new System.Drawing.Size(100, 20);
+            this.txtAsegurado.TabIndex = 6;
+            this.txtAsegurado.TextChanged += new System.EventHandler(this.txtAsegurado_TextChanged);
+            // 
+            // txtObservaciones
+            // 
+            this.txtObservaciones.Location = new System.Drawing.Point(305, 223);
+            this.txtObservaciones.Multiline = true;
+            this.txtObservaciones.Name = "txtObservaciones";
+            this.txtObservaciones.Size = new System.Drawing.Size(100, 20);
+            this.txtObservaciones.TabIndex = 9;
             // 
             // btnAgregarEquipo
             // 

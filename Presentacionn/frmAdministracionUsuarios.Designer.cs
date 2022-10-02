@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.tbpModificarUsuario = new System.Windows.Forms.TabPage();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.txtNUAM = new System.Windows.Forms.TextBox();
             this.mtxtUsernameModificar = new System.Windows.Forms.MaskedTextBox();
             this.mtxtNUAM = new System.Windows.Forms.MaskedTextBox();
             this.txtApellidoModificar = new System.Windows.Forms.TextBox();
@@ -47,6 +49,13 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvListarUsuario = new System.Windows.Forms.DataGridView();
             this.tbpEliminarUsuario = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtUsernameEliminar = new System.Windows.Forms.TextBox();
+            this.txtPasswordEliminar = new System.Windows.Forms.TextBox();
+            this.lblPasswordEliminar = new System.Windows.Forms.Label();
+            this.lblUsernameEliminar = new System.Windows.Forms.Label();
+            this.btnOkEliminar = new System.Windows.Forms.Button();
+            this.tbpAgregarUsuario = new System.Windows.Forms.TabPage();
             this.txtUsernameEliminar = new System.Windows.Forms.MaskedTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblUsernameEliminar = new System.Windows.Forms.Label();
@@ -97,6 +106,16 @@
             this.tbpModificarUsuario.TabIndex = 3;
             this.tbpModificarUsuario.Text = "Modificar";
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(3, 468);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(382, 51);
+            this.panel3.TabIndex = 22;
+            // 
+            // txtNUAM
             // mtxtUsernameModificar
             // 
             this.mtxtUsernameModificar.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -116,7 +135,6 @@
             this.mtxtNUAM.Name = "mtxtNUAM";
             this.mtxtNUAM.Size = new System.Drawing.Size(107, 26);
             this.mtxtNUAM.TabIndex = 25;
-            this.mtxtNUAM.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtxtNUAM_MaskInputRejected);
             // 
             // txtApellidoModificar
             // 
@@ -223,9 +241,9 @@
             this.lblUsernameModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsernameModificar.Location = new System.Drawing.Point(26, 137);
             this.lblUsernameModificar.Name = "lblUsernameModificar";
-            this.lblUsernameModificar.Size = new System.Drawing.Size(140, 20);
+            this.lblUsernameModificar.Size = new System.Drawing.Size(146, 20);
             this.lblUsernameModificar.TabIndex = 11;
-            this.lblUsernameModificar.Text = "Cedula de Usuario";
+            this.lblUsernameModificar.Text = "Nombre de Usuario";
             this.lblUsernameModificar.Click += new System.EventHandler(this.lblUsernameModificar_Click);
             // 
             // btnOkModificar
@@ -261,7 +279,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(382, 51);
             this.panel2.TabIndex = 12;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // dgvListarUsuario
             // 
@@ -270,7 +287,7 @@
             this.dgvListarUsuario.Name = "dgvListarUsuario";
             this.dgvListarUsuario.Size = new System.Drawing.Size(334, 263);
             this.dgvListarUsuario.TabIndex = 11;
-            this.dgvListarUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListarUsuario_CellContentClick_1);
+            this.dgvListarUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListarUsuario_CellContentClick);
             // 
             // tbpEliminarUsuario
             // 
@@ -286,6 +303,15 @@
             this.tbpEliminarUsuario.TabIndex = 1;
             this.tbpEliminarUsuario.Text = "Eliminar";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(3, 468);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(382, 51);
+            this.panel1.TabIndex = 15;
+            // 
             // txtUsernameEliminar
             // 
             this.txtUsernameEliminar.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -295,7 +321,6 @@
             this.txtUsernameEliminar.Name = "txtUsernameEliminar";
             this.txtUsernameEliminar.Size = new System.Drawing.Size(107, 26);
             this.txtUsernameEliminar.TabIndex = 23;
-            this.txtUsernameEliminar.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtUsernameEliminar_MaskInputRejected_1);
             // 
             // panel1
             // 
@@ -430,6 +455,16 @@
             this.lblNombreCompletoAgregar.TabIndex = 6;
             this.lblNombreCompletoAgregar.Text = "Nombre ";
             // 
+            // txtUsernameAgregar
+            // 
+            this.txtUsernameAgregar.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.txtUsernameAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsernameAgregar.Location = new System.Drawing.Point(178, 88);
+            this.txtUsernameAgregar.Name = "txtUsernameAgregar";
+            this.txtUsernameAgregar.Size = new System.Drawing.Size(107, 26);
+            this.txtUsernameAgregar.TabIndex = 5;
+            this.txtUsernameAgregar.TextChanged += new System.EventHandler(this.txtUsernameAgregar_TextChanged);
+            // 
             // txtPasswordAgregar
             // 
             this.txtPasswordAgregar.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -456,10 +491,9 @@
             this.lblUsernameAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsernameAgregar.Location = new System.Drawing.Point(26, 94);
             this.lblUsernameAgregar.Name = "lblUsernameAgregar";
-            this.lblUsernameAgregar.Size = new System.Drawing.Size(140, 20);
+            this.lblUsernameAgregar.Size = new System.Drawing.Size(146, 20);
             this.lblUsernameAgregar.TabIndex = 2;
-            this.lblUsernameAgregar.Text = "Cedula de Usuario";
-            this.lblUsernameAgregar.Click += new System.EventHandler(this.lblUsernameAgregar_Click_1);
+            this.lblUsernameAgregar.Text = "Nombre de Usuario";
             // 
             // btnOkAgregar
             // 
