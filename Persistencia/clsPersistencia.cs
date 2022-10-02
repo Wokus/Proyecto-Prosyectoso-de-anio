@@ -9,7 +9,7 @@ using System.Data;
 
 namespace Persistencia
 {
-    //CHOTAAAAAAAAAAAAAAAAAAAAAAAA 2
+    //CHOTAAAAAAAAAAAAAAAAAAAAAAAA
    public class clsPersistencia
     {
         public MySqlConnection con;
@@ -17,7 +17,8 @@ namespace Persistencia
 
         public void AbrirConexion()
         {
-            miConexion = "server=localhost; uid=root; password=; database=begonesatan22;";
+            miConexion = "server=localhost; uid=root ; password= ; database=begonesatan21;";
+            //"server=localhost; uid=Jesus ; password=Luca1234. ; database=BDprueba;";
             con = new MySqlConnection(miConexion);
             con.Open();
             //jaja pinga
