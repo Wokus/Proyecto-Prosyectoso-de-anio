@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dominio;
+using Entidades;
 
 namespace Presentacionn
 {
@@ -14,7 +16,8 @@ namespace Presentacionn
     {
         public frmListadoResponsable()
         {
-            InitializeComponent();
+            dResponsable unDR = new dResponsable();
+            dataGridView1.DataSource = unDR.ListarResponsable();
         }
     }
 }

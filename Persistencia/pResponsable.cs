@@ -41,10 +41,7 @@ namespace Persistencia
                     estudiante = 1;
 
                 }
-                string consultaSQL2 = "INSERT INTO solicitante VALUES('" + unPR.ci + "','" + unPR.nombre + "','" + unPR.apellido + "');";
-                ejecutarSQL(consultaSQL2);
-
-                consultaSQL2 = "INSERT INTO solicitante VALUES('" + unPR.ci + "','" + unPR.curso + "','" + unPR.tipo + "');";
+                string consultaSQL2 = "INSERT INTO solicitante VALUES('" + unPR.ci + "','" + unPR.curso + "','" + unPR.tipo + "');";
                 ejecutarSQL(consultaSQL2);
             }
             return token;
@@ -53,7 +50,7 @@ namespace Persistencia
         public DataTable listarResponsable()
         {
             {
-                String consultaSQL = "SELECT persona.ci, persona.nombre, persona.apellido, solicitante.curso, solicitante.tipo FROM persona RIGHT JOIN `solicitante` ON persona.ci = solicitante.ci; ";
+                String consultaSQL = "SELECT persona.ci, persona.nombre, persona.apellido, solicitante.curso, solicitante.tipo FROM persona INNER JOIN `solicitante` ON persona.ci = solicitante.ci; ";
 
                 DataTable dt = listarAlgo(consultaSQL);
 
@@ -80,8 +77,6 @@ namespace Persistencia
             {
                 string consultaSQL2 = "DELETE FROM solicitante WHERE ` solicitante`.`ci` = '" + EliminarRes + "';";
                 ejecutarSQL(consultaSQL2);
-                consultaSQL2 = "DELETE FROM persona WHERE `persona`.`ci` = '" + EliminarRes + "';";
-                ejecutarSQL(consultaSQL2);
 
             }
             return elAdmin;
@@ -101,7 +96,7 @@ namespace Persistencia
         {
             eResponsable elAdmin = new eResponsable();
             elAdmin = null;
-            string consultaSQL = "SELECT * FROM `usuario` WHERE `usuario`.`ci` = '" + oldCi + "';";
+            string consultaSQL = "SELECT * FROM `solicitante` WHERE `solicitante`.`ci` = '" + oldCi + "';";
 
 
             MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
