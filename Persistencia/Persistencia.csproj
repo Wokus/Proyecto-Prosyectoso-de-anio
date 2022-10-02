@@ -48,9 +48,7 @@
     <Compile Include="clsPersistencia.cs" />
     <Compile Include="pEquipo.cs" />
     <Compile Include="pPrestamo.cs" />
-    <Compile Include="pPrestamoDeEquipo.cs" />
     <Compile Include="pPrestamoDeEspacio.cs" />
-    <Compile Include="pPrestamoEspontaneo.cs" />
     <Compile Include="pPrestamoEquipo.cs" />
     <Compile Include="pPrestamoEspacio.cs" />
     <Compile Include="pPrestamoExpontaneo.cs" />
