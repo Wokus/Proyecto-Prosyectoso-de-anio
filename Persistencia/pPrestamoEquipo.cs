@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace Persistencia
 {
@@ -99,6 +100,15 @@ namespace Persistencia
         {
             int id = fila.GetInt32("id");
             return id;
+        }
+
+        public DataTable listarPrestamoDeEquipo()
+        {
+            String consultaSQL = "SELECT * FROM prestamoDeEquipo INNER JOIN prestamo ON prestamoDeEquipo.id_Prestamo=prestamo.id;";
+
+            DataTable dt = listarAlgo(consultaSQL);
+
+            return dt;
         }
     }
 }

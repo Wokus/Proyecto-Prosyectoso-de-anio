@@ -15,7 +15,7 @@ namespace Dominio
         public DataTable listarPrestamoDeEquipo()
         {
 
-            pPrestamoDeEquipo unPE = new pPrestamoDeEquipo();
+            pPrestamoEquipo unPE = new pPrestamoEquipo();
 
             return unPE.listarPrestamoDeEquipo();
         }
