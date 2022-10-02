@@ -66,7 +66,7 @@ namespace Persistencia
             if (fila.Read())
             {
                 stock = fila.GetInt32("COUNT(*)") + 1;
-               consultaSQL= "UPDATE `inventario` SET `Stock` = '" + stock + "' WHERE `inventario`.`Numero de Serie` = '" + unPE.numeroSerie + "' AND `inventario`.`Precio` = '" + unPE.precio + /*"' AND `inventario`.`Tipo` = '" + unPE.tipo +*/ "';";
+                consultaSQL= "UPDATE `inventario` SET `Stock` = '" + stock + "' WHERE `inventario`.`Numero de Serie` = '" + unPE.numeroSerie + "' AND `inventario`.`Precio` = '" + unPE.precio + /*"' AND `inventario`.`Tipo` = '" + unPE.tipo +*/ "';";
                 ejecutarSQL(consultaSQL);
 
                 string consultaSQL = "SELECT COUNT(*) FROM `equipo` WHERE `nombre` = '" + unPE.nombre + "' AND `precio` = '" + unPE.precio + "'; ";

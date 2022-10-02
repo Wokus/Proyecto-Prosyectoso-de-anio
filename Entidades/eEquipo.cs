@@ -15,10 +15,7 @@ namespace Entidades
         public String fechaIngreso { get; set; }
         public String asegurado { get; set; }
         public String precio { get; set; }
-        public String fotografia { get; set; }
-        public String sonido { get; set; }
-        public String informatica { get; set; }
-        public String varios { get; set; }
+        public String tipo { get; set; }
         public String observacion { get; set; }
         public int stock { get; set; }
 
