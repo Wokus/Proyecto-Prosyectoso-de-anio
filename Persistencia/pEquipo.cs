@@ -69,8 +69,8 @@ namespace Persistencia
                 consultaSQL= "UPDATE `inventario` SET `Stock` = '" + stock + "' WHERE `inventario`.`Numero de Serie` = '" + unPE.numeroSerie + "' AND `inventario`.`Precio` = '" + unPE.precio + /*"' AND `inventario`.`Tipo` = '" + unPE.tipo +*/ "';";
                 ejecutarSQL(consultaSQL);
 
-                string consultaSQL = "SELECT COUNT(*) FROM `equipo` WHERE `nombre` = '" + unPE.nombre + "' AND `precio` = '" + unPE.precio + "'; ";
-                MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
+                 consultaSQL = "SELECT COUNT(*) FROM `equipo` WHERE `nombre` = '" + unPE.nombre + "' AND `precio` = '" + unPE.precio + "'; ";
+                fila = ejecutarYdevolver(consultaSQL);
                 if (fila.Read())
                 {
                     stock = fila.GetInt32("COUNT(*)") + 1;
@@ -86,7 +86,7 @@ namespace Persistencia
                 consultaSQL = "INSERT INTO `equipo` VALUES('" + id + "','" + unPE.nombre + "','" + unPE.numeroSerie + "','" + unPE.estado + "','" + unPE.fechaIngreso + "','" + unPE.asegurado + "','" + unPE.precio + "','" + tipoBOOLfot + "','" + tipoBOOLson + "','" + tipoBOOLinf + "','" + tipoBOOLotr + "','" + stock + "','" + unPE.observacion + "');";
                 ejecutarSQL(consultaSQL);
             }
-
+            }
             return NStoken;
         }
 

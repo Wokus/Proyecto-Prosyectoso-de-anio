@@ -21,9 +21,10 @@ namespace Presentacionn
         private void btnOK_Click(object sender, EventArgs e)
         {
             eUsuario unU = new eUsuario(); 
-            unU.username = txtUsernameAgregar.Text; 
+            unU.ci = mtxtUsernameAgregar.Text; 
             unU.password = txtPasswordAgregar.Text; 
-            unU.nombreCompleto = txtNombreCompletoAgregar.Text;
+            unU.nombre = txtNombreAgregar.Text;
+            unU.apellido = txtApellidoAgregar.Text;
             unU.telefono = mtxtTelefonoAgregar.Text;
             dUsuario unDU = new dUsuario(); 
             eUsuario elAdmin = unDU.altaUsuario(unU);
@@ -39,7 +40,7 @@ namespace Presentacionn
         {
 
             dUsuario unDU = new dUsuario();
-            eUsuario elAdmin = unDU.bajaUsuario(txtUsernameEliminar.Text, txtPasswordEliminar.Text);
+            eUsuario elAdmin = unDU.bajaUsuario(txtUsernameEliminar.Text);
             if (elAdmin==null)
             {
                 MessageBox.Show("Usuario y/o clave incorrecto");
@@ -66,12 +67,13 @@ namespace Presentacionn
         private void btnOkModificar_Click(object sender, EventArgs e)
         {
             eUsuario unU = new eUsuario();
-            unU.username = txtUsernameModificar.Text;
+            unU.ci = mtxtUsernameModificar.Text;
             unU.password = txtPasswordModificar.Text;
-            unU.nombreCompleto = txtNombreCompletoModificar.Text;
+            unU.nombre = txtNombreModificar.Text;
+            unU.apellido = txtApellidoModificar.Text;
             unU.telefono = mtxtTelefonoModificar.Text;
             dUsuario unDU = new dUsuario();
-            eUsuario elAdmin = unDU.modificarUsuario(unU, txtNUAM.Text);
+            eUsuario elAdmin = unDU.modificarUsuario(unU, mtxtNUAM.Text);
             
 
             if (elAdmin != null)
@@ -122,12 +124,7 @@ namespace Presentacionn
 
         }
 
-        private void txtUsernameAgregar_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvListarUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void lblUsernameModificar_Click(object sender, EventArgs e)
         {
 
         }
