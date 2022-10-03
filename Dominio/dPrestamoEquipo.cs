@@ -20,6 +20,8 @@ namespace Dominio
             return tokenEquipo;
         }
 
+
+
         public DataTable listarPrestamoDeEquipo()
         {
 

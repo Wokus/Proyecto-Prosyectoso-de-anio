@@ -96,6 +96,7 @@ namespace Persistencia
             }
             return tokenEquipo;
         }
+
         public int recrearIdPrestamo(MySqlDataReader fila)
         {
             int id = fila.GetInt32("id");
@@ -110,6 +111,8 @@ namespace Persistencia
 
             return dt;
         }
+
+
     }
 }
 
