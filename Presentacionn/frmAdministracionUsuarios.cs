@@ -20,18 +20,18 @@ namespace Presentacionn
         }
         private void btnOK_Click(object sender, EventArgs e)
         {
-            eUsuario unU = new eUsuario(); 
-            unU.ci = mtxtUsernameAgregar.Text; 
-            unU.password = txtPasswordAgregar.Text; 
-            unU.nombre = txtNombreAgregar.Text;
-            unU.apellido = txtApellidoAgregar.Text;
+            eUsuario unU = new eUsuario();
+            unU.username = txtUsernameAgregar.Text;
+            unU.password = txtPasswordAgregar.Text;
+            unU.nombreCompleto = txtNombreCompletoAgregar.Text;
             unU.telefono = mtxtTelefonoAgregar.Text;
-            dUsuario unDU = new dUsuario(); 
+            dUsuario unDU = new dUsuario();
             eUsuario elAdmin = unDU.altaUsuario(unU);
-            if (elAdmin!=null)
+            if (elAdmin != null)
             {
                 MessageBox.Show("Nombre de Usuario ya existente");
-            }else
+            }
+            else
             {
                 MessageBox.Show("Usuario creado EXITAntemente");
             }
@@ -40,12 +40,13 @@ namespace Presentacionn
         {
 
             dUsuario unDU = new dUsuario();
-            eUsuario elAdmin = unDU.bajaUsuario(txtUsernameEliminar.Text);
-            if (elAdmin==null)
+            eUsuario elAdmin = unDU.bajaUsuario(txtUsernameEliminar.Text, txtPasswordEliminar.Text);
+            if (elAdmin == null)
             {
                 MessageBox.Show("Usuario y/o clave incorrecto");
 
-            }else
+            }
+            else
             {
                 MessageBox.Show("Usuario eliminado correctamente");
 
@@ -67,14 +68,13 @@ namespace Presentacionn
         private void btnOkModificar_Click(object sender, EventArgs e)
         {
             eUsuario unU = new eUsuario();
-            unU.ci = mtxtUsernameModificar.Text;
+            unU.username = txtUsernameModificar.Text;
             unU.password = txtPasswordModificar.Text;
-            unU.nombre = txtNombreModificar.Text;
-            unU.apellido = txtApellidoModificar.Text;
+            unU.nombreCompleto = txtNombreCompletoModificar.Text;
             unU.telefono = mtxtTelefonoModificar.Text;
             dUsuario unDU = new dUsuario();
-            eUsuario elAdmin = unDU.modificarUsuario(unU, mtxtNUAM.Text);
-            
+            eUsuario elAdmin = unDU.modificarUsuario(unU, txtNUAM.Text);
+
 
             if (elAdmin != null)
             {
@@ -89,8 +89,8 @@ namespace Presentacionn
                 //MessageBox.Show("Usuario a modificar no existente");
             }
 
-          
-           
+
+
             /*
             if (elAdmin.username == "1")
             {
@@ -123,67 +123,5 @@ namespace Presentacionn
         {
 
         }
-
-        private void txtUsernameAgregar_TextChanged(object sender, EventArgs e)
-        private void lblUsernameModificar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbpEliminarUsuario_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvListarUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void mtxtUsernameAgregar_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void lblUsernameAgregar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUsernameEliminar_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void mtxtUsernameAgregar_MaskInputRejected_1(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void dgvListarUsuario_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void mtxtNUAM_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void txtUsernameEliminar_MaskInputRejected_1(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void lblUsernameAgregar_Click_1(object sender, EventArgs e)
-        {
-
-        }
     }
-    }
-
+}

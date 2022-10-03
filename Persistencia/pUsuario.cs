@@ -138,12 +138,14 @@ namespace Persistencia
                 string consultaSQL2 = "DELETE FROM administradores WHERE `administradores`.`Nombre de Usuario` = '" + username +"';";
                 
             { 
-                string consultaSQL2 = "DELETE FROM usuario WHERE `usuario`.`ci` = '" + username +"';";
+                consultaSQL2 = "DELETE FROM usuario WHERE `usuario`.`ci` = '" + username +"';";
                 ejecutarSQL(consultaSQL2);
                 consultaSQL2 = "DELETE FROM persona WHERE `persona`.`ci` = '" + username + "';";
                 ejecutarSQL(consultaSQL2);
 
             }
+            
+           }
             return elAdmin;
         }
 
@@ -162,7 +164,7 @@ namespace Persistencia
             String consultaSQL = "SELECT * FROM administradores;";
             //String consultaSQL = "SELECT persona.ci, persona.nombre, persona.apellido, usuario.password, usuario.telefono FROM persona RIGHT JOIN `usuario` ON persona.ci = usuario.ci; ";
 
-            String consultaSQL = "SELECT persona.ci, persona.nombre, persona.apellido, usuario.password, usuario.telefono FROM persona RIGHT JOIN `usuario` ON persona.ci = usuario.ci; ";
+            consultaSQL = "SELECT persona.ci, persona.nombre, persona.apellido, usuario.password, usuario.telefono FROM persona RIGHT JOIN `usuario` ON persona.ci = usuario.ci; ";
             
             DataTable dt = listarAlgo(consultaSQL);
 

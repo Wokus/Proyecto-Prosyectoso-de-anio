@@ -61,16 +61,18 @@ namespace Persistencia
                     }
                 }
 
-             string consultaSQL = "SELECT COUNT(*) FROM `inventario` WHERE `Nombre` = '" + unPE.nombre + "' AND `Numero de Serie` = '" + unPE.numeroSerie + "' AND `Precio` = '" + unPE.precio + /*"' AND `Tipo` = '" + unPE.tipo + */"'; ";
-            MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
+                string consultaSQL = "SELECT COUNT(*) FROM `inventario` WHERE `Nombre` = '" + unPE.nombre + "' AND `Numero de Serie` = '" + unPE.numeroSerie + "' AND `Precio` = '" + unPE.precio + /*"' AND `Tipo` = '" + unPE.tipo + */"'; ";
+
+                MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
+
             if (fila.Read())
             {
                 stock = fila.GetInt32("COUNT(*)") + 1;
                 consultaSQL= "UPDATE `inventario` SET `Stock` = '" + stock + "' WHERE `inventario`.`Numero de Serie` = '" + unPE.numeroSerie + "' AND `inventario`.`Precio` = '" + unPE.precio + /*"' AND `inventario`.`Tipo` = '" + unPE.tipo +*/ "';";
                 ejecutarSQL(consultaSQL);
 
-                string consultaSQL = "SELECT COUNT(*) FROM `equipo` WHERE `nombre` = '" + unPE.nombre + "' AND `precio` = '" + unPE.precio + "'; ";
-                MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
+                consultaSQL = "SELECT COUNT(*) FROM `equipo` WHERE `nombre` = '" + unPE.nombre + "' AND `precio` = '" + unPE.precio + "'; ";
+                fila = ejecutarYdevolver(consultaSQL);
                 if (fila.Read())
                 {
                     stock = fila.GetInt32("COUNT(*)") + 1;
@@ -87,6 +89,8 @@ namespace Persistencia
                 ejecutarSQL(consultaSQL);
             }
 
+            
+        }
             return NStoken;
         }
 
