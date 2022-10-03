@@ -29,6 +29,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -41,8 +44,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="eEquipo.cs" />
+    <Compile Include="ePersona.cs" />
+    <Compile Include="ePrestamo.cs" />
+    <Compile Include="ePrestamoEquipo.cs" />
+    <Compile Include="ePrestamoEspacio.cs" />
+    <Compile Include="ePrestamoEspontaneos.cs" />
     <Compile Include="eUsuario.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="eResponsable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

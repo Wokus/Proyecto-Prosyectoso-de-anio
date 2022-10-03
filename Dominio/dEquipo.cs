@@ -6,18 +6,20 @@ using System.Threading.Tasks;
 using Entidades;
 using Persistencia;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace Dominio
 {
     public class dEquipo
     {
-        public void altaEquipo(eEquipo unDE)
+        public bool altaEquipo(eEquipo unDE)
         {
 
             pEquipo unPE = new pEquipo();
 
-            unPE.altaEquipo(unDE);
-            
+           bool equipoCreado =  unPE.altaEquipo(unDE);
+
+            return equipoCreado;
         }
 
         public int bajaEquipo(String id)
@@ -27,6 +29,13 @@ namespace Dominio
             return unPE.bajaEquipo(id);
         }
 
+        public DataTable listarEquipo()
+        {
+
+            pEquipo unPE = new pEquipo();
+
+            return unPE.listarEquipo1();
+        }
 
     }
 }

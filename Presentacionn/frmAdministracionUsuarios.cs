@@ -21,9 +21,10 @@ namespace Presentacionn
         private void btnOK_Click(object sender, EventArgs e)
         {
             eUsuario unU = new eUsuario(); 
-            unU.username = txtUsernameAgregar.Text; 
+            unU.ci = mtxtUsernameAgregar.Text; 
             unU.password = txtPasswordAgregar.Text; 
-            unU.nombreCompleto = txtNombreCompletoAgregar.Text;
+            unU.nombre = txtNombreAgregar.Text;
+            unU.apellido = txtApellidoAgregar.Text;
             unU.telefono = mtxtTelefonoAgregar.Text;
             dUsuario unDU = new dUsuario(); 
             eUsuario elAdmin = unDU.altaUsuario(unU);
@@ -39,7 +40,7 @@ namespace Presentacionn
         {
 
             dUsuario unDU = new dUsuario();
-            eUsuario elAdmin = unDU.bajaUsuario(txtUsernameEliminar.Text, txtPasswordEliminar.Text);
+            eUsuario elAdmin = unDU.bajaUsuario(txtUsernameEliminar.Text);
             if (elAdmin==null)
             {
                 MessageBox.Show("Usuario y/o clave incorrecto");
@@ -66,12 +67,13 @@ namespace Presentacionn
         private void btnOkModificar_Click(object sender, EventArgs e)
         {
             eUsuario unU = new eUsuario();
-            unU.username = txtUsernameModificar.Text;
+            unU.ci = mtxtUsernameModificar.Text;
             unU.password = txtPasswordModificar.Text;
-            unU.nombreCompleto = txtNombreCompletoModificar.Text;
+            unU.nombre = txtNombreModificar.Text;
+            unU.apellido = txtApellidoModificar.Text;
             unU.telefono = mtxtTelefonoModificar.Text;
             dUsuario unDU = new dUsuario();
-            eUsuario elAdmin = unDU.modificarUsuario(unU, txtNUAM.Text);
+            eUsuario elAdmin = unDU.modificarUsuario(unU, mtxtNUAM.Text);
             
 
             if (elAdmin != null)
@@ -118,6 +120,67 @@ namespace Presentacionn
         }
 
         private void txtUsernameModificar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsernameAgregar_TextChanged(object sender, EventArgs e)
+        private void lblUsernameModificar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbpEliminarUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvListarUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void mtxtUsernameAgregar_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void lblUsernameAgregar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsernameEliminar_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void mtxtUsernameAgregar_MaskInputRejected_1(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void dgvListarUsuario_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void mtxtNUAM_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void txtUsernameEliminar_MaskInputRejected_1(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void lblUsernameAgregar_Click_1(object sender, EventArgs e)
         {
 
         }

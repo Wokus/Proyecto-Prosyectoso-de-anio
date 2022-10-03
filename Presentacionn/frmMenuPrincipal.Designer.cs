@@ -52,6 +52,7 @@
             this.pnl1.Name = "pnl1";
             this.pnl1.Size = new System.Drawing.Size(1020, 57);
             this.pnl1.TabIndex = 0;
+            this.pnl1.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl1_Paint);
             // 
             // button1
             // 
@@ -94,7 +95,8 @@
             this.cbxListados.FormattingEnabled = true;
             this.cbxListados.Items.AddRange(new object[] {
             "Inventario",
-            "Prestamos"});
+            "Prestamos",
+            "Responsable"});
             this.cbxListados.Location = new System.Drawing.Point(887, 29);
             this.cbxListados.Name = "cbxListados";
             this.cbxListados.Size = new System.Drawing.Size(121, 21);
@@ -111,7 +113,10 @@
             "Modificar Equipo",
             "Agregar Prestamo",
             "Eliminar Prestamo",
-            "Modificar Prestamo"});
+            "Modificar Prestamo",
+            "Alta Responsable",
+            "Baja Responsable",
+            "Modificar Responsable"});
             this.cbxAcciones.Location = new System.Drawing.Point(12, 23);
             this.cbxAcciones.Name = "cbxAcciones";
             this.cbxAcciones.Size = new System.Drawing.Size(121, 21);
@@ -138,6 +143,7 @@
             // sc1.Panel1
             // 
             this.sc1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(226)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.sc1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.sc1_Panel1_Paint);
             // 
             // sc1.Panel2
             // 

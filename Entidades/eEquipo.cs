@@ -14,11 +14,10 @@ namespace Entidades
         public String estado { get; set; }
         public String fechaIngreso { get; set; }
         public String asegurado { get; set; }
-        public string precio { get; set; }
-        public string observacion { get; set; }
+        public String precio { get; set; }
         public String tipo { get; set; }
-       // public int stock { get; set; }
-        //8
+        public String observacion { get; set; }
+        public int stock { get; set; }
 
     }
 }

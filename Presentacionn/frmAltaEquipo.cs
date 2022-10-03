@@ -33,21 +33,34 @@ namespace Presentacionn
             eEquipo unE = new eEquipo();
             unE.nombre = txtNombre.Text;
             unE.numeroSerie = txtNumeroSerie.Text;
-            unE.estado = cbxEstado.Text;
+            unE.estado = txtEstado.Text;
             unE.fechaIngreso = mtxtFechaIngreso.Text;
             unE.asegurado = txtAsegurado.Text;
             unE.precio = txtPrecio.Text + cbxMoneda.Text;
-            unE.tipo = cbxTipo.Text;
+            //unE.tipo = cbxTipo.Text;
             unE.observacion = txtObservaciones.Text;
 
             dEquipo unDE = new dEquipo();
-            unDE.altaEquipo(unE);
-
-            MessageBox.Show("Equipo agregado de manera exitosa");
+            bool productoCreado = unDE.altaEquipo(unE);
+            if (productoCreado == true)
+            {
+                MessageBox.Show("Equipo agregado de manera exitosa");
+            }else { MessageBox.Show("Numero de serie repetido"); }
+            
 
         }
 
         private void txtAsegurado_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPrecio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
         {
 
         }

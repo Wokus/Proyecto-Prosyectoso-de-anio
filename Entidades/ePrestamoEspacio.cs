@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dominio
+namespace Entidades
 {
-    public class Class1
+   public class ePrestamoEspacio : ePrestamo
     {
+        public int numeroEspacio { get; set; }
+        
+        
     }
 }

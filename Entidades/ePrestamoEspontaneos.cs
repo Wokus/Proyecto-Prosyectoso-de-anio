@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Class1
+    public class ePrestamoEspontaneos : ePrestamo
     {
+        public  String idEquipo { get;  set; }
+
+
     }
 }
