@@ -52,7 +52,6 @@
             this.cbxListadosInventario.Size = new System.Drawing.Size(121, 21);
             this.cbxListadosInventario.TabIndex = 1;
             this.cbxListadosInventario.Text = "Tipos de listado";
-            this.cbxListadosInventario.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // frmListadoEquipo
             // 

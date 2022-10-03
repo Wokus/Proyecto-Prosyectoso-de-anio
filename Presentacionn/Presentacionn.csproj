@@ -76,12 +76,6 @@
     <Compile Include="frmBajaResponsable.Designer.cs">
       <DependentUpon>frmBajaResponsable.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAdministracionUsuarios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAdministracionUsuarios.Designer.cs">
-      <DependentUpon>frmAdministracionUsuarios.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmAltaEquipo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,9 +137,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBajaResponsable.resx">
       <DependentUpon>frmBajaResponsable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmAdministracionUsuarios.resx">
-      <DependentUpon>frmAdministracionUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAltaEquipo.resx">
       <DependentUpon>frmAltaEquipo.cs</DependentUpon>
