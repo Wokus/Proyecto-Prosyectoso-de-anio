@@ -50,7 +50,7 @@ namespace Persistencia
         public DataTable listarResponsable()
         {
             {
-                String consultaSQL = "SELECT persona.ci, persona.nombre, persona.apellido, solicitante.curso, solicitante.tipo FROM persona INNER JOIN `solicitante` ON persona.ci = solicitante.ci; ";
+                String consultaSQL = "SELECT * FROM persona INNER JOIN `solicitante` ON persona.ci = solicitante.ci; ";
 
                 DataTable dt = listarAlgo(consultaSQL);
 
