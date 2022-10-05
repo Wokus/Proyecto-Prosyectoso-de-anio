@@ -112,6 +112,14 @@ namespace Persistencia
             return dt;
         }
 
+        public int bajaPrestamoDeEquipo (int idPrestamo)
+        {
+
+            string consultaSQL = "DELETE FROM prestamoDeEquipo WHERE prestamoDeEquipo.id_Prestamo = " + idPrestamo + " ;";
+            ejecutarSQL(consultaSQL);
+            return idPrestamo;
+
+        }
 
     }
 }

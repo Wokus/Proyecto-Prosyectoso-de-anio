@@ -20,7 +20,14 @@ namespace Dominio
 
         }
 
-            public DataTable listarPrestamoDeEspacio()
+        public int bajaPrestamoDeEspacio(int idPrestamo)
+        {
+            pPrestamoEspacio unPPES = new pPrestamoEspacio();
+
+            return unPPES.bajaPrestamoDeEspacio(idPrestamo);
+        }
+
+        public DataTable listarPrestamoDeEspacio()
         {
 
             pPrestamoEspacio unPE = new pPrestamoEspacio();
