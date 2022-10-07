@@ -93,6 +93,14 @@ namespace Persistencia
             return dt;
         }
 
+        public int bajaPrestamoDeEspacio(int idPrestamo)
+        {
+
+            string consultaSQL = "DELETE FROM prestamoDeEspacio WHERE prestamoDeEspacio.id_Prestamo = " + idPrestamo + " ;";
+            ejecutarSQL(consultaSQL);
+            return idPrestamo;
+
+        }
 
     }
 }

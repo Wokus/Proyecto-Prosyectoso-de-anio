@@ -97,7 +97,7 @@
             "Inventario",
             "Prestamos",
             "Responsable"});
-            this.cbxListados.Location = new System.Drawing.Point(887, 29);
+            this.cbxListados.Location = new System.Drawing.Point(887, 23);
             this.cbxListados.Name = "cbxListados";
             this.cbxListados.Size = new System.Drawing.Size(121, 21);
             this.cbxListados.TabIndex = 4;

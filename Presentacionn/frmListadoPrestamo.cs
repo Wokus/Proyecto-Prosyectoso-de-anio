@@ -38,7 +38,7 @@ namespace Presentacionn
 
             }
 
-            if (cbxListadosPrestamos.SelectedIndex == 2)
+            if (cbxListadosPrestamos.SelectedIndex == 3)
             {
 
                 dPrestamoEspacio unDP = new dPrestamoEspacio();
@@ -46,7 +46,7 @@ namespace Presentacionn
 
             }
 
-            if (cbxListadosPrestamos.SelectedIndex == 3)
+            if (cbxListadosPrestamos.SelectedIndex == 2)
             {
 
                 dPrestamoExpontaneo unDP = new dPrestamoExpontaneo();

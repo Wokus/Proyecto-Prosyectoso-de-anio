@@ -95,19 +95,28 @@ namespace Presentacionn
                 rellenarPanel1(new frmBajaEquipo());
 
             }
+
             if (cbxAcciones.SelectedIndex == 3)
             {
                 rellenarPanel1(new frmAltaPrestamo());
 
             }
+
+            if (cbxAcciones.SelectedIndex == 4)
+            {
+                rellenarPanel1(new frmBajaPrestamo());
+            }
+
             if (cbxAcciones.SelectedIndex == 6)
             {
                 rellenarPanel1(new frmAltaResponsable());
             }
+
             if (cbxAcciones.SelectedIndex == 7)
             {
                 rellenarPanel1(new frmBajaResponsable());
             }
+
             if (cbxAcciones.SelectedIndex == 8)
             {
                 rellenarPanel1(new frmModificarResponsable());

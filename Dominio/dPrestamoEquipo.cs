@@ -20,6 +20,13 @@ namespace Dominio
             return tokenEquipo;
         }
 
+        public int bajaPrestamoDeEquipo(int idPrestamo)
+        {
+            pPrestamoEquipo unPPE = new pPrestamoEquipo();
+
+            return unPPE.bajaPrestamoDeEquipo(idPrestamo);
+        }
+
 
 
         public DataTable listarPrestamoDeEquipo()

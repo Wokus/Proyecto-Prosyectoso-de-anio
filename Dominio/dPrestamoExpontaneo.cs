@@ -24,6 +24,13 @@ namespace Dominio
             
         }
 
+        public int bajaPrestamoEspontaneo(int idPrestamo)
+        {
+            pPrestamoExpontaneo unPPEX = new pPrestamoExpontaneo();
+
+            return unPPEX.bajaPrestamoEspontaneo(idPrestamo);
+        }
+
         public DataTable listarPrestamoEspontaneo()
         {
 
