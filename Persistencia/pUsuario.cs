@@ -123,7 +123,7 @@ namespace Persistencia
             eUsuario elAdmin = new eUsuario();
             elAdmin = null;
             string consultaSQL = "SELECT * FROM `usuario` WHERE `usuario`.`ci` = '" + username + "';";
-            
+
 
             MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
             ejecutarSQL(consultaSQL);
@@ -133,41 +133,34 @@ namespace Persistencia
 
             }
 
-            if (elAdmin!=null)
+            if (elAdmin != null)
             {
-                string consultaSQL2 = "DELETE FROM administradores WHERE `administradores`.`Nombre de Usuario` = '" + username +"';";
-                
-            { 
-                 consultaSQL2 = "DELETE FROM usuario WHERE `usuario`.`ci` = '" + username +"';";
+                string consultaSQL2 = "DELETE FROM usuario WHERE `usuario`.`ci` = '" + username + "';";
                 ejecutarSQL(consultaSQL2);
                 consultaSQL2 = "DELETE FROM persona WHERE `persona`.`ci` = '" + username + "';";
                 ejecutarSQL(consultaSQL2);
 
             }
-            }
             return elAdmin;
         }
 
         public eUsuario recrearUsuario(MySqlDataReader fila)
-            {
+        {
             eUsuario unUsuario = new eUsuario();
-                unUsuario.password = fila.GetString("password");
-                unUsuario.ci = fila.GetString("ci");
+            unUsuario.password = fila.GetString("password");
+            unUsuario.ci = fila.GetString("ci");
 
 
-                return unUsuario;
-            }
+            return unUsuario;
+        }
 
         public DataTable listarUsuario()
         {
-            String consultaSQL = "SELECT * FROM administradores;";
-            //String consultaSQL = "SELECT persona.ci, persona.nombre, persona.apellido, usuario.password, usuario.telefono FROM persona RIGHT JOIN `usuario` ON persona.ci = usuario.ci; ";
+            String consultaSQL = "SELECT persona.ci, persona.nombre, persona.apellido, usuario.password, usuario.telefono FROM persona RIGHT JOIN `usuario` ON persona.ci = usuario.ci; ";
 
-             consultaSQL = "SELECT persona.ci, persona.nombre, persona.apellido, usuario.password, usuario.telefono FROM persona RIGHT JOIN `usuario` ON persona.ci = usuario.ci; ";
-            
             DataTable dt = listarAlgo(consultaSQL);
 
-            return dt;  
+            return dt;
         }
-        }
+    }
 }

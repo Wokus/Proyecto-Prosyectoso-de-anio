@@ -29,7 +29,7 @@ namespace Presentacionn
         private void frmListadoEquipo_Load(object sender, EventArgs e)
         {
             dEquipo unDE = new dEquipo();
-            dataGridView1.DataSource = unDE.listarEquipo();
+            dgvEquipo.DataSource = unDE.listarEquipo();
         }
     }
 }
