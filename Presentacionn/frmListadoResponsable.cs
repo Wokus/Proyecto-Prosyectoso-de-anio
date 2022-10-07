@@ -19,5 +19,20 @@ namespace Presentacionn
             dResponsable unDR = new dResponsable();
             dataGridView1.DataSource = unDR.ListarResponsable();
         }
+
+        private void chbAtrasado_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chbRotura_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbxTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -48,9 +48,10 @@ namespace Persistencia
 
             resultado = comando.ExecuteReader();
 
-            return resultado;
-            CerrarConexion();
 
+            CerrarConexion();
+            return resultado;
+           
         }
         public DataTable listarAlgo(string consultaSQL)
         {
