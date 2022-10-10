@@ -16,6 +16,9 @@ namespace Persistencia
         {
             int profesor = 0;
             int estudiante = 0;
+            int Primero = 0;
+            int Segundo = 0;
+            int Tercero = 0;
             bool token = true;
 
             eResponsable elAdmin = new eResponsable();
@@ -41,6 +44,20 @@ namespace Persistencia
                     estudiante = 1;
 
                 }
+                if (unPR.curso == "Primero")
+                {
+                    Primero = 1;
+                }
+                if (unPR.curso == "Segundo")
+                {
+                    Segundo = 1;
+                }
+                if (unPR.curso == "Tercero")
+                {
+                    Tercero = 1;
+                }
+                string consultaSQL3 = "INSERT INTO persona VALUES('" + unPR.ci + "','" + unPR.nombre + "','" + unPR.apellido + "');";
+                ejecutarSQL(consultaSQL3);
                 string consultaSQL2 = "INSERT INTO solicitante VALUES('" + unPR.ci + "','" + unPR.curso + "','" + unPR.tipo + "');";
                 ejecutarSQL(consultaSQL2);
             }
@@ -49,13 +66,13 @@ namespace Persistencia
 
         public DataTable listarResponsable()
         {
-            {
-                String consultaSQL = "SELECT * FROM persona INNER JOIN `solicitante` ON persona.ci = solicitante.ci; ";
+            
+                string consultaSQL = "SELECT * FROM persona INNER JOIN `solicitante` ON persona.ci = solicitante.ci; ";
 
                 DataTable dt = listarAlgo(consultaSQL);
 
                 return dt;
-            }
+            
         }
 
         public eResponsable bajaResponsable(string EliminarRes)

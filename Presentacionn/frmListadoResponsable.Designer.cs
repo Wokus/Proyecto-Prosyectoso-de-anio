@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvResponsable = new System.Windows.Forms.DataGridView();
             this.chbRotura = new System.Windows.Forms.CheckBox();
             this.chbAtrasado = new System.Windows.Forms.CheckBox();
             this.cbxTipo = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResponsable)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvResponsable
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 64);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(470, 419);
-            this.dataGridView1.TabIndex = 2;
+            this.dgvResponsable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvResponsable.Location = new System.Drawing.Point(12, 64);
+            this.dgvResponsable.Name = "dgvResponsable";
+            this.dgvResponsable.Size = new System.Drawing.Size(470, 419);
+            this.dgvResponsable.TabIndex = 2;
             // 
             // chbRotura
             // 
@@ -52,7 +52,6 @@
             this.chbRotura.TabIndex = 3;
             this.chbRotura.Text = "Equipos Rotos";
             this.chbRotura.UseVisualStyleBackColor = true;
-            this.chbRotura.CheckedChanged += new System.EventHandler(this.chbRotura_CheckedChanged);
             // 
             // chbAtrasado
             // 
@@ -63,7 +62,6 @@
             this.chbAtrasado.TabIndex = 4;
             this.chbAtrasado.Text = "Prestamo Atrasados";
             this.chbAtrasado.UseVisualStyleBackColor = true;
-            this.chbAtrasado.CheckedChanged += new System.EventHandler(this.chbAtrasado_CheckedChanged);
             // 
             // cbxTipo
             // 
@@ -86,10 +84,10 @@
             this.Controls.Add(this.cbxTipo);
             this.Controls.Add(this.chbAtrasado);
             this.Controls.Add(this.chbRotura);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvResponsable);
             this.Name = "frmListadoResponsable";
             this.Text = "frmListadoResponsable";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResponsable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -97,7 +95,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvResponsable;
         private System.Windows.Forms.CheckBox chbRotura;
         private System.Windows.Forms.CheckBox chbAtrasado;
         private System.Windows.Forms.ComboBox cbxTipo;
