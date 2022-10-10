@@ -27,7 +27,15 @@ namespace Dominio
             return unPPE.bajaPrestamoDeEquipo(idPrestamo);
         }
 
+        public bool modificacionPrestamo(ePrestamoEquipo unEPE, String IdPrestamo)
+        {
 
+            pPrestamoEquipo unPPE = new pPrestamoEquipo();
+
+            bool confirmacion = unPPE.modificacionPrestamo(unEPE, IdPrestamo);
+            return confirmacion;
+            
+        }
 
         public DataTable listarPrestamoDeEquipo()
         {

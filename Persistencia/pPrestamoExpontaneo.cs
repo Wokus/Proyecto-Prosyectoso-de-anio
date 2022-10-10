@@ -45,7 +45,7 @@ namespace Persistencia
 
             if (tokenEquipo == true)
             {
-          
+
                 if (unPRESP.estado == "Armado")
                 {
                     estadoBOOLarm = 1;
@@ -81,7 +81,7 @@ namespace Persistencia
                 consultaSQL = "INSERT INTO `prestamoespontaneo` VALUES('" + id + "');";
                 ejecutarSQL(consultaSQL);
 
-              
+
                 for (int i = 0; i < equipos.Length; i++)
                 {
                     consultaSQL = "INSERT INTO `obtieneequipoprestamoespontaneo` VALUES('" + id + "','" + equipos[i] + "');";
@@ -114,7 +114,7 @@ namespace Persistencia
             return dt;
         }
 
-        public int bajaPrestamoEspontaneo (int idPrestamo)
+        public int bajaPrestamoEspontaneo(int idPrestamo)
         {
 
             string consultaSQL = "DELETE FROM prestamoEspontaneo WHERE prestamoEspontaneo.id_Prestamo = " + idPrestamo + " ;";
@@ -123,5 +123,48 @@ namespace Persistencia
 
         }
 
+        public bool modificacionPrestamo(ePrestamoEspontaneos unEPEX, String IdPrestamo)
+        {
+
+            string consultaSQL;
+            string estado = "ICKKCK";
+            bool tokenEquipo = true;
+
+            if (tokenEquipo == true)
+            {
+                if (unEPEX.estado == "Armado")
+                {
+                    estado = "Armado";
+                }
+                if (unEPEX.estado == "Levantado")
+                {
+                    estado = "Levantado";
+                }
+                if (unEPEX.estado == "Cancelado")
+                {
+                    estado = "Cancelado";
+                }
+                if (unEPEX.estado == "Devuelto")
+                {
+                    estado = "Devuelto";
+                }
+
+            }
+
+            string consultaFK = "ALTER TABLE prestamoEspontaneo DROP FOREIGN KEY fK_prestamoEspontaneo_prestamo;";
+            ejecutarSQL(consultaFK);
+
+            string consultaSQL2 = "UPDATE prestamo SET fechaSolicitada =" + unEPEX.fechaSolicitada + ", cantidadDias =" + unEPEX.cantidadDias
+            + ", fechaRetiro = " + unEPEX.fechaRetiro + ", horaRetiro = " + unEPEX.horaRetiro + ", fechaDevolucion = " + unEPEX.horaDevolucion
+            + ", tipo =" + estado + " profesorResponsable = " + unEPEX.profeRespon + ", alumnoResponsable = " + unEPEX.alumnoRespon + "  WHERE prestamo.id = " + IdPrestamo + " ;";
+            ejecutarSQL(consultaSQL2);
+
+            consultaFK = "ALTER TABLE prestamoEspontaneo ADD CONSTRAINT fK_prestamoEspontaneo_prestamo FOREIGN KEY (id_Prestamo) REFERENCES prestamo(id);";
+            ejecutarSQL(consultaFK);
+
+            bool confirmacion = tokenEquipo;
+            return confirmacion;
+
+        }
     }
 }

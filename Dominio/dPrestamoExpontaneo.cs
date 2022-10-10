@@ -31,6 +31,16 @@ namespace Dominio
             return unPPEX.bajaPrestamoEspontaneo(idPrestamo);
         }
 
+        public bool modificacionPrestamo(ePrestamoEspontaneos unEPEX, String IdPrestamo)
+        {
+
+            pPrestamoExpontaneo unPPEX = new pPrestamoExpontaneo();
+
+            bool confirmacion = unPPEX.modificacionPrestamo(unEPEX, IdPrestamo);
+            return confirmacion;
+
+        }
+
         public DataTable listarPrestamoEspontaneo()
         {
 

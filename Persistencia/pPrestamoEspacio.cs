@@ -102,6 +102,66 @@ namespace Persistencia
 
         }
 
+        public bool modificacionPrestamo(ePrestamoEspacio unEPES, String IdPrestamo)
+        {
+
+            string consultaSQL;
+            string estado = "ICKKCK";
+            bool tokenEquipo = true;
+
+            if (tokenEquipo == true)
+            {
+                if (unEPES.estado == "Armado")
+                {
+                    estado = "Armado";
+                }
+                if (unEPES.estado == "Levantado")
+                {
+                    estado = "Levantado";
+                }
+                if (unEPES.estado == "Cancelado")
+                {
+                    estado = "Cancelado";
+                }
+                if (unEPES.estado == "Devuelto")
+                {
+                    estado = "Devuelto";
+                }
+
+            }
+
+            string consultaFK = "ALTER TABLE prestamoDeEspacio DROP FOREIGN KEY fK_prestamoDeEspacio_prestamo;";
+            ejecutarSQL(consultaFK);
+
+            string consultaSQL2 = "UPDATE prestamo SET fechaSolicitada =" + unEPES.fechaSolicitada + ", cantidadDias =" + unEPES.cantidadDias
+            + ", fechaRetiro = " + unEPES.fechaRetiro + ", horaRetiro = " + unEPES.horaRetiro + ", fechaDevolucion = " + unEPES.horaDevolucion
+            + ", tipo =" + estado + " profesorResponsable = " + unEPES.profeRespon + ", alumnoResponsable = " + unEPES.alumnoRespon + "  WHERE prestamo.id = " + IdPrestamo + " ;";
+            ejecutarSQL(consultaSQL2);
+
+            consultaFK = "ALTER TABLE obtieneEspaciosPrestamoDeEspacio DROP FOREIGN KEY fK_obtieneEspaciosPrestamoDeEspacio_prestamoDeEspacio;";
+            ejecutarSQL(consultaFK);
+
+            consultaFK = "ALTER TABLE obtieneEspaciosPrestamoDeEspacio DROP FOREIGN KEY fK_obtieneEspaciosPrestamoDeEspacio_espacio;";
+            ejecutarSQL(consultaFK);
+
+            consultaSQL2 = "UPDATE obtieneEspaciosPrestamoDeEspacio SET nro_Espacio = " + unEPES.numeroEspacio
+            + " WHERE prestamoDeEspacio.id_PrestamoDeEspacio = " + IdPrestamo + " ;";
+            ejecutarSQL(consultaSQL2);
+
+            consultaFK = "ALTER TABLE prestamoDeEspacio ADD CONSTRAINT fK_prestamoDeEspacio_prestamo FOREIGN KEY (id_Prestamo) REFERENCES prestamo(id);";
+            ejecutarSQL(consultaFK);
+
+            consultaFK = "ALTER TABLE obtieneEspaciosPrestamoDeEspacio ADD CONSTRAINT fK_obtieneEspaciosPrestamoDeEspacio_prestamoDeEspacio FOREIGN KEY(id_PrestamoDeEspacio) REFERENCES prestamoDeEspacio(id_Prestamo);";
+            ejecutarSQL(consultaFK);
+
+            consultaFK = "ALTER TABLE obtieneEspaciosPrestamoDeEspacio ADD CONSTRAINT fK_obtieneEspaciosPrestamoDeEspacio_espacio FOREIGN KEY(nro_Espacio) REFERENCES espacio(nro);";
+            ejecutarSQL(consultaFK);
+
+            bool confirmacion = tokenEquipo;
+            return confirmacion;
+
+        }
+
     }
 }
 
