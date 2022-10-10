@@ -33,7 +33,9 @@ namespace Persistencia
                 if (fila.Read())
                 {
 
-                }else {
+                }
+                else
+                {
                     tokenEquipo = false;
                     break;
                 }
@@ -42,49 +44,50 @@ namespace Persistencia
 
             }
 
-            if (tokenEquipo == true) { 
-            unPRE.prioridad = 0;
-            if (unPRE.estado == "Armado")
+            if (tokenEquipo == true)
             {
-                estadoBOOLarm = 1;
-            }
-            if (unPRE.estado == "Levantado")
-            {
-                estadoBOOLlev = 1;
-            }
-            if (unPRE.estado == "Cancelado")
-            {
-                estadoBOOLcan = 1;
-            }
-            if (unPRE.estado == "Devuelto")
-            {
-                estadoBOOLdev = 1;
-            }
-
-
-
-
-            while (idOcupado == id)
-            {
-                id++;
-                consultaSQL = "SELECT * FROM `prestamo` WHERE `prestamo`.`id` = '" + id + "'; ";
-                MySqlDataReader filaid = ejecutarYdevolver(consultaSQL);
-                if (filaid.Read())
+                unPRE.prioridad = 0;
+                if (unPRE.estado == "Armado")
                 {
-                    idOcupado = recrearIdPrestamo(filaid);
+                    estadoBOOLarm = 1;
                 }
-            }        
-            consultaSQL = "INSERT INTO `prestamo` VALUES('" + id + "','" + unPRE.fechaSolicitada + "','" + unPRE.cantidadDias + "','" + unPRE.fechaRetiro + "','" + unPRE.horaRetiro + "','" + unPRE.fechaDevolucion + "','" + unPRE.horaDevolucion + "','" + estadoBOOLarm + "','" + estadoBOOLlev + "','" + estadoBOOLcan + "','" + estadoBOOLdev + "','" + unPRE.alumnoRespon + "','" + unPRE.profeRespon + "');";
-            ejecutarSQL(consultaSQL);
-            consultaSQL = "INSERT INTO `prestamodeequipo` VALUES('" + id + "','" + unPRE.prioridad + "','" + unPRE.ejercicio + "');";
-            ejecutarSQL(consultaSQL);
+                if (unPRE.estado == "Levantado")
+                {
+                    estadoBOOLlev = 1;
+                }
+                if (unPRE.estado == "Cancelado")
+                {
+                    estadoBOOLcan = 1;
+                }
+                if (unPRE.estado == "Devuelto")
+                {
+                    estadoBOOLdev = 1;
+                }
 
-            for (int i = 0; i<locaciones.Length; i++)
-            {
-                
-                consultaSQL = "INSERT INTO `prestamodeequipolocacion` VALUES('" + id + "','" + locaciones[i] + "');";
+
+
+
+                while (idOcupado == id)
+                {
+                    id++;
+                    consultaSQL = "SELECT * FROM `prestamo` WHERE `prestamo`.`id` = '" + id + "'; ";
+                    MySqlDataReader filaid = ejecutarYdevolver(consultaSQL);
+                    if (filaid.Read())
+                    {
+                        idOcupado = recrearIdPrestamo(filaid);
+                    }
+                }
+                consultaSQL = "INSERT INTO `prestamo` VALUES('" + id + "','" + unPRE.fechaSolicitada + "','" + unPRE.cantidadDias + "','" + unPRE.fechaRetiro + "','" + unPRE.horaRetiro + "','" + unPRE.fechaDevolucion + "','" + unPRE.horaDevolucion + "','" + estadoBOOLarm + "','" + estadoBOOLlev + "','" + estadoBOOLcan + "','" + estadoBOOLdev + "','" + unPRE.alumnoRespon + "','" + unPRE.profeRespon + "');";
                 ejecutarSQL(consultaSQL);
-            }
+                consultaSQL = "INSERT INTO `prestamodeequipo` VALUES('" + id + "','" + unPRE.prioridad + "','" + unPRE.ejercicio + "');";
+                ejecutarSQL(consultaSQL);
+
+                for (int i = 0; i < locaciones.Length; i++)
+                {
+
+                    consultaSQL = "INSERT INTO `prestamodeequipolocacion` VALUES('" + id + "','" + locaciones[i] + "');";
+                    ejecutarSQL(consultaSQL);
+                }
                 for (int i = 0; i < equipos.Length; i++)
                 {
                     consultaSQL = "INSERT INTO `tiene` VALUES('" + id + "','" + equipos[i] + "');";
@@ -112,15 +115,91 @@ namespace Persistencia
             return dt;
         }
 
-        public int bajaPrestamoDeEquipo (int idPrestamo)
+        public int bajaPrestamoDeEquipo(int idPrestamo)
         {
 
             string consultaSQL = "DELETE FROM prestamoDeEquipo WHERE prestamoDeEquipo.id_Prestamo = " + idPrestamo + " ;";
             ejecutarSQL(consultaSQL);
+            
             return idPrestamo;
 
         }
 
+        public bool modificacionPrestamo(ePrestamoEquipo unEPE, String IdPrestamo)
+        {
+
+            string consultaSQL;
+            string estado = "ICKKCK";
+            bool tokenEquipo = true;
+
+            String[] locaciones = unEPE.locacion.Split(',');
+            String[] equipos = unEPE.equipos.Split(',');
+
+            for (int i = 0; i < equipos.Length; i++)
+            {
+
+                consultaSQL = "SELECT * FROM `equipo` WHERE `id` = '" + equipos[i] + "';";
+                MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
+                if (fila.Read())
+                {
+
+                }
+                else
+                {
+                    tokenEquipo = false;
+                    break;
+                }
+            }
+
+            if (tokenEquipo == true)
+            {
+                unEPE.prioridad = 0;
+                if (unEPE.estado == "Armado")
+                {
+                    estado = "Armado";
+                }
+                if (unEPE.estado == "Levantado")
+                {
+                    estado = "Levantado";
+                }
+                if (unEPE.estado == "Cancelado")
+                {
+                    estado = "Cancelado";
+                }
+                if (unEPE.estado == "Devuelto")
+                {
+                    estado = "Devuelto";
+                }
+
+            }
+
+            string consultaFK = "ALTER TABLE prestamoDeEquipo DROP FOREIGN KEY fK_prestamoDeEquipo_prestamo;";
+            ejecutarSQL(consultaFK);
+
+            string consultaSQL2 = "UPDATE prestamo SET fechaSolicitada =" + unEPE.fechaSolicitada + ", cantidadDias =" + unEPE.cantidadDias 
+            + ", fechaRetiro = " + unEPE.fechaRetiro + ", horaRetiro = " + unEPE.horaRetiro + ", fechaDevolucion = " + unEPE.horaDevolucion 
+            + ", tipo =" + estado + " profesorResponsable = " + unEPE.profeRespon + ", alumnoResponsable = " + unEPE.alumnoRespon + "  WHERE prestamo.id = " + IdPrestamo + " ;";
+            ejecutarSQL(consultaSQL2);
+
+            consultaSQL2 = "UPDATE prestamoDeEquipo SET prioridad = " + unEPE.prioridad + ", ejercicio = " + unEPE.ejercicio 
+            + " WHERE prestamoDeEquipo.id_Prestamo = " + IdPrestamo + " ;";
+            ejecutarSQL(consultaSQL2);
+
+            consultaFK = "ALTER TABLE prestamoDeEquipoLocacion DROP FOREIGN KEY fK_prestamoDeEquipoLocacion_PrestamoDeEquipo;";
+            ejecutarSQL(consultaFK);
+
+            consultaSQL2 = "UPDATE prestamoDeEquipoLocacion SET locacion = " + unEPE.locacion + " WHERE id_PrestamoDeEquipo = " + IdPrestamo + " ;";
+
+            consultaFK = "ALTER TABLE prestamoDeEquipo ADD CONSTRAINT fK_prestamoDeEquipo_prestamo FOREIGN KEY (id_Prestamo) REFERENCES prestamo(id);";
+            ejecutarSQL(consultaFK);
+
+            consultaFK = "ALTER TABLE prestamoDeEquipoLocacion ADD CONSTRAINT fK_prestamoDeEquipoLocacion_prestamoDeEquipo FOREIGN KEY (id_PrestamoDeEquipo) REFERENCES prestamoDeEquipo(id_Prestamo);";
+            ejecutarSQL(consultaFK);
+
+            bool confirmacion = tokenEquipo;
+            return confirmacion;
+
+            }
     }
 }
 

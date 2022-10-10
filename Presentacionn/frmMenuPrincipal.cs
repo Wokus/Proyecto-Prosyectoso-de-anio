@@ -106,6 +106,12 @@ namespace Presentacionn
             {
                 rellenarPanel1(new frmBajaPrestamo());
             }
+            if (cbxAcciones.SelectedIndex == 5)
+            {
+
+                rellenarPanel1(new fmmModificacionPrestamo());
+
+            }
 
             if (cbxAcciones.SelectedIndex == 6)
             {

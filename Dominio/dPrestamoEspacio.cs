@@ -27,6 +27,16 @@ namespace Dominio
             return unPPES.bajaPrestamoDeEspacio(idPrestamo);
         }
 
+        public bool modificacionPrestamo(ePrestamoEspacio unEPES, String IdPrestamo)
+        {
+
+            pPrestamoEspacio unPPES = new pPrestamoEspacio();
+
+            bool confirmacion = unPPES.modificacionPrestamo(unEPES, IdPrestamo);
+            return confirmacion;
+
+        }
+
         public DataTable listarPrestamoDeEspacio()
         {
 
