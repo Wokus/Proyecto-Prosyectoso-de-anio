@@ -30,42 +30,46 @@
         {
             this.btnEliminarEquipo = new System.Windows.Forms.Button();
             this.txtId = new System.Windows.Forms.TextBox();
-            this.lblId = new System.Windows.Forms.Label();
+            this.lblIdEquipo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnEliminarEquipo
             // 
-            this.btnEliminarEquipo.Location = new System.Drawing.Point(206, 316);
+            this.btnEliminarEquipo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminarEquipo.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnEliminarEquipo.Location = new System.Drawing.Point(170, 423);
             this.btnEliminarEquipo.Name = "btnEliminarEquipo";
-            this.btnEliminarEquipo.Size = new System.Drawing.Size(121, 48);
+            this.btnEliminarEquipo.Size = new System.Drawing.Size(144, 55);
             this.btnEliminarEquipo.TabIndex = 0;
             this.btnEliminarEquipo.Text = "Eliminar";
-            this.btnEliminarEquipo.UseVisualStyleBackColor = true;
+            this.btnEliminarEquipo.UseVisualStyleBackColor = false;
             this.btnEliminarEquipo.Click += new System.EventHandler(this.btnEliminarEquipo_Click);
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(206, 122);
+            this.txtId.Location = new System.Drawing.Point(194, 143);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(100, 20);
             this.txtId.TabIndex = 1;
             this.txtId.TextChanged += new System.EventHandler(this.txtId_TextChanged);
             // 
-            // lblId
+            // lblIdEquipo
             // 
-            this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(185, 129);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(15, 13);
-            this.lblId.TabIndex = 2;
-            this.lblId.Text = "id";
+            this.lblIdEquipo.AutoSize = true;
+            this.lblIdEquipo.Location = new System.Drawing.Point(173, 150);
+            this.lblIdEquipo.Name = "lblIdEquipo";
+            this.lblIdEquipo.Size = new System.Drawing.Size(15, 13);
+            this.lblIdEquipo.TabIndex = 2;
+            this.lblIdEquipo.Text = "id";
             // 
             // frmBajaEquipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(519, 492);
-            this.Controls.Add(this.lblId);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(228)))), ((int)(((byte)(244)))));
+            this.ClientSize = new System.Drawing.Size(494, 508);
+            this.Controls.Add(this.lblIdEquipo);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.btnEliminarEquipo);
             this.Name = "frmBajaEquipo";
@@ -80,6 +84,6 @@
 
         private System.Windows.Forms.Button btnEliminarEquipo;
         private System.Windows.Forms.TextBox txtId;
-        private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.Label lblIdEquipo;
     }
 }

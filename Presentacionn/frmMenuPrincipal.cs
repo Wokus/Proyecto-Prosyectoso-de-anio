@@ -95,6 +95,10 @@ namespace Presentacionn
                 rellenarPanel1(new frmBajaEquipo());
 
             }
+            if (cbxAcciones.SelectedIndex == 2)
+            {
+                rellenarPanel1(new frmModificacionEquipo());
+            }
 
             if (cbxAcciones.SelectedIndex == 3)
             {
@@ -109,7 +113,7 @@ namespace Presentacionn
             if (cbxAcciones.SelectedIndex == 5)
             {
 
-                rellenarPanel1(new fmmModificacionPrestamo());
+                rellenarPanel1(new frmModificacionPrestamo());
 
             }
 
@@ -125,8 +129,21 @@ namespace Presentacionn
 
             if (cbxAcciones.SelectedIndex == 8)
             {
-                rellenarPanel1(new frmModificarResponsable());
+                rellenarPanel1(new frmModificacionResponsable());
             }
+            if (cbxAcciones.SelectedIndex == 9)
+            {
+                rellenarPanel1(new frmAltaRotura());
+            }
+            if (cbxAcciones.SelectedIndex == 10)
+            {
+                rellenarPanel1(new frmBajaRotura());
+            }
+            if (cbxAcciones.SelectedIndex == 11)
+            {
+                rellenarPanel1(new frmModificacionRotura());
+            }
+
 
 
 

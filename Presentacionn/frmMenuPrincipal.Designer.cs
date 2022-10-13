@@ -70,6 +70,7 @@
             // 
             // btnMenuUsuarios
             // 
+            this.btnMenuUsuarios.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMenuUsuarios.Location = new System.Drawing.Point(907, 12);
             this.btnMenuUsuarios.Name = "btnMenuUsuarios";
             this.btnMenuUsuarios.Size = new System.Drawing.Size(101, 39);
@@ -92,6 +93,7 @@
             // 
             // cbxListados
             // 
+            this.cbxListados.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxListados.FormattingEnabled = true;
             this.cbxListados.Items.AddRange(new object[] {
             "Inventario",
@@ -114,9 +116,12 @@
             "Agregar Prestamo",
             "Eliminar Prestamo",
             "Modificar Prestamo",
-            "Alta Responsable",
-            "Baja Responsable",
-            "Modificar Responsable"});
+            "Agregar Responsable",
+            "Eliminar Responsable",
+            "Modificar Responsable",
+            "Agregar Rotura",
+            "Eliminar Rotura",
+            "Modificar Rotura"});
             this.cbxAcciones.Location = new System.Drawing.Point(12, 23);
             this.cbxAcciones.Name = "cbxAcciones";
             this.cbxAcciones.Size = new System.Drawing.Size(121, 21);
@@ -142,12 +147,12 @@
             // 
             // sc1.Panel1
             // 
-            this.sc1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(226)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.sc1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(228)))), ((int)(((byte)(244)))));
             this.sc1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.sc1_Panel1_Paint);
             // 
             // sc1.Panel2
             // 
-            this.sc1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(226)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.sc1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(228)))), ((int)(((byte)(244)))));
             this.sc1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.sc1_Panel2_Paint);
             this.sc1.Size = new System.Drawing.Size(1020, 496);
             this.sc1.SplitterDistance = 518;

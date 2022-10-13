@@ -27,8 +27,8 @@ namespace Presentacionn
 
                 ePrestamoEquipo unEPE = new ePrestamoEquipo();
 
-                unEPE.alumnoRespon = txtAlumno.Text;
-                unEPE.profeRespon = txtProfesor.Text;
+                unEPE.alumnoRespon = mtxtAlumno.Text;
+                unEPE.profeRespon = mtxtProfesor.Text;
                 unEPE.fechaSolicitada = mtxtFechaSolicitud.Text;
                 unEPE.fechaRetiro = mtxtFechaRetiro.Text;
                 unEPE.fechaDevolucion = mtxtFechaDevolucion.Text;
@@ -37,13 +37,13 @@ namespace Presentacionn
                 unEPE.ejercicio = txtEjercicio.Text;
                 unEPE.transporte = txtTransporte.Text;
                 unEPE.locacion = txtLocacion.Text;
-                unEPE.equipos = txtEquipoID.Text;
+                unEPE.equipos = mtxtEquipoID.Text;
                 unEPE.horaDevolucion = "Sex:ooo";
                 unEPE.cantidadDias = 69;
                 //unEPE.idPrestamo = Convert.ToInt16(txtIdPrestamo.Text);
 
                 dPrestamoEquipo unDPE = new dPrestamoEquipo();
-                bool confirmacion = unDPE.modificacionPrestamo(unEPE, txtIdPrestamo.Text);
+                bool confirmacion = unDPE.modificacionPrestamo(unEPE, mtxtIdPrestamo.Text);
 
                 if(confirmacion = true)
                 {
@@ -65,8 +65,8 @@ namespace Presentacionn
 
                 ePrestamoEspacio unEPES = new ePrestamoEspacio();
 
-                unEPES.alumnoRespon = txtAlumno.Text;
-                unEPES.profeRespon = txtProfesor.Text;
+                unEPES.alumnoRespon = mtxtAlumno.Text;
+                unEPES.profeRespon = mtxtProfesor.Text;
                 unEPES.fechaSolicitada = mtxtFechaSolicitud.Text;
                 unEPES.fechaRetiro = mtxtFechaRetiro.Text;
                 unEPES.fechaDevolucion = mtxtFechaDevolucion.Text;
@@ -76,7 +76,7 @@ namespace Presentacionn
                 unEPES.cantidadDias = 69;
 
                 dPrestamoEspacio unDPES = new dPrestamoEspacio();
-                bool confirmacion = unDPES.modificacionPrestamo(unEPES, txtIdPrestamo.Text);
+                bool confirmacion = unDPES.modificacionPrestamo(unEPES, mtxtIdPrestamo.Text);
 
                 if (confirmacion = true)
                 {
@@ -98,8 +98,8 @@ namespace Presentacionn
 
                 ePrestamoEspontaneos unEPEX = new ePrestamoEspontaneos();
 
-                unEPEX.alumnoRespon = txtAlumno.Text;
-                unEPEX.profeRespon = txtProfesor.Text;
+                unEPEX.alumnoRespon = mtxtAlumno.Text;
+                unEPEX.profeRespon = mtxtProfesor.Text;
                 unEPEX.fechaSolicitada = mtxtFechaSolicitud.Text;
                 unEPEX.fechaRetiro = mtxtFechaRetiro.Text;
                 unEPEX.fechaDevolucion = mtxtFechaDevolucion.Text;
@@ -109,7 +109,7 @@ namespace Presentacionn
                 unEPEX.cantidadDias = 69;
 
                 dPrestamoExpontaneo unDPEX = new dPrestamoExpontaneo();
-                bool confirmacion = unDPEX.modificacionPrestamo(unEPEX, txtIdPrestamo.Text);
+                bool confirmacion = unDPEX.modificacionPrestamo(unEPEX, mtxtIdPrestamo.Text);
 
                 if (confirmacion = true)
                 {
@@ -141,11 +141,11 @@ namespace Presentacionn
             if (cbxModificacionPrestamo.SelectedIndex == 0)
             {
 
-                txtIDSalon.Visible = true;
+                mtxtIDSalon.Visible = true;
                 txtLocacion.Visible = true;
                 txtEjercicio.Visible = true;
                 txtTransporte.Visible = true;
-                txtEquipoID.Visible = true;
+                mtxtEquipoID.Visible = true;
 
             }
             if (cbxModificacionPrestamo.SelectedIndex == 1)
@@ -154,7 +154,7 @@ namespace Presentacionn
                 txtLocacion.Visible = false;
                 txtEjercicio.Visible = false;
                 txtTransporte.Visible = false;
-                txtEquipoID.Visible = false;
+                mtxtEquipoID.Visible = false;
                 
             }
             if (cbxModificacionPrestamo.SelectedIndex == 2)
@@ -163,7 +163,7 @@ namespace Presentacionn
                 txtLocacion.Visible = false;
                 txtEjercicio.Visible = false;
                 txtTransporte.Visible = false;
-                txtEquipoID.Visible = false;
+                mtxtEquipoID.Visible = false;
 
             }
 

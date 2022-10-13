@@ -128,6 +128,11 @@ namespace Presentacionn
         {
 
         }
+
+        private void tbpAgregarUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     }
 

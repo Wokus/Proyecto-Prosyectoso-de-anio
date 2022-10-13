@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvListadoResponsable = new System.Windows.Forms.DataGridView();
             this.chbRotura = new System.Windows.Forms.CheckBox();
             this.chbAtrasado = new System.Windows.Forms.CheckBox();
             this.cbxTipo = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoResponsable)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvListadoResponsable
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 64);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(470, 419);
-            this.dataGridView1.TabIndex = 2;
+            this.dgvListadoResponsable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListadoResponsable.Location = new System.Drawing.Point(12, 39);
+            this.dgvListadoResponsable.Name = "dgvListadoResponsable";
+            this.dgvListadoResponsable.Size = new System.Drawing.Size(474, 457);
+            this.dgvListadoResponsable.TabIndex = 2;
             // 
             // chbRotura
             // 
             this.chbRotura.AutoSize = true;
-            this.chbRotura.Location = new System.Drawing.Point(376, 22);
+            this.chbRotura.Location = new System.Drawing.Point(391, 16);
             this.chbRotura.Name = "chbRotura";
             this.chbRotura.Size = new System.Drawing.Size(95, 17);
             this.chbRotura.TabIndex = 3;
@@ -57,7 +57,7 @@
             // chbAtrasado
             // 
             this.chbAtrasado.AutoSize = true;
-            this.chbAtrasado.Location = new System.Drawing.Point(250, 22);
+            this.chbAtrasado.Location = new System.Drawing.Point(265, 16);
             this.chbAtrasado.Name = "chbAtrasado";
             this.chbAtrasado.Size = new System.Drawing.Size(120, 17);
             this.chbAtrasado.TabIndex = 4;
@@ -71,7 +71,7 @@
             this.cbxTipo.Items.AddRange(new object[] {
             "Profesor",
             "Alumno"});
-            this.cbxTipo.Location = new System.Drawing.Point(22, 22);
+            this.cbxTipo.Location = new System.Drawing.Point(12, 12);
             this.cbxTipo.Name = "cbxTipo";
             this.cbxTipo.Size = new System.Drawing.Size(121, 21);
             this.cbxTipo.TabIndex = 5;
@@ -82,14 +82,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(228)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(494, 508);
             this.Controls.Add(this.cbxTipo);
             this.Controls.Add(this.chbAtrasado);
             this.Controls.Add(this.chbRotura);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvListadoResponsable);
             this.Name = "frmListadoResponsable";
             this.Text = "frmListadoResponsable";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoResponsable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -97,7 +98,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvListadoResponsable;
         private System.Windows.Forms.CheckBox chbRotura;
         private System.Windows.Forms.CheckBox chbAtrasado;
         private System.Windows.Forms.ComboBox cbxTipo;

@@ -28,8 +28,8 @@ namespace Presentacionn
 
             if (cbxTipoPrestamo.Text == "De equipo(Formales)")
             {
-                unPRE.alumnoRespon = txtAlumno.Text;
-                unPRE.profeRespon = txtProfesor.Text;
+                unPRE.alumnoRespon = mtxtAlumno.Text;
+                unPRE.profeRespon = mtxtProfesor.Text;
                 unPRE.fechaSolicitada = mtxtFechaSolicitud.Text;
                 unPRE.fechaRetiro = mtxtFechaRetiro.Text;
                 unPRE.fechaDevolucion = mtxtFechaDevolucion.Text;
@@ -38,7 +38,7 @@ namespace Presentacionn
                 unPRE.ejercicio = txtEjercicio.Text;
                 unPRE.transporte = txtTransporte.Text;
                 unPRE.locacion = txtLocacion.Text;
-                unPRE.equipos = txtEquipoID.Text;
+                unPRE.equipos = mtxtEquipoID.Text;
                 unPRE.horaDevolucion = "Sex:ooo";
                 unPRE.cantidadDias = 69;
 
@@ -57,14 +57,14 @@ namespace Presentacionn
 
             if (cbxTipoPrestamo.Text == "De espacio")
             {
-                unPRES.alumnoRespon = txtAlumno.Text;
-                unPRES.profeRespon = txtProfesor.Text;
+                unPRES.alumnoRespon = mtxtAlumno.Text;
+                unPRES.profeRespon = mtxtProfesor.Text;
                 unPRES.fechaSolicitada = mtxtFechaSolicitud.Text;
                 unPRES.fechaRetiro = mtxtFechaRetiro.Text;
                 unPRES.fechaDevolucion = mtxtFechaDevolucion.Text;
                 unPRES.horaRetiro = mtxtHoraRetiro.Text;
                 unPRES.estado = cbxEstado.Text;
-                unPRES.numeroEspacio = Int32.Parse(txtIDSalon.Text);
+                unPRES.numeroEspacio = Int32.Parse(mtxtIDSalon.Text);
                 
 
                 unPRES.horaDevolucion = "Sex:ooo";
@@ -82,8 +82,8 @@ namespace Presentacionn
 
             if (cbxTipoPrestamo.Text == "Expontaneo")
             {
-                unPREX.alumnoRespon = txtAlumno.Text;
-                unPREX.profeRespon = txtProfesor.Text;
+                unPREX.alumnoRespon = mtxtAlumno.Text;
+                unPREX.profeRespon = mtxtProfesor.Text;
                 unPREX.fechaSolicitada = mtxtFechaSolicitud.Text;
                 unPREX.fechaRetiro = mtxtFechaRetiro.Text;
                 unPREX.fechaDevolucion = mtxtFechaDevolucion.Text;
@@ -92,7 +92,7 @@ namespace Presentacionn
 
                 unPREX.horaDevolucion = "Sex:ooo";
                 unPREX.cantidadDias = 69;
-                unPREX.idEquipo = txtEquipoID.Text; 
+                unPREX.idEquipo = mtxtEquipoID.Text; 
 
                 dPrestamoExpontaneo unDPREX = new dPrestamoExpontaneo();
                 bool tokenEspacio = unDPREX.altaPrestamoEspacio(unPREX);
@@ -229,7 +229,7 @@ namespace Presentacionn
         {
             if (cbxTipoPrestamo.Text == "De equipo(Formales)")
             {
-                txtIDSalon.Visible = false;
+                mtxtIDSalon.Visible = false;
                 
                 lblIDSalon.Visible = false;
                 
@@ -237,7 +237,7 @@ namespace Presentacionn
 
                 txtTransporte.Visible = true;
                 txtEjercicio.Visible = true;
-                txtEquipoID.Visible = true;
+                mtxtEquipoID.Visible = true;
                 txtLocacion.Visible = true;
 
                 lblTransporte.Visible = true;
@@ -252,7 +252,7 @@ namespace Presentacionn
             {
                 txtTransporte.Visible = false;
                 txtEjercicio.Visible = false;
-                txtEquipoID.Visible = false;
+                mtxtEquipoID.Visible = false;
                 txtLocacion.Visible = false;
 
                 lblTransporte.Visible = false;
@@ -262,7 +262,7 @@ namespace Presentacionn
 
 
 
-                txtIDSalon.Visible = true;
+                mtxtIDSalon.Visible = true;
                 
                 lblIDSalon.Visible = true;
                 
@@ -270,7 +270,7 @@ namespace Presentacionn
             }
             if (cbxTipoPrestamo.Text == "Expontaneo")
             {
-                txtIDSalon.Visible = false;
+                mtxtIDSalon.Visible = false;
                 lblIDSalon.Visible = false;
 
                 txtTransporte.Visible = false;
@@ -290,6 +290,21 @@ namespace Presentacionn
 
 
 
+
+        }
+
+        private void lblIDSalon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtIDSalon_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mtxtIDSalon_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
 
         }
     }

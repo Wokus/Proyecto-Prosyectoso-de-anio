@@ -28,7 +28,7 @@ namespace Presentacionn
 
         private void cbxPrestamosAEliminar_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            /*
             if (cbxPrestamosAEliminar.SelectedIndex == 0)
             {
 
@@ -79,23 +79,9 @@ namespace Presentacionn
             btnEliminar.Visible = false;
             btnEliminarPrestamoEspacio.Visible = false;
             btnEliminarPrestamoEspontaneo.Visible = false;
-
+            */
         }
-
-        private void btnEliminarPrestamoEspacio_Click(object sender, EventArgs e)
-        {
-
-            dPrestamoEspacio unDPE = new dPrestamoEspacio();
-            int idPrestamoEspacio = unDPE.bajaPrestamoDeEspacio(Convert.ToInt16(txtBajaPrestamoEspacio.Text));
-
-        }
-
-        private void btnEliminarPrestamoEspontaneo_Click(object sender, EventArgs e)
-        {
-
-            dPrestamoExpontaneo unDPE = new dPrestamoExpontaneo();
-            int idPrestamoEspontaneo = unDPE.bajaPrestamoEspontaneo(Convert.ToInt16(txtBajaPrestamoEspontaneo.Text));
-
-        }
+        
+       
     }
 }

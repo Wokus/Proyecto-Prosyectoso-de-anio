@@ -17,7 +17,7 @@ namespace Presentacionn
         public frmListadoResponsable()
         {
             dResponsable unDR = new dResponsable();
-            dataGridView1.DataSource = unDR.ListarResponsable();
+            dgvListadoResponsable.DataSource = unDR.ListarResponsable();
         }
 
         private void chbAtrasado_CheckedChanged(object sender, EventArgs e)

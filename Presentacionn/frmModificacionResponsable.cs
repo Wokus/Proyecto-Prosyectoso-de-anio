@@ -12,9 +12,9 @@ using Entidades;
 
 namespace Presentacionn
 {
-    public partial class frmModificarResponsable : Form
+    public partial class frmModificacionResponsable : Form
     {
-        public frmModificarResponsable()
+        public frmModificacionResponsable()
         {
             InitializeComponent();
         }

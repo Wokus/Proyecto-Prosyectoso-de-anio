@@ -22,41 +22,46 @@ namespace Presentacionn
         private void cbxListadosPrestamos_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            if (cbxListadosPrestamos.SelectedIndex == 0)
+            if (cbxTipo.SelectedIndex == 0)
             {
 
                 dPrestamo unDP = new dPrestamo();
-                dataGridView1.DataSource = unDP.listarPrestamo();
+                dgvListadoEquipo.DataSource = unDP.listarPrestamo();
 
             }
 
-            if (cbxListadosPrestamos.SelectedIndex == 1)
+            if (cbxTipo.SelectedIndex == 1)
             {
 
                 dPrestamoEquipo unDP = new dPrestamoEquipo();
-                dataGridView1.DataSource = unDP.listarPrestamoDeEquipo();
+                dgvListadoEquipo.DataSource = unDP.listarPrestamoDeEquipo();
 
             }
 
-            if (cbxListadosPrestamos.SelectedIndex == 3)
+            if (cbxTipo.SelectedIndex == 3)
             {
 
                 dPrestamoEspacio unDP = new dPrestamoEspacio();
-                dataGridView1.DataSource = unDP.listarPrestamoDeEspacio();
+                dgvListadoEquipo.DataSource = unDP.listarPrestamoDeEspacio();
 
             }
 
-            if (cbxListadosPrestamos.SelectedIndex == 2)
+            if (cbxTipo.SelectedIndex == 2)
             {
 
                 dPrestamoExpontaneo unDP = new dPrestamoExpontaneo();
-                dataGridView1.DataSource = unDP.listarPrestamoEspontaneo();
+                dgvListadoEquipo.DataSource = unDP.listarPrestamoEspontaneo();
 
             }
 
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cbxEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

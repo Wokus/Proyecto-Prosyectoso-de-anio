@@ -76,6 +76,12 @@
     <Compile Include="frmAltaResponsable.Designer.cs">
       <DependentUpon>frmAltaResponsable.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAltaRotura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAltaRotura.Designer.cs">
+      <DependentUpon>frmAltaRotura.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBajaPrestamo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,12 @@
     <Compile Include="frmBajaEquipo.Designer.cs">
       <DependentUpon>frmBajaEquipo.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBajaRotura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBajaRotura.Designer.cs">
+      <DependentUpon>frmBajaRotura.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmListadoEquipo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +136,12 @@
     <Compile Include="frmListadoResponsable.Designer.cs">
       <DependentUpon>frmListadoResponsable.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmListadoRotura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListadoRotura.Designer.cs">
+      <DependentUpon>frmListadoRotura.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMenuInicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,17 +154,29 @@
     <Compile Include="frmMenuPrincipal.Designer.cs">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmModificacionEquipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificacionEquipo.Designer.cs">
+      <DependentUpon>frmModificacionEquipo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmModificacionPrestamo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmModificacionPrestamo.Designer.cs">
       <DependentUpon>frmModificacionPrestamo.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmModificarResponsable.cs">
+    <Compile Include="frmModificacionRotura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmModificarResponsable.Designer.cs">
-      <DependentUpon>frmModificarResponsable.cs</DependentUpon>
+    <Compile Include="frmModificacionRotura.Designer.cs">
+      <DependentUpon>frmModificacionRotura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModificacionResponsable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificacionResponsable.Designer.cs">
+      <DependentUpon>frmModificacionResponsable.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -155,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAltaResponsable.resx">
       <DependentUpon>frmAltaResponsable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAltaRotura.resx">
+      <DependentUpon>frmAltaRotura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBajaPrestamo.resx">
       <DependentUpon>frmBajaPrestamo.cs</DependentUpon>
@@ -171,6 +204,9 @@
     <EmbeddedResource Include="frmBajaEquipo.resx">
       <DependentUpon>frmBajaEquipo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmBajaRotura.resx">
+      <DependentUpon>frmBajaRotura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmListadoEquipo.resx">
       <DependentUpon>frmListadoEquipo.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,17 +216,26 @@
     <EmbeddedResource Include="frmListadoResponsable.resx">
       <DependentUpon>frmListadoResponsable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmListadoRotura.resx">
+      <DependentUpon>frmListadoRotura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMenuInicial.resx">
       <DependentUpon>frmMenuInicial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenuPrincipal.resx">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmModificacionEquipo.resx">
+      <DependentUpon>frmModificacionEquipo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmModificacionPrestamo.resx">
       <DependentUpon>frmModificacionPrestamo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmModificarResponsable.resx">
-      <DependentUpon>frmModificarResponsable.cs</DependentUpon>
+    <EmbeddedResource Include="frmModificacionRotura.resx">
+      <DependentUpon>frmModificacionRotura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificacionResponsable.resx">
+      <DependentUpon>frmModificacionResponsable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

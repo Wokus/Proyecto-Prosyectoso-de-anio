@@ -39,12 +39,15 @@
             // 
             // btnAregar
             // 
-            this.btnAregar.Location = new System.Drawing.Point(213, 409);
+            this.btnAregar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAregar.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnAregar.Location = new System.Drawing.Point(170, 423);
             this.btnAregar.Name = "btnAregar";
-            this.btnAregar.Size = new System.Drawing.Size(131, 43);
+            this.btnAregar.Size = new System.Drawing.Size(144, 55);
             this.btnAregar.TabIndex = 6;
             this.btnAregar.Text = "Agregar";
-            this.btnAregar.UseVisualStyleBackColor = true;
+            this.btnAregar.UseVisualStyleBackColor = false;
             this.btnAregar.Click += new System.EventHandler(this.btnAregar_Click);
             // 
             // cbxTipo
@@ -99,10 +102,11 @@
             this.txtResCi.Size = new System.Drawing.Size(100, 20);
             this.txtResCi.TabIndex = 7;
             // 
-            // AltaResponsable
+            // frmAltaResponsable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(228)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(494, 508);
             this.Controls.Add(this.btnAregar);
             this.Controls.Add(this.cbxTipo);
@@ -111,7 +115,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtCurso);
             this.Controls.Add(this.txtResCi);
-            this.Name = "AltaResponsable";
+            this.Name = "frmAltaResponsable";
             this.Text = "AltaResponsable";
             this.ResumeLayout(false);
             this.PerformLayout();
