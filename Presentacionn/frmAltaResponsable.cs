@@ -23,8 +23,11 @@ namespace Presentacionn
         {
             eResponsable unR = new eResponsable();
             unR.ci = txtResCi.Text;
-            unR.curso = txtCurso.Text;
+            unR.nombre = txtNombreRes.Text;
+            unR.apellido = txtApellidoRes.Text;
+            unR.curso = cbxCurso.Text;
             unR.tipo = cbxTipo.Text;
+
             dResponsable unDR = new dResponsable();
             bool token = unDR.altaResponsable(unR);
             if (token == true)
@@ -37,6 +40,16 @@ namespace Presentacionn
 
                 MessageBox.Show("el responsable no ha sido ingresado");
             }
+        }
+
+        private void cbxTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
