@@ -45,7 +45,7 @@ namespace Presentacionn
                 dPrestamoEquipo unDPE = new dPrestamoEquipo();
                 bool confirmacion = unDPE.modificacionPrestamo(unEPE, mtxtIdPrestamo.Text);
 
-                if(confirmacion = true)
+                if(confirmacion == true)
                 {
 
                     MessageBox.Show("Se Modifico el Prestamo Correctamente");

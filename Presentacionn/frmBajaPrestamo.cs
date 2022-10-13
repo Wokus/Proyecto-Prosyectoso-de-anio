@@ -23,7 +23,20 @@ namespace Presentacionn
         {
 
             dPrestamoEquipo unDPE = new dPrestamoEquipo();
-            int idPrestamoEquipo = unDPE.bajaPrestamoDeEquipo(Convert.ToInt16(txtIdPrestamoBaja.Text));
+            int idPrestamo = unDPE.bajaPrestamoDeEquipo(Convert.ToInt16(txtIdPrestamoBaja.Text));
+
+            if (idPrestamo != 0)
+            {
+
+                MessageBox.Show("Se bajo el prestamo correctamente");
+
+            }
+            else
+            {
+
+                MessageBox.Show("No existe un prestamo con esa id");
+
+            }
         }
 
         private void cbxPrestamosAEliminar_SelectedIndexChanged(object sender, EventArgs e)
@@ -79,9 +92,9 @@ namespace Presentacionn
             btnEliminar.Visible = false;
             btnEliminarPrestamoEspacio.Visible = false;
             btnEliminarPrestamoEspontaneo.Visible = false;
-            */
+            
         }
-        
-       
+             */
+        }
     }
 }

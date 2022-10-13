@@ -93,7 +93,6 @@ namespace Persistencia
             {
                 id2 = Convert.ToInt32(id);
                 id2 = recrearIdEquipo(fila);
-
             }
             if (id2 != 0)
             {
