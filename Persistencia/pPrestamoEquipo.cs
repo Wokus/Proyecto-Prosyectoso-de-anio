@@ -11,62 +11,24 @@ namespace Persistencia
 {
     public class pPrestamoEquipo : clsPersistencia
     {
-        public bool altaPrestamo(ePrestamoEquipo unPRE)
+        public int altaPrestamo(ePrestamoEquipo unPRE)
         {
             string consultaSQL;
             int id = 0;
             int idOcupado = 0;
-            int estadoBOOLarm = 0;
-            int estadoBOOLlev = 0;
-            int estadoBOOLcan = 0;
-            int estadoBOOLdev = 0;
-            bool tokenEquipo = true;
+            
 
             String[] locaciones = unPRE.locacion.Split(',');
             String[] equipos = unPRE.equipos.Split(',');
-
-            for (int i = 0; i < equipos.Length; i++)
-            {
-
-                consultaSQL = "SELECT * FROM `equipo` WHERE `id` = '" + equipos[i] + "';";
-                MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
-                if (fila.Read())
-                {
-
-                }
-                else
-                {
-                    tokenEquipo = false;
-                    break;
-                }
+            
+    
+            int token = verificarEstado(unPRE.alumnoRespon, unPRE.profeRespon, unPRE.equipos);
 
 
-
-            }
-
-            if (tokenEquipo == true)
+            if (token == 0)
             {
                 unPRE.prioridad = 0;
-                if (unPRE.estado == "Armado")
-                {
-                    estadoBOOLarm = 1;
-                }
-                if (unPRE.estado == "Levantado")
-                {
-                    estadoBOOLlev = 1;
-                }
-                if (unPRE.estado == "Cancelado")
-                {
-                    estadoBOOLcan = 1;
-                }
-                if (unPRE.estado == "Devuelto")
-                {
-                    estadoBOOLdev = 1;
-                }
-
-
-
-
+                
                 while (idOcupado == id)
                 {
                     id++;
@@ -77,7 +39,7 @@ namespace Persistencia
                         idOcupado = recrearIdPrestamo(filaid);
                     }
                 }
-                consultaSQL = "INSERT INTO `prestamo` VALUES('" + id + "','" + unPRE.fechaSolicitada + "','" + unPRE.cantidadDias + "','" + unPRE.fechaRetiro + "','" + unPRE.horaRetiro + "','" + unPRE.fechaDevolucion + "','" + unPRE.horaDevolucion + "','" + estadoBOOLarm + "','" + estadoBOOLlev + "','" + estadoBOOLcan + "','" + estadoBOOLdev + "','" + unPRE.alumnoRespon + "','" + unPRE.profeRespon + "');";
+                consultaSQL = "INSERT INTO `prestamo` VALUES('" + id + "','" + unPRE.fechaSolicitada + "','" + unPRE.cantidadDias + "','" + unPRE.fechaRetiro + "','" + unPRE.horaRetiro + "','" + unPRE.fechaDevolucion + "','" + unPRE.horaDevolucion + "','" + unPRE.estado + "');";
                 ejecutarSQL(consultaSQL);
                 consultaSQL = "INSERT INTO `prestamodeequipo` VALUES('" + id + "','" + unPRE.prioridad + "','" + unPRE.ejercicio + "');";
                 ejecutarSQL(consultaSQL);
@@ -97,7 +59,7 @@ namespace Persistencia
 
 
             }
-            return tokenEquipo;
+            return token;
         }
 
         public int recrearIdPrestamo(MySqlDataReader fila)
@@ -268,6 +230,52 @@ namespace Persistencia
             return confirmacion;
 
             }
+
+        private int verificarEstado(string alumno, string profe, string equipos)
+        {
+            int token = 0;
+            string consultaSQL = "SELECT * FROM `solicitante` WHERE `solicitante`.`ci` = '" + alumno + "' AND `tipo` = alumno;";
+            MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
+            if (fila.Read())
+            {
+                 consultaSQL = "SELECT * FROM `solicitante` WHERE `solicitante`.`ci` = '" + profe + "' AND `tipo` = profesor;";
+                 fila = ejecutarYdevolver(consultaSQL);
+                if (fila.Read())
+                {
+                    bool tokenEquipo = corroborarEquipos(equipos);
+                    if (tokenEquipo != true)
+                    {
+                        token = 3;
+                    }
+                }else { token = 2; }
+            }else { token = 1; }
+            return token;
+        }
+
+        private bool corroborarEquipos(string equipos)
+        {
+            bool tokenEquipo = true;
+            for (int i = 0; i < equipos.Length; i++)
+            {
+                
+               string consultaSQL = "SELECT * FROM `equipo` WHERE `id` = '" + equipos[i] + "';";
+                MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
+                if (fila.Read())
+                {
+
+                }
+                else
+                {
+                   tokenEquipo = false;
+                    break;
+                }
+            }
+            return tokenEquipo;
+
+        }
+
+
+
     }
 }
 

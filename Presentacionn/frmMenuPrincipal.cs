@@ -150,7 +150,7 @@ namespace Presentacionn
         }
 
         private Form formActivo = null;
-        private void rellenarPanel1(Form formHijo)
+        public void rellenarPanel1(Form formHijo)
         {
             if (formActivo!=null)
            {
@@ -166,7 +166,7 @@ namespace Presentacionn
         }
 
         private Form formActivo2 = null;
-        private void rellenarPanel2(Form formHijo2)
+        public void rellenarPanel2(Form formHijo2)
         {
             if (formActivo2 != null)
             {
@@ -195,6 +195,7 @@ namespace Presentacionn
         {
 
         }
+        
 
         private void button1_Click_1(object sender, EventArgs e)
         {
