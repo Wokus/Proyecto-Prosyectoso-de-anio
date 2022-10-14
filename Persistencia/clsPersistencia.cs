@@ -17,7 +17,7 @@ namespace Persistencia
 
         public void AbrirConexion()
         {
-            miConexion = "server=localhost; uid=root ; password= ; database=begonesatan24;";
+            miConexion = "server=localhost; uid=root ; password= ; database=begonesatan27;";
             //"server=localhost; uid=Jesus ; password=Luca1234. ; database=BDprueba;";
             con = new MySqlConnection(miConexion);
             con.Open();
@@ -55,7 +55,7 @@ namespace Persistencia
         }
         public DataTable listarAlgo(string consultaSQL)
         {
-            MySqlDataAdapter listado = new MySqlDataAdapter(consultaSQL, "server=localhost; uid=root ; password= ; database=begonesatan24;");
+            MySqlDataAdapter listado = new MySqlDataAdapter(consultaSQL, "server=localhost; uid=root ; password= ; database=begonesatan27;");
 
             DataTable dt = new DataTable();
 

@@ -47,7 +47,7 @@
             this.cbxTipo.Name = "cbxTipo";
             this.cbxTipo.Size = new System.Drawing.Size(121, 21);
             this.cbxTipo.TabIndex = 0;
-            this.cbxTipo.Text = "Tipos de Prestamo";
+            this.cbxTipo.Text = "Tipos de prestamo";
             this.cbxTipo.SelectedIndexChanged += new System.EventHandler(this.cbxListadosPrestamos_SelectedIndexChanged);
             // 
             // dgvListadoEquipo
@@ -104,10 +104,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox cbxTipo;
         private System.Windows.Forms.DataGridView dgvListadoEquipo;
         private System.Windows.Forms.ComboBox cbxFecha;
         private System.Windows.Forms.ComboBox cbxEstado;
+        private System.Windows.Forms.ComboBox cbxTipo;
     }
 }
