@@ -14,7 +14,7 @@ namespace Persistencia
 
         public DataTable listarPrestamo()
         {
-            String consultaSQL = "SELECT * FROM prestamo, prestamoDeEquipo, prestamoDeEspacio, prestamoEspontaneo;";
+            String consultaSQL = "SELECT * FROM prestamo;";
 
             DataTable dt = listarAlgo(consultaSQL);
 

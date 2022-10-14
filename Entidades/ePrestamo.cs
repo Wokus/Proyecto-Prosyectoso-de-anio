@@ -19,6 +19,7 @@ namespace Entidades
         public String estado { get; set; }
         public String alumnoRespon { get; set; }
         public String profeRespon { get; set; }
+        public int prioridad { get; set; }
 
     }
 }
