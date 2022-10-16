@@ -210,5 +210,10 @@ namespace Presentacionn
         {
 
         }
+
+        private void frmMenuPrincipal_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
