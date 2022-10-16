@@ -94,7 +94,6 @@
             // cbxListados
             // 
             this.cbxListados.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxListados.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxListados.FormattingEnabled = true;
             this.cbxListados.Items.AddRange(new object[] {
             "Inventario",
@@ -104,11 +103,11 @@
             this.cbxListados.Name = "cbxListados";
             this.cbxListados.Size = new System.Drawing.Size(121, 21);
             this.cbxListados.TabIndex = 4;
+            this.cbxListados.Text = "Listado";
             this.cbxListados.SelectedIndexChanged += new System.EventHandler(this.cbxListados_SelectedIndexChanged);
             // 
             // cbxAcciones
             // 
-            this.cbxAcciones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxAcciones.FormattingEnabled = true;
             this.cbxAcciones.Items.AddRange(new object[] {
             "Agregar Equipo",
@@ -127,6 +126,7 @@
             this.cbxAcciones.Name = "cbxAcciones";
             this.cbxAcciones.Size = new System.Drawing.Size(121, 21);
             this.cbxAcciones.TabIndex = 3;
+            this.cbxAcciones.Text = "Acciones";
             this.cbxAcciones.SelectedIndexChanged += new System.EventHandler(this.cbxAcciones_SelectedIndexChanged);
             // 
             // pnl3
@@ -169,7 +169,6 @@
             this.Controls.Add(this.pnl1);
             this.Name = "frmMenuPrincipal";
             this.Text = "frmMenuPrincipal";
-            this.Load += new System.EventHandler(this.frmMenuPrincipal_Load);
             this.pnl1.ResumeLayout(false);
             this.pnl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sc1)).EndInit();

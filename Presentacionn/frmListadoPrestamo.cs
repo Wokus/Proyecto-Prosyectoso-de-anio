@@ -65,10 +65,5 @@ namespace Presentacionn
         {
 
         }
-
-        private void cbxPrioridad_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
