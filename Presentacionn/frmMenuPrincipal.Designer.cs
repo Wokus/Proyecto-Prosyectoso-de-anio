@@ -95,6 +95,7 @@
             // 
             this.cbxListados.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxListados.FormattingEnabled = true;
+            this.cbxListados.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.cbxListados.Items.AddRange(new object[] {
             "Inventario",
             "Prestamos",
@@ -169,6 +170,7 @@
             this.Controls.Add(this.pnl1);
             this.Name = "frmMenuPrincipal";
             this.Text = "frmMenuPrincipal";
+            this.Load += new System.EventHandler(this.frmMenuPrincipal_Load);
             this.pnl1.ResumeLayout(false);
             this.pnl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sc1)).EndInit();
