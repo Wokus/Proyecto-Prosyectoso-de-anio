@@ -39,19 +39,33 @@ namespace Presentacionn
                 unPRE.transporte = txtTransporte.Text;
                 unPRE.locacion = txtLocacion.Text;
                 unPRE.equipos = mtxtEquipoID.Text;
-                unPRE.horaDevolucion = "Sex:ooo";
+                unPRE.horaDevolucion = "S:o";
                 unPRE.cantidadDias = 69;
 
                 dPrestamoEquipo unDPRE = new dPrestamoEquipo();
-                bool tokenEquipo = unDPRE.altaPrestamo(unPRE);
+                int token = unDPRE.altaPrestamo(unPRE);
 
-                if (tokenEquipo == true)
+                if (token == 0)
                 {
                     MessageBox.Show("Prestamo agregado de manera exitosa");
 
 
                 }
-                else { MessageBox.Show("Equipo no exitente"); }
+                if (token == 1){
+                    MessageBox.Show("Alumno no existente");
+                    
+                    
+                }
+                if (token == 2)
+                {
+                    MessageBox.Show("Profesor no existente");
+                }
+                if (token == 3)
+                {
+                    MessageBox.Show("Equipo no existente");
+                }
+             
+
             }
 
 

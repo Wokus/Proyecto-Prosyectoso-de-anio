@@ -32,6 +32,7 @@
             this.dgvListadoEquipo = new System.Windows.Forms.DataGridView();
             this.cbxFecha = new System.Windows.Forms.ComboBox();
             this.cbxEstado = new System.Windows.Forms.ComboBox();
+            this.cbxPrioridad = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoEquipo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,12 +80,27 @@
             "Levantado",
             "Cancelado",
             "Devuelto "});
-            this.cbxEstado.Location = new System.Drawing.Point(188, 12);
+            this.cbxEstado.Location = new System.Drawing.Point(139, 12);
             this.cbxEstado.Name = "cbxEstado";
-            this.cbxEstado.Size = new System.Drawing.Size(121, 21);
+            this.cbxEstado.Size = new System.Drawing.Size(105, 21);
             this.cbxEstado.TabIndex = 3;
             this.cbxEstado.Text = "Estado";
             this.cbxEstado.SelectedIndexChanged += new System.EventHandler(this.cbxEstado_SelectedIndexChanged);
+            // 
+            // cbxPrioridad
+            // 
+            this.cbxPrioridad.FormattingEnabled = true;
+            this.cbxPrioridad.Items.AddRange(new object[] {
+            "Armado",
+            "Levantado",
+            "Cancelado",
+            "Devuelto "});
+            this.cbxPrioridad.Location = new System.Drawing.Point(253, 12);
+            this.cbxPrioridad.Name = "cbxPrioridad";
+            this.cbxPrioridad.Size = new System.Drawing.Size(106, 21);
+            this.cbxPrioridad.TabIndex = 4;
+            this.cbxPrioridad.Text = "Prioridad";
+            this.cbxPrioridad.SelectedIndexChanged += new System.EventHandler(this.cbxPrioridad_SelectedIndexChanged);
             // 
             // frmListadoPrestamo
             // 
@@ -92,6 +108,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(228)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(494, 508);
+            this.Controls.Add(this.cbxPrioridad);
             this.Controls.Add(this.cbxEstado);
             this.Controls.Add(this.cbxFecha);
             this.Controls.Add(this.dgvListadoEquipo);
@@ -108,5 +125,6 @@
         private System.Windows.Forms.ComboBox cbxFecha;
         private System.Windows.Forms.ComboBox cbxEstado;
         private System.Windows.Forms.ComboBox cbxTipo;
+        private System.Windows.Forms.ComboBox cbxPrioridad;
     }
 }

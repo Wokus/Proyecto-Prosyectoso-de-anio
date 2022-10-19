@@ -38,15 +38,15 @@
             // dgvResponsable
             // 
             this.dgvResponsable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvResponsable.Location = new System.Drawing.Point(12, 64);
+            this.dgvResponsable.Location = new System.Drawing.Point(12, 39);
             this.dgvResponsable.Name = "dgvResponsable";
-            this.dgvResponsable.Size = new System.Drawing.Size(470, 419);
+            this.dgvResponsable.Size = new System.Drawing.Size(474, 457);
             this.dgvResponsable.TabIndex = 2;
             // 
             // chbRotura
             // 
             this.chbRotura.AutoSize = true;
-            this.chbRotura.Location = new System.Drawing.Point(376, 22);
+            this.chbRotura.Location = new System.Drawing.Point(391, 16);
             this.chbRotura.Name = "chbRotura";
             this.chbRotura.Size = new System.Drawing.Size(95, 17);
             this.chbRotura.TabIndex = 3;
@@ -56,7 +56,7 @@
             // chbAtrasado
             // 
             this.chbAtrasado.AutoSize = true;
-            this.chbAtrasado.Location = new System.Drawing.Point(250, 22);
+            this.chbAtrasado.Location = new System.Drawing.Point(265, 16);
             this.chbAtrasado.Name = "chbAtrasado";
             this.chbAtrasado.Size = new System.Drawing.Size(120, 17);
             this.chbAtrasado.TabIndex = 4;
@@ -69,7 +69,7 @@
             this.cbxTipo.Items.AddRange(new object[] {
             "Profesor",
             "Alumno"});
-            this.cbxTipo.Location = new System.Drawing.Point(22, 22);
+            this.cbxTipo.Location = new System.Drawing.Point(12, 12);
             this.cbxTipo.Name = "cbxTipo";
             this.cbxTipo.Size = new System.Drawing.Size(121, 21);
             this.cbxTipo.TabIndex = 5;
@@ -80,6 +80,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(228)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(494, 508);
             this.Controls.Add(this.cbxTipo);
             this.Controls.Add(this.chbAtrasado);

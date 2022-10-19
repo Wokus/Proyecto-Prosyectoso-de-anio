@@ -11,13 +11,13 @@ namespace Dominio
 {
     public class dPrestamoEquipo
     {
-        public bool altaPrestamo(ePrestamoEquipo unPRE)
+        public int altaPrestamo(ePrestamoEquipo unPRE)
         {
             pPrestamoEquipo unPPRE = new pPrestamoEquipo();
 
 
-            bool tokenEquipo = unPPRE.altaPrestamo(unPRE);
-            return tokenEquipo;
+            int token = unPPRE.altaPrestamo(unPRE);
+            return token;
         }
 
         public int bajaPrestamoDeEquipo(int idPrestamo)
