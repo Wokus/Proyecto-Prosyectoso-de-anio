@@ -95,6 +95,7 @@
             // 
             this.cbxListados.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxListados.FormattingEnabled = true;
+            this.cbxListados.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.cbxListados.Items.AddRange(new object[] {
             "Inventario",
             "Prestamos",
