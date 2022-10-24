@@ -13,7 +13,7 @@ namespace Persistencia
     {
         public bool altaEquipo(eEquipo unPE)
         {
-            int stock = 1;
+            
             int id = 0;
             int idOcupado = 0;
             bool NStoken = false;
@@ -21,25 +21,11 @@ namespace Persistencia
             int tipoBOOLfot = 0;
             int tipoBOOLson = 0;
             int tipoBOOLotr = 0;
-            if (unPE.tipo == "Informatica")
-            {
-                tipoBOOLinf = 1;
-            }
-            if (unPE.tipo == "Fotografia")
-            {
-                tipoBOOLfot = 1;
-            }
-            if (unPE.tipo == "Sonido")
-            {
-                tipoBOOLson = 1;
-            }
-            if (unPE.tipo == "Otros")
-            {
-                tipoBOOLotr = 1;
-            }
+            String consultaSQL;
+           
             if (unPE.numeroSerie != null)
             {
-                string consultaSQL = "SELECT * FROM `equipo` WHERE `equipo`.`numero_de_serie` = '" + unPE.numeroSerie + "'; ";
+                 consultaSQL = "SELECT * FROM `equipo` WHERE `equipo`.`numero_de_serie` = '" + unPE.numeroSerie + "'; ";
                 MySqlDataReader filaNS = ejecutarYdevolver(consultaSQL);
                 if (filaNS.Read())
                 {
@@ -52,28 +38,9 @@ namespace Persistencia
 
             if (NStoken == true)
             {
-                while (idOcupado == id)
-                {
-                    id++;
-                    string consultaSQLid = "SELECT * FROM `equipo` WHERE `equipo`.`id` = '" + id + "'; ";
-                    MySqlDataReader filaid = ejecutarYdevolver(consultaSQLid);
-                    if (filaid.Read())
-                    {
-                        idOcupado = recrearIdEquipo(filaid);
-                    }
-                }
+                id = calculoID();
 
-
-                string consultaSQL = "SELECT COUNT(*) FROM `equipo` WHERE `nombre` = '" + unPE.nombre + "' AND `precio` = '" + unPE.precio + "'; ";
-                MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
-                if (fila.Read())
-                {
-                    stock = fila.GetInt32("COUNT(*)") + 1;
-                    consultaSQL = "UPDATE `equipo` SET `stock` = '" + stock + "' WHERE `equipo`.`nombre` = '" + unPE.nombre + "' AND `equipo`.`precio` = '" + unPE.precio + "';";
-                    ejecutarSQL(consultaSQL);
-
-                }
-                else { stock = 1; }
+               int stock = calculoStock(unPE.nombre, unPE.precio);
 
                 consultaSQL = "INSERT INTO `equipo` VALUES('" + id + "','" + unPE.nombre + "','" + unPE.numeroSerie + "','" + unPE.estado + "','" + unPE.fechaIngreso + "','" + unPE.asegurado + "','" + unPE.precio + "','" + tipoBOOLfot + "','" + tipoBOOLson + "','" + tipoBOOLinf + "','" + tipoBOOLotr + "','" + stock + "','" + unPE.observacion + "');";
                 ejecutarSQL(consultaSQL);
@@ -121,8 +88,40 @@ namespace Persistencia
 
             return dt;
         }
+        public int calculoID()
+        {
+            int id = 0;
+            int idOcupado = 0;
+            while (idOcupado == id)
+            {
+                id++;
+                string consultaSQLid = "SELECT * FROM `equipo` WHERE `equipo`.`id` = '" + id + "'; ";
+                MySqlDataReader filaid = ejecutarYdevolver(consultaSQLid);
+                if (filaid.Read())
+                {
+                    idOcupado = recrearIdEquipo(filaid);
+                }
+            }
+            return id;
 
+        }
+        public int calculoStock(String nombre, String precio)
+        {
+            int stock;
+            string consultaSQL = "SELECT COUNT(*) FROM `equipo` WHERE `nombre` = '" + nombre + "' AND `precio` = '" + precio + "'; ";
+            MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
+            if (fila.Read())
+            {
+                
+                stock = fila.GetInt32("COUNT(*)") + 1;
+                consultaSQL = "UPDATE `equipo` SET `stock` = '" + stock + "' WHERE `equipo`.`nombre` = '" + nombre + "' AND `equipo`.`precio` = '" + precio + "';";
+                ejecutarSQL(consultaSQL);
 
+            }
+            else { stock = 1; }
+            return stock;
+        }
+        
 
     }
 }

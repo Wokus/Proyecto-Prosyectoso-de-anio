@@ -17,8 +17,9 @@ namespace Entidades
         public String fechaDevolucion { get; set; }
         public String horaDevolucion { get; set; }
         public String estado { get; set; }
-        public String alumnoRespon { get; set; }
-        public String profeRespon { get; set; }
+        
+        public eResponsable alumnoResponsable { get; set; }
+        public eResponsable profeResponsable { get; set; }
         public int prioridad { get; set; }
 
     }

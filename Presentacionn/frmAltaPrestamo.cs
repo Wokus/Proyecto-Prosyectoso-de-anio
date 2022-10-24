@@ -28,8 +28,12 @@ namespace Presentacionn
 
             if (cbxTipoPrestamo.Text == "De equipo(Formales)")
             {
-                unPRE.alumnoRespon = mtxtAlumno.Text;
-                unPRE.profeRespon = mtxtProfesor.Text;
+                eResponsable alumno = new eResponsable();
+                eResponsable profe = new eResponsable();
+                alumno.ci = mtxtAlumno.Text;
+                profe.ci = mtxtProfesor.Text;
+                unPRE.alumnoResponsable = alumno;
+                unPRE.profeResponsable = profe;
                 unPRE.fechaSolicitada = mtxtFechaSolicitud.Text;
                 unPRE.fechaRetiro = mtxtFechaRetiro.Text;
                 unPRE.fechaDevolucion = mtxtFechaDevolucion.Text;
@@ -38,7 +42,7 @@ namespace Presentacionn
                 unPRE.ejercicio = txtEjercicio.Text;
                 unPRE.transporte = txtTransporte.Text;
                 unPRE.locacion = txtLocacion.Text;
-                unPRE.equipos = mtxtEquipoID.Text;
+                unPRE.unE.nombre = mtxtEquipoID.Text;
                 unPRE.horaDevolucion = "S:o";
                 unPRE.cantidadDias = 69;
 
@@ -71,33 +75,48 @@ namespace Presentacionn
 
             if (cbxTipoPrestamo.Text == "De espacio")
             {
-                unPRES.alumnoRespon = mtxtAlumno.Text;
-                unPRES.profeRespon = mtxtProfesor.Text;
+                unPRES.alumnoResponsable.ci= mtxtAlumno.Text;
+                unPRES.profeResponsable.ci = mtxtProfesor.Text;
                 unPRES.fechaSolicitada = mtxtFechaSolicitud.Text;
                 unPRES.fechaRetiro = mtxtFechaRetiro.Text;
                 unPRES.fechaDevolucion = mtxtFechaDevolucion.Text;
                 unPRES.horaRetiro = mtxtHoraRetiro.Text;
                 unPRES.estado = cbxEstado.Text;
-                unPRES.numeroEspacio = Int32.Parse(mtxtIDSalon.Text);
+                unPRES.unEs.numeroEspacio= Int32.Parse(mtxtIDSalon.Text);
                 
 
                 unPRES.horaDevolucion = "Sex:ooo";
                 unPRES.cantidadDias = 69;
 
                 dPrestamoEspacio unDPRE = new dPrestamoEspacio();
-                bool tokenEspacio = unDPRE.altaPrestamoEspacio(unPRES);
+                int token = unDPRE.altaPrestamoEspacio(unPRES);
 
-                if (tokenEspacio == true)
+                if (token == 0)
                 {
                     MessageBox.Show("Prestamo agregado de manera exitosa");
+
+
                 }
-                else { MessageBox.Show("Espacio no exitente"); }
+                if (token == 1)
+                {
+                    MessageBox.Show("Alumno no existente");
+
+
+                }
+                if (token == 2)
+                {
+                    MessageBox.Show("Profesor no existente");
+                }
+                if (token == 3)
+                {
+                    MessageBox.Show("Equipo no existente");
+                }
             }
 
             if (cbxTipoPrestamo.Text == "Expontaneo")
             {
-                unPREX.alumnoRespon = mtxtAlumno.Text;
-                unPREX.profeRespon = mtxtProfesor.Text;
+                unPREX.alumnoResponsable.ci = mtxtAlumno.Text;
+                unPREX.profeResponsable.ci = mtxtProfesor.Text;
                 unPREX.fechaSolicitada = mtxtFechaSolicitud.Text;
                 unPREX.fechaRetiro = mtxtFechaRetiro.Text;
                 unPREX.fechaDevolucion = mtxtFechaDevolucion.Text;
@@ -109,13 +128,28 @@ namespace Presentacionn
                 unPREX.idEquipo = mtxtEquipoID.Text; 
 
                 dPrestamoExpontaneo unDPREX = new dPrestamoExpontaneo();
-                bool tokenEspacio = unDPREX.altaPrestamoEspacio(unPREX);
+                int token = unDPREX.altaPrestamoEspacio(unPREX);
 
-                if (tokenEspacio == true)
+                if (token == 0)
                 {
                     MessageBox.Show("Prestamo agregado de manera exitosa");
+
+
                 }
-                else { MessageBox.Show("Espacio no exitente"); }
+                if (token == 1)
+                {
+                    MessageBox.Show("Alumno no existente");
+
+
+                }
+                if (token == 2)
+                {
+                    MessageBox.Show("Profesor no existente");
+                }
+                if (token == 3)
+                {
+                    MessageBox.Show("Equipo no existente");
+                }
             }
 
 

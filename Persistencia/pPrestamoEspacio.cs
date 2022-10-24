@@ -9,79 +9,40 @@ using System.Data;
 
 namespace Persistencia
 {
-    public class pPrestamoEspacio : clsPersistencia
+    public class pPrestamoEspacio : pPrestamo
     {
-        public bool altaPrestamoEspacio(ePrestamoEspacio unPRE)
+        public int altaPrestamoEspacio(ePrestamoEspacio unPRES)
         {
             string consultaSQL;
-            int id = 0;
-            int idOcupado = 0;
-            int estadoBOOLarm = 0;
-            int estadoBOOLlev = 0;
-            int estadoBOOLcan = 0;
-            int estadoBOOLdev = 0;
-            bool tokenEspacio = true;
 
-            consultaSQL = "SELECT * FROM `espacio` WHERE `nro` = '" + unPRE.numeroEspacio + "';";
-            MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
-            if (fila.Read())
+            int token = verificarEstado(unPRES.alumnoResponsable.ci, unPRES.profeResponsable.ci , unPRES.unEs.numeroEspacio);
+          
+            if (token == 0)
             {
+                int id = calculoDeId();
 
-            }
-            else
-            {
-                tokenEspacio = false;
-                
-            }
-
-            if (tokenEspacio == true)
-            {
-
-                if (unPRE.estado == "Armado")
-                {
-                    estadoBOOLarm = 1;
-                }
-                if (unPRE.estado == "Levantado")
-                {
-                    estadoBOOLlev = 1;
-                }
-                if (unPRE.estado == "Cancelado")
-                {
-                    estadoBOOLcan = 1;
-                }
-                if (unPRE.estado == "Devuelto")
-                {
-                    estadoBOOLdev = 1;
-                }
-                while (idOcupado == id)
-                {
-                    id++;
-                    consultaSQL = "SELECT * FROM `prestamo` WHERE `prestamo`.`id` = '" + id + "'; ";
-                    MySqlDataReader filaid = ejecutarYdevolver(consultaSQL);
-                    if (filaid.Read())
-                    {
-                        idOcupado = recrearIdPrestamo(filaid);
-                    }
-                }
-                consultaSQL = "INSERT INTO `prestamo` VALUES('" + id + "','" + unPRE.fechaSolicitada + "','" + unPRE.cantidadDias + "','" + unPRE.fechaRetiro + "','" + unPRE.horaRetiro + "','" + unPRE.fechaDevolucion + "','" + unPRE.horaDevolucion + "','" + estadoBOOLarm + "','" + estadoBOOLlev + "','" + estadoBOOLcan + "','" + estadoBOOLdev + "','" + unPRE.alumnoRespon + "','" + unPRE.profeRespon + "');";
+                consultaSQL = "INSERT INTO `prestamo` VALUES('" + id + "','" + unPRES.fechaSolicitada + "','" + unPRES.cantidadDias + "','" + unPRES.fechaRetiro + "','" + unPRES.horaRetiro + "','" + unPRES.fechaDevolucion + "','" + unPRES.horaDevolucion + "','" + unPRES.estado + "','" + unPRES.prioridad + "');";
                 ejecutarSQL(consultaSQL);
+
+                if (unPRES.alumnoResponsable.ci != null)
+                {
+                    consultaSQL = "INSERT INTO realiza VALUES (" + unPRES.alumnoResponsable.ci + "," + unPRES.id + ");";
+                    ejecutarSQL(consultaSQL);
+                }
+
+                consultaSQL = "INSERT INTO profesorPrestamo VALUES (" + unPRES.profeResponsable.ci + "," + unPRES.id + ");";
+                ejecutarSQL(consultaSQL);
+
                 consultaSQL = "INSERT INTO `prestamodeespacio` VALUES('" + id + "');";
                 ejecutarSQL(consultaSQL);
-                consultaSQL = "INSERT INTO `obtieneespaciosprestamodeespacio` (`id_PrestamoDeEspacio`, `nro_Espacio`) VALUES('" + id + "','" + unPRE.numeroEspacio + "');";
+                consultaSQL = "INSERT INTO `obtieneespaciosprestamodeespacio` (`id_PrestamoDeEspacio`, `nro_Espacio`) VALUES('" + id + "','" + unPRES.unEs.numeroEspacio + "');";
                 ejecutarSQL(consultaSQL);
 
-
-
             }
-            return tokenEspacio;
+            return token;
 
 
 
-        }
-        public int recrearIdPrestamo(MySqlDataReader fila)
-        {
-            int id = fila.GetInt32("id");
-            return id;
         }
 
         public DataTable listarPrestamoDeEspacio()
@@ -98,69 +59,119 @@ namespace Persistencia
 
             string consultaSQL = "DELETE FROM prestamoDeEspacio WHERE prestamoDeEspacio.id_Prestamo = " + idPrestamo + " ;";
             ejecutarSQL(consultaSQL);
+
             return idPrestamo;
 
         }
 
-        public bool modificacionPrestamo(ePrestamoEspacio unEPES, String IdPrestamo)
+        public int modificacionPrestamo(ePrestamoEspacio unPRES)
         {
 
+
+            int token = 69;
             string consultaSQL;
             string estado = "ICKKCK";
-            bool tokenEquipo = true;
 
-            if (tokenEquipo == true)
+
+
+            int existencia = corroborarExistencia(unPRES.id, "espa");
+            if (existencia == 2)
             {
-                if (unEPES.estado == "Armado")
+                 token = verificarEstado(unPRES.alumnoResponsable.ci, unPRES.profeResponsable.ci, unPRES.unEs.numeroEspacio);
+                if (token == 0)
                 {
-                    estado = "Armado";
+                    //Tirar abajo FK start
+                    string consultaFK = "ALTER TABLE prestamoDeEspacio DROP FOREIGN KEY fK_prestamoDeEspacio_prestamo;";
+                    ejecutarSQL(consultaFK);
+
+                    consultaFK = "ALTER TABLE obtieneEspaciosPrestamoDeEspacio DROP FOREIGN KEY fK_obtieneEspaciosPrestamoDeEspacio_prestamoDeEspacio;";
+                    ejecutarSQL(consultaFK);
+
+                    consultaFK = "ALTER TABLE obtieneEspaciosPrestamoDeEspacio DROP FOREIGN KEY fK_obtieneEspaciosPrestamoDeEspacio_espacio;";
+                    ejecutarSQL(consultaFK);
+                    //Tirar abajo FK final
+                    string consultaSQL2 = "UPDATE prestamo SET fechaSolicitada =" + unPRES.fechaSolicitada + ", cantidadDias =" + unPRES.cantidadDias
+                             + ", fechaRetiro = " + unPRES.fechaRetiro + ", horaRetiro = " + unPRES.horaRetiro + ", fechaDevolucion = " + unPRES.horaDevolucion
+                             + ", estado =" + estado + "  WHERE prestamo.id = " + unPRES.id + " ;";
+                    ejecutarSQL(consultaSQL2);
+
+                    consultaSQL = "UPDATE prestamodeespacio SET id_Prestamo =" + unPRES.id +"  WHERE prestamo.id = " + " ;";
+                    ejecutarSQL(consultaSQL);
+
+                    consultaSQL2 = "UPDATE obtieneEspaciosPrestamoDeEspacio SET nro_Espacio = " + unPRES.unEs.numeroEspacio
+                    + " WHERE prestamoDeEspacio.id_PrestamoDeEspacio = " + unPRES.id + " ;";
+                    ejecutarSQL(consultaSQL2);
+
+                    bool tokenPrestamoAlumno = corroborarPrestamoConAlumno(unPRES.id);
+
+                    if (tokenPrestamoAlumno == true)
+                    {
+                        consultaSQL2 = "UPDATE realiza SET ci_Solicitante = " + unPRES.alumnoResponsable.ci + " WHERE realiza.id_Prestamo = " + unPRES.id + " ;";
+                        ejecutarSQL(consultaSQL2);
+                    }
+                    else
+                    {
+                        consultaSQL = "INSERT INTO `realiza` VALUES('" + unPRES.alumnoResponsable + "','" + unPRES.id + "');";
+                    }
+                    consultaSQL2 = "UPDATE profesorprestamo SET ci_Solicitante = " + unPRES.profeResponsable.ci + " WHERE profesorprestamo.id_Prestamo = " + unPRES.id + " ;";
+
+                    //Tirar arriba FK start
+                    consultaFK = "ALTER TABLE prestamoDeEspacio ADD CONSTRAINT fK_prestamoDeEspacio_prestamo FOREIGN KEY (id_Prestamo) REFERENCES prestamo(id);";
+                    ejecutarSQL(consultaFK);
+
+                    consultaFK = "ALTER TABLE obtieneEspaciosPrestamoDeEspacio ADD CONSTRAINT fK_obtieneEspaciosPrestamoDeEspacio_prestamoDeEspacio FOREIGN KEY(id_PrestamoDeEspacio) REFERENCES prestamoDeEspacio(id_Prestamo);";
+                    ejecutarSQL(consultaFK);
+
+                    consultaFK = "ALTER TABLE obtieneEspaciosPrestamoDeEspacio ADD CONSTRAINT fK_obtieneEspaciosPrestamoDeEspacio_espacio FOREIGN KEY(nro_Espacio) REFERENCES espacio(nro);";
+                    ejecutarSQL(consultaFK);
+                    //Tirar arriba FK final
                 }
-                if (unEPES.estado == "Levantado")
-                {
-                    estado = "Levantado";
-                }
-                if (unEPES.estado == "Cancelado")
-                {
-                    estado = "Cancelado";
-                }
-                if (unEPES.estado == "Devuelto")
-                {
-                    estado = "Devuelto";
-                }
+            }
+            return existencia;
+        }
+        private bool verificarEspacio(int numeroEspacio)
+        {
+            bool tokenEspacio = true;
+
+            string consultaSQL = "SELECT * FROM `espacio` WHERE `nro` = '" + numeroEspacio + "';";
+            MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
+            if (fila.Read())
+            {
+
+            }
+            else
+            {
+                tokenEspacio = false;
 
             }
 
-            string consultaFK = "ALTER TABLE prestamoDeEspacio DROP FOREIGN KEY fK_prestamoDeEspacio_prestamo;";
-            ejecutarSQL(consultaFK);
-
-            string consultaSQL2 = "UPDATE prestamo SET fechaSolicitada =" + unEPES.fechaSolicitada + ", cantidadDias =" + unEPES.cantidadDias
-            + ", fechaRetiro = " + unEPES.fechaRetiro + ", horaRetiro = " + unEPES.horaRetiro + ", fechaDevolucion = " + unEPES.horaDevolucion
-            + ", tipo =" + estado + " profesorResponsable = " + unEPES.profeRespon + ", alumnoResponsable = " + unEPES.alumnoRespon + "  WHERE prestamo.id = " + IdPrestamo + " ;";
-            ejecutarSQL(consultaSQL2);
-
-            consultaFK = "ALTER TABLE obtieneEspaciosPrestamoDeEspacio DROP FOREIGN KEY fK_obtieneEspaciosPrestamoDeEspacio_prestamoDeEspacio;";
-            ejecutarSQL(consultaFK);
-
-            consultaFK = "ALTER TABLE obtieneEspaciosPrestamoDeEspacio DROP FOREIGN KEY fK_obtieneEspaciosPrestamoDeEspacio_espacio;";
-            ejecutarSQL(consultaFK);
-
-            consultaSQL2 = "UPDATE obtieneEspaciosPrestamoDeEspacio SET nro_Espacio = " + unEPES.numeroEspacio
-            + " WHERE prestamoDeEspacio.id_PrestamoDeEspacio = " + IdPrestamo + " ;";
-            ejecutarSQL(consultaSQL2);
-
-            consultaFK = "ALTER TABLE prestamoDeEspacio ADD CONSTRAINT fK_prestamoDeEspacio_prestamo FOREIGN KEY (id_Prestamo) REFERENCES prestamo(id);";
-            ejecutarSQL(consultaFK);
-
-            consultaFK = "ALTER TABLE obtieneEspaciosPrestamoDeEspacio ADD CONSTRAINT fK_obtieneEspaciosPrestamoDeEspacio_prestamoDeEspacio FOREIGN KEY(id_PrestamoDeEspacio) REFERENCES prestamoDeEspacio(id_Prestamo);";
-            ejecutarSQL(consultaFK);
-
-            consultaFK = "ALTER TABLE obtieneEspaciosPrestamoDeEspacio ADD CONSTRAINT fK_obtieneEspaciosPrestamoDeEspacio_espacio FOREIGN KEY(nro_Espacio) REFERENCES espacio(nro);";
-            ejecutarSQL(consultaFK);
-
-            bool confirmacion = tokenEquipo;
-            return confirmacion;
-
+            return tokenEspacio;
         }
+        private int verificarEstado(string alumno, string profe, int numeroEspacio)
+        {
+            int token = 0;
+            string consultaSQL = "SELECT * FROM `solicitante` WHERE `solicitante`.`ci` = '" + alumno + "' AND `tipo` = alumno;";
+            MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
+            if (fila.Read())
+            {
+                consultaSQL = "SELECT * FROM `solicitante` WHERE `solicitante`.`ci` = '" + profe + "' AND `tipo` = profesor;";
+                fila = ejecutarYdevolver(consultaSQL);
+                if (fila.Read())
+                {
+                    bool tokenEspacio = verificarEspacio(numeroEspacio);
+                    if (tokenEspacio != true)
+                    {
+                        token = 3;
+                    }
+                }
+                else { token = 2; }
+            }
+            else { token = 1; }
+            return token;
+        }
+
+
+
 
     }
 }

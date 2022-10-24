@@ -20,19 +20,13 @@ namespace Dominio
             return token;
         }
 
-        public int bajaPrestamoDeEquipo(int idPrestamo)
-        {
-            pPrestamoEquipo unPPE = new pPrestamoEquipo();
 
-            return unPPE.bajaPrestamoDeEquipo(idPrestamo);
-        }
-
-        public bool modificacionPrestamo(ePrestamoEquipo unEPE, String IdPrestamo)
+        public int modificacionPrestamo(ePrestamoEquipo unEPE)
         {
 
             pPrestamoEquipo unPPE = new pPrestamoEquipo();
 
-            bool confirmacion = unPPE.modificacionPrestamo(unEPE, IdPrestamo);
+            int confirmacion = unPPE.modificacionPrestamo(unEPE, IdPrestamo);
             return confirmacion;
             
         }

@@ -20,5 +20,11 @@ namespace Dominio
             return unPE.listarPrestamo();
         }
 
+        public int bajaPrestamoDeEquipo(int idPrestamo)
+        {
+            pPrestamo unPP = new pPrestamo();
+
+            return unPP.bajaPrestamo(idPrestamo);
+        }
     }
 }

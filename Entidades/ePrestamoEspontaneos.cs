@@ -9,6 +9,7 @@ namespace Entidades
     public class ePrestamoEspontaneos : ePrestamo
     {
         public  String idEquipo { get;  set; }
+        public eEquipo unE  { get; set; }
 
 
     }

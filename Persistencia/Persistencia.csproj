@@ -50,7 +50,7 @@
     <Compile Include="pPrestamo.cs" />
     <Compile Include="pPrestamoEquipo.cs" />
     <Compile Include="pPrestamoEspacio.cs" />
-    <Compile Include="pPrestamoExpontaneo.cs" />
+    <Compile Include="pPrestamoEspontaneo.cs" />
     <Compile Include="pUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

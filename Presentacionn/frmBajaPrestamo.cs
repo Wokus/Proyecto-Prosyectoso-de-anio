@@ -22,8 +22,8 @@ namespace Presentacionn
         private void btnEliminar_Click(object sender, EventArgs e)
         {
 
-            dPrestamoEquipo unDPE = new dPrestamoEquipo();
-            int idPrestamo = unDPE.bajaPrestamoDeEquipo(Convert.ToInt16(txtIdPrestamoBaja.Text));
+            dPrestamo unDP = new dPrestamo();
+            int idPrestamo = unDP.bajaPrestamoDeEquipo(Convert.ToInt16(txtIdPrestamoBaja.Text));
 
             if (idPrestamo != 0)
             {
