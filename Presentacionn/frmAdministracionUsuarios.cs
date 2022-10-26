@@ -30,10 +30,10 @@ namespace Presentacionn
             eUsuario elAdmin = unDU.altaUsuario(unU);
             if (elAdmin!=null)
             {
-                MessageBox.Show("Nombre de Usuario ya existente");
+                MessageBox.Show("Usuario ya existente");
             }else
             {
-                MessageBox.Show("Usuario creado EXITAntemente");
+                MessageBox.Show("Usuario creado Exitosamente");
             }
         }
         private void btnOkEliminar_Click(object sender, EventArgs e)

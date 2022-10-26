@@ -36,7 +36,7 @@ namespace Persistencia
 
 
             MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
-            while (fila.Read())
+           while (fila.Read())
             {
                 elAdmin = recrearUsuario(fila);
 
