@@ -20,6 +20,7 @@ namespace Presentacionn
         }
         private void btnOK_Click(object sender, EventArgs e)
         {
+            eUsuario elAdmin = null;
             eUsuario unU = new eUsuario(); 
             unU.ci = mtxtUsernameAgregar.Text; 
             unU.password = txtPasswordAgregar.Text; 
@@ -27,14 +28,23 @@ namespace Presentacionn
             unU.apellido = txtApellidoAgregar.Text;
             unU.telefono = mtxtTelefonoAgregar.Text;
             dUsuario unDU = new dUsuario(); 
-            eUsuario elAdmin = unDU.altaUsuario(unU);
-            if (elAdmin!=null)
+            try
             {
-                MessageBox.Show("Nombre de Usuario ya existente");
-            }else
-            {
-                MessageBox.Show("Usuario creado EXITAntemente");
+                elAdmin = unDU.altaUsuario(unU);
+                if (elAdmin != null)
+                {
+                    MessageBox.Show("Nombre de Usuario ya existente");
+                }
+                else
+                {
+                    MessageBox.Show("Usuario creado EXITAntemente");
+                }
             }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
+            
         }
         private void btnOkEliminar_Click(object sender, EventArgs e)
         {
@@ -51,17 +61,17 @@ namespace Presentacionn
 
             }
         }
-        private void frmAdministracionUsuarios_Load(object sender, EventArgs e)
-        {
-            dUsuario unDU = new dUsuario();
-            dgvListarUsuario.DataSource = unDU.listarUsuario();
-        }
+        
 
 
         private void tbcUsuarios_Click(object sender, EventArgs e)
         {
             dUsuario unDU = new dUsuario();
+            try
+            {
             dgvListarUsuario.DataSource = unDU.listarUsuario();
+            }
+            catch (Exception error) { MessageBox.Show(error.Message); }
         }
 
         private void btnOkModificar_Click(object sender, EventArgs e)

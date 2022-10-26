@@ -36,6 +36,7 @@
     <Reference Include="MySql.Data, Version=8.0.30.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,14 +45,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="pResponsable.cs" />
-    <Compile Include="clsPersistencia.cs" />
-    <Compile Include="pEquipo.cs" />
-    <Compile Include="pPrestamo.cs" />
-    <Compile Include="pPrestamoEquipo.cs" />
-    <Compile Include="pPrestamoEspacio.cs" />
-    <Compile Include="pPrestamoEspontaneo.cs" />
-    <Compile Include="pUsuario.cs" />
+    <Compile Include="pResponsable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clsPersistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pEquipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pPrestamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pPrestamoEquipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pPrestamoEspacio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pPrestamoEspontaneo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

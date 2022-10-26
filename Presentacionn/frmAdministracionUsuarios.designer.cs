@@ -391,7 +391,7 @@
             this.mtxtTelefonoAgregar.BackColor = System.Drawing.Color.White;
             this.mtxtTelefonoAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtxtTelefonoAgregar.Location = new System.Drawing.Point(177, 274);
-            this.mtxtTelefonoAgregar.Mask = "000000000000";
+            this.mtxtTelefonoAgregar.Mask = "000000000";
             this.mtxtTelefonoAgregar.Name = "mtxtTelefonoAgregar";
             this.mtxtTelefonoAgregar.Size = new System.Drawing.Size(107, 26);
             this.mtxtTelefonoAgregar.TabIndex = 10;
@@ -492,7 +492,6 @@
             this.Controls.Add(this.tbcUsuarios);
             this.Name = "frmAdministracionUsuarios";
             this.Text = "frmAdministracionUsuarios";
-            this.Load += new System.EventHandler(this.frmAdministracionUsuarios_Load);
             this.tbpModificarUsuario.ResumeLayout(false);
             this.tbpModificarUsuario.PerformLayout();
             this.tbpListarUsuario.ResumeLayout(false);
