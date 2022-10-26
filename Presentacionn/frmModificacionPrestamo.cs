@@ -27,8 +27,8 @@ namespace Presentacionn
 
                 ePrestamoEquipo unEPE = new ePrestamoEquipo();
 
-                unEPE.alumnoRespon = mtxtAlumno.Text;
-                unEPE.profeRespon = mtxtProfesor.Text;
+                unEPE.alumnoResponsable.ci = mtxtAlumno.Text;
+                unEPE.profeResponsable.ci = mtxtProfesor.Text;
                 unEPE.fechaSolicitada = mtxtFechaSolicitud.Text;
                 unEPE.fechaRetiro = mtxtFechaRetiro.Text;
                 unEPE.fechaDevolucion = mtxtFechaDevolucion.Text;
@@ -37,36 +37,49 @@ namespace Presentacionn
                 unEPE.ejercicio = txtEjercicio.Text;
                 unEPE.transporte = txtTransporte.Text;
                 unEPE.locacion = txtLocacion.Text;
-                unEPE.equipos = mtxtEquipoID.Text;
+                unEPE.unE.nombre = mtxtEquipoID.Text;
                 unEPE.horaDevolucion = "Sex:ooo";
                 unEPE.cantidadDias = 69;
+                unEPE.id = Convert.ToInt32(mtxtIdPrestamo.Text);
                 //unEPE.idPrestamo = Convert.ToInt16(txtIdPrestamo.Text);
 
                 dPrestamoEquipo unDPE = new dPrestamoEquipo();
-                bool confirmacion = unDPE.modificacionPrestamo(unEPE, mtxtIdPrestamo.Text);
+                int confirmacion = unDPE.modificacionPrestamo(unEPE);
 
-                if(confirmacion == true)
+                if (confirmacion == 0)
                 {
+                    MessageBox.Show("Prestamo modificado de manera exitosa");
 
-                    MessageBox.Show("Se Modifico el Prestamo Correctamente");
 
                 }
-                else
+                if (confirmacion == 1)
                 {
+                    MessageBox.Show("Alumno no existente");
 
-                    MessageBox.Show("No se Modifico el Prestamo Correctamente");
-
-                }
 
                 }
+                if (confirmacion == 2)
+                {
+                    MessageBox.Show("Profesor no existente");
+                }
+                if (confirmacion == 3)
+                {
+                    MessageBox.Show("Equipo no existente");
+                }
+                if (confirmacion == 69)
+                {
+                    MessageBox.Show("Prestamo no existente");
+                }
+            }
 
             if (cbxModificacionPrestamo.Text == "Prestamo de Espacio")
             {
 
                 ePrestamoEspacio unEPES = new ePrestamoEspacio();
 
-                unEPES.alumnoRespon = mtxtAlumno.Text;
-                unEPES.profeRespon = mtxtProfesor.Text;
+                unEPES.alumnoResponsable.ci = mtxtAlumno.Text;
+
+                unEPES.profeResponsable.ci = mtxtProfesor.Text;
                 unEPES.fechaSolicitada = mtxtFechaSolicitud.Text;
                 unEPES.fechaRetiro = mtxtFechaRetiro.Text;
                 unEPES.fechaDevolucion = mtxtFechaDevolucion.Text;
@@ -74,21 +87,28 @@ namespace Presentacionn
                 unEPES.estado = cbxEstado.Text;
                 unEPES.horaDevolucion = "Sex:ooo";
                 unEPES.cantidadDias = 69;
+                unEPES.id = Convert.ToInt32(mtxtIdPrestamo.Text);
 
                 dPrestamoEspacio unDPES = new dPrestamoEspacio();
-                bool confirmacion = unDPES.modificacionPrestamo(unEPES, mtxtIdPrestamo.Text);
+                int token = unDPES.modificacionPrestamo(unEPES);
 
-                if (confirmacion = true)
+                if (token == 0)
                 {
+                    MessageBox.Show("Prestamo modificado de manera exitosa");
 
-                    MessageBox.Show("Se Modifico el Prestamo Correctamente");
 
                 }
-                else
+                if (token == 1)
                 {
-
-                    MessageBox.Show("No se Modifico el Prestamo Correctamente");
-
+                    MessageBox.Show("Alumno no existente");
+                }
+                if (token == 2)
+                {
+                    MessageBox.Show("Profesor no existente");
+                }
+                if (token == 3)
+                {
+                    MessageBox.Show("Equipo no existente");
                 }
 
             }
@@ -98,8 +118,8 @@ namespace Presentacionn
 
                 ePrestamoEspontaneos unEPEX = new ePrestamoEspontaneos();
 
-                unEPEX.alumnoRespon = mtxtAlumno.Text;
-                unEPEX.profeRespon = mtxtProfesor.Text;
+                unEPEX.alumnoResponsable.ci = mtxtAlumno.Text;
+                unEPEX.profeResponsable.ci = mtxtProfesor.Text;
                 unEPEX.fechaSolicitada = mtxtFechaSolicitud.Text;
                 unEPEX.fechaRetiro = mtxtFechaRetiro.Text;
                 unEPEX.fechaDevolucion = mtxtFechaDevolucion.Text;
@@ -107,23 +127,31 @@ namespace Presentacionn
                 unEPEX.estado = cbxEstado.Text;
                 unEPEX.horaDevolucion = "Sex:ooo";
                 unEPEX.cantidadDias = 69;
+                unEPEX.id = Convert.ToInt32(mtxtIdPrestamo.Text);
 
                 dPrestamoExpontaneo unDPEX = new dPrestamoExpontaneo();
-                bool confirmacion = unDPEX.modificacionPrestamo(unEPEX, mtxtIdPrestamo.Text);
+                int token = unDPEX.modificacionPrestamo(unEPEX);
 
-                if (confirmacion = true)
+                if (token == 0)
                 {
+                    MessageBox.Show("Prestamo modificado de manera exitosa");
 
-                    MessageBox.Show("Se Modifico el Prestamo Correctamente");
 
                 }
-                else
+                if (token == 1)
                 {
+                    MessageBox.Show("Alumno no existente");
 
-                    MessageBox.Show("No se Modifico el Prestamo Correctamente");
 
                 }
-
+                if (token == 2)
+                {
+                    MessageBox.Show("Profesor no existente");
+                }
+                if (token == 3)
+                {
+                    MessageBox.Show("Equipo no existente");
+                }
             }
 
         }

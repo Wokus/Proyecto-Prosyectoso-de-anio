@@ -54,7 +54,7 @@ namespace Presentacionn
 
         private void frmAltaResponsable_Load(object sender, EventArgs e)
         {
-         
+           
         }
     }
 }

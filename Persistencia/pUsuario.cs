@@ -32,6 +32,7 @@ namespace Persistencia
         {
             eUsuario elAdmin = new eUsuario();
             elAdmin = null;
+
             string consultaSQL = "SELECT * FROM `usuario` WHERE `usuario`.`ci` = '" + unPU.ci + "';";
 
 
@@ -53,6 +54,9 @@ namespace Persistencia
             }
                 return elAdmin;
         }
+
+
+       
 
         public eUsuario modificarUsuario(eUsuario unPU, String NUAM)
         {
@@ -156,6 +160,7 @@ namespace Persistencia
 
         public DataTable listarUsuario()
         {
+        
             String consultaSQL = "SELECT persona.ci, persona.nombre, persona.apellido, usuario.password, usuario.telefono FROM persona RIGHT JOIN `usuario` ON persona.ci = usuario.ci; ";
 
             DataTable dt = listarAlgo(consultaSQL);

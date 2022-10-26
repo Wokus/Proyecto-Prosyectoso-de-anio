@@ -11,32 +11,29 @@ namespace Dominio
 {
     public class dPrestamoExpontaneo
     {
-        public bool altaPrestamoEspacio(ePrestamoEspontaneos unPRESP)
+        public int altaPrestamoEspacio(ePrestamoEspontaneos unPRESP)
         {
 
-          pPrestamoExpontaneo unPPREX = new pPrestamoExpontaneo();
-            bool tokenEquipo = unPPREX.altaEspacioExpontaneo(unPRESP);
+          pPrestamoEspontaneo unPPREX = new pPrestamoEspontaneo();
+            int token = unPPREX.altaEspacioExpontaneo(unPRESP);
 
-            return tokenEquipo;
-            
-
-
-            
+            return token;
+                       
         }
 
         public int bajaPrestamoEspontaneo(int idPrestamo)
         {
-            pPrestamoExpontaneo unPPEX = new pPrestamoExpontaneo();
+            pPrestamoEspontaneo unPPEX = new pPrestamoEspontaneo();
 
             return unPPEX.bajaPrestamoEspontaneo(idPrestamo);
         }
 
-        public bool modificacionPrestamo(ePrestamoEspontaneos unEPEX, String IdPrestamo)
+        public int modificacionPrestamo(ePrestamoEspontaneos unEPEX)
         {
 
-            pPrestamoExpontaneo unPPEX = new pPrestamoExpontaneo();
+            pPrestamoEspontaneo unPPEX = new pPrestamoEspontaneo();
 
-            bool confirmacion = unPPEX.modificacionPrestamo(unEPEX, IdPrestamo);
+            int confirmacion = unPPEX.modificacionPrestamo(unEPEX);
             return confirmacion;
 
         }
@@ -44,7 +41,7 @@ namespace Dominio
         public DataTable listarPrestamoEspontaneo()
         {
 
-            pPrestamoExpontaneo unPE = new pPrestamoExpontaneo();
+            pPrestamoEspontaneo unPE = new pPrestamoEspontaneo();
 
             return unPE.listarPrestamoEspontaneo();
         }

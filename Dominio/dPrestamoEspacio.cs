@@ -11,12 +11,12 @@ namespace Dominio
 {
     public class dPrestamoEspacio
     {
-        public bool altaPrestamoEspacio(ePrestamoEspacio unPRE)
+        public int altaPrestamoEspacio(ePrestamoEspacio unPRE)
         {
             pPrestamoEspacio unEPRE = new pPrestamoEspacio();
-            bool tokenEspacio = unEPRE.altaPrestamoEspacio(unPRE);
+            int token = unEPRE.altaPrestamoEspacio(unPRE);
 
-            return tokenEspacio;
+            return token;
 
         }
 
@@ -27,12 +27,12 @@ namespace Dominio
             return unPPES.bajaPrestamoDeEspacio(idPrestamo);
         }
 
-        public bool modificacionPrestamo(ePrestamoEspacio unEPES, String IdPrestamo)
+        public int modificacionPrestamo(ePrestamoEspacio unEPES)
         {
 
             pPrestamoEspacio unPPES = new pPrestamoEspacio();
 
-            bool confirmacion = unPPES.modificacionPrestamo(unEPES, IdPrestamo);
+            int confirmacion = unPPES.modificacionPrestamo(unEPES);
             return confirmacion;
 
         }

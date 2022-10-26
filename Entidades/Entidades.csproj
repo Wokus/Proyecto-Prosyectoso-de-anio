@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="eEquipo.cs" />
+    <Compile Include="eEspacio.cs" />
     <Compile Include="ePersona.cs" />
     <Compile Include="ePrestamo.cs" />
     <Compile Include="ePrestamoEquipo.cs" />

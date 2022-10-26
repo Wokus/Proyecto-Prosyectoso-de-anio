@@ -9,39 +9,31 @@ using System.Data;
 
 namespace Persistencia
 {
-    public class pPrestamoEquipo : clsPersistencia
+    public class pPrestamoEquipo : pPrestamo
     {
         public int altaPrestamo(ePrestamoEquipo unPRE)
         {
             string consultaSQL;
-            int id = 0;
+            
             int idOcupado = 0;
             
 
             String[] locaciones = unPRE.locacion.Split(',');
-            String[] equipos = unPRE.equipos.Split(',');
-            
-    
-            int token = verificarEstado(unPRE.alumnoRespon, unPRE.profeRespon, unPRE.equipos);
+            String[] equipos = unPRE.unE.nombre.Split(',');
+
+           
+            int token = verificarEstado(unPRE.alumnoResponsable.ci, unPRE.profeResponsable.ci, equipos);
 
 
             if (token == 0)
             {
                 unPRE.prioridad = 0;
                 
-                while (idOcupado == id)
-                {
-                    id++;
-                    consultaSQL = "SELECT * FROM `prestamo` WHERE `prestamo`.`id` = '" + id + "'; ";
-                    MySqlDataReader filaid = ejecutarYdevolver(consultaSQL);
-                    if (filaid.Read())
-                    {
-                        idOcupado = recrearIdPrestamo(filaid);
-                    }
-                }
-                consultaSQL = "INSERT INTO `prestamo` VALUES('" + id + "','" + unPRE.fechaSolicitada + "','" + unPRE.cantidadDias + "','" + unPRE.fechaRetiro + "','" + unPRE.horaRetiro + "','" + unPRE.fechaDevolucion + "','" + unPRE.horaDevolucion + "','" + unPRE.estado + "');";
+                int id = calculoDeId();
+                
+                consultaSQL = "INSERT INTO `prestamo` VALUES('" + id + "','" + unPRE.fechaSolicitada + "','" + unPRE.cantidadDias + "','" + unPRE.fechaRetiro + "','" + unPRE.horaRetiro + "','" + unPRE.fechaDevolucion + "','" + unPRE.horaDevolucion + "','" + unPRE.estado + "','" + unPRE.prioridad + "');";
                 ejecutarSQL(consultaSQL);
-                consultaSQL = "INSERT INTO `prestamodeequipo` VALUES('" + id + "','" + unPRE.prioridad + "','" + unPRE.ejercicio + "');";
+                consultaSQL = "INSERT INTO `prestamodeequipo` VALUES('" + id + "','" + unPRE.ejercicio + "','" + unPRE.transporte + "');";  
                 ejecutarSQL(consultaSQL);
 
                 for (int i = 0; i < locaciones.Length; i++)
@@ -55,19 +47,23 @@ namespace Persistencia
                     consultaSQL = "INSERT INTO `tiene` VALUES('" + id + "','" + equipos[i] + "');";
                     ejecutarSQL(consultaSQL);
                 }
+                if (unPRE.alumnoResponsable.ci != null)
+                {
+                    consultaSQL = "INSERT INTO realiza VALUES (" + unPRE.alumnoResponsable.ci + "," + unPRE.id + ");";
+                    ejecutarSQL(consultaSQL);
+                }
+               
+                consultaSQL = "INSERT INTO profesorPrestamo VALUES (" + unPRE.profeResponsable.ci + "," + unPRE.id + ");";
+                ejecutarSQL(consultaSQL);
 
+
+               
 
 
             }
             return token;
         }
-
-        public int recrearIdPrestamo(MySqlDataReader fila)
-        {
-            int id = fila.GetInt32("id");
-            return id;
-        }
-
+       
         public DataTable listarPrestamoDeEquipo()
         {
             String consultaSQL = "SELECT * FROM prestamoDeEquipo INNER JOIN prestamo ON prestamoDeEquipo.id_Prestamo=prestamo.id;";
@@ -77,161 +73,81 @@ namespace Persistencia
             return dt;
         }
 
-        public int bajaPrestamoDeEquipo(int idPrestamo)
+        public int modificacionPrestamo(ePrestamoEquipo unPRE, String IdPrestamo)
         {
-            int id1 = 0;
-            int id2 = 0;
-            int id3 = 0;
-            int id5 = 0;
-            string consultaSQL2;
-            string consultaSQL = "SELECT * FROM prestamoDeEquipo WHERE prestamoDeEquipo.id_Prestamo = " + idPrestamo + ";";
-            MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
-            while (fila.Read())
-            {
-
-                id1 = (idPrestamo);
-                id1 = recrearIdPrestamo(fila);
-
-            }
-            if (id1 != 0)
-            {
-
-                consultaSQL2 = "DELETE FROM prestamoDeEquipo WHERE prestamoDeEquipo.id_Prestamo = " + idPrestamo + " ;";
-                ejecutarSQL(consultaSQL);
-
-            }
-
-            consultaSQL = "SELECT * FROM prestamoDeEspacio WHERE prestamoDeEspacio.id_Prestamo = " + idPrestamo + ";";
-            MySqlDataReader fila2 = ejecutarYdevolver(consultaSQL);
-            while (fila2.Read())
-            {
-
-                id2 = (idPrestamo);
-                id2 = recrearIdPrestamo(fila2);
-
-            }
-            if (id2 != 0)
-            {
-
-                consultaSQL2 = "DELETE FROM prestamoDeEspacio WHERE prestamoDeEspacio.id_Prestamo = " + idPrestamo + ";";
-                ejecutarSQL(consultaSQL2);
-
-            }
-
-            consultaSQL = "SELECT * FROM prestamoEspontaneo WHERE prestamoEspontaneo.id_Prestamo = " + idPrestamo + ";";
-            MySqlDataReader fila3 = ejecutarYdevolver(consultaSQL);
-            while (fila3.Read())
-            {
-
-                id3 = (idPrestamo);
-                id3 = recrearIdPrestamo(fila3);
-
-            }
-            if (id3 != 0)
-            {
-
-                consultaSQL2 = "DELETE FROM prestamoEspontaneo WHERE prestamoEspontaneo.id_Prestamo = " + idPrestamo + ";";
-                ejecutarSQL(consultaSQL2);
-                
-            }
-
-            consultaSQL = "SELECT * FROM prestamo WHERE prestamo.id = " + idPrestamo + ";";
-            MySqlDataReader fila5 = ejecutarYdevolver(consultaSQL);
-            while (fila5.Read())
-            {
-
-                id5 = (idPrestamo);
-                id5 = recrearIdPrestamo(fila5);
-
-            }
-            if (id5 != 0)
-            {
-
-                consultaSQL2 = "DELETE FROM prestamo WHERE prestamo.id_Prestamo = " + idPrestamo + ";";
-                ejecutarSQL(consultaSQL2);
-
-            }
-            
-            return idPrestamo;
-        }
-
-        public bool modificacionPrestamo(ePrestamoEquipo unEPE, String IdPrestamo)
-        {
-
+            int token = 69;
             string consultaSQL;
             string estado = "ICKKCK";
-            bool tokenEquipo = true;
-
-            String[] locaciones = unEPE.locacion.Split(',');
-            String[] equipos = unEPE.equipos.Split(',');
-
-            for (int i = 0; i < equipos.Length; i++)
+            int existencia = corroborarExistencia(unPRE.id,"equi");
+            if (existencia == 1 )
             {
+                String[] locaciones = unPRE.locacion.Split(',');
+                String[] equipos = unPRE.unE.nombre.Split(',');
+               token = verificarEstado(unPRE.alumnoResponsable.ci, unPRE.profeResponsable.ci, equipos);
 
-                consultaSQL = "SELECT * FROM `equipo` WHERE `id` = '" + equipos[i] + "';";
-                MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
-                if (fila.Read())
+                if (token == 0)
                 {
+                    //Tirar abajo as FK start
+                    string consultaFK = "ALTER TABLE prestamoDeEquipo DROP FOREIGN KEY fK_prestamoDeEquipo_prestamo;";
+                    ejecutarSQL(consultaFK);
 
-                }
-                else
-                {
-                    tokenEquipo = false;
-                    break;
+                    consultaFK = "ALTER TABLE prestamoDeEquipoLocacion DROP FOREIGN KEY fK_prestamoDeEquipoLocacion_PrestamoDeEquipo;";
+                    ejecutarSQL(consultaFK);
+
+                    //Tirar abajo as FK final
+                    string consultaSQL2 = "UPDATE prestamo SET fechaSolicitada =" + unPRE.fechaSolicitada + ", cantidadDias =" + unPRE.cantidadDias
+                     + ", fechaRetiro = " + unPRE.fechaRetiro + ", horaRetiro = " + unPRE.horaRetiro + ", fechaDevolucion = " + unPRE.horaDevolucion
+                     + ", estado =" + estado + "  WHERE prestamo.id = " + unPRE.id + " ;";
+                    ejecutarSQL(consultaSQL2);
+
+                    consultaSQL2 = "UPDATE prestamoDeEquipo SET prioridad = " + unPRE.prioridad + ", ejercicio = " + unPRE.ejercicio
+                     + " WHERE prestamoDeEquipo.id_Prestamo = " + unPRE.id + " ;";
+                    ejecutarSQL(consultaSQL2);
+
+                    consultaSQL = "DELETE FROM `prestamodeequipolocacion` WHERE prestamodeequipolocacion.id_PrestamoDeEquipo =" + unPRE.id + " ;";
+                    ejecutarSQL(consultaSQL);
+
+                    for (int i = 0; i < locaciones.Length; i++)
+                    {
+                        consultaSQL = "INSERT INTO `prestamodeequipolocacion` VALUES('" + unPRE.id + "','" + locaciones[i] + "');";
+                        ejecutarSQL(consultaSQL);
+                    }
+
+                    consultaSQL = "DELETE FROM `tiene` WHERE tiene.id_PrestamoDeEquipo =" + unPRE.id + " ;";
+                    ejecutarSQL(consultaSQL);
+                    for (int i = 0; i < equipos.Length; i++)
+                    {
+                        consultaSQL = "INSERT INTO `tiene` VALUES('" + unPRE.id + "','" + equipos[i] + "');";
+                        ejecutarSQL(consultaSQL);
+                    }
+
+                    bool tokenPrestamoAlumno = corroborarPrestamoConAlumno(unPRE.id);
+                    if (tokenPrestamoAlumno == true)
+                    {
+                        consultaSQL2 = "UPDATE realiza SET ci_Solicitante = " + unPRE.alumnoResponsable.ci + " WHERE realiza.id_Prestamo = " + unPRE.id + " ;";
+                        ejecutarSQL(consultaSQL2);
+                    }
+                    else
+                    {
+                        consultaSQL = "INSERT INTO `realiza` VALUES('" + unPRE.alumnoResponsable + "','" + unPRE.id + "');";
+                    }
+                    consultaSQL2 = "UPDATE profesorprestamo SET ci_Solicitante = " + unPRE.profeResponsable.ci + " WHERE profesorprestamo.id_Prestamo = " + unPRE.id + " ;";
+
+                    //Tirar arriba(?) las FK start
+                    consultaFK = "ALTER TABLE prestamoDeEquipo ADD CONSTRAINT fK_prestamoDeEquipo_prestamo FOREIGN KEY (id_Prestamo) REFERENCES prestamo(id);";
+                    ejecutarSQL(consultaFK);
+                    consultaFK = "ALTER TABLE prestamoDeEquipoLocacion ADD CONSTRAINT fK_prestamoDeEquipoLocacion_prestamoDeEquipo FOREIGN KEY (id_PrestamoDeEquipo) REFERENCES prestamoDeEquipo(id_Prestamo);";
+                    ejecutarSQL(consultaFK);
+                    //Tirar arriba(?) las FK final
+
                 }
             }
-
-            if (tokenEquipo == true)
-            {
-                unEPE.prioridad = 0;
-                if (unEPE.estado == "Armado")
-                {
-                    estado = "Armado";
-                }
-                if (unEPE.estado == "Levantado")
-                {
-                    estado = "Levantado";
-                }
-                if (unEPE.estado == "Cancelado")
-                {
-                    estado = "Cancelado";
-                }
-                if (unEPE.estado == "Devuelto")
-                {
-                    estado = "Devuelto";
-                }
+           
+            return token;
 
             }
 
-            string consultaFK = "ALTER TABLE prestamoDeEquipo DROP FOREIGN KEY fK_prestamoDeEquipo_prestamo;";
-            ejecutarSQL(consultaFK);
-
-            string consultaSQL2 = "UPDATE prestamo SET fechaSolicitada =" + unEPE.fechaSolicitada + ", cantidadDias =" + unEPE.cantidadDias 
-            + ", fechaRetiro = " + unEPE.fechaRetiro + ", horaRetiro = " + unEPE.horaRetiro + ", fechaDevolucion = " + unEPE.horaDevolucion 
-            + ", tipo =" + estado + " profesorResponsable = " + unEPE.profeRespon + ", alumnoResponsable = " + unEPE.alumnoRespon + "  WHERE prestamo.id = " + IdPrestamo + " ;";
-            ejecutarSQL(consultaSQL2);
-
-            consultaSQL2 = "UPDATE prestamoDeEquipo SET prioridad = " + unEPE.prioridad + ", ejercicio = " + unEPE.ejercicio 
-            + " WHERE prestamoDeEquipo.id_Prestamo = " + IdPrestamo + " ;";
-            ejecutarSQL(consultaSQL2);
-
-            consultaFK = "ALTER TABLE prestamoDeEquipoLocacion DROP FOREIGN KEY fK_prestamoDeEquipoLocacion_PrestamoDeEquipo;";
-            ejecutarSQL(consultaFK);
-
-            consultaSQL2 = "UPDATE prestamoDeEquipoLocacion SET locacion = " + unEPE.locacion + " WHERE id_PrestamoDeEquipo = " + IdPrestamo + " ;";
-
-            consultaFK = "ALTER TABLE prestamoDeEquipo ADD CONSTRAINT fK_prestamoDeEquipo_prestamo FOREIGN KEY (id_Prestamo) REFERENCES prestamo(id);";
-            ejecutarSQL(consultaFK);
-
-            consultaFK = "ALTER TABLE prestamoDeEquipoLocacion ADD CONSTRAINT fK_prestamoDeEquipoLocacion_prestamoDeEquipo FOREIGN KEY (id_PrestamoDeEquipo) REFERENCES prestamoDeEquipo(id_Prestamo);";
-            ejecutarSQL(consultaFK);
-
-            bool confirmacion = tokenEquipo;
-            return confirmacion;
-
-            }
-
-        private int verificarEstado(string alumno, string profe, string equipos)
+        private int verificarEstado(string alumno, string profe, String[] equipos)
         {
             int token = 0;
             string consultaSQL = "SELECT * FROM `solicitante` WHERE `solicitante`.`ci` = '" + alumno + "' AND `tipo` = alumno;";
@@ -252,7 +168,7 @@ namespace Persistencia
             return token;
         }
 
-        private bool corroborarEquipos(string equipos)
+        private bool corroborarEquipos(String[] equipos)
         {
             bool tokenEquipo = true;
             for (int i = 0; i < equipos.Length; i++)
@@ -273,7 +189,8 @@ namespace Persistencia
             return tokenEquipo;
 
         }
-
+        
+        
 
 
     }
