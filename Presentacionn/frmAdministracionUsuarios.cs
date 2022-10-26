@@ -43,7 +43,7 @@ namespace Presentacionn
             eUsuario elAdmin = unDU.bajaUsuario(txtUsernameEliminar.Text);
             if (elAdmin==null)
             {
-                MessageBox.Show("Usuario y/o clave incorrecto");
+                MessageBox.Show("Usuario inexistente");
 
             }else
             {
