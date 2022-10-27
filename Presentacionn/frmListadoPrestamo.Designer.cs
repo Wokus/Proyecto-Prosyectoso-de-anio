@@ -60,6 +60,7 @@
             // 
             // cbxFecha
             // 
+            this.cbxFecha.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxFecha.FormattingEnabled = true;
             this.cbxFecha.Items.AddRange(new object[] {
             "De mas antiguo a mas reciente",
@@ -68,7 +69,6 @@
             this.cbxFecha.Name = "cbxFecha";
             this.cbxFecha.Size = new System.Drawing.Size(121, 21);
             this.cbxFecha.TabIndex = 2;
-            this.cbxFecha.Text = "Orden por Fecha";
             // 
             // cbxEstado
             // 
@@ -96,6 +96,7 @@
             this.Controls.Add(this.cbxTipo);
             this.Name = "frmListadoPrestamo";
             this.Text = "frmListadoPrestamo";
+            this.Load += new System.EventHandler(this.frmListadoPrestamo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoEquipo)).EndInit();
             this.ResumeLayout(false);
 

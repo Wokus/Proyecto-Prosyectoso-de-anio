@@ -61,6 +61,10 @@ namespace Presentacionn
             }
         }
 
-       
+        private void frmListadoPrestamo_Load(object sender, EventArgs e)
+        {
+            dPrestamo unDP = new dPrestamo();
+            dgvListadoEquipo.DataSource = unDP.listarPrestamo();
+        }
     }
 }

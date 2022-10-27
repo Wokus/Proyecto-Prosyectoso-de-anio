@@ -121,7 +121,7 @@
             // lblLocacion
             // 
             this.lblLocacion.AutoSize = true;
-            this.lblLocacion.Location = new System.Drawing.Point(379, 102);
+            this.lblLocacion.Location = new System.Drawing.Point(379, 103);
             this.lblLocacion.Name = "lblLocacion";
             this.lblLocacion.Size = new System.Drawing.Size(51, 13);
             this.lblLocacion.TabIndex = 92;
@@ -129,7 +129,7 @@
             // 
             // txtLocacion
             // 
-            this.txtLocacion.Location = new System.Drawing.Point(382, 118);
+            this.txtLocacion.Location = new System.Drawing.Point(382, 119);
             this.txtLocacion.Name = "txtLocacion";
             this.txtLocacion.Size = new System.Drawing.Size(100, 20);
             this.txtLocacion.TabIndex = 91;
@@ -137,7 +137,7 @@
             // lblEquipoID
             // 
             this.lblEquipoID.AutoSize = true;
-            this.lblEquipoID.Location = new System.Drawing.Point(264, 228);
+            this.lblEquipoID.Location = new System.Drawing.Point(262, 228);
             this.lblEquipoID.Name = "lblEquipoID";
             this.lblEquipoID.Size = new System.Drawing.Size(57, 13);
             this.lblEquipoID.TabIndex = 90;
@@ -146,7 +146,7 @@
             // lblProfesor
             // 
             this.lblProfesor.AutoSize = true;
-            this.lblProfesor.Location = new System.Drawing.Point(262, 162);
+            this.lblProfesor.Location = new System.Drawing.Point(262, 163);
             this.lblProfesor.Name = "lblProfesor";
             this.lblProfesor.Size = new System.Drawing.Size(106, 13);
             this.lblProfesor.TabIndex = 88;
@@ -191,7 +191,7 @@
             // lblResponsable
             // 
             this.lblResponsable.AutoSize = true;
-            this.lblResponsable.Location = new System.Drawing.Point(262, 102);
+            this.lblResponsable.Location = new System.Drawing.Point(262, 103);
             this.lblResponsable.Name = "lblResponsable";
             this.lblResponsable.Size = new System.Drawing.Size(107, 13);
             this.lblResponsable.TabIndex = 79;
@@ -253,10 +253,11 @@
             this.mtxtIDSalon.HidePromptOnLeave = true;
             this.mtxtIDSalon.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Insert;
             this.mtxtIDSalon.Location = new System.Drawing.Point(382, 179);
-            this.mtxtIDSalon.Mask = "999999999999999999999999999999999999999";
+            this.mtxtIDSalon.Mask = "999999";
             this.mtxtIDSalon.Name = "mtxtIDSalon";
             this.mtxtIDSalon.Size = new System.Drawing.Size(100, 20);
             this.mtxtIDSalon.TabIndex = 104;
+            this.mtxtIDSalon.Visible = false;
             // 
             // mtxtProfesor
             // 
@@ -271,7 +272,7 @@
             this.mtxtEquipoID.HidePromptOnLeave = true;
             this.mtxtEquipoID.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Insert;
             this.mtxtEquipoID.Location = new System.Drawing.Point(265, 244);
-            this.mtxtEquipoID.Mask = "999999999999999999999999999999999999999";
+            this.mtxtEquipoID.Mask = "9999999";
             this.mtxtEquipoID.Name = "mtxtEquipoID";
             this.mtxtEquipoID.Size = new System.Drawing.Size(100, 20);
             this.mtxtEquipoID.TabIndex = 106;

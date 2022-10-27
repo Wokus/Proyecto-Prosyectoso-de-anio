@@ -100,11 +100,6 @@ namespace Persistencia
 
 
 
-
-
-
-
-
         public bool corroborarPrestamoConAlumno(int idPrestamo)
         {
             bool tokenPrestamoAlumno = true;

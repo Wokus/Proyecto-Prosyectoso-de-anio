@@ -42,24 +42,24 @@
             this.lblTransporte = new System.Windows.Forms.Label();
             this.txtTransporte = new System.Windows.Forms.TextBox();
             this.lblEjercicio = new System.Windows.Forms.Label();
-            this.txtEjercicio = new System.Windows.Forms.TextBox();
             this.cbxTipoPrestamo = new System.Windows.Forms.ComboBox();
             this.lblIDSalon = new System.Windows.Forms.Label();
             this.txtLocacion = new System.Windows.Forms.TextBox();
             this.lblLocacion = new System.Windows.Forms.Label();
             this.mtxtIDSalon = new System.Windows.Forms.MaskedTextBox();
-            this.mtxtEquipoID = new System.Windows.Forms.MaskedTextBox();
             this.mtxtProfesor = new System.Windows.Forms.MaskedTextBox();
             this.mtxtAlumno = new System.Windows.Forms.MaskedTextBox();
             this.dtpFechaSolicitud = new System.Windows.Forms.DateTimePicker();
             this.dtptFechaRetiro = new System.Windows.Forms.DateTimePicker();
             this.dtpFechaDevolucion = new System.Windows.Forms.DateTimePicker();
+            this.txtEquiposId = new System.Windows.Forms.TextBox();
+            this.cbxEjercicioPEquip = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblProfesor
             // 
             this.lblProfesor.AutoSize = true;
-            this.lblProfesor.Location = new System.Drawing.Point(262, 162);
+            this.lblProfesor.Location = new System.Drawing.Point(262, 163);
             this.lblProfesor.Name = "lblProfesor";
             this.lblProfesor.Size = new System.Drawing.Size(106, 13);
             this.lblProfesor.TabIndex = 43;
@@ -69,7 +69,7 @@
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
-            this.lblEstado.Location = new System.Drawing.Point(26, 293);
+            this.lblEstado.Location = new System.Drawing.Point(26, 289);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(40, 13);
             this.lblEstado.TabIndex = 38;
@@ -109,7 +109,7 @@
             // lblResponsable
             // 
             this.lblResponsable.AutoSize = true;
-            this.lblResponsable.Location = new System.Drawing.Point(261, 102);
+            this.lblResponsable.Location = new System.Drawing.Point(262, 103);
             this.lblResponsable.Name = "lblResponsable";
             this.lblResponsable.Size = new System.Drawing.Size(107, 13);
             this.lblResponsable.TabIndex = 34;
@@ -128,17 +128,17 @@
             // 
             // cbxEstado
             // 
+            this.cbxEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxEstado.FormattingEnabled = true;
             this.cbxEstado.Items.AddRange(new object[] {
             "Armado",
             "Levantado",
             "Devuelto",
             "Cancelado"});
-            this.cbxEstado.Location = new System.Drawing.Point(29, 309);
+            this.cbxEstado.Location = new System.Drawing.Point(29, 305);
             this.cbxEstado.Name = "cbxEstado";
             this.cbxEstado.Size = new System.Drawing.Size(100, 21);
             this.cbxEstado.TabIndex = 32;
-            this.cbxEstado.Text = "Armado";
             this.cbxEstado.SelectedIndexChanged += new System.EventHandler(this.cbxEstado_SelectedIndexChanged);
             // 
             // mtxtHoraRetiro
@@ -167,7 +167,7 @@
             // lblEquipoID
             // 
             this.lblEquipoID.AutoSize = true;
-            this.lblEquipoID.Location = new System.Drawing.Point(264, 233);
+            this.lblEquipoID.Location = new System.Drawing.Point(262, 228);
             this.lblEquipoID.Name = "lblEquipoID";
             this.lblEquipoID.Size = new System.Drawing.Size(57, 13);
             this.lblEquipoID.TabIndex = 45;
@@ -195,23 +195,16 @@
             // lblEjercicio
             // 
             this.lblEjercicio.AutoSize = true;
-            this.lblEjercicio.Location = new System.Drawing.Point(379, 233);
+            this.lblEjercicio.Location = new System.Drawing.Point(379, 228);
             this.lblEjercicio.Name = "lblEjercicio";
             this.lblEjercicio.Size = new System.Drawing.Size(47, 13);
             this.lblEjercicio.TabIndex = 51;
             this.lblEjercicio.Text = "Ejercicio";
             this.lblEjercicio.Click += new System.EventHandler(this.label5_Click);
             // 
-            // txtEjercicio
-            // 
-            this.txtEjercicio.Location = new System.Drawing.Point(382, 249);
-            this.txtEjercicio.Name = "txtEjercicio";
-            this.txtEjercicio.Size = new System.Drawing.Size(100, 20);
-            this.txtEjercicio.TabIndex = 50;
-            this.txtEjercicio.TextChanged += new System.EventHandler(this.txtEjercicio_TextChanged);
-            // 
             // cbxTipoPrestamo
             // 
+            this.cbxTipoPrestamo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTipoPrestamo.FormattingEnabled = true;
             this.cbxTipoPrestamo.Items.AddRange(new object[] {
             "De equipo(Formales)",
@@ -221,13 +214,12 @@
             this.cbxTipoPrestamo.Name = "cbxTipoPrestamo";
             this.cbxTipoPrestamo.Size = new System.Drawing.Size(121, 21);
             this.cbxTipoPrestamo.TabIndex = 52;
-            this.cbxTipoPrestamo.Text = "De equipo(Formales)";
             this.cbxTipoPrestamo.SelectedIndexChanged += new System.EventHandler(this.cbxTipoPrestamo_SelectedIndexChanged);
             // 
             // lblIDSalon
             // 
             this.lblIDSalon.AutoSize = true;
-            this.lblIDSalon.Location = new System.Drawing.Point(382, 163);
+            this.lblIDSalon.Location = new System.Drawing.Point(379, 163);
             this.lblIDSalon.Name = "lblIDSalon";
             this.lblIDSalon.Size = new System.Drawing.Size(48, 13);
             this.lblIDSalon.TabIndex = 74;
@@ -237,7 +229,7 @@
             // 
             // txtLocacion
             // 
-            this.txtLocacion.Location = new System.Drawing.Point(382, 118);
+            this.txtLocacion.Location = new System.Drawing.Point(382, 119);
             this.txtLocacion.Name = "txtLocacion";
             this.txtLocacion.Size = new System.Drawing.Size(100, 20);
             this.txtLocacion.TabIndex = 46;
@@ -246,7 +238,7 @@
             // lblLocacion
             // 
             this.lblLocacion.AutoSize = true;
-            this.lblLocacion.Location = new System.Drawing.Point(382, 103);
+            this.lblLocacion.Location = new System.Drawing.Point(379, 103);
             this.lblLocacion.Name = "lblLocacion";
             this.lblLocacion.Size = new System.Drawing.Size(51, 13);
             this.lblLocacion.TabIndex = 47;
@@ -258,25 +250,16 @@
             this.mtxtIDSalon.HidePromptOnLeave = true;
             this.mtxtIDSalon.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Insert;
             this.mtxtIDSalon.Location = new System.Drawing.Point(382, 179);
-            this.mtxtIDSalon.Mask = "999999999999999999999999999999999999999";
+            this.mtxtIDSalon.Mask = "99999";
             this.mtxtIDSalon.Name = "mtxtIDSalon";
             this.mtxtIDSalon.Size = new System.Drawing.Size(100, 20);
             this.mtxtIDSalon.TabIndex = 76;
+            this.mtxtIDSalon.Visible = false;
             this.mtxtIDSalon.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtxtIDSalon_MaskInputRejected);
-            // 
-            // mtxtEquipoID
-            // 
-            this.mtxtEquipoID.HidePromptOnLeave = true;
-            this.mtxtEquipoID.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Insert;
-            this.mtxtEquipoID.Location = new System.Drawing.Point(264, 249);
-            this.mtxtEquipoID.Mask = "999999999999999999999999999999999999999";
-            this.mtxtEquipoID.Name = "mtxtEquipoID";
-            this.mtxtEquipoID.Size = new System.Drawing.Size(100, 20);
-            this.mtxtEquipoID.TabIndex = 77;
             // 
             // mtxtProfesor
             // 
-            this.mtxtProfesor.Location = new System.Drawing.Point(264, 179);
+            this.mtxtProfesor.Location = new System.Drawing.Point(265, 179);
             this.mtxtProfesor.Mask = "9.999.999-9";
             this.mtxtProfesor.Name = "mtxtProfesor";
             this.mtxtProfesor.Size = new System.Drawing.Size(100, 20);
@@ -284,7 +267,7 @@
             // 
             // mtxtAlumno
             // 
-            this.mtxtAlumno.Location = new System.Drawing.Point(264, 118);
+            this.mtxtAlumno.Location = new System.Drawing.Point(265, 119);
             this.mtxtAlumno.Mask = "9.999.999-9";
             this.mtxtAlumno.Name = "mtxtAlumno";
             this.mtxtAlumno.Size = new System.Drawing.Size(100, 20);
@@ -314,23 +297,42 @@
             this.dtpFechaDevolucion.Size = new System.Drawing.Size(100, 20);
             this.dtpFechaDevolucion.TabIndex = 82;
             // 
+            // txtEquiposId
+            // 
+            this.txtEquiposId.Location = new System.Drawing.Point(265, 244);
+            this.txtEquiposId.Name = "txtEquiposId";
+            this.txtEquiposId.Size = new System.Drawing.Size(100, 20);
+            this.txtEquiposId.TabIndex = 83;
+            // 
+            // cbxEjercicioPEquip
+            // 
+            this.cbxEjercicioPEquip.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxEjercicioPEquip.FormattingEnabled = true;
+            this.cbxEjercicioPEquip.Items.AddRange(new object[] {
+            "Rodaje",
+            "Practica de Rodaje"});
+            this.cbxEjercicioPEquip.Location = new System.Drawing.Point(382, 244);
+            this.cbxEjercicioPEquip.Name = "cbxEjercicioPEquip";
+            this.cbxEjercicioPEquip.Size = new System.Drawing.Size(100, 21);
+            this.cbxEjercicioPEquip.TabIndex = 84;
+            // 
             // frmAltaPrestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(228)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(494, 508);
+            this.Controls.Add(this.cbxEjercicioPEquip);
+            this.Controls.Add(this.txtEquiposId);
             this.Controls.Add(this.dtpFechaDevolucion);
             this.Controls.Add(this.dtptFechaRetiro);
             this.Controls.Add(this.dtpFechaSolicitud);
             this.Controls.Add(this.mtxtAlumno);
             this.Controls.Add(this.mtxtProfesor);
-            this.Controls.Add(this.mtxtEquipoID);
             this.Controls.Add(this.mtxtIDSalon);
             this.Controls.Add(this.lblIDSalon);
             this.Controls.Add(this.cbxTipoPrestamo);
             this.Controls.Add(this.lblEjercicio);
-            this.Controls.Add(this.txtEjercicio);
             this.Controls.Add(this.lblTransporte);
             this.Controls.Add(this.txtTransporte);
             this.Controls.Add(this.lblLocacion);
@@ -370,17 +372,17 @@
         private System.Windows.Forms.Label lblTransporte;
         private System.Windows.Forms.TextBox txtTransporte;
         private System.Windows.Forms.Label lblEjercicio;
-        private System.Windows.Forms.TextBox txtEjercicio;
         private System.Windows.Forms.ComboBox cbxTipoPrestamo;
         private System.Windows.Forms.Label lblIDSalon;
         private System.Windows.Forms.TextBox txtLocacion;
         private System.Windows.Forms.Label lblLocacion;
         private System.Windows.Forms.MaskedTextBox mtxtIDSalon;
-        private System.Windows.Forms.MaskedTextBox mtxtEquipoID;
         private System.Windows.Forms.MaskedTextBox mtxtProfesor;
         private System.Windows.Forms.MaskedTextBox mtxtAlumno;
         private System.Windows.Forms.DateTimePicker dtpFechaSolicitud;
         private System.Windows.Forms.DateTimePicker dtptFechaRetiro;
         private System.Windows.Forms.DateTimePicker dtpFechaDevolucion;
+        private System.Windows.Forms.TextBox txtEquiposId;
+        private System.Windows.Forms.ComboBox cbxEjercicioPEquip;
     }
 }

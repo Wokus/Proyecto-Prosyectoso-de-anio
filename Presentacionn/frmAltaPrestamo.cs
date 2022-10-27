@@ -20,15 +20,51 @@ namespace Presentacionn
             InitializeComponent();
         }
 
+        private bool corroborarCampos()
+        {
+            bool token = false;
+            if (cbxEstado.SelectedIndex != -1 && cbxTipoPrestamo.SelectedIndex != -1
+                && mtxtHoraRetiro.MaskFull && cbxEjercicioPEquip.SelectedIndex != -1
+                && mtxtProfesor.MaskFull)
+            {
+                for (int i = 0; i < txtEquiposId.Text.Length; i++)
+                {
+                    char c = txtEquiposId.Text[i];
+                    String cc = Convert.ToString(c);
+                    if (cc != "1" && cc != "2" && cc != "3" && cc != "4" && cc != "5" && cc != "6" && cc != "7" && cc != "8" && cc != "9" && cc != "0")
+                    {
+                        token = false;
+                        break;
+                    }
+                    else { token = true; }
+                }
+            
+            }
+
+
+            return token;
+        }
+
         private void btnAgregarPrestamo_Click(object sender, EventArgs e)
         {
             ePrestamoEquipo unPRE = new ePrestamoEquipo();
             ePrestamoEspacio unPRES = new ePrestamoEspacio();
             ePrestamoEspontaneos unPREX = new ePrestamoEspontaneos();
+            bool tokenCampos = corroborarCampos();
+            if (tokenCampos == false)
+            {
+                MessageBox.Show("Hay campos vacios, imcompletos o con informacion incorrecta");
+            }
+            else
+            {
+
+
+           
             try
             {
                 if (cbxTipoPrestamo.Text == "De equipo(Formales)")
             {
+                  
                 eResponsable alumno = new eResponsable();
                 eResponsable profe = new eResponsable();
                 alumno.ci = mtxtAlumno.Text;
@@ -40,10 +76,10 @@ namespace Presentacionn
                 unPRE.fechaDevolucion = dtpFechaDevolucion.Value.ToString("yyyy-MM-dd"); ;
                 unPRE.horaRetiro = mtxtHoraRetiro.Text;
                 unPRE.estado = cbxEstado.Text;
-                unPRE.ejercicio = txtEjercicio.Text;
+                unPRE.ejercicio = cbxEjercicioPEquip.Text;
                 unPRE.transporte = txtTransporte.Text;
                 unPRE.locacion = txtLocacion.Text;
-                unPRE.unE.nombre = mtxtEquipoID.Text;
+                unPRE.unE.nombre = txtEquiposId.Text;
                 
                 
 
@@ -77,6 +113,10 @@ namespace Presentacionn
 
                 if (cbxTipoPrestamo.Text == "De espacio")
             {
+                   
+                    unPRES.unEs.numeroEspacio= Int32.Parse(mtxtIDSalon.Text);
+
+                  
                 unPRES.alumnoResponsable.ci= mtxtAlumno.Text;
                 unPRES.profeResponsable.ci = mtxtProfesor.Text;
                 unPRES.fechaSolicitada = dtpFechaSolicitud.Text;
@@ -84,7 +124,7 @@ namespace Presentacionn
                 unPRES.fechaDevolucion = dtpFechaDevolucion.Text;
                 unPRES.horaRetiro = mtxtHoraRetiro.Text;
                 unPRES.estado = cbxEstado.Text;
-                unPRES.unEs.numeroEspacio= Int32.Parse(mtxtIDSalon.Text);
+                
                 
 
                 dPrestamoEspacio unDPRE = new dPrestamoEspacio();
@@ -121,9 +161,10 @@ namespace Presentacionn
                 unPREX.fechaDevolucion = dtpFechaDevolucion.Text;
                 unPREX.horaRetiro = mtxtHoraRetiro.Text;
                 unPREX.estado = cbxEstado.Text;
+                
 
          
-                unPREX.idEquipo = mtxtEquipoID.Text; 
+                unPREX.idEquipo = txtEquiposId.Text; 
 
                 dPrestamoExpontaneo unDPREX = new dPrestamoExpontaneo();
                     int token = unDPREX.altaPrestamoEspacio(unPREX);
@@ -153,11 +194,12 @@ namespace Presentacionn
 
                 }
                 catch (Exception error) { MessageBox.Show(error.Message); }
-          }
-        
-    
+            }
+        }
 
-    private void frmAltaPrestamo_Load(object sender, EventArgs e)
+        
+
+        private void frmAltaPrestamo_Load(object sender, EventArgs e)
         {
             string eee;
         }
@@ -277,29 +319,28 @@ namespace Presentacionn
             if (cbxTipoPrestamo.Text == "De equipo(Formales)")
             {
                 mtxtIDSalon.Visible = false;
-                
+                txtEquiposId.Visible = false;
                 lblIDSalon.Visible = false;
                 
                
 
                 txtTransporte.Visible = true;
-                txtEjercicio.Visible = true;
-                mtxtEquipoID.Visible = true;
+                txtEquiposId.Visible = true;
                 txtLocacion.Visible = true;
 
                 lblTransporte.Visible = true;
                 lblEjercicio.Visible = true;
                 lblEquipoID.Visible = true;
                 lblLocacion.Visible = true;
-
+                cbxEjercicioPEquip.Visible = true;
 
 
             }
             if (cbxTipoPrestamo.Text == "De espacio")
             {
                 txtTransporte.Visible = false;
-                txtEjercicio.Visible = false;
-                mtxtEquipoID.Visible = false;
+                cbxEjercicioPEquip.Visible = false;
+                txtEquiposId.Visible = false;
                 txtLocacion.Visible = false;
 
                 lblTransporte.Visible = false;
@@ -321,7 +362,7 @@ namespace Presentacionn
                 lblIDSalon.Visible = false;
 
                 txtTransporte.Visible = false;
-                txtEjercicio.Visible = false;
+                cbxEjercicioPEquip.Visible = false;
               
                 txtLocacion.Visible = false;
 
