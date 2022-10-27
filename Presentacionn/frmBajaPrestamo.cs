@@ -23,78 +23,31 @@ namespace Presentacionn
         {
 
             dPrestamo unDP = new dPrestamo();
-            int idPrestamo = unDP.bajaPrestamoDeEquipo(Convert.ToInt16(txtIdPrestamoBaja.Text));
-
-            if (idPrestamo != 0)
+            try
             {
+                int idPrestamo = unDP.bajaPrestamoDeEquipo(Convert.ToInt16(txtIdPrestamoBaja.Text));
 
-                MessageBox.Show("Se bajo el prestamo correctamente");
+                if (idPrestamo != 0)
+                {
 
-            }
-            else
-            {
-
-                MessageBox.Show("No existe un prestamo con esa id");
-
-            }
-        }
-
-        private void cbxPrestamosAEliminar_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            /*
-            if (cbxPrestamosAEliminar.SelectedIndex == 0)
-            {
-
-                txtIdPrestamoBaja.Visible = true;
-                btnEliminar.Visible = true;
-
-                txtBajaPrestamoEspacio.Visible = false;
-                txtBajaPrestamoEspontaneo.Visible = false;
-                btnEliminarPrestamoEspacio.Visible = false;
-                btnEliminarPrestamoEspontaneo.Visible = false;
+                    MessageBox.Show("Se bajo el prestamo correctamente");
 
                 }
+                else
+                {
 
-            if (cbxPrestamosAEliminar.SelectedIndex == 1)
-            {
+                    MessageBox.Show("No existe un prestamo con esa id");
 
-                txtBajaPrestamoEspacio.Visible = true;
-                btnEliminarPrestamoEspacio.Visible = true;
-
-                txtIdPrestamoBaja.Visible = false;
-                txtBajaPrestamoEspontaneo.Visible = false;
-                btnEliminar.Visible = false;
-                btnEliminarPrestamoEspontaneo.Visible = false;
-
+                }
             }
-
-            if (cbxPrestamosAEliminar.SelectedIndex == 2)
+            catch (Exception error)
             {
-
-                txtBajaPrestamoEspontaneo.Visible = true;
-                btnEliminarPrestamoEspontaneo.Visible = true;
-
-                txtBajaPrestamoEspacio.Visible = false;
-                txtIdPrestamoBaja.Visible = false;
-                btnEliminar.Visible = false;
-                btnEliminarPrestamoEspacio.Visible = false;
+                MessageBox.Show(error.Message);
 
             }
 
         }
 
-        private void frmBajaPrestamo_Load(object sender, EventArgs e)
-        {
-
-            txtIdPrestamoBaja.Visible = false;
-            txtBajaPrestamoEspontaneo.Visible = false;
-            txtBajaPrestamoEspacio.Visible = false;
-            btnEliminar.Visible = false;
-            btnEliminarPrestamoEspacio.Visible = false;
-            btnEliminarPrestamoEspontaneo.Visible = false;
-            
-        }
-             */
-        }
+        
     }
 }

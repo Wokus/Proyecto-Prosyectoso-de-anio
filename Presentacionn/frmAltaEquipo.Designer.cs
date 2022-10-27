@@ -30,7 +30,6 @@
         {
             this.txtNumeroSerie = new System.Windows.Forms.TextBox();
             this.btnAgregarEquipo = new System.Windows.Forms.Button();
-            this.mtxtFechaIngreso = new System.Windows.Forms.MaskedTextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblNumeroSerie = new System.Windows.Forms.Label();
             this.lblEstado = new System.Windows.Forms.Label();
@@ -43,9 +42,10 @@
             this.lblPrecio = new System.Windows.Forms.Label();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.lblObservaciones = new System.Windows.Forms.Label();
-            this.txtAsegurado = new System.Windows.Forms.TextBox();
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.cbxAsegurado = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txtNumeroSerie
@@ -68,16 +68,6 @@
             this.btnAgregarEquipo.Text = "Agregar";
             this.btnAgregarEquipo.UseVisualStyleBackColor = false;
             this.btnAgregarEquipo.Click += new System.EventHandler(this.btnAgregarEquipo_Click);
-            // 
-            // mtxtFechaIngreso
-            // 
-            this.mtxtFechaIngreso.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.mtxtFechaIngreso.Location = new System.Drawing.Point(100, 254);
-            this.mtxtFechaIngreso.Mask = "00/00/0000";
-            this.mtxtFechaIngreso.Name = "mtxtFechaIngreso";
-            this.mtxtFechaIngreso.Size = new System.Drawing.Size(100, 20);
-            this.mtxtFechaIngreso.TabIndex = 12;
-            this.mtxtFechaIngreso.ValidatingType = typeof(System.DateTime);
             // 
             // lblNombre
             // 
@@ -113,7 +103,7 @@
             // 
             this.lblFechaIgreso.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblFechaIgreso.AutoSize = true;
-            this.lblFechaIgreso.Location = new System.Drawing.Point(4, 261);
+            this.lblFechaIgreso.Location = new System.Drawing.Point(12, 261);
             this.lblFechaIgreso.Name = "lblFechaIgreso";
             this.lblFechaIgreso.Size = new System.Drawing.Size(90, 13);
             this.lblFechaIgreso.TabIndex = 18;
@@ -153,6 +143,7 @@
             this.cbxTipo.Size = new System.Drawing.Size(100, 21);
             this.cbxTipo.TabIndex = 14;
             this.cbxTipo.Text = "Fotografia";
+            this.cbxTipo.SelectedIndexChanged += new System.EventHandler(this.cbxTipo_SelectedIndexChanged);
             // 
             // txtPrecio
             // 
@@ -202,15 +193,6 @@
             this.lblObservaciones.TabIndex = 22;
             this.lblObservaciones.Text = "Observacioes";
             // 
-            // txtAsegurado
-            // 
-            this.txtAsegurado.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtAsegurado.Location = new System.Drawing.Point(305, 104);
-            this.txtAsegurado.Name = "txtAsegurado";
-            this.txtAsegurado.Size = new System.Drawing.Size(100, 20);
-            this.txtAsegurado.TabIndex = 6;
-            this.txtAsegurado.TextChanged += new System.EventHandler(this.txtAsegurado_TextChanged);
-            // 
             // txtEstado
             // 
             this.txtEstado.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -228,12 +210,35 @@
             this.txtNombre.TabIndex = 1;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
+            // dtpFecha
+            // 
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha.Location = new System.Drawing.Point(100, 254);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(100, 20);
+            this.dtpFecha.TabIndex = 24;
+            // 
+            // cbxAsegurado
+            // 
+            this.cbxAsegurado.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbxAsegurado.FormattingEnabled = true;
+            this.cbxAsegurado.Items.AddRange(new object[] {
+            "Si",
+            "No"});
+            this.cbxAsegurado.Location = new System.Drawing.Point(305, 108);
+            this.cbxAsegurado.Name = "cbxAsegurado";
+            this.cbxAsegurado.Size = new System.Drawing.Size(100, 21);
+            this.cbxAsegurado.TabIndex = 25;
+            this.cbxAsegurado.Text = "Fotografia";
+            // 
             // frmAltaEquipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(228)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(494, 508);
+            this.Controls.Add(this.cbxAsegurado);
+            this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.txtEstado);
             this.Controls.Add(this.lblObservaciones);
             this.Controls.Add(this.lblTipo);
@@ -245,11 +250,9 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.cbxTipo);
             this.Controls.Add(this.cbxMoneda);
-            this.Controls.Add(this.mtxtFechaIngreso);
             this.Controls.Add(this.btnAgregarEquipo);
             this.Controls.Add(this.txtObservaciones);
             this.Controls.Add(this.txtPrecio);
-            this.Controls.Add(this.txtAsegurado);
             this.Controls.Add(this.txtNumeroSerie);
             this.Controls.Add(this.txtNombre);
             this.MinimumSize = new System.Drawing.Size(510, 39);
@@ -264,7 +267,6 @@
         #endregion
         private System.Windows.Forms.TextBox txtNumeroSerie;
         private System.Windows.Forms.Button btnAgregarEquipo;
-        private System.Windows.Forms.MaskedTextBox mtxtFechaIngreso;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblNumeroSerie;
         private System.Windows.Forms.Label lblEstado;
@@ -277,8 +279,9 @@
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.TextBox txtObservaciones;
         private System.Windows.Forms.Label lblObservaciones;
-        private System.Windows.Forms.TextBox txtAsegurado;
         private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.ComboBox cbxAsegurado;
     }
 }

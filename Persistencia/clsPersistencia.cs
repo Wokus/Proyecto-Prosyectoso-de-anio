@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using MySql.Data;
 using System.Data;
-using System.Windows.Forms;
+
 
 namespace Persistencia
 {
     //CHOTAAAAAAAAAAAAAAAAAAAAAAAA
-   public class clsPersistencia : Form
+   public class clsPersistencia 
     {
         public String miConexion = "server=192.168.2.132; uid=root ; password=Feder-ico123 ; database=begoneSatan69;";
         public MySqlConnection con;
@@ -22,28 +22,24 @@ namespace Persistencia
 
         public void AbrirConexion()
         {
-            
-            //"server=localhost; uid=Jesus ; password=Luca1234. ; database=BDprueba;";
             con = new MySqlConnection(miConexion);
             con.Open();
-            //jaja pinga
         }
 
         public void CerrarConexion()
         {
-            con.Close();//.Close();
+            con.Close();
         }
 
         public void ejecutarSQL(string consultaSQL)
         {
-            try
-            {
+    
             AbrirConexion();
+           
             MySqlCommand comando = new MySqlCommand(consultaSQL, con);
             comando.ExecuteNonQuery();
             CerrarConexion();
-            }
-            catch (Exception error) { MessageBox.Show(error.Message); }
+            
         }
 
 
@@ -51,34 +47,27 @@ namespace Persistencia
         {
             MySqlDataReader resultado = null;
             MySqlCommand comando;
-            AbrirConexion();
-            try
-            {
-                comando = new MySqlCommand(consultaSQL, con);
-                resultado = comando.ExecuteReader();
-                return resultado;
-                CerrarConexion();
-            }
-            catch (Exception error) { MessageBox.Show(error.Message); }
+            comando = new MySqlCommand(consultaSQL, con);
+            resultado = comando.ExecuteReader();
             return resultado;
-            
+            CerrarConexion();
         }
     
         public DataTable listarAlgo(string consultaSQL)
         {
             DataTable dt = null;
-            
-            try
-            {
                 MySqlDataAdapter listado = new MySqlDataAdapter(consultaSQL, miConexion);
                 dt = new DataTable();
                 listado.Fill(dt);
-            }
-            catch (Exception error) { MessageBox.Show(error.Message); }
-
             return dt;
-
         }
+
+        public void openAndClose()
+        {
+            AbrirConexion();
+            CerrarConexion();
+        }
+
 }
 }
 

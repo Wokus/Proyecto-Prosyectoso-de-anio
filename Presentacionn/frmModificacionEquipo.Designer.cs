@@ -61,7 +61,7 @@
             this.btnModificarEquipo.TabIndex = 76;
             this.btnModificarEquipo.Text = "Modificar";
             this.btnModificarEquipo.UseVisualStyleBackColor = false;
-            this.btnModificarEquipo.Click += new System.EventHandler(this.btnAgregarPrestamo_Click);
+            this.btnModificarEquipo.Click += new System.EventHandler(this.btnModificarEquipo_Click);
             // 
             // txtEstado
             // 

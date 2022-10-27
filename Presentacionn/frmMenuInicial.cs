@@ -55,7 +55,10 @@ namespace Presentacionn
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             dUsuario unAD = new dUsuario();
+            try
+            {
 
+           
             eUsuario elAdmin = unAD.login(txtUserName.Text, txtPassword.Text);
 
 
@@ -71,20 +74,28 @@ namespace Presentacionn
                 this.Hide();
                 unMP.Show();
                 
-
-
+            }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error en la conexion con el servidor");
             }
     }
         
         private void btnInvitado_Click(object sender, EventArgs e)
         {
+            try
+            {
 
             
             frmMenuPrincipal unMPI = new frmMenuPrincipal(false);
-            
             this.Hide();
             unMPI.Show();
-
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error en la conexion con el servidor");
+            }
         }
 
         private void txtUserName_TextChanged(object sender, EventArgs e)

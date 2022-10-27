@@ -38,9 +38,6 @@
             this.txtLocacion = new System.Windows.Forms.TextBox();
             this.lblEquipoID = new System.Windows.Forms.Label();
             this.lblProfesor = new System.Windows.Forms.Label();
-            this.mtxtFechaDevolucion = new System.Windows.Forms.MaskedTextBox();
-            this.mtxtFechaRetiro = new System.Windows.Forms.MaskedTextBox();
-            this.mtxtFechaSolicitud = new System.Windows.Forms.MaskedTextBox();
             this.lblEstado = new System.Windows.Forms.Label();
             this.lblFechaDev = new System.Windows.Forms.Label();
             this.lblFechaIgreso = new System.Windows.Forms.Label();
@@ -56,6 +53,9 @@
             this.mtxtEquipoID = new System.Windows.Forms.MaskedTextBox();
             this.mtxtAlumno = new System.Windows.Forms.MaskedTextBox();
             this.mtxtIdPrestamo = new System.Windows.Forms.MaskedTextBox();
+            this.dtpFechaSolicitud = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaRetiro = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaDevolucion = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // btnModificarPrestamo
@@ -151,33 +151,6 @@
             this.lblProfesor.Size = new System.Drawing.Size(106, 13);
             this.lblProfesor.TabIndex = 88;
             this.lblProfesor.Text = "Profesor responsable";
-            // 
-            // mtxtFechaDevolucion
-            // 
-            this.mtxtFechaDevolucion.Location = new System.Drawing.Point(29, 244);
-            this.mtxtFechaDevolucion.Mask = "00/00/0000";
-            this.mtxtFechaDevolucion.Name = "mtxtFechaDevolucion";
-            this.mtxtFechaDevolucion.Size = new System.Drawing.Size(100, 20);
-            this.mtxtFechaDevolucion.TabIndex = 86;
-            this.mtxtFechaDevolucion.ValidatingType = typeof(System.DateTime);
-            // 
-            // mtxtFechaRetiro
-            // 
-            this.mtxtFechaRetiro.Location = new System.Drawing.Point(29, 179);
-            this.mtxtFechaRetiro.Mask = "00/00/0000";
-            this.mtxtFechaRetiro.Name = "mtxtFechaRetiro";
-            this.mtxtFechaRetiro.Size = new System.Drawing.Size(100, 20);
-            this.mtxtFechaRetiro.TabIndex = 85;
-            this.mtxtFechaRetiro.ValidatingType = typeof(System.DateTime);
-            // 
-            // mtxtFechaSolicitud
-            // 
-            this.mtxtFechaSolicitud.Location = new System.Drawing.Point(29, 119);
-            this.mtxtFechaSolicitud.Mask = "00/00/0000";
-            this.mtxtFechaSolicitud.Name = "mtxtFechaSolicitud";
-            this.mtxtFechaSolicitud.Size = new System.Drawing.Size(100, 20);
-            this.mtxtFechaSolicitud.TabIndex = 84;
-            this.mtxtFechaSolicitud.ValidatingType = typeof(System.DateTime);
             // 
             // lblEstado
             // 
@@ -321,12 +294,39 @@
             this.mtxtIdPrestamo.Size = new System.Drawing.Size(100, 20);
             this.mtxtIdPrestamo.TabIndex = 108;
             // 
+            // dtpFechaSolicitud
+            // 
+            this.dtpFechaSolicitud.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaSolicitud.Location = new System.Drawing.Point(29, 119);
+            this.dtpFechaSolicitud.Name = "dtpFechaSolicitud";
+            this.dtpFechaSolicitud.Size = new System.Drawing.Size(100, 20);
+            this.dtpFechaSolicitud.TabIndex = 109;
+            // 
+            // dtpFechaRetiro
+            // 
+            this.dtpFechaRetiro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaRetiro.Location = new System.Drawing.Point(29, 179);
+            this.dtpFechaRetiro.Name = "dtpFechaRetiro";
+            this.dtpFechaRetiro.Size = new System.Drawing.Size(100, 20);
+            this.dtpFechaRetiro.TabIndex = 110;
+            // 
+            // dtpFechaDevolucion
+            // 
+            this.dtpFechaDevolucion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaDevolucion.Location = new System.Drawing.Point(29, 244);
+            this.dtpFechaDevolucion.Name = "dtpFechaDevolucion";
+            this.dtpFechaDevolucion.Size = new System.Drawing.Size(100, 20);
+            this.dtpFechaDevolucion.TabIndex = 111;
+            // 
             // frmModificacionPrestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(228)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(494, 508);
+            this.Controls.Add(this.dtpFechaDevolucion);
+            this.Controls.Add(this.dtpFechaRetiro);
+            this.Controls.Add(this.dtpFechaSolicitud);
             this.Controls.Add(this.mtxtIdPrestamo);
             this.Controls.Add(this.mtxtAlumno);
             this.Controls.Add(this.mtxtEquipoID);
@@ -342,9 +342,6 @@
             this.Controls.Add(this.txtLocacion);
             this.Controls.Add(this.lblEquipoID);
             this.Controls.Add(this.lblProfesor);
-            this.Controls.Add(this.mtxtFechaDevolucion);
-            this.Controls.Add(this.mtxtFechaRetiro);
-            this.Controls.Add(this.mtxtFechaSolicitud);
             this.Controls.Add(this.lblEstado);
             this.Controls.Add(this.lblFechaDev);
             this.Controls.Add(this.lblFechaIgreso);
@@ -375,9 +372,6 @@
         private System.Windows.Forms.TextBox txtLocacion;
         private System.Windows.Forms.Label lblEquipoID;
         private System.Windows.Forms.Label lblProfesor;
-        private System.Windows.Forms.MaskedTextBox mtxtFechaDevolucion;
-        private System.Windows.Forms.MaskedTextBox mtxtFechaRetiro;
-        private System.Windows.Forms.MaskedTextBox mtxtFechaSolicitud;
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Label lblFechaDev;
         private System.Windows.Forms.Label lblFechaIgreso;
@@ -393,5 +387,8 @@
         private System.Windows.Forms.MaskedTextBox mtxtEquipoID;
         private System.Windows.Forms.MaskedTextBox mtxtAlumno;
         private System.Windows.Forms.MaskedTextBox mtxtIdPrestamo;
+        private System.Windows.Forms.DateTimePicker dtpFechaSolicitud;
+        private System.Windows.Forms.DateTimePicker dtpFechaRetiro;
+        private System.Windows.Forms.DateTimePicker dtpFechaDevolucion;
     }
 }

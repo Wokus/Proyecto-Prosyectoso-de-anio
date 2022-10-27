@@ -25,8 +25,9 @@ namespace Presentacionn
             ePrestamoEquipo unPRE = new ePrestamoEquipo();
             ePrestamoEspacio unPRES = new ePrestamoEspacio();
             ePrestamoEspontaneos unPREX = new ePrestamoEspontaneos();
-
-            if (cbxTipoPrestamo.Text == "De equipo(Formales)")
+            try
+            {
+                if (cbxTipoPrestamo.Text == "De equipo(Formales)")
             {
                 eResponsable alumno = new eResponsable();
                 eResponsable profe = new eResponsable();
@@ -34,18 +35,19 @@ namespace Presentacionn
                 profe.ci = mtxtProfesor.Text;
                 unPRE.alumnoResponsable = alumno;
                 unPRE.profeResponsable = profe;
-                unPRE.fechaSolicitada = mtxtFechaSolicitud.Text;
-                unPRE.fechaRetiro = mtxtFechaRetiro.Text;
-                unPRE.fechaDevolucion = mtxtFechaDevolucion.Text;
+                unPRE.fechaSolicitada = dtpFechaSolicitud.Value.ToString("yyyy-MM-dd"); ;
+                unPRE.fechaRetiro = dtptFechaRetiro.Value.ToString("yyyy-MM-dd"); ;
+                unPRE.fechaDevolucion = dtpFechaDevolucion.Value.ToString("yyyy-MM-dd"); ;
                 unPRE.horaRetiro = mtxtHoraRetiro.Text;
                 unPRE.estado = cbxEstado.Text;
                 unPRE.ejercicio = txtEjercicio.Text;
                 unPRE.transporte = txtTransporte.Text;
                 unPRE.locacion = txtLocacion.Text;
                 unPRE.unE.nombre = mtxtEquipoID.Text;
-                unPRE.horaDevolucion = "S:o";
-                unPRE.cantidadDias = 69;
+                
+                
 
+               
                 dPrestamoEquipo unDPRE = new dPrestamoEquipo();
                 int token = unDPRE.altaPrestamo(unPRE);
 
@@ -68,25 +70,22 @@ namespace Presentacionn
                 {
                     MessageBox.Show("Equipo no existente");
                 }
-             
-
-            }
 
 
-            if (cbxTipoPrestamo.Text == "De espacio")
+                }
+
+
+                if (cbxTipoPrestamo.Text == "De espacio")
             {
                 unPRES.alumnoResponsable.ci= mtxtAlumno.Text;
                 unPRES.profeResponsable.ci = mtxtProfesor.Text;
-                unPRES.fechaSolicitada = mtxtFechaSolicitud.Text;
-                unPRES.fechaRetiro = mtxtFechaRetiro.Text;
-                unPRES.fechaDevolucion = mtxtFechaDevolucion.Text;
+                unPRES.fechaSolicitada = dtpFechaSolicitud.Text;
+                unPRES.fechaRetiro = dtptFechaRetiro.Text;
+                unPRES.fechaDevolucion = dtpFechaDevolucion.Text;
                 unPRES.horaRetiro = mtxtHoraRetiro.Text;
                 unPRES.estado = cbxEstado.Text;
                 unPRES.unEs.numeroEspacio= Int32.Parse(mtxtIDSalon.Text);
                 
-
-                unPRES.horaDevolucion = "Sex:ooo";
-                unPRES.cantidadDias = 69;
 
                 dPrestamoEspacio unDPRE = new dPrestamoEspacio();
                 int token = unDPRE.altaPrestamoEspacio(unPRES);
@@ -117,18 +116,17 @@ namespace Presentacionn
             {
                 unPREX.alumnoResponsable.ci = mtxtAlumno.Text;
                 unPREX.profeResponsable.ci = mtxtProfesor.Text;
-                unPREX.fechaSolicitada = mtxtFechaSolicitud.Text;
-                unPREX.fechaRetiro = mtxtFechaRetiro.Text;
-                unPREX.fechaDevolucion = mtxtFechaDevolucion.Text;
+                unPREX.fechaSolicitada = dtpFechaSolicitud.Text;
+                unPREX.fechaRetiro = dtptFechaRetiro.Text;
+                unPREX.fechaDevolucion = dtpFechaDevolucion.Text;
                 unPREX.horaRetiro = mtxtHoraRetiro.Text;
                 unPREX.estado = cbxEstado.Text;
 
-                unPREX.horaDevolucion = "Sex:ooo";
-                unPREX.cantidadDias = 69;
+         
                 unPREX.idEquipo = mtxtEquipoID.Text; 
 
                 dPrestamoExpontaneo unDPREX = new dPrestamoExpontaneo();
-                int token = unDPREX.altaPrestamoEspacio(unPREX);
+                    int token = unDPREX.altaPrestamoEspacio(unPREX);
 
                 if (token == 0)
                 {
@@ -153,12 +151,13 @@ namespace Presentacionn
             }
 
 
+                }
+                catch (Exception error) { MessageBox.Show(error.Message); }
+          }
+        
+    
 
-
-        }
-            
-
-        private void frmAltaPrestamo_Load(object sender, EventArgs e)
+    private void frmAltaPrestamo_Load(object sender, EventArgs e)
         {
             string eee;
         }

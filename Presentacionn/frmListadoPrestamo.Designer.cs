@@ -57,7 +57,6 @@
             this.dgvListadoEquipo.Name = "dgvListadoEquipo";
             this.dgvListadoEquipo.Size = new System.Drawing.Size(474, 457);
             this.dgvListadoEquipo.TabIndex = 1;
-            this.dgvListadoEquipo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // cbxFecha
             // 
@@ -84,7 +83,6 @@
             this.cbxEstado.Size = new System.Drawing.Size(121, 21);
             this.cbxEstado.TabIndex = 3;
             this.cbxEstado.Text = "Estado";
-            this.cbxEstado.SelectedIndexChanged += new System.EventHandler(this.cbxEstado_SelectedIndexChanged);
             // 
             // frmListadoPrestamo
             // 

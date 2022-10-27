@@ -30,15 +30,12 @@ namespace Persistencia
                 unPRE.prioridad = 0;
                 
                 int id = calculoDeId();
-                
-                consultaSQL = "INSERT INTO `prestamo` VALUES('" + id + "','" + unPRE.fechaSolicitada + "','" + unPRE.cantidadDias + "','" + unPRE.fechaRetiro + "','" + unPRE.horaRetiro + "','" + unPRE.fechaDevolucion + "','" + unPRE.horaDevolucion + "','" + unPRE.estado + "','" + unPRE.prioridad + "');";
+                consultaSQL = "INSERT INTO `prestamo` VALUES('" + id + "','" + unPRE.fechaSolicitada + "','" + unPRE.fechaRetiro + "','" + unPRE.horaRetiro + "','" + unPRE.fechaDevolucion + "','" + "','" + unPRE.estado + "','" + unPRE.prioridad + "');";
                 ejecutarSQL(consultaSQL);
                 consultaSQL = "INSERT INTO `prestamodeequipo` VALUES('" + id + "','" + unPRE.ejercicio + "','" + unPRE.transporte + "');";  
                 ejecutarSQL(consultaSQL);
-
                 for (int i = 0; i < locaciones.Length; i++)
                 {
-
                     consultaSQL = "INSERT INTO `prestamodeequipolocacion` VALUES('" + id + "','" + locaciones[i] + "');";
                     ejecutarSQL(consultaSQL);
                 }
