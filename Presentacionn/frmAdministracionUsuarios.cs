@@ -28,9 +28,7 @@ namespace Presentacionn
             unU.apellido = txtApellidoAgregar.Text;
             unU.telefono = mtxtTelefonoAgregar.Text;
             dUsuario unDU = new dUsuario(); 
-            try
-            {
-                elAdmin = unDU.altaUsuario(unU);
+           elAdmin = unDU.altaUsuario(unU);
                 if (elAdmin != null)
                 {
                     MessageBox.Show("Nombre de Usuario ya existente");
@@ -39,11 +37,8 @@ namespace Presentacionn
                 {
                     MessageBox.Show("Usuario creado exitosamente");
                 }
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show(error.Message);
-            }
+            
+           
             
         }
         private void btnOkEliminar_Click(object sender, EventArgs e)

@@ -20,7 +20,7 @@ namespace Persistencia
             if (token == 0)
             {
                 int id = calculoDeId();
-                consultaSQL = "INSERT INTO `prestamo` VALUES('" + id + "','" + unPRESP.fechaSolicitada + "','" + unPRESP.cantidadDias + "','" + unPRESP.fechaRetiro + "','" + unPRESP.horaRetiro + "','" + unPRESP.fechaDevolucion + "','" + unPRESP.horaDevolucion + "','" + unPRESP.estado + "','" + unPRESP.prioridad + "');";
+                consultaSQL = "INSERT INTO `prestamo` VALUES('" + id + "','" + unPRESP.fechaSolicitada + "','" + unPRESP.fechaRetiro + "','" + unPRESP.horaRetiro + "','" + unPRESP.fechaDevolucion + "','" + "','" + unPRESP.estado + "','" + unPRESP.prioridad + "','" + unPRESP.genuinoDiaDevolucion + "');";
                 ejecutarSQL(consultaSQL);
                 consultaSQL = "INSERT INTO `prestamoEspontaneo` VALUES('" + id + "');";
                 ejecutarSQL(consultaSQL);
@@ -83,9 +83,10 @@ namespace Persistencia
                 token = verificarEstado(unPRESP.alumnoResponsable.ci, unPRESP.profeResponsable.ci, equipos);
                 if (token == 0)
                 {
-                    string consultaSQL2 = "UPDATE prestamo SET fechaSolicitada =" + unPRESP.fechaSolicitada + ", cantidadDias =" + unPRESP.cantidadDias
-                    + ", fechaRetiro = " + unPRESP.fechaRetiro + ", horaRetiro = " + unPRESP.horaRetiro + ", fechaDevolucion = " + unPRESP.horaDevolucion
-                    + ", estado =" + estado + "  WHERE prestamo.id = " + unPRESP.id + " ;";
+                    string consultaSQL2 = "UPDATE prestamo SET fechaSolicitada =" + unPRESP.fechaSolicitada + ", cantidadDias ="
+                            + ", fechaRetiro = " + unPRESP.fechaRetiro + ", horaRetiro = " + unPRESP.horaRetiro + ", fechaDevolucion = " + unPRESP.fechaDevolucion + ", fechaGenuinaDevolucion = " + unPRESP.genuinoDiaDevolucion
+                            +
+                             ", estado =" + estado + "  WHERE prestamo.id = " + unPRESP.id + " ;";
                     ejecutarSQL(consultaSQL2);
 
                     consultaSQL = "DELETE FROM `tiene` WHERE tiene.id_PrestamoDeEquipo =" + unPRESP.id + " ;";

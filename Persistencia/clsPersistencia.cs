@@ -16,7 +16,7 @@ namespace Persistencia
     //CHOTAAAAAAAAAAAAAAAAAAAAAAAA
    public class clsPersistencia 
     {
-        public String miConexion = "server=192.168.2.132; uid=root ; password=Feder-ico123 ; database=begoneSatan69;";
+        public String miConexion = "server=localhost; uid=root ; password= ; database=begonesatan69;";
         public MySqlConnection con;
        
 
@@ -45,6 +45,7 @@ namespace Persistencia
 
         public MySqlDataReader ejecutarYdevolver(string consultaSQL)
         {
+            AbrirConexion();
             MySqlDataReader resultado = null;
             MySqlCommand comando;
             comando = new MySqlCommand(consultaSQL, con);

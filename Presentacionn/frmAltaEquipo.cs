@@ -33,7 +33,7 @@ namespace Presentacionn
             eEquipo unE = new eEquipo();
             unE.nombre = txtNombre.Text;
             unE.numeroSerie = txtNumeroSerie.Text;
-            unE.estado = txtEstado.Text;
+            unE.estado = cbxEstado.Text;
             unE.fechaIngreso = dtpFecha.Value.ToString("yyyy-MM-dd");
             unE.asegurado = cbxAsegurado.Text;
             unE.precio = txtPrecio.Text + cbxMoneda.Text;
@@ -69,6 +69,11 @@ namespace Presentacionn
         }
 
         private void cbxTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbxAsegurado_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
