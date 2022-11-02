@@ -39,5 +39,13 @@ namespace Presentacionn
 
             
         }
+
+        private void frmListadoResponsable_Load_1(object sender, EventArgs e)
+        {
+
+            dResponsable unDR = new dResponsable();
+            dgvResponsable.DataSource = unDR.ListarResponsable();
+
+        }
     }
 }
