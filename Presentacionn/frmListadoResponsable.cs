@@ -20,11 +20,19 @@ namespace Presentacionn
         }
         private void frmListadoResponsable_Load (object sener, EventArgs e)
         {
+            try
+            {
             dResponsable unDR = new dResponsable();
             dgvResponsable.DataSource = unDR.ListarResponsable();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
         }
         private void cbxTipo_SelectedIndexChanged(object sender, EventArgs e)
         {
+            try { 
             if (cbxTipo.SelectedIndex == 0)
             {
                 dResponsable unDR = new dResponsable();
@@ -35,9 +43,22 @@ namespace Presentacionn
                 dResponsable unDR = new dResponsable();
                 dgvResponsable.DataSource = unDR.ListarResponsable();
             }
-            
+            }
 
-            
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
+        }
+
+        private void chbRotura_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chbAtrasado_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void frmListadoResponsable_Load_1(object sender, EventArgs e)

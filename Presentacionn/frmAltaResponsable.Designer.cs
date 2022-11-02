@@ -65,7 +65,6 @@
             this.cbxTipo.Name = "cbxTipo";
             this.cbxTipo.Size = new System.Drawing.Size(100, 21);
             this.cbxTipo.TabIndex = 12;
-            this.cbxTipo.SelectedIndexChanged += new System.EventHandler(this.cbxTipo_SelectedIndexChanged);
             // 
             // lblTipo
             // 
@@ -143,7 +142,6 @@
             this.lblNombre.Size = new System.Drawing.Size(44, 13);
             this.lblNombre.TabIndex = 16;
             this.lblNombre.Text = "Nombre";
-            this.lblNombre.Click += new System.EventHandler(this.label4_Click);
             // 
             // lblApellido
             // 
@@ -174,7 +172,6 @@
             this.Controls.Add(this.txtResCi);
             this.Name = "frmAltaResponsable";
             this.Text = "AltaResponsable";
-            this.Load += new System.EventHandler(this.frmAltaResponsable_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

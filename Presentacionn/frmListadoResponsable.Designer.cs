@@ -52,6 +52,7 @@
             this.chbRotura.TabIndex = 3;
             this.chbRotura.Text = "Equipos Rotos";
             this.chbRotura.UseVisualStyleBackColor = true;
+            this.chbRotura.CheckedChanged += new System.EventHandler(this.chbRotura_CheckedChanged);
             // 
             // chbAtrasado
             // 
@@ -62,6 +63,7 @@
             this.chbAtrasado.TabIndex = 4;
             this.chbAtrasado.Text = "Prestamo Atrasados";
             this.chbAtrasado.UseVisualStyleBackColor = true;
+            this.chbAtrasado.CheckedChanged += new System.EventHandler(this.chbAtrasado_CheckedChanged);
             // 
             // cbxTipo
             // 

@@ -27,20 +27,22 @@ namespace Presentacionn
         private void btnEliminarEquipo_Click(object sender, EventArgs e)
         {
             dEquipo unDE = new dEquipo();
-            int id = unDE.bajaEquipo(txtId.Text);
-
-
-
-            if (id == 0)
+            
+            try
             {
+                int id = unDE.bajaEquipo(txtId.Text);
+                if (id == 0)
+                {
 
-                MessageBox.Show("id infresado incorrrecto");
+                    MessageBox.Show("id infresado incorrrecto");
 
+                }
+                else
+                {
+                    MessageBox.Show("Equipo bajado de manera exitosa");
+                }
             }
-            else
-            {
-                MessageBox.Show("Equipo bajado de manera exitosa");
-            }
+            catch (Exception error) { MessageBox.Show(error.Message); }
         }
 
         private void txtId_TextChanged(object sender, EventArgs e)

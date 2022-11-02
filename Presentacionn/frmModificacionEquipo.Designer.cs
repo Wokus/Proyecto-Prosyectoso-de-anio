@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnModificarEquipo = new System.Windows.Forms.Button();
-            this.txtEstado = new System.Windows.Forms.TextBox();
             this.lblObservaciones = new System.Windows.Forms.Label();
             this.lblTipo = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
@@ -40,14 +39,15 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.cbxTipo = new System.Windows.Forms.ComboBox();
             this.cbxMoneda = new System.Windows.Forms.ComboBox();
-            this.mtxtFechaIngreso = new System.Windows.Forms.MaskedTextBox();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.txtAsegurado = new System.Windows.Forms.TextBox();
             this.txtNumeroSerie = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblIdEquipoModificar = new System.Windows.Forms.Label();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.cbxAsegurado = new System.Windows.Forms.ComboBox();
+            this.cbxEstado = new System.Windows.Forms.ComboBox();
+            this.mtxtId = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // btnModificarEquipo
@@ -55,22 +55,13 @@
             this.btnModificarEquipo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnModificarEquipo.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnModificarEquipo.Location = new System.Drawing.Point(155, 423);
+            this.btnModificarEquipo.Location = new System.Drawing.Point(170, 423);
             this.btnModificarEquipo.Name = "btnModificarEquipo";
             this.btnModificarEquipo.Size = new System.Drawing.Size(144, 55);
             this.btnModificarEquipo.TabIndex = 76;
             this.btnModificarEquipo.Text = "Modificar";
             this.btnModificarEquipo.UseVisualStyleBackColor = false;
-            this.btnModificarEquipo.Click += new System.EventHandler(this.btnAgregarPrestamo_Click);
-            // 
-            // txtEstado
-            // 
-            this.txtEstado.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtEstado.Location = new System.Drawing.Point(100, 204);
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(100, 20);
-            this.txtEstado.TabIndex = 93;
-            this.txtEstado.TextChanged += new System.EventHandler(this.txtEstado_TextChanged);
+            this.btnModificarEquipo.Click += new System.EventHandler(this.btnModificarEquipo_Click);
             // 
             // lblObservaciones
             // 
@@ -86,7 +77,7 @@
             // 
             this.lblTipo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTipo.AutoSize = true;
-            this.lblTipo.Location = new System.Drawing.Point(271, 207);
+            this.lblTipo.Location = new System.Drawing.Point(271, 212);
             this.lblTipo.Name = "lblTipo";
             this.lblTipo.Size = new System.Drawing.Size(28, 13);
             this.lblTipo.TabIndex = 91;
@@ -126,7 +117,7 @@
             // 
             this.lblEstado.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblEstado.AutoSize = true;
-            this.lblEstado.Location = new System.Drawing.Point(54, 211);
+            this.lblEstado.Location = new System.Drawing.Point(58, 212);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(40, 13);
             this.lblEstado.TabIndex = 87;
@@ -146,7 +137,7 @@
             // 
             this.lblNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(48, 111);
+            this.lblNombre.Location = new System.Drawing.Point(54, 111);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(44, 13);
             this.lblNombre.TabIndex = 85;
@@ -155,37 +146,30 @@
             // cbxTipo
             // 
             this.cbxTipo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbxTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTipo.FormattingEnabled = true;
             this.cbxTipo.Items.AddRange(new object[] {
             "Fotografia",
             "Sonido",
             "Informatica",
             "Otros"});
-            this.cbxTipo.Location = new System.Drawing.Point(305, 203);
+            this.cbxTipo.Location = new System.Drawing.Point(305, 204);
             this.cbxTipo.Name = "cbxTipo";
             this.cbxTipo.Size = new System.Drawing.Size(100, 21);
             this.cbxTipo.TabIndex = 84;
-            this.cbxTipo.Text = "Fotografia";
             // 
             // cbxMoneda
             // 
             this.cbxMoneda.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbxMoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxMoneda.FormattingEnabled = true;
+            this.cbxMoneda.Items.AddRange(new object[] {
+            "$",
+            "$UY"});
             this.cbxMoneda.Location = new System.Drawing.Point(411, 153);
             this.cbxMoneda.Name = "cbxMoneda";
             this.cbxMoneda.Size = new System.Drawing.Size(38, 21);
             this.cbxMoneda.TabIndex = 83;
-            this.cbxMoneda.Text = "$";
-            // 
-            // mtxtFechaIngreso
-            // 
-            this.mtxtFechaIngreso.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.mtxtFechaIngreso.Location = new System.Drawing.Point(100, 254);
-            this.mtxtFechaIngreso.Mask = "00/00/0000";
-            this.mtxtFechaIngreso.Name = "mtxtFechaIngreso";
-            this.mtxtFechaIngreso.Size = new System.Drawing.Size(100, 20);
-            this.mtxtFechaIngreso.TabIndex = 82;
-            this.mtxtFechaIngreso.ValidatingType = typeof(System.DateTime);
             // 
             // txtObservaciones
             // 
@@ -204,14 +188,6 @@
             this.txtPrecio.Size = new System.Drawing.Size(100, 20);
             this.txtPrecio.TabIndex = 80;
             // 
-            // txtAsegurado
-            // 
-            this.txtAsegurado.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtAsegurado.Location = new System.Drawing.Point(305, 104);
-            this.txtAsegurado.Name = "txtAsegurado";
-            this.txtAsegurado.Size = new System.Drawing.Size(100, 20);
-            this.txtAsegurado.TabIndex = 79;
-            // 
             // txtNumeroSerie
             // 
             this.txtNumeroSerie.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -228,14 +204,6 @@
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 77;
             // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Location = new System.Drawing.Point(100, 54);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 94;
-            // 
             // lblIdEquipoModificar
             // 
             this.lblIdEquipoModificar.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -246,15 +214,63 @@
             this.lblIdEquipoModificar.TabIndex = 95;
             this.lblIdEquipoModificar.Text = "Id Equipo";
             // 
+            // dtpFecha
+            // 
+            this.dtpFecha.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha.Location = new System.Drawing.Point(100, 255);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(100, 20);
+            this.dtpFecha.TabIndex = 96;
+            // 
+            // cbxAsegurado
+            // 
+            this.cbxAsegurado.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbxAsegurado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxAsegurado.FormattingEnabled = true;
+            this.cbxAsegurado.Items.AddRange(new object[] {
+            "Si",
+            "No"});
+            this.cbxAsegurado.Location = new System.Drawing.Point(305, 104);
+            this.cbxAsegurado.Name = "cbxAsegurado";
+            this.cbxAsegurado.Size = new System.Drawing.Size(100, 21);
+            this.cbxAsegurado.TabIndex = 97;
+            // 
+            // cbxEstado
+            // 
+            this.cbxEstado.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbxEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxEstado.FormattingEnabled = true;
+            this.cbxEstado.Items.AddRange(new object[] {
+            "Disponible",
+            "Roto",
+            "En reparacion",
+            "No disponible"});
+            this.cbxEstado.Location = new System.Drawing.Point(100, 204);
+            this.cbxEstado.Name = "cbxEstado";
+            this.cbxEstado.Size = new System.Drawing.Size(100, 21);
+            this.cbxEstado.TabIndex = 98;
+            // 
+            // mtxtId
+            // 
+            this.mtxtId.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.mtxtId.Location = new System.Drawing.Point(100, 58);
+            this.mtxtId.Mask = "000000000";
+            this.mtxtId.Name = "mtxtId";
+            this.mtxtId.Size = new System.Drawing.Size(100, 20);
+            this.mtxtId.TabIndex = 99;
+            // 
             // frmModificacionEquipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(228)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(494, 508);
+            this.Controls.Add(this.mtxtId);
+            this.Controls.Add(this.cbxEstado);
+            this.Controls.Add(this.cbxAsegurado);
+            this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.lblIdEquipoModificar);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.txtEstado);
             this.Controls.Add(this.lblObservaciones);
             this.Controls.Add(this.lblTipo);
             this.Controls.Add(this.lblPrecio);
@@ -265,10 +281,8 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.cbxTipo);
             this.Controls.Add(this.cbxMoneda);
-            this.Controls.Add(this.mtxtFechaIngreso);
             this.Controls.Add(this.txtObservaciones);
             this.Controls.Add(this.txtPrecio);
-            this.Controls.Add(this.txtAsegurado);
             this.Controls.Add(this.txtNumeroSerie);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.btnModificarEquipo);
@@ -281,7 +295,6 @@
 
         #endregion
         private System.Windows.Forms.Button btnModificarEquipo;
-        private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.Label lblObservaciones;
         private System.Windows.Forms.Label lblTipo;
         private System.Windows.Forms.Label lblPrecio;
@@ -292,13 +305,14 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.ComboBox cbxTipo;
         private System.Windows.Forms.ComboBox cbxMoneda;
-        private System.Windows.Forms.MaskedTextBox mtxtFechaIngreso;
         private System.Windows.Forms.TextBox txtObservaciones;
         private System.Windows.Forms.TextBox txtPrecio;
-        private System.Windows.Forms.TextBox txtAsegurado;
         private System.Windows.Forms.TextBox txtNumeroSerie;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblIdEquipoModificar;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.ComboBox cbxAsegurado;
+        private System.Windows.Forms.ComboBox cbxEstado;
+        private System.Windows.Forms.MaskedTextBox mtxtId;
     }
 }

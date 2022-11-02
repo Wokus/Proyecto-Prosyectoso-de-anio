@@ -27,34 +27,24 @@ namespace Presentacionn
             unR.apellido = txtApellidoRes.Text;
             unR.curso = cbxCurso.Text;
             unR.tipo = cbxTipo.Text;
-
-            dResponsable unDR = new dResponsable();
-            bool token = unDR.altaResponsable(unR);
-            if (token == true)
+            try
             {
+                dResponsable unDR = new dResponsable();
+                bool token = unDR.altaResponsable(unR);
+                if (token == true)
+                {
 
-                MessageBox.Show("el responsable ha sido agregado correctamente ");
+                    MessageBox.Show("el responsable ha sido agregado correctamente ");
+                }
+                else
+                {
+
+                    MessageBox.Show("el responsable no ha sido ingresado");
+                }
             }
-            else
-            {
-
-                MessageBox.Show("el responsable no ha sido ingresado");
-            }
-        }
-
-        private void cbxTipo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmAltaResponsable_Load(object sender, EventArgs e)
-        {
-           
+            catch (Exception error) { MessageBox.Show(error.Message); }
+            
+            
         }
     }
 }

@@ -29,17 +29,16 @@ namespace Presentacionn
 
                 unEPE.alumnoResponsable.ci = mtxtAlumno.Text;
                 unEPE.profeResponsable.ci = mtxtProfesor.Text;
-                unEPE.fechaSolicitada = mtxtFechaSolicitud.Text;
-                unEPE.fechaRetiro = mtxtFechaRetiro.Text;
-                unEPE.fechaDevolucion = mtxtFechaDevolucion.Text;
+                unEPE.fechaSolicitada = dtpFechaSolicitud.Value.ToString("yyyy-MM-dd"); ;
+                unEPE.fechaRetiro = dtpFechaRetiro.Value.ToString("yyyy-MM-dd"); ;
+                unEPE.fechaDevolucion = dtpFechaDevolucion.Value.ToString("yyyy-MM-dd"); ;
                 unEPE.horaRetiro = mtxtHoraRetiro.Text;
                 unEPE.estado = cbxEstado.Text;
                 unEPE.ejercicio = txtEjercicio.Text;
                 unEPE.transporte = txtTransporte.Text;
                 unEPE.locacion = txtLocacion.Text;
                 unEPE.unE.nombre = mtxtEquipoID.Text;
-                unEPE.horaDevolucion = "Sex:ooo";
-                unEPE.cantidadDias = 69;
+                
                 unEPE.id = Convert.ToInt32(mtxtIdPrestamo.Text);
                 //unEPE.idPrestamo = Convert.ToInt16(txtIdPrestamo.Text);
 
@@ -80,13 +79,12 @@ namespace Presentacionn
                 unEPES.alumnoResponsable.ci = mtxtAlumno.Text;
 
                 unEPES.profeResponsable.ci = mtxtProfesor.Text;
-                unEPES.fechaSolicitada = mtxtFechaSolicitud.Text;
-                unEPES.fechaRetiro = mtxtFechaRetiro.Text;
-                unEPES.fechaDevolucion = mtxtFechaDevolucion.Text;
+                
+                unEPES.fechaSolicitada = dtpFechaSolicitud.Value.ToString("yyyy-MM-dd"); ;
+                unEPES.fechaRetiro = dtpFechaRetiro.Value.ToString("yyyy-MM-dd"); ;
+                unEPES.fechaDevolucion = dtpFechaDevolucion.Value.ToString("yyyy-MM-dd"); ;
                 unEPES.horaRetiro = mtxtHoraRetiro.Text;
                 unEPES.estado = cbxEstado.Text;
-                unEPES.horaDevolucion = "Sex:ooo";
-                unEPES.cantidadDias = 69;
                 unEPES.id = Convert.ToInt32(mtxtIdPrestamo.Text);
 
                 dPrestamoEspacio unDPES = new dPrestamoEspacio();
@@ -120,13 +118,12 @@ namespace Presentacionn
 
                 unEPEX.alumnoResponsable.ci = mtxtAlumno.Text;
                 unEPEX.profeResponsable.ci = mtxtProfesor.Text;
-                unEPEX.fechaSolicitada = mtxtFechaSolicitud.Text;
-                unEPEX.fechaRetiro = mtxtFechaRetiro.Text;
-                unEPEX.fechaDevolucion = mtxtFechaDevolucion.Text;
+                unEPEX.fechaSolicitada = dtpFechaSolicitud.Value.ToString("yyyy-MM-dd"); ;
+                unEPEX.fechaRetiro = dtpFechaRetiro.Value.ToString("yyyy-MM-dd"); ;
+                unEPEX.fechaDevolucion = dtpFechaDevolucion.Value.ToString("yyyy-MM-dd"); ;
                 unEPEX.horaRetiro = mtxtHoraRetiro.Text;
                 unEPEX.estado = cbxEstado.Text;
-                unEPEX.horaDevolucion = "Sex:ooo";
-                unEPEX.cantidadDias = 69;
+            
                 unEPEX.id = Convert.ToInt32(mtxtIdPrestamo.Text);
 
                 dPrestamoExpontaneo unDPEX = new dPrestamoExpontaneo();

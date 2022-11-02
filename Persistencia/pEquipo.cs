@@ -15,12 +15,9 @@ namespace Persistencia
         {
             
             int id = 0;
-            int idOcupado = 0;
+      
             bool NStoken = false;
-            int tipoBOOLinf = 0;
-            int tipoBOOLfot = 0;
-            int tipoBOOLson = 0;
-            int tipoBOOLotr = 0;
+       
             String consultaSQL;
            
             if (unPE.numeroSerie != null)
@@ -42,11 +39,40 @@ namespace Persistencia
 
                int stock = calculoStock(unPE.nombre, unPE.precio);
 
-                consultaSQL = "INSERT INTO `equipo` VALUES('" + id + "','" + unPE.nombre + "','" + unPE.numeroSerie + "','" + unPE.estado + "','" + unPE.fechaIngreso + "','" + unPE.asegurado + "','" + unPE.precio + "','" + tipoBOOLfot + "','" + tipoBOOLson + "','" + tipoBOOLinf + "','" + tipoBOOLotr + "','" + stock + "','" + unPE.observacion + "');";
+                consultaSQL = "INSERT INTO `equipo` VALUES('" + id + "','" + unPE.nombre + "','" + unPE.numeroSerie + "','" + unPE.estado + "','" + unPE.fechaIngreso + "','" + unPE.asegurado + "','" + unPE.precio + "','" + stock + "','" + unPE.observacion + "','" + unPE.tipo + "');";
                 ejecutarSQL(consultaSQL);
             }
 
             return NStoken;
+        }
+
+        public bool modificarEquipo(eEquipo unE)
+        {
+            bool token = true;
+            if (unE.asegurado == "Si")
+            {
+                unE.asegurado = "1";
+            }else {  unE.asegurado = "0"; }
+
+            string consultaSQL = "SELECT * FROM `equipo` WHERE `equipo`.`id` = '" + unE.id + "';";
+            MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
+            if (fila.Read())
+            {
+               
+                    consultaSQL = "UPDATE `equipo` SET `nombre` = '" + unE.nombre
+                    + "', `numero_de_serie` = '" + unE.numeroSerie + "', `estado` = '" + unE.estado
+                    + "', `ingreso` = '" + unE.fechaIngreso + "', `asegurado` = '" + unE.asegurado
+                    + "', `precio` = '" + unE.precio + "', `tipo` = '" + unE.tipo
+                    + "', `stock` = '" + unE.stock
+                    + "' WHERE `equipo`.`id` = '" + unE.id + "';";
+                    ejecutarSQL(consultaSQL);
+
+                
+
+            }else { token = false; }
+
+
+            return token;
         }
 
         public int bajaEquipo(string id)

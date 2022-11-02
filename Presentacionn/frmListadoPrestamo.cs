@@ -21,7 +21,8 @@ namespace Presentacionn
 
         private void cbxListadosPrestamos_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            try
+            {           
             if (cbxTipo.SelectedIndex == 0)
             {
 
@@ -53,17 +54,17 @@ namespace Presentacionn
                 dgvListadoEquipo.DataSource = unDP.listarPrestamoEspontaneo();
 
             }
-
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void frmListadoPrestamo_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void cbxEstado_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            dPrestamo unDP = new dPrestamo();
+            dgvListadoEquipo.DataSource = unDP.listarPrestamo();
         }
     }
 }
