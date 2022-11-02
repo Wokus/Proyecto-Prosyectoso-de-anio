@@ -48,7 +48,7 @@
     <Compile Include="dResponsable.cs" />
     <Compile Include="dEquipo.cs" />
     <Compile Include="dPrestamoEspacio.cs" />
-    <Compile Include="dPrestamoExpontaneo.cs" />
+    <Compile Include="_.cs" />
     <Compile Include="dUsuario.cs" />
     <Compile Include="dPrestamoEquipo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

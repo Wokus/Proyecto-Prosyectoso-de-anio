@@ -21,5 +21,10 @@ namespace Presentacionn
         {
 
         }
+
+        private void btnAgregarPrestamo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
