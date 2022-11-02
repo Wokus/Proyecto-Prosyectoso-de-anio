@@ -37,5 +37,11 @@ namespace Dominio
             return unPE.listarEquipo1();
         }
 
+        public bool modificacionEquipo(eEquipo unE)
+        {
+            pEquipo unPE = new pEquipo();
+            bool token = unPE.modificarEquipo(unE);
+            return token;
+        }
     }
 }

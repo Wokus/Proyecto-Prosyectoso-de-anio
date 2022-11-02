@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio;
 using Entidades;
+using System.Media;
+using WMPLib;
 
 namespace Presentacionn
 {
@@ -195,11 +197,14 @@ namespace Presentacionn
         {
 
         }
-        
+
+    
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
+     
+            frmHeeHee au = new frmHeeHee();
+            au.Show();
         }
 
         private void sc1_Panel1_Paint(object sender, PaintEventArgs e)

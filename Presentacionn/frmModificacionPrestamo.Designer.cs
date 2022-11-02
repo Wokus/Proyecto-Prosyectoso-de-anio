@@ -38,9 +38,6 @@
             this.txtLocacion = new System.Windows.Forms.TextBox();
             this.lblEquipoID = new System.Windows.Forms.Label();
             this.lblProfesor = new System.Windows.Forms.Label();
-            this.mtxtFechaDevolucion = new System.Windows.Forms.MaskedTextBox();
-            this.mtxtFechaRetiro = new System.Windows.Forms.MaskedTextBox();
-            this.mtxtFechaSolicitud = new System.Windows.Forms.MaskedTextBox();
             this.lblEstado = new System.Windows.Forms.Label();
             this.lblFechaDev = new System.Windows.Forms.Label();
             this.lblFechaIgreso = new System.Windows.Forms.Label();
@@ -56,6 +53,9 @@
             this.mtxtEquipoID = new System.Windows.Forms.MaskedTextBox();
             this.mtxtAlumno = new System.Windows.Forms.MaskedTextBox();
             this.mtxtIdPrestamo = new System.Windows.Forms.MaskedTextBox();
+            this.dtpFechaSolicitud = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaRetiro = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaDevolucion = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // btnModificarPrestamo
@@ -121,7 +121,7 @@
             // lblLocacion
             // 
             this.lblLocacion.AutoSize = true;
-            this.lblLocacion.Location = new System.Drawing.Point(379, 102);
+            this.lblLocacion.Location = new System.Drawing.Point(379, 103);
             this.lblLocacion.Name = "lblLocacion";
             this.lblLocacion.Size = new System.Drawing.Size(51, 13);
             this.lblLocacion.TabIndex = 92;
@@ -129,7 +129,7 @@
             // 
             // txtLocacion
             // 
-            this.txtLocacion.Location = new System.Drawing.Point(382, 118);
+            this.txtLocacion.Location = new System.Drawing.Point(382, 119);
             this.txtLocacion.Name = "txtLocacion";
             this.txtLocacion.Size = new System.Drawing.Size(100, 20);
             this.txtLocacion.TabIndex = 91;
@@ -137,7 +137,7 @@
             // lblEquipoID
             // 
             this.lblEquipoID.AutoSize = true;
-            this.lblEquipoID.Location = new System.Drawing.Point(264, 228);
+            this.lblEquipoID.Location = new System.Drawing.Point(262, 228);
             this.lblEquipoID.Name = "lblEquipoID";
             this.lblEquipoID.Size = new System.Drawing.Size(57, 13);
             this.lblEquipoID.TabIndex = 90;
@@ -146,38 +146,11 @@
             // lblProfesor
             // 
             this.lblProfesor.AutoSize = true;
-            this.lblProfesor.Location = new System.Drawing.Point(262, 162);
+            this.lblProfesor.Location = new System.Drawing.Point(262, 163);
             this.lblProfesor.Name = "lblProfesor";
             this.lblProfesor.Size = new System.Drawing.Size(106, 13);
             this.lblProfesor.TabIndex = 88;
             this.lblProfesor.Text = "Profesor responsable";
-            // 
-            // mtxtFechaDevolucion
-            // 
-            this.mtxtFechaDevolucion.Location = new System.Drawing.Point(29, 244);
-            this.mtxtFechaDevolucion.Mask = "00/00/0000";
-            this.mtxtFechaDevolucion.Name = "mtxtFechaDevolucion";
-            this.mtxtFechaDevolucion.Size = new System.Drawing.Size(100, 20);
-            this.mtxtFechaDevolucion.TabIndex = 86;
-            this.mtxtFechaDevolucion.ValidatingType = typeof(System.DateTime);
-            // 
-            // mtxtFechaRetiro
-            // 
-            this.mtxtFechaRetiro.Location = new System.Drawing.Point(29, 179);
-            this.mtxtFechaRetiro.Mask = "00/00/0000";
-            this.mtxtFechaRetiro.Name = "mtxtFechaRetiro";
-            this.mtxtFechaRetiro.Size = new System.Drawing.Size(100, 20);
-            this.mtxtFechaRetiro.TabIndex = 85;
-            this.mtxtFechaRetiro.ValidatingType = typeof(System.DateTime);
-            // 
-            // mtxtFechaSolicitud
-            // 
-            this.mtxtFechaSolicitud.Location = new System.Drawing.Point(29, 119);
-            this.mtxtFechaSolicitud.Mask = "00/00/0000";
-            this.mtxtFechaSolicitud.Name = "mtxtFechaSolicitud";
-            this.mtxtFechaSolicitud.Size = new System.Drawing.Size(100, 20);
-            this.mtxtFechaSolicitud.TabIndex = 84;
-            this.mtxtFechaSolicitud.ValidatingType = typeof(System.DateTime);
             // 
             // lblEstado
             // 
@@ -218,7 +191,7 @@
             // lblResponsable
             // 
             this.lblResponsable.AutoSize = true;
-            this.lblResponsable.Location = new System.Drawing.Point(262, 102);
+            this.lblResponsable.Location = new System.Drawing.Point(262, 103);
             this.lblResponsable.Name = "lblResponsable";
             this.lblResponsable.Size = new System.Drawing.Size(107, 13);
             this.lblResponsable.TabIndex = 79;
@@ -280,10 +253,11 @@
             this.mtxtIDSalon.HidePromptOnLeave = true;
             this.mtxtIDSalon.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Insert;
             this.mtxtIDSalon.Location = new System.Drawing.Point(382, 179);
-            this.mtxtIDSalon.Mask = "999999999999999999999999999999999999999";
+            this.mtxtIDSalon.Mask = "999999";
             this.mtxtIDSalon.Name = "mtxtIDSalon";
             this.mtxtIDSalon.Size = new System.Drawing.Size(100, 20);
             this.mtxtIDSalon.TabIndex = 104;
+            this.mtxtIDSalon.Visible = false;
             // 
             // mtxtProfesor
             // 
@@ -298,7 +272,7 @@
             this.mtxtEquipoID.HidePromptOnLeave = true;
             this.mtxtEquipoID.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Insert;
             this.mtxtEquipoID.Location = new System.Drawing.Point(265, 244);
-            this.mtxtEquipoID.Mask = "999999999999999999999999999999999999999";
+            this.mtxtEquipoID.Mask = "9999999";
             this.mtxtEquipoID.Name = "mtxtEquipoID";
             this.mtxtEquipoID.Size = new System.Drawing.Size(100, 20);
             this.mtxtEquipoID.TabIndex = 106;
@@ -321,12 +295,39 @@
             this.mtxtIdPrestamo.Size = new System.Drawing.Size(100, 20);
             this.mtxtIdPrestamo.TabIndex = 108;
             // 
+            // dtpFechaSolicitud
+            // 
+            this.dtpFechaSolicitud.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaSolicitud.Location = new System.Drawing.Point(29, 119);
+            this.dtpFechaSolicitud.Name = "dtpFechaSolicitud";
+            this.dtpFechaSolicitud.Size = new System.Drawing.Size(100, 20);
+            this.dtpFechaSolicitud.TabIndex = 109;
+            // 
+            // dtpFechaRetiro
+            // 
+            this.dtpFechaRetiro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaRetiro.Location = new System.Drawing.Point(29, 179);
+            this.dtpFechaRetiro.Name = "dtpFechaRetiro";
+            this.dtpFechaRetiro.Size = new System.Drawing.Size(100, 20);
+            this.dtpFechaRetiro.TabIndex = 110;
+            // 
+            // dtpFechaDevolucion
+            // 
+            this.dtpFechaDevolucion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaDevolucion.Location = new System.Drawing.Point(29, 244);
+            this.dtpFechaDevolucion.Name = "dtpFechaDevolucion";
+            this.dtpFechaDevolucion.Size = new System.Drawing.Size(100, 20);
+            this.dtpFechaDevolucion.TabIndex = 111;
+            // 
             // frmModificacionPrestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(228)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(494, 508);
+            this.Controls.Add(this.dtpFechaDevolucion);
+            this.Controls.Add(this.dtpFechaRetiro);
+            this.Controls.Add(this.dtpFechaSolicitud);
             this.Controls.Add(this.mtxtIdPrestamo);
             this.Controls.Add(this.mtxtAlumno);
             this.Controls.Add(this.mtxtEquipoID);
@@ -342,9 +343,6 @@
             this.Controls.Add(this.txtLocacion);
             this.Controls.Add(this.lblEquipoID);
             this.Controls.Add(this.lblProfesor);
-            this.Controls.Add(this.mtxtFechaDevolucion);
-            this.Controls.Add(this.mtxtFechaRetiro);
-            this.Controls.Add(this.mtxtFechaSolicitud);
             this.Controls.Add(this.lblEstado);
             this.Controls.Add(this.lblFechaDev);
             this.Controls.Add(this.lblFechaIgreso);
@@ -375,9 +373,6 @@
         private System.Windows.Forms.TextBox txtLocacion;
         private System.Windows.Forms.Label lblEquipoID;
         private System.Windows.Forms.Label lblProfesor;
-        private System.Windows.Forms.MaskedTextBox mtxtFechaDevolucion;
-        private System.Windows.Forms.MaskedTextBox mtxtFechaRetiro;
-        private System.Windows.Forms.MaskedTextBox mtxtFechaSolicitud;
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Label lblFechaDev;
         private System.Windows.Forms.Label lblFechaIgreso;
@@ -393,5 +388,8 @@
         private System.Windows.Forms.MaskedTextBox mtxtEquipoID;
         private System.Windows.Forms.MaskedTextBox mtxtAlumno;
         private System.Windows.Forms.MaskedTextBox mtxtIdPrestamo;
+        private System.Windows.Forms.DateTimePicker dtpFechaSolicitud;
+        private System.Windows.Forms.DateTimePicker dtpFechaRetiro;
+        private System.Windows.Forms.DateTimePicker dtpFechaDevolucion;
     }
 }

@@ -57,10 +57,10 @@
             this.dgvListadoEquipo.Name = "dgvListadoEquipo";
             this.dgvListadoEquipo.Size = new System.Drawing.Size(474, 457);
             this.dgvListadoEquipo.TabIndex = 1;
-            this.dgvListadoEquipo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // cbxFecha
             // 
+            this.cbxFecha.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxFecha.FormattingEnabled = true;
             this.cbxFecha.Items.AddRange(new object[] {
             "De mas antiguo a mas reciente",
@@ -69,7 +69,6 @@
             this.cbxFecha.Name = "cbxFecha";
             this.cbxFecha.Size = new System.Drawing.Size(121, 21);
             this.cbxFecha.TabIndex = 2;
-            this.cbxFecha.Text = "Orden por Fecha";
             // 
             // cbxEstado
             // 
@@ -84,7 +83,6 @@
             this.cbxEstado.Size = new System.Drawing.Size(121, 21);
             this.cbxEstado.TabIndex = 3;
             this.cbxEstado.Text = "Estado";
-            this.cbxEstado.SelectedIndexChanged += new System.EventHandler(this.cbxEstado_SelectedIndexChanged);
             // 
             // frmListadoPrestamo
             // 
@@ -98,6 +96,7 @@
             this.Controls.Add(this.cbxTipo);
             this.Name = "frmListadoPrestamo";
             this.Text = "frmListadoPrestamo";
+            this.Load += new System.EventHandler(this.frmListadoPrestamo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoEquipo)).EndInit();
             this.ResumeLayout(false);
 

@@ -28,8 +28,23 @@ namespace Presentacionn
 
         private void frmListadoEquipo_Load(object sender, EventArgs e)
         {
-            dEquipo unDE = new dEquipo();
-            dgvEquipo.DataSource = unDE.listarEquipo();
+            try
+            {
+                dEquipo unDE = new dEquipo();
+                dgvEquipo.DataSource = unDE.listarEquipo();
+            }
+            catch (Exception error) { MessageBox.Show(error.Message); }
+            
+        }
+
+        private void cbxEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbxTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

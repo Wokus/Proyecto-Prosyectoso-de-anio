@@ -21,7 +21,7 @@ namespace Presentacionn
 
         private void frmAgregarEquipo_Load(object sender, EventArgs e)
         {
-
+            MessageBox.Show(Convert.ToString(cbxTipo.SelectedIndex));
         }
 
 
@@ -33,20 +33,23 @@ namespace Presentacionn
             eEquipo unE = new eEquipo();
             unE.nombre = txtNombre.Text;
             unE.numeroSerie = txtNumeroSerie.Text;
-            unE.estado = txtEstado.Text;
-            unE.fechaIngreso = mtxtFechaIngreso.Text;
-            unE.asegurado = txtAsegurado.Text;
+            unE.estado = cbxEstado.Text;
+            unE.fechaIngreso = dtpFecha.Value.ToString("yyyy-MM-dd");
+            unE.asegurado = cbxAsegurado.Text;
             unE.precio = txtPrecio.Text + cbxMoneda.Text;
-            //unE.tipo = cbxTipo.Text;
+            unE.tipo = cbxTipo.Text;
             unE.observacion = txtObservaciones.Text;
 
             dEquipo unDE = new dEquipo();
+            try
+            {
             bool productoCreado = unDE.altaEquipo(unE);
             if (productoCreado == true)
             {
                 MessageBox.Show("Equipo agregado de manera exitosa");
             }else { MessageBox.Show("Numero de serie repetido"); }
-            
+            }
+            catch (Exception error) { MessageBox.Show(error.Message); }
 
         }
 
@@ -61,6 +64,16 @@ namespace Presentacionn
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbxTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbxAsegurado_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

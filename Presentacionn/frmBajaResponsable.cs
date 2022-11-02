@@ -21,6 +21,8 @@ namespace Presentacionn
 
         private void button1_Click(object sender, EventArgs e)
         {
+            try
+            {
             dResponsable unDR = new dResponsable();
             eResponsable elAdmin = unDR.bajaResponsable(txtEliminarRes.Text);
             if (elAdmin == null)
@@ -31,6 +33,11 @@ namespace Presentacionn
             else
             {
                 MessageBox.Show("Usuario eliminado correctamente");
+            }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
             }
         }
     }

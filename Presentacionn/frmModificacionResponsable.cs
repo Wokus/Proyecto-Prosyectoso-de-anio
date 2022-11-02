@@ -26,21 +26,27 @@ namespace Presentacionn
             unR.curso = txtNewCi.Text;
             unR.tipo = cbxNewTipo.Text;
             dResponsable unDR = new dResponsable();
-            eResponsable elAdmin = unDR.modificarResponsable(unR, txtOldCi.Text);
-
-
-            if (elAdmin != null)
+            try
             {
-                MessageBox.Show("Usuario modificado de manera exitosa");
-               
+                eResponsable elAdmin = unDR.modificarResponsable(unR, txtOldCi.Text);
+
+                if (elAdmin != null)
+                {
+                    MessageBox.Show("Usuario modificado de manera exitosa");
+
+                }
+
+                if (elAdmin == null)
+                {
+                    MessageBox.Show("Ocurrio un error en los datos ingresados");
+
+                }
             }
-
-
-            if (elAdmin == null)
+            catch(Exception error)
             {
-                MessageBox.Show("Ocurrio un error en los datos ingresados");
-               
+                MessageBox.Show(error.Message);
             }
+           
         }
     }
 }

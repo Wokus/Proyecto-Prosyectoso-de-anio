@@ -21,7 +21,7 @@ namespace Persistencia
             {
                 int id = calculoDeId();
 
-                consultaSQL = "INSERT INTO `prestamo` VALUES('" + id + "','" + unPRES.fechaSolicitada + "','" + unPRES.cantidadDias + "','" + unPRES.fechaRetiro + "','" + unPRES.horaRetiro + "','" + unPRES.fechaDevolucion + "','" + unPRES.horaDevolucion + "','" + unPRES.estado + "','" + unPRES.prioridad + "');";
+                consultaSQL = "INSERT INTO `prestamo` VALUES('" + id + "','" + unPRES.fechaSolicitada + "','" + unPRES.fechaRetiro + "','" + unPRES.horaRetiro + "','" + unPRES.fechaDevolucion + "','" + unPRES.estado + "','" + unPRES.prioridad + "','" + unPRES.genuinoDiaDevolucion + "');";
                 ejecutarSQL(consultaSQL);
 
                 if (unPRES.alumnoResponsable.ci != null)
@@ -90,9 +90,10 @@ namespace Persistencia
                     consultaFK = "ALTER TABLE obtieneEspaciosPrestamoDeEspacio DROP FOREIGN KEY fK_obtieneEspaciosPrestamoDeEspacio_espacio;";
                     ejecutarSQL(consultaFK);
                     //Tirar abajo FK final
-                    string consultaSQL2 = "UPDATE prestamo SET fechaSolicitada =" + unPRES.fechaSolicitada + ", cantidadDias =" + unPRES.cantidadDias
-                             + ", fechaRetiro = " + unPRES.fechaRetiro + ", horaRetiro = " + unPRES.horaRetiro + ", fechaDevolucion = " + unPRES.horaDevolucion
-                             + ", estado =" + estado + "  WHERE prestamo.id = " + unPRES.id + " ;";
+                    string consultaSQL2 = "UPDATE prestamo SET fechaSolicitada =" + unPRES.fechaSolicitada + ", cantidadDias =" 
+                             + ", fechaRetiro = " + unPRES.fechaRetiro + ", horaRetiro = " + unPRES.horaRetiro + ", fechaDevolucion = " + unPRES.fechaDevolucion +", fechaGenuinaDevolucion = " + unPRES.genuinoDiaDevolucion
+                             + 
+                              ", estado =" + estado + "  WHERE prestamo.id = " + unPRES.id + " ;";
                     ejecutarSQL(consultaSQL2);
 
                     consultaSQL = "UPDATE prestamodeespacio SET id_Prestamo =" + unPRES.id +"  WHERE prestamo.id = " + " ;";

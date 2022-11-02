@@ -30,15 +30,12 @@ namespace Persistencia
                 unPRE.prioridad = 0;
                 
                 int id = calculoDeId();
-                
-                consultaSQL = "INSERT INTO `prestamo` VALUES('" + id + "','" + unPRE.fechaSolicitada + "','" + unPRE.cantidadDias + "','" + unPRE.fechaRetiro + "','" + unPRE.horaRetiro + "','" + unPRE.fechaDevolucion + "','" + unPRE.horaDevolucion + "','" + unPRE.estado + "','" + unPRE.prioridad + "');";
+                consultaSQL = "INSERT INTO `prestamo` VALUES('" + id + "','" + unPRE.fechaSolicitada + "','" + unPRE.fechaRetiro + "','" + unPRE.horaRetiro + "','" + unPRE.fechaDevolucion + "','" + unPRE.estado + "','" + unPRE.prioridad + "','" + unPRE.genuinoDiaDevolucion + "');";
                 ejecutarSQL(consultaSQL);
                 consultaSQL = "INSERT INTO `prestamodeequipo` VALUES('" + id + "','" + unPRE.ejercicio + "','" + unPRE.transporte + "');";  
                 ejecutarSQL(consultaSQL);
-
                 for (int i = 0; i < locaciones.Length; i++)
                 {
-
                     consultaSQL = "INSERT INTO `prestamodeequipolocacion` VALUES('" + id + "','" + locaciones[i] + "');";
                     ejecutarSQL(consultaSQL);
                 }
@@ -95,9 +92,10 @@ namespace Persistencia
                     ejecutarSQL(consultaFK);
 
                     //Tirar abajo as FK final
-                    string consultaSQL2 = "UPDATE prestamo SET fechaSolicitada =" + unPRE.fechaSolicitada + ", cantidadDias =" + unPRE.cantidadDias
-                     + ", fechaRetiro = " + unPRE.fechaRetiro + ", horaRetiro = " + unPRE.horaRetiro + ", fechaDevolucion = " + unPRE.horaDevolucion
-                     + ", estado =" + estado + "  WHERE prestamo.id = " + unPRE.id + " ;";
+                    string consultaSQL2 = "UPDATE prestamo SET fechaSolicitada =" + unPRE.fechaSolicitada + ", cantidadDias ="
+                                + ", fechaRetiro = " + unPRE.fechaRetiro + ", horaRetiro = " + unPRE.horaRetiro + ", fechaDevolucion = " + unPRE.fechaDevolucion + ", fechaGenuinaDevolucion = " + unPRE.genuinoDiaDevolucion
+                                +
+                                 ", estado =" + estado + "  WHERE prestamo.id = " + unPRE.id + " ;";
                     ejecutarSQL(consultaSQL2);
 
                     consultaSQL2 = "UPDATE prestamoDeEquipo SET prioridad = " + unPRE.prioridad + ", ejercicio = " + unPRE.ejercicio
