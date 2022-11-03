@@ -311,31 +311,46 @@ namespace Presentacionn
             if (cbxEstadoEquipo.SelectedIndex == 0)
             {
 
+                tuHermana = cbxEstadoEquipo.Text;
 
+                dPrestamoEquipo unDPE = new dPrestamoEquipo();
+                dgvListadoEquipo.DataSource = unDPE.listarPrestamoPorEstado(tuHermana);
 
             }
             if (cbxEstadoEquipo.SelectedIndex == 1)
             {
 
+                tuHermana = cbxEstadoEquipo.Text;
 
+                dPrestamoEquipo unDPE = new dPrestamoEquipo();
+                dgvListadoEquipo.DataSource = unDPE.listarPrestamoPorEstado(tuHermana);
 
             }
             if (cbxEstadoEquipo.SelectedIndex == 2)
             {
 
+                tuHermana = cbxEstadoEquipo.Text;
 
+                dPrestamoEquipo unDPE = new dPrestamoEquipo();
+                dgvListadoEquipo.DataSource = unDPE.listarPrestamoPorEstado(tuHermana);
 
             }
             if (cbxEstadoEquipo.SelectedIndex == 3)
             {
 
+                tuHermana = cbxEstadoEquipo.Text;
 
+                dPrestamoEquipo unDPE = new dPrestamoEquipo();
+                dgvListadoEquipo.DataSource = unDPE.listarPrestamoPorEstado(tuHermana);
 
             }
             if (cbxEstadoEquipo.SelectedIndex == 4)
             {
 
+                tuHermana = cbxEstadoEquipo.Text;
 
+                dPrestamoEquipo unDPE = new dPrestamoEquipo();
+                dgvListadoEquipo.DataSource = unDPE.listarPrestamoPorEstado(tuHermana);
 
             }
 
@@ -347,31 +362,46 @@ namespace Presentacionn
             if (cbxEstadoEspontaneo.SelectedIndex == 0)
             {
 
+                tuHermana = cbxEstadoEspontaneo.Text;
 
+                dPrestamoExpontaneo unDPE = new dPrestamoExpontaneo();
+                dgvListadoEquipo.DataSource = unDPE.listarPrestamoPorEstado(tuHermana);
 
             }
             if (cbxEstadoEspontaneo.SelectedIndex == 1)
             {
 
+                tuHermana = cbxEstadoEspontaneo.Text;
 
+                dPrestamoExpontaneo unDPE = new dPrestamoExpontaneo();
+                dgvListadoEquipo.DataSource = unDPE.listarPrestamoPorEstado(tuHermana);
 
             }
             if (cbxEstadoEspontaneo.SelectedIndex == 2)
             {
 
+                tuHermana = cbxEstadoEspontaneo.Text;
 
+                dPrestamoExpontaneo unDPE = new dPrestamoExpontaneo();
+                dgvListadoEquipo.DataSource = unDPE.listarPrestamoPorEstado(tuHermana);
 
             }
             if (cbxEstadoEspontaneo.SelectedIndex == 3)
             {
 
+                tuHermana = cbxEstadoEspontaneo.Text;
 
+                dPrestamoExpontaneo unDPE = new dPrestamoExpontaneo();
+                dgvListadoEquipo.DataSource = unDPE.listarPrestamoPorEstado(tuHermana);
 
             }
             if (cbxEstadoEspontaneo.SelectedIndex == 4)
             {
 
+                tuHermana = cbxEstadoEspontaneo.Text;
 
+                dPrestamoExpontaneo unDPE = new dPrestamoExpontaneo();
+                dgvListadoEquipo.DataSource = unDPE.listarPrestamoPorEstado(tuHermana);
 
             }
 
@@ -383,31 +413,46 @@ namespace Presentacionn
             if (cbxEstadoEspacio.SelectedIndex == 0)
             {
 
+                tuHermana = cbxEstadoEspacio.Text;
 
+                dPrestamoEspacio unDPE = new dPrestamoEspacio();
+                dgvListadoEquipo.DataSource = unDPE.listarPrestamoPorEstado(tuHermana);
 
             }
             if (cbxEstadoEspacio.SelectedIndex == 1)
             {
 
+                tuHermana = cbxEstadoEspacio.Text;
 
+                dPrestamoEspacio unDPE = new dPrestamoEspacio();
+                dgvListadoEquipo.DataSource = unDPE.listarPrestamoPorEstado(tuHermana);
 
             }
             if (cbxEstadoEspacio.SelectedIndex == 2)
             {
 
+                tuHermana = cbxEstadoEspacio.Text;
 
+                dPrestamoEspacio unDPE = new dPrestamoEspacio();
+                dgvListadoEquipo.DataSource = unDPE.listarPrestamoPorEstado(tuHermana);
 
             }
             if (cbxEstadoEspacio.SelectedIndex == 3)
             {
 
+                tuHermana = cbxEstadoEspacio.Text;
 
+                dPrestamoEspacio unDPE = new dPrestamoEspacio();
+                dgvListadoEquipo.DataSource = unDPE.listarPrestamoPorEstado(tuHermana);
 
             }
             if (cbxEstadoEspacio.SelectedIndex == 4)
             {
 
+                tuHermana = cbxEstadoEspacio.Text;
 
+                dPrestamoEspacio unDPE = new dPrestamoEspacio();
+                dgvListadoEquipo.DataSource = unDPE.listarPrestamoPorEstado(tuHermana);
 
             }
 

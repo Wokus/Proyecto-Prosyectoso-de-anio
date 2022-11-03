@@ -63,5 +63,14 @@ namespace Dominio
 
         }
 
+        public DataTable listarPrestamoPorEstado(String tuHermana)
+        {
+
+            pPrestamoEspacio unPEE = new pPrestamoEspacio();
+
+            return unPEE.listarPrestamoPorEstado(tuHermana);
+
+        }
+
     }
 }
