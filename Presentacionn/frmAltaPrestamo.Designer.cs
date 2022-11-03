@@ -52,8 +52,8 @@
             this.dtpFechaSolicitud = new System.Windows.Forms.DateTimePicker();
             this.dtptFechaRetiro = new System.Windows.Forms.DateTimePicker();
             this.dtpFechaDevolucion = new System.Windows.Forms.DateTimePicker();
-            this.txtEquiposId = new System.Windows.Forms.TextBox();
             this.cbxEjercicioPEquip = new System.Windows.Forms.ComboBox();
+            this.txtEquiposId = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblProfesor
@@ -64,7 +64,6 @@
             this.lblProfesor.Size = new System.Drawing.Size(106, 13);
             this.lblProfesor.TabIndex = 43;
             this.lblProfesor.Text = "Profesor responsable";
-            this.lblProfesor.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblEstado
             // 
@@ -74,7 +73,6 @@
             this.lblEstado.Size = new System.Drawing.Size(40, 13);
             this.lblEstado.TabIndex = 38;
             this.lblEstado.Text = "Estado";
-            this.lblEstado.Click += new System.EventHandler(this.lblTipo_Click);
             // 
             // lblFechaDev
             // 
@@ -84,7 +82,6 @@
             this.lblFechaDev.Size = new System.Drawing.Size(107, 13);
             this.lblFechaDev.TabIndex = 37;
             this.lblFechaDev.Text = "Fecha de devolucion";
-            this.lblFechaDev.Click += new System.EventHandler(this.lblAsegurado_Click);
             // 
             // lblFechaIgreso
             // 
@@ -94,7 +91,6 @@
             this.lblFechaIgreso.Size = new System.Drawing.Size(71, 13);
             this.lblFechaIgreso.TabIndex = 36;
             this.lblFechaIgreso.Text = "Hora de retiro";
-            this.lblFechaIgreso.Click += new System.EventHandler(this.lblFechaIgreso_Click);
             // 
             // lblFechaRe
             // 
@@ -104,7 +100,6 @@
             this.lblFechaRe.Size = new System.Drawing.Size(78, 13);
             this.lblFechaRe.TabIndex = 35;
             this.lblFechaRe.Text = "Fecha de retiro";
-            this.lblFechaRe.Click += new System.EventHandler(this.lblEstado_Click);
             // 
             // lblResponsable
             // 
@@ -114,7 +109,6 @@
             this.lblResponsable.Size = new System.Drawing.Size(107, 13);
             this.lblResponsable.TabIndex = 34;
             this.lblResponsable.Text = "Alumno Responsable";
-            this.lblResponsable.Click += new System.EventHandler(this.lblNumeroSerie_Click);
             // 
             // lblFechaSoli
             // 
@@ -124,7 +118,6 @@
             this.lblFechaSoli.Size = new System.Drawing.Size(93, 13);
             this.lblFechaSoli.TabIndex = 33;
             this.lblFechaSoli.Text = "Fecha de solicitud";
-            this.lblFechaSoli.Click += new System.EventHandler(this.Nombre_Click);
             // 
             // cbxEstado
             // 
@@ -139,7 +132,6 @@
             this.cbxEstado.Name = "cbxEstado";
             this.cbxEstado.Size = new System.Drawing.Size(100, 21);
             this.cbxEstado.TabIndex = 32;
-            this.cbxEstado.SelectedIndexChanged += new System.EventHandler(this.cbxEstado_SelectedIndexChanged);
             // 
             // mtxtHoraRetiro
             // 
@@ -149,7 +141,6 @@
             this.mtxtHoraRetiro.Size = new System.Drawing.Size(100, 20);
             this.mtxtHoraRetiro.TabIndex = 31;
             this.mtxtHoraRetiro.ValidatingType = typeof(System.DateTime);
-            this.mtxtHoraRetiro.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtxtHoraRetiro_MaskInputRejected);
             // 
             // btnAgregarPrestamo
             // 
@@ -172,7 +163,6 @@
             this.lblEquipoID.Size = new System.Drawing.Size(57, 13);
             this.lblEquipoID.TabIndex = 45;
             this.lblEquipoID.Text = "Equipo(ID)";
-            this.lblEquipoID.Click += new System.EventHandler(this.label3_Click);
             // 
             // lblTransporte
             // 
@@ -182,7 +172,6 @@
             this.lblTransporte.Size = new System.Drawing.Size(58, 13);
             this.lblTransporte.TabIndex = 49;
             this.lblTransporte.Text = "Transporte";
-            this.lblTransporte.Click += new System.EventHandler(this.label4_Click);
             // 
             // txtTransporte
             // 
@@ -190,7 +179,6 @@
             this.txtTransporte.Name = "txtTransporte";
             this.txtTransporte.Size = new System.Drawing.Size(100, 20);
             this.txtTransporte.TabIndex = 48;
-            this.txtTransporte.TextChanged += new System.EventHandler(this.txtTransporte_TextChanged);
             // 
             // lblEjercicio
             // 
@@ -200,7 +188,6 @@
             this.lblEjercicio.Size = new System.Drawing.Size(47, 13);
             this.lblEjercicio.TabIndex = 51;
             this.lblEjercicio.Text = "Ejercicio";
-            this.lblEjercicio.Click += new System.EventHandler(this.label5_Click);
             // 
             // cbxTipoPrestamo
             // 
@@ -225,7 +212,6 @@
             this.lblIDSalon.TabIndex = 74;
             this.lblIDSalon.Text = "ID Salon";
             this.lblIDSalon.Visible = false;
-            this.lblIDSalon.Click += new System.EventHandler(this.lblIDSalon_Click);
             // 
             // txtLocacion
             // 
@@ -233,7 +219,6 @@
             this.txtLocacion.Name = "txtLocacion";
             this.txtLocacion.Size = new System.Drawing.Size(100, 20);
             this.txtLocacion.TabIndex = 46;
-            this.txtLocacion.TextChanged += new System.EventHandler(this.txtLocacion_TextChanged);
             // 
             // lblLocacion
             // 
@@ -243,7 +228,6 @@
             this.lblLocacion.Size = new System.Drawing.Size(51, 13);
             this.lblLocacion.TabIndex = 47;
             this.lblLocacion.Text = "Locacion";
-            this.lblLocacion.Click += new System.EventHandler(this.label2_Click);
             // 
             // mtxtIDSalon
             // 
@@ -255,12 +239,11 @@
             this.mtxtIDSalon.Size = new System.Drawing.Size(100, 20);
             this.mtxtIDSalon.TabIndex = 76;
             this.mtxtIDSalon.Visible = false;
-            this.mtxtIDSalon.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtxtIDSalon_MaskInputRejected);
             // 
             // mtxtProfesor
             // 
             this.mtxtProfesor.Location = new System.Drawing.Point(265, 179);
-            this.mtxtProfesor.Mask = "9.999.999-9";
+            this.mtxtProfesor.Mask = "9,999,999-9";
             this.mtxtProfesor.Name = "mtxtProfesor";
             this.mtxtProfesor.Size = new System.Drawing.Size(100, 20);
             this.mtxtProfesor.TabIndex = 78;
@@ -268,10 +251,11 @@
             // mtxtAlumno
             // 
             this.mtxtAlumno.Location = new System.Drawing.Point(265, 119);
-            this.mtxtAlumno.Mask = "9.999.999-9";
+            this.mtxtAlumno.Mask = "9,999,999-9";
             this.mtxtAlumno.Name = "mtxtAlumno";
             this.mtxtAlumno.Size = new System.Drawing.Size(100, 20);
             this.mtxtAlumno.TabIndex = 79;
+            this.mtxtAlumno.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             // 
             // dtpFechaSolicitud
             // 
@@ -297,13 +281,6 @@
             this.dtpFechaDevolucion.Size = new System.Drawing.Size(100, 20);
             this.dtpFechaDevolucion.TabIndex = 82;
             // 
-            // txtEquiposId
-            // 
-            this.txtEquiposId.Location = new System.Drawing.Point(265, 244);
-            this.txtEquiposId.Name = "txtEquiposId";
-            this.txtEquiposId.Size = new System.Drawing.Size(100, 20);
-            this.txtEquiposId.TabIndex = 83;
-            // 
             // cbxEjercicioPEquip
             // 
             this.cbxEjercicioPEquip.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -315,6 +292,13 @@
             this.cbxEjercicioPEquip.Name = "cbxEjercicioPEquip";
             this.cbxEjercicioPEquip.Size = new System.Drawing.Size(100, 21);
             this.cbxEjercicioPEquip.TabIndex = 84;
+            // 
+            // txtEquiposId
+            // 
+            this.txtEquiposId.Location = new System.Drawing.Point(265, 244);
+            this.txtEquiposId.Name = "txtEquiposId";
+            this.txtEquiposId.Size = new System.Drawing.Size(100, 20);
+            this.txtEquiposId.TabIndex = 83;
             // 
             // frmAltaPrestamo
             // 
@@ -350,7 +334,6 @@
             this.Controls.Add(this.btnAgregarPrestamo);
             this.Name = "frmAltaPrestamo";
             this.Text = "frmAltaPrestamo";
-            this.Load += new System.EventHandler(this.frmAltaPrestamo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -382,7 +365,7 @@
         private System.Windows.Forms.DateTimePicker dtpFechaSolicitud;
         private System.Windows.Forms.DateTimePicker dtptFechaRetiro;
         private System.Windows.Forms.DateTimePicker dtpFechaDevolucion;
-        private System.Windows.Forms.TextBox txtEquiposId;
         private System.Windows.Forms.ComboBox cbxEjercicioPEquip;
+        private System.Windows.Forms.TextBox txtEquiposId;
     }
 }
