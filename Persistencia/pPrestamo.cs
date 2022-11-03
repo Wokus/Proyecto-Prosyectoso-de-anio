@@ -43,6 +43,17 @@ namespace Persistencia
 
         }
 
+        public DataTable listarPrestamoPorEstado(string tuHermana)
+        {
+
+            String consultaSQL = "SELECT * FROM prestamo WHERE estado= '" + tuHermana + "' ;";
+
+            DataTable dt = listarAlgo(consultaSQL);
+
+            return dt;
+
+        }
+
         public int bajaPrestamo(int idPrestamo)
         {
             int id1 = 0;

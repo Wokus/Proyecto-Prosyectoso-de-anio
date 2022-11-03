@@ -19,6 +19,8 @@ namespace Presentacionn
             InitializeComponent();
         }
 
+        string tuHermana;
+
         private void cbxListadosPrestamos_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -34,6 +36,11 @@ namespace Presentacionn
             cbxFechaEspacio.Visible = false;
             cbxFechaEspontaneo.Visible = false;
 
+            cbxEstado.Visible = true;
+            cbxEstadoEquipo.Visible = false;
+            cbxEstadoEspacio.Visible = false;
+            cbxEstadoEspontaneo.Visible = false;
+
             }
 
             if (cbxTipo.SelectedIndex == 1)
@@ -46,6 +53,11 @@ namespace Presentacionn
                 cbxFechaEquipo.Visible = true;
                 cbxFechaEspacio.Visible = false;
                 cbxFechaEspontaneo.Visible = false;
+
+                cbxEstado.Visible = false;
+                cbxEstadoEquipo.Visible = true;
+                cbxEstadoEspacio.Visible = false;
+                cbxEstadoEspontaneo.Visible = false;
 
                 }
 
@@ -60,6 +72,11 @@ namespace Presentacionn
                 cbxFechaEspacio.Visible = true;
                 cbxFechaEspontaneo.Visible = false;
 
+                cbxEstado.Visible = false;
+                cbxEstadoEquipo.Visible = false;
+                cbxEstadoEspacio.Visible = true;
+                cbxEstadoEspontaneo.Visible = false;
+
                 }
 
             if (cbxTipo.SelectedIndex == 2)
@@ -72,6 +89,11 @@ namespace Presentacionn
                 cbxFechaEquipo.Visible = false;
                 cbxFechaEspacio.Visible = false;
                 cbxFechaEspontaneo.Visible = true;
+
+                cbxEstado.Visible = false;
+                cbxEstadoEquipo.Visible = false;
+                cbxEstadoEspacio.Visible = false;
+                cbxEstadoEspontaneo.Visible = true;
 
                 }
             }
@@ -90,6 +112,11 @@ namespace Presentacionn
             cbxFechaEquipo.Visible = false;
             cbxFechaEspacio.Visible = false;
             cbxFechaEspontaneo.Visible = false;
+
+            cbxEstado.Visible = true;
+            cbxEstadoEquipo.Visible = false;
+            cbxEstadoEspacio.Visible = false;
+            cbxEstadoEspontaneo.Visible = false;
 
         }
 
@@ -210,6 +237,177 @@ namespace Presentacionn
             {
 
                 MessageBox.Show(error.Message);
+
+            }
+
+        }
+
+        /*Armado
+        Levantado
+        Cancelado
+        Devuelto
+        En progreso*/
+        private void cbxEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cbxEstado.SelectedIndex == 0)
+                {
+
+                    tuHermana=cbxEstado.Text;
+
+                    dPrestamo unDPE = new dPrestamo();
+                    dgvListadoEquipo.DataSource = unDPE.listarPrestamoPorEstado(tuHermana);
+
+                }
+                if (cbxEstado.SelectedIndex == 1)
+                {
+
+                    tuHermana = cbxEstado.Text;
+
+                    dPrestamo unDPE = new dPrestamo();
+                    dgvListadoEquipo.DataSource = unDPE.listarPrestamoPorEstado(tuHermana);
+
+                }
+                if (cbxEstado.SelectedIndex == 2)
+                {
+
+                    tuHermana = cbxEstado.Text;
+
+                    dPrestamo unDPE = new dPrestamo();
+                    dgvListadoEquipo.DataSource = unDPE.listarPrestamoPorEstado(tuHermana);
+
+                }
+                if (cbxEstado.SelectedIndex == 3)
+                {
+
+                    tuHermana = cbxEstado.Text;
+
+                    dPrestamo unDPE = new dPrestamo();
+                    dgvListadoEquipo.DataSource = unDPE.listarPrestamoPorEstado(tuHermana);
+
+                }
+                if (cbxEstado.SelectedIndex == 4)
+                {
+
+                    tuHermana = cbxEstado.Text;
+
+                    dPrestamo unDPE = new dPrestamo();
+                    dgvListadoEquipo.DataSource = unDPE.listarPrestamoPorEstado(tuHermana);
+
+                }
+            }
+            catch (Exception error)
+            {
+
+                MessageBox.Show(error.Message);
+
+            }
+        }
+
+        private void cbxEstadoEquipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (cbxEstadoEquipo.SelectedIndex == 0)
+            {
+
+
+
+            }
+            if (cbxEstadoEquipo.SelectedIndex == 1)
+            {
+
+
+
+            }
+            if (cbxEstadoEquipo.SelectedIndex == 2)
+            {
+
+
+
+            }
+            if (cbxEstadoEquipo.SelectedIndex == 3)
+            {
+
+
+
+            }
+            if (cbxEstadoEquipo.SelectedIndex == 4)
+            {
+
+
+
+            }
+
+        }
+
+        private void cbxEstadoEspontaneo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (cbxEstadoEspontaneo.SelectedIndex == 0)
+            {
+
+
+
+            }
+            if (cbxEstadoEspontaneo.SelectedIndex == 1)
+            {
+
+
+
+            }
+            if (cbxEstadoEspontaneo.SelectedIndex == 2)
+            {
+
+
+
+            }
+            if (cbxEstadoEspontaneo.SelectedIndex == 3)
+            {
+
+
+
+            }
+            if (cbxEstadoEspontaneo.SelectedIndex == 4)
+            {
+
+
+
+            }
+
+        }
+
+        private void cbxEstadoEspacio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (cbxEstadoEspacio.SelectedIndex == 0)
+            {
+
+
+
+            }
+            if (cbxEstadoEspacio.SelectedIndex == 1)
+            {
+
+
+
+            }
+            if (cbxEstadoEspacio.SelectedIndex == 2)
+            {
+
+
+
+            }
+            if (cbxEstadoEspacio.SelectedIndex == 3)
+            {
+
+
+
+            }
+            if (cbxEstadoEspacio.SelectedIndex == 4)
+            {
+
+
 
             }
 

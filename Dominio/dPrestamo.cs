@@ -37,6 +37,15 @@ namespace Dominio
             return unPEF.listarPrestamoPorFechaRA();
 
         }
+
+        public DataTable listarPrestamoPorEstado(String tuHermana)
+        {
+
+            pPrestamo unPEE = new pPrestamo();
+
+            return unPEE.listarPrestamoPorEstado(tuHermana);
+
+        }
              
         public int bajaPrestamoDeEquipo(int idPrestamo)
         {
