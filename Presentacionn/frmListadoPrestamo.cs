@@ -187,6 +187,32 @@ namespace Presentacionn
         private void cbxFechaEquipo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+            try
+            {
+                if (cbxFechaEspontaneo.Text == "De mas antiguo a mas reciente")
+                {
+
+                    dPrestamoEquipo unDPF = new dPrestamoEquipo();
+                    dgvListadoEquipo.DataSource = unDPF.listarPrestamoPorFechaAR();
+
+                }
+
+                if (cbxFechaEspontaneo.Text == "De mas reciente a mas antiguo")
+                {
+
+                    dPrestamoEquipo unDPF = new dPrestamoEquipo();
+                    dgvListadoEquipo.DataSource = unDPF.listarPrestamoPorFechaRA();
+
+                }
+
+            }
+            catch (Exception error)
+            {
+
+                MessageBox.Show(error.Message);
+
+            }
+
         }
     }
         

@@ -70,6 +70,28 @@ namespace Persistencia
             return dt;
         }
 
+        public DataTable listarPrestamoPorFechaAR()
+        {
+
+            String consultaSQL = "SELECT prestamo.id, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, tiene.id_Equipo FROM prestamo INNER JOIN prestamoDeEquipo ON prestamo.id=prestamoDeEquipo.id_Prestamo INNER JOIN tiene ON prestamoDeEquipo.id_Prestamo=tiene.id_PrestamoDeEquipo ORDER BY prestamo.fechaSolicitada ASC ;";
+
+            DataTable dt = listarAlgo(consultaSQL);
+
+            return dt;
+
+        }
+
+        public DataTable listarPrestamoPorFechaRA()
+        {
+
+            String consultaSQL = "SELECT prestamo.id, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, tiene.id_Equipo FROM prestamo INNER JOIN prestamoDeEquipo ON prestamo.id=prestamoDeEquipo.id_Prestamo INNER JOIN tiene ON prestamoDeEquipo.id_Prestamo=tiene.id_PrestamoDeEquipo ORDER BY prestamo.fechaSolicitada DESC ;";
+
+            DataTable dt = listarAlgo(consultaSQL);
+
+            return dt;
+
+        }
+
         public int modificacionPrestamo(ePrestamoEquipo unPRE, String IdPrestamo)
         {
             int token = 69;
