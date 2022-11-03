@@ -83,6 +83,7 @@
             this.cbxEstado.Size = new System.Drawing.Size(121, 21);
             this.cbxEstado.TabIndex = 3;
             this.cbxEstado.Text = "Estado";
+            this.cbxEstado.SelectedIndexChanged += new System.EventHandler(this.cbxEstado_SelectedIndexChanged);
             // 
             // frmListadoPrestamo
             // 

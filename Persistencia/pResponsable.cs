@@ -23,7 +23,7 @@ namespace Persistencia
 
             eResponsable elAdmin = new eResponsable();
             elAdmin = null;
-            string consultaSQL = "SELECT * FROM `solicitante` WHERE `solicitante`.`ci` = '" + unPR.ci + "';";
+            string consultaSQL = "SELECT * FROM solicitante WHERE solicitante.ci = '" + unPR.ci + "';";
 
 
             MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
@@ -65,21 +65,53 @@ namespace Persistencia
         }
 
         public DataTable listarResponsable()
-        {
-            
-                string consultaSQL = "SELECT * FROM persona INNER JOIN `solicitante` ON persona.ci = solicitante.ci; ";
-
+        {     
+                string consultaSQL = "SELECT persona.ci,nombre,apellido,curso,tipo FROM persona INNER JOIN solicitante on persona.ci = solicitante.ci;";
                 DataTable dt = listarAlgo(consultaSQL);
-
                 return dt;
-            
         }
+
+        public DataTable listarResponsabletipoP()
+        {
+            string consultaSQL = "SELECT solicitante.ci,nombre,apellido,curso,tipo FROM persona INNER JOIN solicitante on persona.ci = solicitante.ci WHERE tipo = 'Profesor';";
+            DataTable dat = listarAlgo(consultaSQL);
+            return dat;
+        }
+
+        public DataTable listarResponsabletipoA()
+        {
+            string aaaaaaaaa = "SELECT solicitante.ci,nombre,apellido,curso,tipo FROM persona INNER JOIN solicitante on persona.ci = solicitante.ci WHERE tipo = 'Alumno';";
+            DataTable hee = listarAlgo(aaaaaaaaa);
+            return hee;
+        }
+
+        public DataTable listarResponsableCP()
+        {
+            string CP = "SELECT solicitante.ci,nombre,apellido,curso,tipo FROM persona INNER JOIN solicitante on persona.ci = solicitante.ci WHERE Curso = 'Primero';";
+            DataTable heehee = listarAlgo(CP);
+            return heehee;
+        }
+
+        public DataTable listarResponsableCS()
+        {
+            string CS = "SELECT solicitante.ci,nombre,apellido,curso,tipo FROM persona INNER JOIN solicitante on persona.ci = solicitante.ci WHERE Curso = 'Segundo';";
+            DataTable boys = listarAlgo(CS);
+            return boys;
+        }
+
+        public DataTable listarResponsableCT()
+        {
+            string CT = "SELECT solicitante.ci,nombre,apellido,curso,tipo FROM persona INNER JOIN solicitante on persona.ci = solicitante.ci WHERE Curso = 'Tercero';";
+            DataTable women = listarAlgo(CT);
+            return women;
+        }
+
 
         public eResponsable bajaResponsable(string EliminarRes)
         {
             eResponsable elAdmin = new eResponsable();
             elAdmin = null;
-            string consultaSQL = "SELECT * FROM ` solicitante` WHERE `solicitante`.`ci` = '" + EliminarRes + "';";
+            string consultaSQL = "SELECT * FROM solicitante WHERE solicitante.ci = '" + EliminarRes + "';";
 
 
             MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
@@ -92,7 +124,7 @@ namespace Persistencia
 
             if (elAdmin != null)
             {
-                string consultaSQL2 = "DELETE FROM solicitante WHERE ` solicitante`.`ci` = '" + EliminarRes + "';";
+                string consultaSQL2 = "DELETE FROM solicitante WHERE solicitante.ci = '" + EliminarRes + "';";
                 ejecutarSQL(consultaSQL2);
 
             }
@@ -113,7 +145,7 @@ namespace Persistencia
         {
             eResponsable elAdmin = new eResponsable();
             elAdmin = null;
-            string consultaSQL = "SELECT * FROM `solicitante` WHERE `solicitante`.`ci` = '" + oldCi + "';";
+            string consultaSQL = "SELECT * FROM solicitante WHERE solicitante.ci = '" + oldCi + "';";
 
 
             MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
@@ -129,7 +161,7 @@ namespace Persistencia
                 token = elAdmin;
 
                 elAdmin = null;
-                consultaSQL = "SELECT * FROM `solicitante` WHERE `solicitante`.`ci` = '" + unDR.ci + "';";
+                consultaSQL = "SELECT * FROM solicitante WHERE solicitante.ci = '" + unDR.ci + "';";
 
 
                 fila = ejecutarYdevolver(consultaSQL);
@@ -143,21 +175,22 @@ namespace Persistencia
                 if (elAdmin == null)
                 {
 
-                    String consultaFK = "ALTER TABLE usuario DROP FOREIGN KEY fK_Solicitante_persona;";
-                    ejecutarSQL(consultaFK);
+                    String consultaFK1 = "ALTER TABLE usuario DROP FOREIGN KEY fK_Solicitante_persona;";
+                    ejecutarSQL(consultaFK1);
 
-                    String consultaSQL2 = "UPDATE `persona` SET `ci` ='" + unDR.ci
-                    + "', `nombre` = '" + unDR.nombre + "', `apellido` = '" + unDR.apellido + "' WHERE `persona`.`ci` = '" + oldCi + "';";
+                    String consultaSQL2 = "UPDATE persona SET ci ='" + unDR.ci
+                    + "',nombre = '"+ unDR.nombre +"', apellido = '" + unDR.apellido + "' WHERE person.ci = '" + oldCi + "';";
                     ejecutarSQL(consultaSQL2);
 
-                    consultaSQL2 = "UPDATE `solicitante` SET `ci` = '" + unDR.ci
-                    + "', `curso` = '" + unDR.curso + "', `tipo` = '" + unDR.tipo + "' WHERE `solicitante`.`ci` = '" + oldCi + "';";
+                    
+
+                    consultaSQL2 = "UPDATE solicitante SET `ci` = '" + unDR.ci
+                    + "', curso = '" + unDR.curso + "', tipo = '" + unDR.tipo + "' WHERE solicitante.ci = '" + oldCi + "';";
                     elAdmin = token;
                     ejecutarSQL(consultaSQL2);
 
-
-                    consultaFK = "ALTER TABLE usuario ADD constraint fK_solicitante_persona  FOREIGN KEY (ci) REFERENCES persona(ci);";
-                    ejecutarSQL(consultaFK);
+                    consultaFK1 = "ALTER TABLE usuario ADD constraint fK_solicitante_persona FOREIGN KEY (ci) REFERENCES persona(ci);";
+                    ejecutarSQL(consultaFK1);
 
                 }
             }

@@ -66,5 +66,10 @@ namespace Presentacionn
             dPrestamo unDP = new dPrestamo();
             dgvListadoEquipo.DataSource = unDP.listarPrestamo();
         }
+
+        private void cbxEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

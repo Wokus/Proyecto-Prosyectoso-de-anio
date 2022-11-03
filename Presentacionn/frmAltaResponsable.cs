@@ -27,22 +27,22 @@ namespace Presentacionn
             unR.apellido = txtApellidoRes.Text;
             unR.curso = cbxCurso.Text;
             unR.tipo = cbxTipo.Text;
-            try
-            {
-                dResponsable unDR = new dResponsable();
-                bool token = unDR.altaResponsable(unR);
-                if (token == true)
-                {
 
-                    MessageBox.Show("el responsable ha sido agregado correctamente ");
-                }
-                else
-                {
+            dResponsable unDR = new dResponsable();
+            bool token = unDR.altaResponsable(unR);
+            if (token == true)
+            {
+
+                MessageBox.Show("el responsable ha sido agregado correctamente ");
+            }
+            else
+            {
 
                 MessageBox.Show("el responsable no ha sido ingresado");
             }
         }
-
+ 
+        
         private void cbxTipo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -55,7 +55,7 @@ namespace Presentacionn
 
         private void frmAltaResponsable_Load(object sender, EventArgs e)
         {
-            MdiParent = 
+            
         }
     }
 }

@@ -18,31 +18,25 @@ namespace Presentacionn
         {
             InitializeComponent();
         }
-        private void frmListadoResponsable_Load (object sener, EventArgs e)
-        {
-            try
-            {
-            dResponsable unDR = new dResponsable();
-            dgvResponsable.DataSource = unDR.ListarResponsable();
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show(error.Message);
-            }
-        }
         private void cbxTipo_SelectedIndexChanged(object sender, EventArgs e)
         {
             try { 
             if (cbxTipo.SelectedIndex == 0)
-            {
-                dResponsable unDR = new dResponsable();
-                dgvResponsable.DataSource = unDR.ListarResponsable();
-            }
+                {
+                    dResponsable unDR = new dResponsable();
+                    dgvResponsable.DataSource = unDR.ListarResponsable();
+                }
             if (cbxTipo.SelectedIndex == 1)
-            {
-                dResponsable unDR = new dResponsable();
-                dgvResponsable.DataSource = unDR.ListarResponsable();
-            }
+                {
+                    dResponsable unDR = new dResponsable();
+                    dgvResponsable.DataSource = unDR.ListarResponsabletipoP();
+                }
+            if (cbxTipo.SelectedIndex == 2)
+                {
+                    dResponsable unDR = new dResponsable();
+                    dgvResponsable.DataSource = unDR.ListarResponsabletipoA();
+
+                }
             }
 
             catch (Exception error)
@@ -67,6 +61,27 @@ namespace Presentacionn
             dResponsable unDR = new dResponsable();
             dgvResponsable.DataSource = unDR.ListarResponsable();
 
+        }
+
+        private void cbxCurso_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxCurso.SelectedIndex == 0)
+            {
+                dResponsable unDR = new dResponsable();
+                dgvResponsable.DataSource = unDR.ListarResponsableCP();
+
+            }
+            if (cbxCurso.SelectedIndex == 1)
+            {
+                dResponsable unDR = new dResponsable();
+                dgvResponsable.DataSource = unDR.ListarResponsableCS();
+
+            }
+            if (cbxCurso.SelectedIndex == 2)
+            {
+                dResponsable unDR = new dResponsable();
+                dgvResponsable.DataSource = unDR.ListarResponsableCT();
+            }
         }
     }
 }

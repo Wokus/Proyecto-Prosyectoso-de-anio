@@ -99,12 +99,8 @@ namespace Persistencia
                     ejecutarSQL(consultaSQL2);
 
 
-                    consultaFK = "ALTER TABLE usuario ADD constraint fK_usuario_persona  FOREIGN KEY (ci) REFERENCES persona(ci);";
+                    consultaFK = "ALTER TABLE usuario ADD constraint fK_usuario_persona FOREIGN KEY (ci) REFERENCES persona(ci);";
                     ejecutarSQL(consultaFK);
-
-
-
-
 
                 }
             }
