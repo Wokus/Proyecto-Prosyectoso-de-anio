@@ -39,12 +39,23 @@ namespace Presentacionn
                 else
                 {
 
-                    MessageBox.Show("el responsable no ha sido ingresado");
-                }
+                MessageBox.Show("el responsable no ha sido ingresado");
             }
-            catch (Exception error) { MessageBox.Show(error.Message); }
-            
-            
+        }
+
+        private void cbxTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmAltaResponsable_Load(object sender, EventArgs e)
+        {
+            MdiParent = 
         }
     }
 }
