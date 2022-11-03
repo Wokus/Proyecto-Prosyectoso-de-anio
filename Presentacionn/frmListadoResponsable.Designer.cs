@@ -90,6 +90,7 @@
             this.Controls.Add(this.dgvResponsable);
             this.Name = "frmListadoResponsable";
             this.Text = "frmListadoResponsable";
+            this.Load += new System.EventHandler(this.frmListadoResponsable_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvResponsable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -49,11 +49,44 @@ namespace Persistencia
 
         public DataTable listarPrestamoEspontaneo()
         {
-            String consultaSQL = "SELECT * FROM prestamoEspontaneo INNER JOIN prestamo ON prestamoEspontaneo.id_Prestamo=prestamo.id;";
+            String consultaSQL = "SELECT prestamo.id, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion FROM prestamoEspontaneo INNER JOIN prestamo ON prestamoEspontaneo.id_Prestamo=prestamo.id;";
 
             DataTable dt = listarAlgo(consultaSQL);
 
             return dt;
+        }
+
+        public DataTable listarPrestamoPorFechaAR()
+        {
+
+            String consultaSQL = "SELECT prestamo.id, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion FROM prestamo INNER JOIN prestamoEspontaneo ON prestamo.id = prestamoEspontaneo.id_Prestamo ORDER BY prestamo.fechaSolicitada ASC ;";
+
+            DataTable dt = listarAlgo(consultaSQL);
+
+            return dt;
+
+        }
+
+        public DataTable listarPrestamoPorFechaRA()
+        {
+
+            String consultaSQL = "SELECT prestamo.id, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion FROM prestamo INNER JOIN prestamoEspontaneo ON prestamo.id = prestamoEspontaneo.id_Prestamo ORDER BY prestamo.fechaSolicitada DESC ;";
+
+            DataTable dt = listarAlgo(consultaSQL);
+
+            return dt;
+
+        }
+
+        public DataTable listarPrestamoPorEstado(string tuHermana)
+        {
+
+            String consultaSQL = "SELECT prestamo.id, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion FROM prestamo INNER JOIN prestamoEspontaneo ON prestamo.id = prestamoEspontaneo.id_Prestamo WHERE estado='" + tuHermana + "' ;";
+
+            DataTable dt = listarAlgo(consultaSQL);
+
+            return dt;
+
         }
 
         public int bajaPrestamoEspontaneo(int idPrestamo)

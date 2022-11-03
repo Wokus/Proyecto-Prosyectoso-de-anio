@@ -115,6 +115,7 @@
             this.btnAgregarPrestamo.TabIndex = 31;
             this.btnAgregarPrestamo.Text = "Agregar";
             this.btnAgregarPrestamo.UseVisualStyleBackColor = false;
+            this.btnAgregarPrestamo.Click += new System.EventHandler(this.btnAgregarPrestamo_Click);
             // 
             // frmAltaRotura
             // 
