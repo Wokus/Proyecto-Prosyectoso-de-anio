@@ -20,6 +20,24 @@ namespace Dominio
             return unPE.listarPrestamo();
         }
 
+        public DataTable listarPrestamoPorFechaAR()
+        {
+
+            pPrestamo unPEF = new pPrestamo();
+
+            return unPEF.listarPrestamoPorFechaAR();
+
+        }
+
+        public DataTable listarPrestamoPorFechaRA()
+        {
+
+            pPrestamo unPEF = new pPrestamo();
+
+            return unPEF.listarPrestamoPorFechaRA();
+
+        }
+             
         public int bajaPrestamoDeEquipo(int idPrestamo)
         {
             pPrestamo unPP = new pPrestamo();

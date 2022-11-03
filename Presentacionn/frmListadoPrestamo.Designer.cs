@@ -69,6 +69,7 @@
             this.cbxFecha.Name = "cbxFecha";
             this.cbxFecha.Size = new System.Drawing.Size(121, 21);
             this.cbxFecha.TabIndex = 2;
+            this.cbxFecha.SelectedIndexChanged += new System.EventHandler(this.cbxFecha_SelectedIndexChanged);
             // 
             // cbxEstado
             // 

@@ -66,5 +66,35 @@ namespace Presentacionn
             dPrestamo unDP = new dPrestamo();
             dgvListadoEquipo.DataSource = unDP.listarPrestamo();
         }
-    }
+
+        private void cbxFecha_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cbxFecha.Text == "De mas antiguo a mas reciente")
+                {
+
+                    dPrestamo unDPF = new dPrestamo();
+                    dgvListadoEquipo.DataSource = unDPF.listarPrestamoPorFechaAR();
+
+                }
+
+                if (cbxFecha.Text == "De mas reciente a mas antiguo")
+                {
+
+                    dPrestamo unDPF = new dPrestamo();
+                    dgvListadoEquipo.DataSource = unDPF.listarPrestamoPorFechaRA();
+               
+                }
+
+            }
+            catch (Exception error)
+            {
+
+                MessageBox.Show(error.Message);
+
+            }
+        }
+        }
+        
 }
