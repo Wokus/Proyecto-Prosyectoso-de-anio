@@ -54,6 +54,28 @@ namespace Persistencia
             return dt;
         }
 
+        public DataTable listarPrestamoPorFechaAR()
+        {
+
+            String consultaSQL = "SELECT prestamo.id, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion FROM prestamo INNER JOIN prestamoDeEspacio ON prestamo.id = prestamoDeEspacio.id_Prestamo ORDER BY fechaSolicitada ASC ;";
+
+            DataTable dt = listarAlgo(consultaSQL);
+
+            return dt;
+
+        }
+
+        public DataTable listarPrestamoPorFechaRA()
+        {
+
+            String consultaSQL = "SELECT * FROM prestamo ORDER BY fechaSolicitada DESC ;";
+
+            DataTable dt = listarAlgo(consultaSQL);
+
+            return dt;
+
+        }
+
         public int bajaPrestamoDeEspacio(int idPrestamo)
         {
 

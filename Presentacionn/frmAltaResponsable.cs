@@ -39,7 +39,14 @@ namespace Presentacionn
                 else
                 {
 
-                MessageBox.Show("el responsable no ha sido ingresado");
+                    MessageBox.Show("el responsable no ha sido ingresado");
+                }
+            }
+            catch (Exception error)
+            {
+
+                MessageBox.Show(error.Message);
+
             }
         }
 
@@ -55,7 +62,7 @@ namespace Presentacionn
 
         private void frmAltaResponsable_Load(object sender, EventArgs e)
         {
-            MdiParent = 
+            //MdiParent = 
         }
     }
 }

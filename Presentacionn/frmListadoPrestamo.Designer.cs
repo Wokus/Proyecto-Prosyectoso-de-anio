@@ -32,6 +32,9 @@
             this.dgvListadoEquipo = new System.Windows.Forms.DataGridView();
             this.cbxFecha = new System.Windows.Forms.ComboBox();
             this.cbxEstado = new System.Windows.Forms.ComboBox();
+            this.cbxFechaEquipo = new System.Windows.Forms.ComboBox();
+            this.cbxFechaEspontaneo = new System.Windows.Forms.ComboBox();
+            this.cbxFechaEspacio = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoEquipo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,12 +88,54 @@
             this.cbxEstado.TabIndex = 3;
             this.cbxEstado.Text = "Estado";
             // 
+            // cbxFechaEquipo
+            // 
+            this.cbxFechaEquipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxFechaEquipo.FormattingEnabled = true;
+            this.cbxFechaEquipo.Items.AddRange(new object[] {
+            "De mas antiguo a mas reciente",
+            "De mas reciente a mas antiguo"});
+            this.cbxFechaEquipo.Location = new System.Drawing.Point(365, 12);
+            this.cbxFechaEquipo.Name = "cbxFechaEquipo";
+            this.cbxFechaEquipo.Size = new System.Drawing.Size(121, 21);
+            this.cbxFechaEquipo.TabIndex = 4;
+            this.cbxFechaEquipo.SelectedIndexChanged += new System.EventHandler(this.cbxFechaEquipo_SelectedIndexChanged);
+            // 
+            // cbxFechaEspontaneo
+            // 
+            this.cbxFechaEspontaneo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxFechaEspontaneo.FormattingEnabled = true;
+            this.cbxFechaEspontaneo.Items.AddRange(new object[] {
+            "De mas antiguo a mas reciente",
+            "De mas reciente a mas antiguo"});
+            this.cbxFechaEspontaneo.Location = new System.Drawing.Point(365, 12);
+            this.cbxFechaEspontaneo.Name = "cbxFechaEspontaneo";
+            this.cbxFechaEspontaneo.Size = new System.Drawing.Size(121, 21);
+            this.cbxFechaEspontaneo.TabIndex = 5;
+            this.cbxFechaEspontaneo.SelectedIndexChanged += new System.EventHandler(this.cbxFechaEspontaneo_SelectedIndexChanged);
+            // 
+            // cbxFechaEspacio
+            // 
+            this.cbxFechaEspacio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxFechaEspacio.FormattingEnabled = true;
+            this.cbxFechaEspacio.Items.AddRange(new object[] {
+            "De mas antiguo a mas reciente",
+            "De mas reciente a mas antiguo"});
+            this.cbxFechaEspacio.Location = new System.Drawing.Point(365, 12);
+            this.cbxFechaEspacio.Name = "cbxFechaEspacio";
+            this.cbxFechaEspacio.Size = new System.Drawing.Size(121, 21);
+            this.cbxFechaEspacio.TabIndex = 6;
+            this.cbxFechaEspacio.SelectedIndexChanged += new System.EventHandler(this.cbxFechaEspacio_SelectedIndexChanged);
+            // 
             // frmListadoPrestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(228)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(494, 508);
+            this.Controls.Add(this.cbxFechaEspacio);
+            this.Controls.Add(this.cbxFechaEspontaneo);
+            this.Controls.Add(this.cbxFechaEquipo);
             this.Controls.Add(this.cbxEstado);
             this.Controls.Add(this.cbxFecha);
             this.Controls.Add(this.dgvListadoEquipo);
@@ -108,5 +153,8 @@
         private System.Windows.Forms.ComboBox cbxFecha;
         private System.Windows.Forms.ComboBox cbxEstado;
         private System.Windows.Forms.ComboBox cbxTipo;
+        private System.Windows.Forms.ComboBox cbxFechaEquipo;
+        private System.Windows.Forms.ComboBox cbxFechaEspontaneo;
+        private System.Windows.Forms.ComboBox cbxFechaEspacio;
     }
 }

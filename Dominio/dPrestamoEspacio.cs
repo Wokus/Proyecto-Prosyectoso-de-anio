@@ -44,5 +44,24 @@ namespace Dominio
 
             return unPE.listarPrestamoDeEspacio();
         }
+
+        public DataTable listarPrestamoPorFechaAR()
+        {
+
+            pPrestamoEspacio unPEF = new pPrestamoEspacio();
+
+            return unPEF.listarPrestamoPorFechaAR();
+
+        }
+
+        public DataTable listarPrestamoPorFechaRA()
+        {
+
+            pPrestamoEspacio unPEF = new pPrestamoEspacio();
+
+            return unPEF.listarPrestamoPorFechaRA();
+
+        }
+
     }
 }
