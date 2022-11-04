@@ -41,8 +41,7 @@ namespace Presentacionn
                 MessageBox.Show("el responsable no ha sido ingresado");
             }
         }
- 
-        
+
         private void cbxTipo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -55,7 +54,7 @@ namespace Presentacionn
 
         private void frmAltaResponsable_Load(object sender, EventArgs e)
         {
-            
+            MdiParent = 
         }
     }
 }

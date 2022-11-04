@@ -213,7 +213,8 @@
             "Armado",
             "Levantado",
             "Devuelto",
-            "Cancelado"});
+            "Cancelado",
+            "En progreso"});
             this.cbxEstado.Location = new System.Drawing.Point(29, 305);
             this.cbxEstado.Name = "cbxEstado";
             this.cbxEstado.Size = new System.Drawing.Size(100, 21);

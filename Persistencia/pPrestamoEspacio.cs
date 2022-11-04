@@ -47,11 +47,44 @@ namespace Persistencia
 
         public DataTable listarPrestamoDeEspacio()
         {
-            String consultaSQL = "SELECT * FROM prestamoDeEspacio INNER JOIN prestamo ON prestamoDeEspacio.id_Prestamo=prestamo.id;";
+            String consultaSQL = "SELECT prestamo.id, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, obtieneEspaciosPrestamoDeEspacio.nro_Espacio FROM prestamo INNER JOIN prestamoDeEspacio ON prestamo.id=prestamoDeEspacio.id_Prestamo INNER JOIN obtieneEspaciosPrestamoDeEspacio ON prestamoDeEspacio.id_Prestamo=obtieneEspaciosPrestamoDeEspacio.id_PrestamoDeEspacio;";
 
             DataTable dt = listarAlgo(consultaSQL);
 
             return dt;
+        }
+
+        public DataTable listarPrestamoPorFechaAR()
+        {
+
+            String consultaSQL = "SELECT prestamo.id, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, obtieneEspaciosPrestamoDeEspacio.nro_Espacio FROM prestamo INNER JOIN prestamoDeEspacio ON prestamo.id=prestamoDeEspacio.id_Prestamo INNER JOIN obtieneEspaciosPrestamoDeEspacio ON prestamoDeEspacio.id_Prestamo=obtieneEspaciosPrestamoDeEspacio.id_PrestamoDeEspacio ORDER BY prestamo.fechaSolicitada ASC ;";
+
+            DataTable dt = listarAlgo(consultaSQL);
+
+            return dt;
+
+        }
+
+        public DataTable listarPrestamoPorFechaRA()
+        {
+
+            String consultaSQL = "SELECT prestamo.id, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, obtieneEspaciosPrestamoDeEspacio.nro_Espacio FROM prestamo INNER JOIN prestamoDeEspacio ON prestamo.id=prestamoDeEspacio.id_Prestamo INNER JOIN obtieneEspaciosPrestamoDeEspacio ON prestamoDeEspacio.id_Prestamo=obtieneEspaciosPrestamoDeEspacio.id_PrestamoDeEspacio ORDER BY prestamo.fechaSolicitada DESC ;";
+
+            DataTable dt = listarAlgo(consultaSQL);
+
+            return dt;
+
+        }
+
+        public DataTable listarPrestamoPorEstado(string tuHermana)
+        {
+
+            String consultaSQL = "SELECT prestamo.id, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, obtieneEspaciosPrestamoDeEspacio.nro_Espacio FROM prestamo INNER JOIN prestamoDeEspacio ON prestamo.id=prestamoDeEspacio.id_Prestamo INNER JOIN obtieneEspaciosPrestamoDeEspacio ON prestamoDeEspacio.id_Prestamo=obtieneEspaciosPrestamoDeEspacio.id_PrestamoDeEspacio WHERE estado='" + tuHermana + "' ;";
+
+            DataTable dt = listarAlgo(consultaSQL);
+
+            return dt;
+
         }
 
         public int bajaPrestamoDeEspacio(int idPrestamo)

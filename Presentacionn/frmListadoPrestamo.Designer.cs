@@ -32,6 +32,12 @@
             this.dgvListadoEquipo = new System.Windows.Forms.DataGridView();
             this.cbxFecha = new System.Windows.Forms.ComboBox();
             this.cbxEstado = new System.Windows.Forms.ComboBox();
+            this.cbxFechaEquipo = new System.Windows.Forms.ComboBox();
+            this.cbxFechaEspontaneo = new System.Windows.Forms.ComboBox();
+            this.cbxFechaEspacio = new System.Windows.Forms.ComboBox();
+            this.cbxEstadoEquipo = new System.Windows.Forms.ComboBox();
+            this.cbxEstadoEspontaneo = new System.Windows.Forms.ComboBox();
+            this.cbxEstadoEspacio = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoEquipo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,6 +75,7 @@
             this.cbxFecha.Name = "cbxFecha";
             this.cbxFecha.Size = new System.Drawing.Size(121, 21);
             this.cbxFecha.TabIndex = 2;
+            this.cbxFecha.SelectedIndexChanged += new System.EventHandler(this.cbxFecha_SelectedIndexChanged);
             // 
             // cbxEstado
             // 
@@ -77,13 +84,29 @@
             "Armado",
             "Levantado",
             "Cancelado",
-            "Devuelto "});
+            "Devuelto ",
+            "En progreso"});
             this.cbxEstado.Location = new System.Drawing.Point(188, 12);
             this.cbxEstado.Name = "cbxEstado";
             this.cbxEstado.Size = new System.Drawing.Size(121, 21);
             this.cbxEstado.TabIndex = 3;
             this.cbxEstado.Text = "Estado";
-            this.cbxEstado.SelectedIndexChanged += new System.EventHandler(this.cbxEstado_SelectedIndexChanged);
+            // 
+            // cbxEstadoEspacio
+            // 
+            this.cbxEstadoEspacio.FormattingEnabled = true;
+            this.cbxEstadoEspacio.Items.AddRange(new object[] {
+            "Armado",
+            "Levantado",
+            "Cancelado",
+            "Devuelto ",
+            "En progreso"});
+            this.cbxEstadoEspacio.Location = new System.Drawing.Point(188, 12);
+            this.cbxEstadoEspacio.Name = "cbxEstadoEspacio";
+            this.cbxEstadoEspacio.Size = new System.Drawing.Size(121, 21);
+            this.cbxEstadoEspacio.TabIndex = 9;
+            this.cbxEstadoEspacio.Text = "Estado";
+            this.cbxEstadoEspacio.SelectedIndexChanged += new System.EventHandler(this.cbxEstadoEspacio_SelectedIndexChanged);
             // 
             // frmListadoPrestamo
             // 
@@ -91,6 +114,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(228)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(494, 508);
+            this.Controls.Add(this.cbxEstadoEspacio);
+            this.Controls.Add(this.cbxEstadoEspontaneo);
+            this.Controls.Add(this.cbxEstadoEquipo);
+            this.Controls.Add(this.cbxFechaEspacio);
+            this.Controls.Add(this.cbxFechaEspontaneo);
+            this.Controls.Add(this.cbxFechaEquipo);
             this.Controls.Add(this.cbxEstado);
             this.Controls.Add(this.cbxFecha);
             this.Controls.Add(this.dgvListadoEquipo);
@@ -108,5 +137,11 @@
         private System.Windows.Forms.ComboBox cbxFecha;
         private System.Windows.Forms.ComboBox cbxEstado;
         private System.Windows.Forms.ComboBox cbxTipo;
+        private System.Windows.Forms.ComboBox cbxFechaEquipo;
+        private System.Windows.Forms.ComboBox cbxFechaEspontaneo;
+        private System.Windows.Forms.ComboBox cbxFechaEspacio;
+        private System.Windows.Forms.ComboBox cbxEstadoEquipo;
+        private System.Windows.Forms.ComboBox cbxEstadoEspontaneo;
+        private System.Windows.Forms.ComboBox cbxEstadoEspacio;
     }
 }
