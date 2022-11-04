@@ -32,7 +32,6 @@ namespace Persistencia
         public eUsuario altaUsuario(eUsuario unPU)
         {
             eUsuario elAdmin = new eUsuario();
-            elAdmin = null;
             string consultaSQL = "SELECT * FROM `usuario` WHERE `usuario`.`ci` = '" + unPU.ci + "';";
             MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
             while (fila.Read())

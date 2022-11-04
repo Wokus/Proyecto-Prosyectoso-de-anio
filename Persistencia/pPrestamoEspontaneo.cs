@@ -20,7 +20,7 @@ namespace Persistencia
             if (token == 0)
             {
                 int id = calculoDeId();
-                consultaSQL = "INSERT INTO `prestamo` VALUES('" + id + "','" + unPRESP.fechaSolicitada + "','" + unPRESP.fechaRetiro + "','" + unPRESP.horaRetiro + "','" + unPRESP.fechaDevolucion + "','" + "','" + unPRESP.estado + "','" + unPRESP.prioridad + "','" + unPRESP.genuinoDiaDevolucion + "');";
+                consultaSQL = "INSERT INTO `prestamo` VALUES('" + id + "','" + unPRESP.fechaSolicitada + "','" + unPRESP.fechaRetiro + "','" + unPRESP.horaRetiro + "','" + unPRESP.fechaDevolucion + "','" + "','" + unPRESP.estado + "','" + unPRESP.genuinoDiaDevolucion + "');";
                 ejecutarSQL(consultaSQL);
                 consultaSQL = "INSERT INTO `prestamoEspontaneo` VALUES('" + id + "');";
                 ejecutarSQL(consultaSQL);

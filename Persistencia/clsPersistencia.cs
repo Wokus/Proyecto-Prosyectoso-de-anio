@@ -16,7 +16,8 @@ namespace Persistencia
     //CHOTAAAAAAAAAAAAAAAAAAAAAAAA
    public class clsPersistencia 
     {
-        public String miConexion = "server=localhost; uid=root ; password= ; database=begonesatan69;";
+        public String miConexion = "server=localhost; uid=root ; password= ; database=begonesatan69;convert zero datetime=True";
+       
         public MySqlConnection con;
        
 
