@@ -166,6 +166,7 @@
             // 
             // cbxEstadoEspacio
             // 
+            this.cbxEstadoEspacio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxEstadoEspacio.FormattingEnabled = true;
             this.cbxEstadoEspacio.Items.AddRange(new object[] {
             "Armado",
@@ -177,7 +178,6 @@
             this.cbxEstadoEspacio.Name = "cbxEstadoEspacio";
             this.cbxEstadoEspacio.Size = new System.Drawing.Size(121, 21);
             this.cbxEstadoEspacio.TabIndex = 9;
-            this.cbxEstadoEspacio.Text = "Estado";
             this.cbxEstadoEspacio.SelectedIndexChanged += new System.EventHandler(this.cbxEstadoEspacio_SelectedIndexChanged);
             // 
             // frmListadoPrestamo
