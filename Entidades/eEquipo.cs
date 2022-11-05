@@ -18,6 +18,6 @@ namespace Entidades
         public String tipo { get; set; }
         public String observacion { get; set; }
         public int stock { get; set; }
-
+        public eRotura rotu = new eRotura();
     }
 }

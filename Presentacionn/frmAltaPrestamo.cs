@@ -262,6 +262,7 @@ namespace Presentacionn
                 // Hace no visible
                 mtxtIDSalon.Visible = false;
                 lblIDSalon.Visible = false;
+                txtEjercicio.Visible = false;
                 // Hace no visible
 
                 // Hace visible
@@ -274,6 +275,7 @@ namespace Presentacionn
                 lblTransporte.Visible = true;
                 lblEquipoID.Visible = true;
                 lblLocacion.Visible = true;
+                cbxEjercicioPEquip.Visible = true;
                 // Hace visible los textos
 
 
@@ -284,6 +286,8 @@ namespace Presentacionn
                 txtTransporte.Visible = false;
                 txtEquiposId.Visible = false;
                 txtLocacion.Visible = false;
+                txtEjercicio.Visible = false;
+
                 // Hace no visible
 
                 // Hace no visible textos
@@ -295,6 +299,7 @@ namespace Presentacionn
                 // Hace si visible textos
                 mtxtIDSalon.Visible = true;
                 lblIDSalon.Visible = true;
+                cbxEjercicioPEquip.Visible = true;
                 // Hace si visible textos
 
             }
@@ -304,7 +309,7 @@ namespace Presentacionn
                 // Hace no visible 
                 mtxtIDSalon.Visible = false;
                 txtTransporte.Visible = false;
-                
+                cbxEjercicioPEquip.Visible = false;
                 txtLocacion.Visible = false;
                 // Hace no visible 
 
@@ -318,6 +323,7 @@ namespace Presentacionn
                 // Hace visible 
                 lblEquipoID.Visible = true;
                 txtEquiposId.Visible = true;
+                txtEjercicio.Visible = true;
                 // Hace visible 
 
 
