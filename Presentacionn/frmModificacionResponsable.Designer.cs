@@ -31,12 +31,12 @@
             this.cbxNewTipo = new System.Windows.Forms.ComboBox();
             this.lblCurso = new System.Windows.Forms.Label();
             this.lblTipo = new System.Windows.Forms.Label();
-            this.txtNewCurso = new System.Windows.Forms.TextBox();
             this.txtNewCi = new System.Windows.Forms.TextBox();
             this.lblCedulaNueva = new System.Windows.Forms.Label();
             this.txtOldCi = new System.Windows.Forms.TextBox();
             this.btnModiRes = new System.Windows.Forms.Button();
             this.lblCedulaAmodificar = new System.Windows.Forms.Label();
+            this.cbxCurso = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // cbxNewTipo
@@ -67,13 +67,6 @@
             this.lblTipo.Size = new System.Drawing.Size(28, 13);
             this.lblTipo.TabIndex = 18;
             this.lblTipo.Text = "Tipo";
-            // 
-            // txtNewCurso
-            // 
-            this.txtNewCurso.Location = new System.Drawing.Point(256, 120);
-            this.txtNewCurso.Name = "txtNewCurso";
-            this.txtNewCurso.Size = new System.Drawing.Size(100, 20);
-            this.txtNewCurso.TabIndex = 17;
             // 
             // txtNewCi
             // 
@@ -120,16 +113,29 @@
             this.lblCedulaAmodificar.TabIndex = 12;
             this.lblCedulaAmodificar.Text = "Cedula del responsable a modificar";
             // 
+            // cbxCurso
+            // 
+            this.cbxCurso.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbxCurso.FormattingEnabled = true;
+            this.cbxCurso.Items.AddRange(new object[] {
+            "Primero",
+            "Segundo",
+            "Tercero"});
+            this.cbxCurso.Location = new System.Drawing.Point(256, 120);
+            this.cbxCurso.Name = "cbxCurso";
+            this.cbxCurso.Size = new System.Drawing.Size(100, 21);
+            this.cbxCurso.TabIndex = 22;
+            // 
             // frmModificacionResponsable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(228)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(494, 508);
+            this.Controls.Add(this.cbxCurso);
             this.Controls.Add(this.cbxNewTipo);
             this.Controls.Add(this.lblCurso);
             this.Controls.Add(this.lblTipo);
-            this.Controls.Add(this.txtNewCurso);
             this.Controls.Add(this.txtNewCi);
             this.Controls.Add(this.lblCedulaNueva);
             this.Controls.Add(this.txtOldCi);
@@ -147,11 +153,11 @@
         private System.Windows.Forms.ComboBox cbxNewTipo;
         private System.Windows.Forms.Label lblCurso;
         private System.Windows.Forms.Label lblTipo;
-        private System.Windows.Forms.TextBox txtNewCurso;
         private System.Windows.Forms.TextBox txtNewCi;
         private System.Windows.Forms.Label lblCedulaNueva;
         private System.Windows.Forms.TextBox txtOldCi;
         private System.Windows.Forms.Button btnModiRes;
         private System.Windows.Forms.Label lblCedulaAmodificar;
+        private System.Windows.Forms.ComboBox cbxCurso;
     }
 }

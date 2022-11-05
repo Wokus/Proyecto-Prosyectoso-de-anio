@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.dgvResponsable = new System.Windows.Forms.DataGridView();
+            this.cbxTipo = new System.Windows.Forms.ComboBox();
             this.chbRotura = new System.Windows.Forms.CheckBox();
             this.chbAtrasado = new System.Windows.Forms.CheckBox();
-            this.cbxTipo = new System.Windows.Forms.ComboBox();
+            this.cbxCurso = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResponsable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,6 +43,20 @@
             this.dgvResponsable.Name = "dgvResponsable";
             this.dgvResponsable.Size = new System.Drawing.Size(474, 457);
             this.dgvResponsable.TabIndex = 2;
+            // 
+            // cbxTipo
+            // 
+            this.cbxTipo.FormattingEnabled = true;
+            this.cbxTipo.Items.AddRange(new object[] {
+            "General",
+            "Profesor",
+            "Alumno"});
+            this.cbxTipo.Location = new System.Drawing.Point(12, 12);
+            this.cbxTipo.Name = "cbxTipo";
+            this.cbxTipo.Size = new System.Drawing.Size(121, 21);
+            this.cbxTipo.TabIndex = 5;
+            this.cbxTipo.Text = "Tipo";
+            this.cbxTipo.SelectedIndexChanged += new System.EventHandler(this.cbxTipo_SelectedIndexChanged);
             // 
             // chbRotura
             // 
@@ -65,18 +80,19 @@
             this.chbAtrasado.UseVisualStyleBackColor = true;
             this.chbAtrasado.CheckedChanged += new System.EventHandler(this.chbAtrasado_CheckedChanged);
             // 
-            // cbxTipo
+            // cbxCurso
             // 
-            this.cbxTipo.FormattingEnabled = true;
-            this.cbxTipo.Items.AddRange(new object[] {
-            "Profesor",
-            "Alumno"});
-            this.cbxTipo.Location = new System.Drawing.Point(12, 12);
-            this.cbxTipo.Name = "cbxTipo";
-            this.cbxTipo.Size = new System.Drawing.Size(121, 21);
-            this.cbxTipo.TabIndex = 5;
-            this.cbxTipo.Text = "Tipo";
-            this.cbxTipo.SelectedIndexChanged += new System.EventHandler(this.cbxTipo_SelectedIndexChanged);
+            this.cbxCurso.FormattingEnabled = true;
+            this.cbxCurso.Items.AddRange(new object[] {
+            "Primero",
+            "Segundo",
+            "Tercero"});
+            this.cbxCurso.Location = new System.Drawing.Point(138, 12);
+            this.cbxCurso.Name = "cbxCurso";
+            this.cbxCurso.Size = new System.Drawing.Size(121, 21);
+            this.cbxCurso.TabIndex = 7;
+            this.cbxCurso.Text = "Curso";
+            this.cbxCurso.SelectedIndexChanged += new System.EventHandler(this.cbxCurso_SelectedIndexChanged);
             // 
             // frmListadoResponsable
             // 
@@ -84,6 +100,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(228)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(494, 508);
+            this.Controls.Add(this.cbxCurso);
             this.Controls.Add(this.cbxTipo);
             this.Controls.Add(this.chbAtrasado);
             this.Controls.Add(this.chbRotura);
@@ -100,8 +117,9 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvResponsable;
+        private System.Windows.Forms.ComboBox cbxTipo;
         private System.Windows.Forms.CheckBox chbRotura;
         private System.Windows.Forms.CheckBox chbAtrasado;
-        private System.Windows.Forms.ComboBox cbxTipo;
+        private System.Windows.Forms.ComboBox cbxCurso;
     }
 }

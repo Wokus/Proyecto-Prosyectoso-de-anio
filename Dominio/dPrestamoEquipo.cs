@@ -28,7 +28,7 @@ namespace Dominio
 
             int confirmacion = unPPE.modificacionPrestamo(unEPE, Convert.ToString(unEPE.id));
             return confirmacion;
-            
+
         }
 
         public DataTable listarPrestamoDeEquipo()
@@ -38,7 +38,7 @@ namespace Dominio
 
             return unPE.listarPrestamoDeEquipo();
 
-         }
+        }
 
         public DataTable listarPrestamoPorFechaAR()
         {
@@ -64,6 +64,22 @@ namespace Dominio
             pPrestamoEquipo unPEE = new pPrestamoEquipo();
 
             return unPEE.listarPrestamoPorEstado(tuHermana);
+
+        }
+
+        public DataTable listarPrestamoPorFechaRAE(string tuHermana)
+        { 
+            pPrestamoEquipo unPPFE = new pPrestamoEquipo();
+
+            return unPPFE.listarPrestamoPorFechaRAE(tuHermana);
+
+        }
+
+        public DataTable listarPrestamoPorFechaARE(string tuHermana)
+        {
+            pPrestamoEquipo unPPFE = new pPrestamoEquipo();
+
+            return unPPFE.listarPrestamoPorFechaARE(tuHermana);
 
         }
     }

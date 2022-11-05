@@ -22,12 +22,12 @@ namespace Presentacionn
         private void btnModiRes_Click(object sender, EventArgs e)
         {
             eResponsable unR = new eResponsable();
+
             unR.ci = txtNewCi.Text;
             unR.curso = txtNewCi.Text;
             unR.tipo = cbxNewTipo.Text;
             dResponsable unDR = new dResponsable();
-            try
-            {
+           
                 eResponsable elAdmin = unDR.modificarResponsable(unR, txtOldCi.Text);
 
                 if (elAdmin != null)
@@ -42,11 +42,7 @@ namespace Presentacionn
 
                 }
             }
-            catch(Exception error)
-            {
-                MessageBox.Show(error.Message);
-            }
            
         }
     }
-}
+
