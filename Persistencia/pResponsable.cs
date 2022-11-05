@@ -73,35 +73,35 @@ namespace Persistencia
 
         public DataTable listarResponsabletipoP()
         {
-            string consultaSQL = "SELECT solicitante.ci,nombre,apellido,curso,tipo FROM persona INNER JOIN solicitante on persona.ci = solicitante.ci WHERE tipo = 'Profesor';";
+            string consultaSQL = "SELECT persona.ci,nombre,apellido,curso,tipo FROM persona INNER JOIN solicitante on persona.ci = solicitante.ci WHERE tipo = 'Profesor';";
             DataTable dat = listarAlgo(consultaSQL);
             return dat;
         }
 
         public DataTable listarResponsabletipoA()
         {
-            string aaaaaaaaa = "SELECT solicitante.ci,nombre,apellido,curso,tipo FROM persona INNER JOIN solicitante on persona.ci = solicitante.ci WHERE tipo = 'Alumno';";
+            string aaaaaaaaa = "SELECT persona.ci,nombre,apellido,curso,tipo FROM persona INNER JOIN solicitante on persona.ci = solicitante.ci WHERE tipo = 'estudiante';";
             DataTable hee = listarAlgo(aaaaaaaaa);
             return hee;
         }
 
         public DataTable listarResponsableCP()
         {
-            string CP = "SELECT solicitante.ci,nombre,apellido,curso,tipo FROM persona INNER JOIN solicitante on persona.ci = solicitante.ci WHERE Curso = 'Primero';";
+            string CP = "SELECT persona.ci,nombre,apellido,curso,tipo FROM persona INNER JOIN solicitante on persona.ci = solicitante.ci WHERE Curso = 'Primero';";
             DataTable heehee = listarAlgo(CP);
             return heehee;
         }
 
         public DataTable listarResponsableCS()
         {
-            string CS = "SELECT solicitante.ci,nombre,apellido,curso,tipo FROM persona INNER JOIN solicitante on persona.ci = solicitante.ci WHERE Curso = 'Segundo';";
+            string CS = "SELECT persona.ci,nombre,apellido,curso,tipo FROM persona INNER JOIN solicitante on persona.ci = solicitante.ci WHERE Curso = 'Segundo';";
             DataTable boys = listarAlgo(CS);
             return boys;
         }
 
         public DataTable listarResponsableCT()
         {
-            string CT = "SELECT solicitante.ci,nombre,apellido,curso,tipo FROM persona INNER JOIN solicitante on persona.ci = solicitante.ci WHERE Curso = 'Tercero';";
+            string CT = "SELECT persona.ci,nombre,apellido,curso,tipo FROM persona INNER JOIN solicitante on persona.ci = solicitante.ci WHERE Curso = 'Tercero';";
             DataTable women = listarAlgo(CT);
             return women;
         }
@@ -170,8 +170,11 @@ namespace Persistencia
 
                 if (elAdmin == null)
                 {
-                    String consultaFK1 = "ALTER TABLE solicitante DROP FOREIGN KEY fK_Solicitante_persona;";
-                    ejecutarSQL(consultaFK1);
+                    String consultaFK = "ALTER TABLE solicitante DROP FOREIGN KEY fK_Solicitante_persona;";
+                    ejecutarSQL(consultaFK);
+
+                    consultaFK = "ALTER TABLE realiza DROP FOREIGN KEY fk_realiza_solicitante;";
+                    ejecutarSQL(consultaFK);
 
                     String consultaSQL2 = "UPDATE persona SET ci ='" + unDR.ci
                     + "',nombre = '" + unDR.nombre + "', apellido = '" + unDR.apellido + "' WHERE persona.ci = '" + oldCi + "';";
@@ -182,8 +185,15 @@ namespace Persistencia
                     elAdmin = token;
                     ejecutarSQL(consultaSQL2);
 
-                    consultaFK1 = "ALTER TABLE solicitante ADD constraint fK_solicitante_persona FOREIGN KEY (ci) REFERENCES persona(ci);";
-                    ejecutarSQL(consultaFK1);
+                    consultaSQL2 = "UPDATE realiza SET ci_solicitante = '" + unDR.ci + "'WHERE ci_solicitante ='" + oldCi + "';";
+                    ejecutarSQL(consultaSQL2);
+
+                    consultaFK = "ALTER TABLE solicitante ADD CONSTRAINT fK_solicitante_persona FOREIGN KEY (ci) REFERENCES persona (ci);";
+                    ejecutarSQL(consultaFK);
+
+                    consultaFK = "ALTER TABLE realiza ADD CONSTRAINT fk_realiza_solicitante FOREIGN KEY(ci_Solicitante) REFERENCES solicitante(ci);";
+                    ejecutarSQL(consultaFK);
+
                 }
             }
             else
