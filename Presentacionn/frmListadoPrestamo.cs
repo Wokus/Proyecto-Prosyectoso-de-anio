@@ -242,6 +242,46 @@ namespace Presentacionn
                     dPrestamoExpontaneo unDPF = new dPrestamoExpontaneo();
                     dgvListadoEquipo.DataSource = unDPF.listarPrestamoPorFechaAR();
 
+                    if (cbxEstadoEspontaneo.Text == "Armado")
+                    {
+                        tuHermana = cbxEstadoEspontaneo.Text;
+                        dPrestamoExpontaneo unDPFE = new dPrestamoExpontaneo();
+                        dgvListadoEquipo.DataSource = unDPFE.listarPrestamoPorFechaARE(tuHermana);
+
+                    }
+
+                    if (cbxEstadoEspontaneo.Text == "Levantado")
+                    {
+                        tuHermana = cbxEstadoEspontaneo.Text;
+                        dPrestamoExpontaneo unDPFE = new dPrestamoExpontaneo();
+                        dgvListadoEquipo.DataSource = unDPFE.listarPrestamoPorFechaARE(tuHermana);
+
+                    }
+
+                    if (cbxEstadoEspontaneo.Text == "Cancelado")
+                    {
+                        tuHermana = cbxEstadoEspontaneo.Text;
+                        dPrestamoExpontaneo unDPFE = new dPrestamoExpontaneo();
+                        dgvListadoEquipo.DataSource = unDPFE.listarPrestamoPorFechaARE(tuHermana);
+
+                    }
+
+                    if (cbxEstadoEspontaneo.Text == "Devuelto")
+                    {
+                        tuHermana = cbxEstadoEspontaneo.Text;
+                        dPrestamoExpontaneo unDPFE = new dPrestamoExpontaneo();
+                        dgvListadoEquipo.DataSource = unDPFE.listarPrestamoPorFechaARE(tuHermana);
+
+                    }
+
+                    if (cbxEstadoEspontaneo.Text == "En Progreso")
+                    {
+                        tuHermana = cbxEstadoEspontaneo.Text;
+                        dPrestamoExpontaneo unDPFE = new dPrestamoExpontaneo();
+                        dgvListadoEquipo.DataSource = unDPFE.listarPrestamoPorFechaARE(tuHermana);
+
+                    }
+
                 }
 
                 if (cbxFechaEspontaneo.Text == "De mas reciente a mas antiguo")
@@ -250,6 +290,46 @@ namespace Presentacionn
                     dPrestamoExpontaneo unDPF = new dPrestamoExpontaneo();
                     dgvListadoEquipo.DataSource = unDPF.listarPrestamoPorFechaRA();
 
+
+                    if (cbxEstadoEspontaneo.Text == "Armado")
+                    {
+                        tuHermana = cbxEstadoEspontaneo.Text;
+                        dPrestamoExpontaneo unDPFE = new dPrestamoExpontaneo();
+                        dgvListadoEquipo.DataSource = unDPFE.listarPrestamoPorFechaRAE(tuHermana);
+
+                    }
+
+                    if (cbxEstadoEspontaneo.Text == "Levantado")
+                    {
+                        tuHermana = cbxEstadoEspontaneo.Text;
+                        dPrestamoExpontaneo unDPFE = new dPrestamoExpontaneo();
+                        dgvListadoEquipo.DataSource = unDPFE.listarPrestamoPorFechaRAE(tuHermana);
+
+                    }
+
+                    if (cbxEstadoEspontaneo.Text == "Cancelado")
+                    {
+                        tuHermana = cbxEstadoEspontaneo.Text;
+                        dPrestamoExpontaneo unDPFE = new dPrestamoExpontaneo();
+                        dgvListadoEquipo.DataSource = unDPFE.listarPrestamoPorFechaRAE(tuHermana);
+
+                    }
+
+                    if (cbxEstadoEspontaneo.Text == "Devuelto")
+                    {
+                        tuHermana = cbxEstadoEspontaneo.Text;
+                        dPrestamoExpontaneo unDPFE = new dPrestamoExpontaneo();
+                        dgvListadoEquipo.DataSource = unDPFE.listarPrestamoPorFechaRAE(tuHermana);
+
+                    }
+
+                    if (cbxEstadoEspontaneo.Text == "En Progreso")
+                    {
+                        tuHermana = cbxEstadoEspontaneo.Text;
+                        dPrestamoExpontaneo unDPFE = new dPrestamoExpontaneo();
+                        dgvListadoEquipo.DataSource = unDPFE.listarPrestamoPorFechaRAE(tuHermana);
+
+                    }
                 }
 
             }
