@@ -9,7 +9,6 @@ using System.Data;
 
 namespace Persistencia
 {
-
     public class pUsuario : clsPersistencia
     {
         public eUsuario login(string userName, string pass)
@@ -18,13 +17,11 @@ namespace Persistencia
             eUsuario elAdmin = new eUsuario();
             elAdmin = null;
             string consultaSQL = "SELECT * FROM `usuario` WHERE `usuario`.ci` = '" + userName + "' AND `contra`='" + pass + "';";
-
             MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
 
             while (fila.Read())
             {
                 elAdmin = recrearUsuario(fila);
-
             }
             return elAdmin;
         }
@@ -37,7 +34,6 @@ namespace Persistencia
             while (fila.Read())
             {
                 elAdmin = recrearUsuario(fila);
-
             }
             if (elAdmin == null)
             {
@@ -56,8 +52,6 @@ namespace Persistencia
             eUsuario elAdmin = new eUsuario();
             elAdmin = null;
             string consultaSQL = "SELECT * FROM `usuario` WHERE `usuario`.`ci` = '" + NUAM + "';";
-
-
             MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
             
             while (fila.Read())
@@ -73,7 +67,6 @@ namespace Persistencia
                 elAdmin = null;
                 consultaSQL = "SELECT * FROM `usuario` WHERE `usuario`.`ci` = '" + unPU.ci + "';";
 
-
                 fila = ejecutarYdevolver(consultaSQL);
                 ejecutarSQL(consultaSQL);
                 while (fila.Read())
@@ -81,10 +74,8 @@ namespace Persistencia
                     elAdmin = recrearUsuario(fila);
                 }
 
-
                 if (elAdmin == null)
                 {
-
                     String consultaFK = "ALTER TABLE usuario DROP FOREIGN KEY fK_usuario_persona;";
                     ejecutarSQL(consultaFK);
 
@@ -97,10 +88,8 @@ namespace Persistencia
                     elAdmin = token;
                     ejecutarSQL(consultaSQL2);
 
-
                     consultaFK = "ALTER TABLE usuario ADD constraint fK_usuario_persona FOREIGN KEY (ci) REFERENCES persona(ci);";
                     ejecutarSQL(consultaFK);
-
                 }
             }
             else
@@ -115,22 +104,19 @@ namespace Persistencia
             eUsuario elAdmin = new eUsuario();
             elAdmin = null;
             string consultaSQL = "SELECT * FROM `usuario` WHERE `usuario`.`ci` = '" + username + "';";
-
             MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
-
             while (fila.Read())
             {
                 elAdmin = recrearUsuario(fila);
-
             }
 
             if (elAdmin != null)
             {
                 string consultaSQL2 = "DELETE FROM usuario WHERE `usuario`.`ci` = '" + username + "';";
                 ejecutarSQL(consultaSQL2);
+
                 consultaSQL2 = "DELETE FROM persona WHERE `persona`.`ci` = '" + username + "';";
                 ejecutarSQL(consultaSQL2);
-
             }
             return elAdmin;
         }
@@ -140,25 +126,15 @@ namespace Persistencia
             eUsuario unUsuario = new eUsuario();
             unUsuario.ci = fila.GetString("ci");
             unUsuario.password = fila.GetString("contra");
-
-
-
             return unUsuario;
         }
 
         public DataTable listarUsuario()
         {
-            DataTable dt = null;
-            
+            DataTable dt = null;        
             String consultaSQL = "SELECT persona.ci, persona.nombre, persona.apellido, usuario.contra, usuario.telefono FROM persona RIGHT JOIN `usuario` ON persona.ci = usuario.ci; ";
-
-             dt = listarAlgo(consultaSQL);
-           
-            
+             dt = listarAlgo(consultaSQL);                      
             return dt;
         }
     }
 }
-
-
-

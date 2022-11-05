@@ -88,23 +88,17 @@ namespace Presentacionn
                 if (elAdmin != null)
                 {
                     MessageBox.Show("Usuario modificado de manera exitosa");
-
                 }
                 if (elAdmin == null)
                 {
                     MessageBox.Show("Ocurrio un error en los datos ingresados");
-
                 }
             }
             catch (Exception error)
             {
                 MessageBox.Show(error.Message);
             }
-            
-            
-
-          
         }
     }
-    }
+}
 

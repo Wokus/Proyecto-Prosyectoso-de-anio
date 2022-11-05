@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.tbpModificarUsuario = new System.Windows.Forms.TabPage();
+            this.mtxtTelefonoModificar = new System.Windows.Forms.MaskedTextBox();
             this.mtxtUsernameModificar = new System.Windows.Forms.MaskedTextBox();
             this.mtxtNUAM = new System.Windows.Forms.MaskedTextBox();
             this.txtApellidoModificar = new System.Windows.Forms.TextBox();
@@ -64,7 +65,6 @@
             this.lblUsernameAgregar = new System.Windows.Forms.Label();
             this.btnOkAgregar = new System.Windows.Forms.Button();
             this.tbcUsuarios = new System.Windows.Forms.TabControl();
-            this.mtxtTelefonoModificar = new System.Windows.Forms.MaskedTextBox();
             this.tbpModificarUsuario.SuspendLayout();
             this.tbpListarUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarUsuario)).BeginInit();
@@ -96,6 +96,16 @@
             this.tbpModificarUsuario.Size = new System.Drawing.Size(388, 522);
             this.tbpModificarUsuario.TabIndex = 3;
             this.tbpModificarUsuario.Text = "Modificar";
+            // 
+            // mtxtTelefonoModificar
+            // 
+            this.mtxtTelefonoModificar.BackColor = System.Drawing.Color.White;
+            this.mtxtTelefonoModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtxtTelefonoModificar.Location = new System.Drawing.Point(178, 321);
+            this.mtxtTelefonoModificar.Mask = " 000,000,000";
+            this.mtxtTelefonoModificar.Name = "mtxtTelefonoModificar";
+            this.mtxtTelefonoModificar.Size = new System.Drawing.Size(107, 26);
+            this.mtxtTelefonoModificar.TabIndex = 27;
             // 
             // mtxtUsernameModificar
             // 
@@ -132,9 +142,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(106, 278);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 20);
+            this.label2.Size = new System.Drawing.Size(65, 20);
             this.label2.TabIndex = 23;
-            this.label2.Text = "Apelido";
+            this.label2.Text = "Apellido";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel3
@@ -155,7 +165,6 @@
             this.lblNDAM.Size = new System.Drawing.Size(145, 20);
             this.lblNDAM.TabIndex = 20;
             this.lblNDAM.Text = "Usuario a modificar";
-            
             // 
             // txtNombreModificar
             // 
@@ -212,10 +221,9 @@
             this.lblUsernameModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsernameModificar.Location = new System.Drawing.Point(26, 137);
             this.lblUsernameModificar.Name = "lblUsernameModificar";
-            this.lblUsernameModificar.Size = new System.Drawing.Size(146, 20);
+            this.lblUsernameModificar.Size = new System.Drawing.Size(140, 20);
             this.lblUsernameModificar.TabIndex = 11;
-            this.lblUsernameModificar.Text = "Nombre de Usuario";
-            
+            this.lblUsernameModificar.Text = "Cedula de Usuario";
             // 
             // btnOkModificar
             // 
@@ -240,7 +248,6 @@
             this.tbpListarUsuario.Size = new System.Drawing.Size(388, 522);
             this.tbpListarUsuario.TabIndex = 2;
             this.tbpListarUsuario.Text = "Listar Informacion";
-        
             // 
             // panel2
             // 
@@ -298,9 +305,9 @@
             this.lblUsernameEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsernameEliminar.Location = new System.Drawing.Point(26, 94);
             this.lblUsernameEliminar.Name = "lblUsernameEliminar";
-            this.lblUsernameEliminar.Size = new System.Drawing.Size(146, 20);
+            this.lblUsernameEliminar.Size = new System.Drawing.Size(143, 20);
             this.lblUsernameEliminar.TabIndex = 11;
-            this.lblUsernameEliminar.Text = "Nombre de Usuario";
+            this.lblUsernameEliminar.Text = "Cedula del Usuario";
             // 
             // btnOkEliminar
             // 
@@ -335,7 +342,6 @@
             this.tbpAgregarUsuario.Size = new System.Drawing.Size(388, 522);
             this.tbpAgregarUsuario.TabIndex = 0;
             this.tbpAgregarUsuario.Text = "Agregar";
-            
             // 
             // mtxtUsernameAgregar
             // 
@@ -401,9 +407,9 @@
             this.lblTelefonoAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTelefonoAgregar.Location = new System.Drawing.Point(101, 232);
             this.lblTelefonoAgregar.Name = "lblTelefonoAgregar";
-            this.lblTelefonoAgregar.Size = new System.Drawing.Size(62, 20);
+            this.lblTelefonoAgregar.Size = new System.Drawing.Size(65, 20);
             this.lblTelefonoAgregar.TabIndex = 7;
-            this.lblTelefonoAgregar.Text = "Apelido";
+            this.lblTelefonoAgregar.Text = "Apellido";
             this.lblTelefonoAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblNombreCompletoAgregar
@@ -424,7 +430,6 @@
             this.txtPasswordAgregar.Name = "txtPasswordAgregar";
             this.txtPasswordAgregar.Size = new System.Drawing.Size(107, 26);
             this.txtPasswordAgregar.TabIndex = 4;
-            
             // 
             // lblPasswordAgregar
             // 
@@ -442,9 +447,9 @@
             this.lblUsernameAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsernameAgregar.Location = new System.Drawing.Point(26, 94);
             this.lblUsernameAgregar.Name = "lblUsernameAgregar";
-            this.lblUsernameAgregar.Size = new System.Drawing.Size(146, 20);
+            this.lblUsernameAgregar.Size = new System.Drawing.Size(143, 20);
             this.lblUsernameAgregar.TabIndex = 2;
-            this.lblUsernameAgregar.Text = "Nombre de Usuario";
+            this.lblUsernameAgregar.Text = "Cedula del Usuario";
             // 
             // btnOkAgregar
             // 
@@ -473,16 +478,6 @@
             this.tbcUsuarios.Size = new System.Drawing.Size(396, 548);
             this.tbcUsuarios.TabIndex = 0;
             this.tbcUsuarios.Click += new System.EventHandler(this.tbcUsuarios_Click);
-            // 
-            // mtxtTelefonoModificar
-            // 
-            this.mtxtTelefonoModificar.BackColor = System.Drawing.Color.White;
-            this.mtxtTelefonoModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtxtTelefonoModificar.Location = new System.Drawing.Point(178, 321);
-            this.mtxtTelefonoModificar.Mask = " 000,000,000";
-            this.mtxtTelefonoModificar.Name = "mtxtTelefonoModificar";
-            this.mtxtTelefonoModificar.Size = new System.Drawing.Size(107, 26);
-            this.mtxtTelefonoModificar.TabIndex = 27;
             // 
             // frmAdministracionUsuarios
             // 

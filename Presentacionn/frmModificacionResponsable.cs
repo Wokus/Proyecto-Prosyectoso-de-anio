@@ -24,25 +24,22 @@ namespace Presentacionn
             eResponsable unR = new eResponsable();
 
             unR.ci = txtNewCi.Text;
+            unR.nombre = txtNewNombre.Text;
+            unR.apellido = txtNewApellido.Text;
             unR.curso = txtNewCi.Text;
             unR.tipo = cbxNewTipo.Text;
+           
             dResponsable unDR = new dResponsable();
            
-                eResponsable elAdmin = unDR.modificarResponsable(unR, txtOldCi.Text);
-
-                if (elAdmin != null)
-                {
-                    MessageBox.Show("Usuario modificado de manera exitosa");
-
-                }
-
-                if (elAdmin == null)
-                {
-                    MessageBox.Show("Ocurrio un error en los datos ingresados");
-
-                }
+            eResponsable elAdmin = unDR.modificarResponsable(unR, txtOldCi.Text);
+            if (elAdmin != null)
+            {
+                MessageBox.Show("Usuario modificado de manera exitosa");
             }
-           
+            if (elAdmin == null)
+            {
+               MessageBox.Show("Ocurrio un error en los datos ingresados");
+            }
         }
     }
-
+}
