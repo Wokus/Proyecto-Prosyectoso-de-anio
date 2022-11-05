@@ -43,7 +43,6 @@ namespace Dominio
 
         public eUsuario modificarUsuario(eUsuario unDU, String NUAM)
         {
-
             pUsuario unPU = new pUsuario();
             return unPU.modificarUsuario(unDU,NUAM);
         }

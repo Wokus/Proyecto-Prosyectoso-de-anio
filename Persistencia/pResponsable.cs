@@ -147,7 +147,6 @@ namespace Persistencia
             elAdmin = null;
             string consultaSQL = "SELECT * FROM solicitante WHERE solicitante.ci = '" + oldCi + "';";
 
-
             MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
             ejecutarSQL(consultaSQL);
             while (fila.Read())
@@ -163,7 +162,6 @@ namespace Persistencia
                 elAdmin = null;
                 consultaSQL = "SELECT * FROM solicitante WHERE solicitante.ci = '" + unDR.ci + "';";
 
-
                 fila = ejecutarYdevolver(consultaSQL);
                 ejecutarSQL(consultaSQL);
                 while (fila.Read())
@@ -174,24 +172,20 @@ namespace Persistencia
 
                 if (elAdmin == null)
                 {
-
-                    String consultaFK1 = "ALTER TABLE usuario DROP FOREIGN KEY fK_Solicitante_persona;";
+                    String consultaFK1 = "ALTER TABLE solicitante DROP FOREIGN KEY fK_Solicitante_persona;";
                     ejecutarSQL(consultaFK1);
 
                     String consultaSQL2 = "UPDATE persona SET ci ='" + unDR.ci
-                    + "',nombre = '"+ unDR.nombre +"', apellido = '" + unDR.apellido + "' WHERE person.ci = '" + oldCi + "';";
+                    + "',nombre = '" + unDR.nombre + "', apellido = '" + unDR.apellido + "' WHERE person.ci = '" + oldCi + "';";
                     ejecutarSQL(consultaSQL2);
 
-                    
-
-                    consultaSQL2 = "UPDATE solicitante SET `ci` = '" + unDR.ci
+                    consultaSQL2 = "UPDATE solicitante SET ci = '" + unDR.ci
                     + "', curso = '" + unDR.curso + "', tipo = '" + unDR.tipo + "' WHERE solicitante.ci = '" + oldCi + "';";
                     elAdmin = token;
                     ejecutarSQL(consultaSQL2);
 
-                    consultaFK1 = "ALTER TABLE usuario ADD constraint fK_solicitante_persona FOREIGN KEY (ci) REFERENCES persona(ci);";
+                    consultaFK1 = "ALTER TABLE solicitante ADD constraint fK_solicitante_persona FOREIGN KEY (ci) REFERENCES persona(ci);";
                     ejecutarSQL(consultaFK1);
-
                 }
             }
             else
