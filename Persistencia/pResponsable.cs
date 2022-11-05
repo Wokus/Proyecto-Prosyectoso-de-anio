@@ -66,9 +66,9 @@ namespace Persistencia
 
         public DataTable listarResponsable()
         {     
-                string consultaSQL = "SELECT persona.ci,nombre,apellido,curso,tipo FROM persona INNER JOIN solicitante on persona.ci = solicitante.ci;";
-                DataTable dt = listarAlgo(consultaSQL);
-                return dt;
+            string consultaSQL = "SELECT persona.ci,nombre,apellido,curso,tipo FROM persona INNER JOIN solicitante on persona.ci = solicitante.ci;";
+            DataTable dt = listarAlgo(consultaSQL);
+            return dt;
         }
 
         public DataTable listarResponsabletipoP()
@@ -106,7 +106,6 @@ namespace Persistencia
             return women;
         }
 
-
         public eResponsable bajaResponsable(string EliminarRes)
         {
             eResponsable elAdmin = new eResponsable();
@@ -137,7 +136,6 @@ namespace Persistencia
             unResponsable.tipo = fila.GetString("tipo");
             unResponsable.curso = fila.GetString("curso");
             unResponsable.ci = fila.GetString("ci");
-
 
             return unResponsable;
         }
@@ -176,7 +174,7 @@ namespace Persistencia
                     ejecutarSQL(consultaFK1);
 
                     String consultaSQL2 = "UPDATE persona SET ci ='" + unDR.ci
-                    + "',nombre = '" + unDR.nombre + "', apellido = '" + unDR.apellido + "' WHERE person.ci = '" + oldCi + "';";
+                    + "',nombre = '" + unDR.nombre + "', apellido = '" + unDR.apellido + "' WHERE persona.ci = '" + oldCi + "';";
                     ejecutarSQL(consultaSQL2);
 
                     consultaSQL2 = "UPDATE solicitante SET ci = '" + unDR.ci
