@@ -9,9 +9,8 @@ namespace Entidades
     public class ePrestamoEquipo : ePrestamo
     {
   
-        public int prioridad { get; set; }
+        
         public string transporte { get; set; }
-        public string ejercicio { get; set; }
         public string locacion { get; set; }
      
         public eEquipo unE { get; set; }

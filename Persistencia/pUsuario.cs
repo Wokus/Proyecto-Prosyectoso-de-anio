@@ -32,7 +32,6 @@ namespace Persistencia
         public eUsuario altaUsuario(eUsuario unPU)
         {
             eUsuario elAdmin = new eUsuario();
-            elAdmin = null;
             string consultaSQL = "SELECT * FROM `usuario` WHERE `usuario`.`ci` = '" + unPU.ci + "';";
             MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
             while (fila.Read())
@@ -99,12 +98,8 @@ namespace Persistencia
                     ejecutarSQL(consultaSQL2);
 
 
-                    consultaFK = "ALTER TABLE usuario ADD constraint fK_usuario_persona  FOREIGN KEY (ci) REFERENCES persona(ci);";
+                    consultaFK = "ALTER TABLE usuario ADD constraint fK_usuario_persona FOREIGN KEY (ci) REFERENCES persona(ci);";
                     ejecutarSQL(consultaFK);
-
-
-
-
 
                 }
             }

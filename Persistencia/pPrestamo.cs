@@ -76,88 +76,69 @@ namespace Persistencia
 
         public int bajaPrestamo(int idPrestamo)
         {
-            int id1 = 0;
-            int id2 = 0;
-            int id3 = 0;
-            int id5 = 0;
+            int token = 0;
             string consultaSQL2;
-            string consultaSQL = "SELECT * FROM prestamoDeEquipo WHERE prestamoDeEquipo.id_Prestamo = " + idPrestamo + ";";
+            string consultaSQL = "SELECT * FROM prestamo WHERE prestamo.id = " + idPrestamo + ";";
             MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
-            while (fila.Read())
+
+            if (fila.Read())
             {
-
-                id1 = (idPrestamo);
-                id1 = recrearIdPrestamo(fila);
-
-            }
-            if (id1 != 0)
-            {
-
-                consultaSQL2 = "DELETE FROM prestamoDeEquipo WHERE prestamoDeEquipo.id_Prestamo = " + idPrestamo + " ;";
+                consultaSQL = "DELETE FROM realiza WHERE id_Prestamo  = " + idPrestamo + ";";
+                ejecutarSQL(consultaSQL);
+                consultaSQL = "DELETE FROM profesorPrestamo WHERE id_Prestamo  = " + idPrestamo + ";";
                 ejecutarSQL(consultaSQL);
 
+                consultaSQL = "SELECT * FROM prestamoDeEquipo WHERE prestamoDeEquipo.id_Prestamo = " + idPrestamo + ";";
+                fila = ejecutarYdevolver(consultaSQL);
+               
+                //Prestamo de equipo
+                if (fila.Read())
+                {
+                    consultaSQL = "DELETE FROM tiene WHERE id_PrestamoDeEquipo  =" + idPrestamo + " ;" ;
+                    ejecutarSQL(consultaSQL);
+                    consultaSQL = "DELETE FROM prestamodeequipolocacion WHERE id_PrestamoDeEquipo  =" + idPrestamo + " ;";
+                    ejecutarSQL(consultaSQL);
+
+                    consultaSQL = "DELETE FROM prestamoDeEquipo WHERE prestamoDeEquipo.id_Prestamo = " + idPrestamo + " ;";
+                    ejecutarSQL(consultaSQL);
+                }
+                consultaSQL = "SELECT * FROM prestamoDeEspacio WHERE prestamoDeEspacio.id_Prestamo = " + idPrestamo + ";";
+                MySqlDataReader fila2 = ejecutarYdevolver(consultaSQL);
+                //Prestamo de equipo
+
+                //Prestamo de espacio
+                if (fila2.Read())
+                {
+                    consultaSQL = "DELETE FROM obtieneespaciosprestamodeespacio WHERE id_PrestamoDeEspacio  =" + idPrestamo + " ;";
+                    ejecutarSQL(consultaSQL);
+                    consultaSQL = "DELETE FROM prestamoDeEspacio WHERE prestamoDeEspacio.id_Prestamo = " + idPrestamo + ";";
+                    ejecutarSQL(consultaSQL);
+                }
+                //Prestamo de espacio
+
+                consultaSQL = "SELECT * FROM prestamoEspontaneo WHERE prestamoEspontaneo.id_Prestamo = " + idPrestamo + ";";
+                MySqlDataReader fila3 = ejecutarYdevolver(consultaSQL);
+
+                //Prestamo espontaneo
+                if (fila3.Read())
+                {
+                    consultaSQL = "DELETE FROM obtieneequipoprestamoespontaneo WHERE id_PrestamoEspontaneo  =" + idPrestamo + " ;";
+                    ejecutarSQL(consultaSQL);
+                    consultaSQL = "DELETE FROM prestamoEspontaneo WHERE prestamoEspontaneo.id_Prestamo = " + idPrestamo + ";";
+                    ejecutarSQL(consultaSQL);
+                }
+                //Prestamo espontaneo
+                consultaSQL = "DELETE FROM prestamo WHERE prestamo.id = " + idPrestamo + ";";
+                ejecutarSQL(consultaSQL);
+                token = 1;
             }
 
-            consultaSQL = "SELECT * FROM prestamoDeEspacio WHERE prestamoDeEspacio.id_Prestamo = " + idPrestamo + ";";
-            MySqlDataReader fila2 = ejecutarYdevolver(consultaSQL);
-            while (fila2.Read())
-            {
-
-                id2 = (idPrestamo);
-                id2 = recrearIdPrestamo(fila2);
-
-            }
-            if (id2 != 0)
-            {
-
-                consultaSQL2 = "DELETE FROM prestamoDeEspacio WHERE prestamoDeEspacio.id_Prestamo = " + idPrestamo + ";";
-                ejecutarSQL(consultaSQL2);
-
-            }
-
-            consultaSQL = "SELECT * FROM prestamoEspontaneo WHERE prestamoEspontaneo.id_Prestamo = " + idPrestamo + ";";
-            MySqlDataReader fila3 = ejecutarYdevolver(consultaSQL);
-            while (fila3.Read())
-            {
-
-                id3 = (idPrestamo);
-                id3 = recrearIdPrestamo(fila3);
-
-            }
-            if (id3 != 0)
-            {
-
-                consultaSQL2 = "DELETE FROM prestamoEspontaneo WHERE prestamoEspontaneo.id_Prestamo = " + idPrestamo + ";";
-                ejecutarSQL(consultaSQL2);
-
-            }
-
-            consultaSQL = "SELECT * FROM prestamo WHERE prestamo.id = " + idPrestamo + ";";
-            MySqlDataReader fila5 = ejecutarYdevolver(consultaSQL);
-            while (fila5.Read())
-            {
-
-                id5 = (idPrestamo);
-                id5 = recrearIdPrestamo(fila5);
-
-            }
-            if (id5 != 0)
-            {
-
-                consultaSQL2 = "DELETE FROM prestamo WHERE prestamo.id_Prestamo = " + idPrestamo + ";";
-                ejecutarSQL(consultaSQL2);
-
-            }
-
-            return idPrestamo;
+            return token;
         }
-
-
-
         public bool corroborarPrestamoConAlumno(int idPrestamo)
         {
             bool tokenPrestamoAlumno = true;
-            string consultaSQL = "SELECT * FROM `realiza` WHERE `id_Prestamo ` = '" + idPrestamo + "';";
+            string consultaSQL = "SELECT * FROM `realiza` WHERE `id_Prestamo` = '" + idPrestamo + "';";
 
             MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
             if (fila.Read())
@@ -239,8 +220,99 @@ namespace Persistencia
             int id = fila.GetInt32("id");
             return id;
         }
+        public ePrestamo recrearPrestamo(string id)
+        {
+
+            ePrestamo unPRE = new ePrestamo();
+            String consultaSQL = "Select * FROM prestamo WHERE id = '" + id + "';";
+            MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
+           if(fila.Read())
+            {
+
+            
+            unPRE.id = fila.GetInt32("id");
+            unPRE.fechaSolicitada= fila.GetString("fechaSolicitada");
+            unPRE.fechaRetiro = fila.GetString("fechaRetiro");
+            unPRE.horaRetiro = fila.GetString("horaRetiro");
+            unPRE.fechaDevolucion = fila.GetString("fechaDevolucion");
+            unPRE.estado = fila.GetString("estado");
+            unPRE.genuinoDiaDevolucion = fila.GetString("fechaGenuinaDevolucion");
+
+            }
+            consultaSQL = "Select * FROM realiza WHERE id_Prestamo = '" + id + "';";
+
+            fila = ejecutarYdevolver(consultaSQL);
+            if (fila.Read())
+            {
+                eResponsable alumno = new eResponsable();
+            alumno.ci = fila.GetString("ci_Solicitante");
 
 
+            consultaSQL = "Select * FROM profesorPrestamo WHERE id_Prestamo = '" + id + "';";
+                unPRE.alumnoResponsable = alumno;
+            }
+
+            fila = ejecutarYdevolver(consultaSQL);
+            if (fila.Read())
+            {
+                eResponsable profe = new eResponsable();
+            profe.ci = fila.GetString("ci_Solicitante");
+
+            
+            unPRE.profeResponsable = profe;
+            }
+            return unPRE;
+        }
+        public int calculoPrioridad(string curso, String actividad)
+        {
+            int prioridad = 0;
+
+            if (actividad == "Rodaje")
+            {
+                prioridad = 7;
+            }
+            else // osea si es == Practica de Rodaje
+            {
+                prioridad = 1;
+            }
+
+            if (curso == "Audiovisual 1")
+            {
+                prioridad = prioridad + 1;
+            }
+            if (curso == "Audiovisual 2")
+            {
+                prioridad = prioridad + 2;
+            }
+            if (curso == "FINEST")
+            {
+                prioridad = prioridad + 3;
+            }
+            if (curso == "Audiovisual 3")
+            {
+                prioridad = prioridad + 4;
+            }
+            if (curso == "Tecnicatura 1")
+            {
+                prioridad = prioridad + 5;
+            }
+            if (curso == "Tecnicatura 2")
+            {
+                prioridad = prioridad + 6;
+            }
+            return prioridad;
+        }
+        public String recrearCurso(String alumnoCI)
+        {
+            String consultaSQL = "Select solicitante.curso FROM solicitante WHERE solicitante.ci = '" + alumnoCI + "';";
+            MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
+            fila.Read();
+
+            String curso = fila.GetString("curso");
+
+            return curso;
+        }
 
     }
 }
+

@@ -394,6 +394,11 @@ namespace Presentacionn
 
             }
         }
+
+        private void cbxEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
         
 }

@@ -27,26 +27,18 @@ namespace Presentacionn
             unR.apellido = txtApellidoRes.Text;
             unR.curso = cbxCurso.Text;
             unR.tipo = cbxTipo.Text;
-            try
+
+            dResponsable unDR = new dResponsable();
+            bool token = unDR.altaResponsable(unR);
+            if (token == true)
             {
-                dResponsable unDR = new dResponsable();
-                bool token = unDR.altaResponsable(unR);
-                if (token == true)
-                {
 
-                    MessageBox.Show("el responsable ha sido agregado correctamente ");
-                }
-                else
-                {
-
-                    MessageBox.Show("el responsable no ha sido ingresado");
-                }
+                MessageBox.Show("el responsable ha sido agregado correctamente ");
             }
-            catch (Exception error)
+            else
             {
 
-                MessageBox.Show(error.Message);
-
+                MessageBox.Show("el responsable no ha sido ingresado");
             }
         }
 
@@ -62,7 +54,7 @@ namespace Presentacionn
 
         private void frmAltaResponsable_Load(object sender, EventArgs e)
         {
-            //MdiParent = 
+            MdiParent = 
         }
     }
 }

@@ -23,11 +23,14 @@ namespace Presentacionn
         {
 
             dPrestamo unDP = new dPrestamo();
+            bool tokenCampos = corroborarCampo();
+            if (tokenCampos == true)
+            {     
             try
             {
-                int idPrestamo = unDP.bajaPrestamoDeEquipo(Convert.ToInt16(txtIdPrestamoBaja.Text));
+                int token = unDP.bajaPrestamoDeEquipo(Convert.ToInt16(mtxtidPrestamo.Text));
 
-                if (idPrestamo != 0)
+                if (token == 1)
                 {
 
                     MessageBox.Show("Se bajo el prestamo correctamente");
@@ -45,9 +48,18 @@ namespace Presentacionn
                 MessageBox.Show(error.Message);
 
             }
+            } else { MessageBox.Show("Campo vacio"); }
 
         }
 
-        
+        private bool corroborarCampo()
+        {
+            bool token = true;
+            if (mtxtidPrestamo.Text == "")
+            {
+                token = false;
+            }
+            return token;
+        }
     }
 }

@@ -30,7 +30,7 @@
         {
             this.btnEliminar = new System.Windows.Forms.Button();
             this.lblIdPrestamoBaja = new System.Windows.Forms.Label();
-            this.txtIdPrestamoBaja = new System.Windows.Forms.TextBox();
+            this.mtxtidPrestamo = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // btnEliminar
@@ -53,12 +53,13 @@
             this.lblIdPrestamoBaja.TabIndex = 2;
             this.lblIdPrestamoBaja.Text = "Id Prestamo";
             // 
-            // txtIdPrestamoBaja
+            // mtxtidPrestamo
             // 
-            this.txtIdPrestamoBaja.Location = new System.Drawing.Point(194, 143);
-            this.txtIdPrestamoBaja.Name = "txtIdPrestamoBaja";
-            this.txtIdPrestamoBaja.Size = new System.Drawing.Size(100, 20);
-            this.txtIdPrestamoBaja.TabIndex = 1;
+            this.mtxtidPrestamo.Location = new System.Drawing.Point(194, 147);
+            this.mtxtidPrestamo.Mask = "0000000";
+            this.mtxtidPrestamo.Name = "mtxtidPrestamo";
+            this.mtxtidPrestamo.Size = new System.Drawing.Size(100, 20);
+            this.mtxtidPrestamo.TabIndex = 3;
             // 
             // frmBajaPrestamo
             // 
@@ -66,8 +67,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(228)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(494, 508);
+            this.Controls.Add(this.mtxtidPrestamo);
             this.Controls.Add(this.lblIdPrestamoBaja);
-            this.Controls.Add(this.txtIdPrestamoBaja);
             this.Controls.Add(this.btnEliminar);
             this.Name = "frmBajaPrestamo";
             this.Text = "frmBajaPrestamo";
@@ -80,6 +81,6 @@
 
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label lblIdPrestamoBaja;
-        private System.Windows.Forms.TextBox txtIdPrestamoBaja;
+        private System.Windows.Forms.MaskedTextBox mtxtidPrestamo;
     }
 }
