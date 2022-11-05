@@ -9,6 +9,7 @@ using System.Data;
 
 namespace Persistencia
 {
+
     public class pUsuario : clsPersistencia
     {
         public eUsuario login(string userName, string pass)
@@ -17,11 +18,13 @@ namespace Persistencia
             eUsuario elAdmin = new eUsuario();
             elAdmin = null;
             string consultaSQL = "SELECT * FROM `usuario` WHERE `usuario`.ci` = '" + userName + "' AND `contra`='" + pass + "';";
+
             MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
 
             while (fila.Read())
             {
                 elAdmin = recrearUsuario(fila);
+
             }
             return elAdmin;
         }
@@ -29,11 +32,13 @@ namespace Persistencia
         public eUsuario altaUsuario(eUsuario unPU)
         {
             eUsuario elAdmin = new eUsuario();
+            elAdmin = null;
             string consultaSQL = "SELECT * FROM `usuario` WHERE `usuario`.`ci` = '" + unPU.ci + "';";
             MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
             while (fila.Read())
             {
                 elAdmin = recrearUsuario(fila);
+
             }
             if (elAdmin == null)
             {
@@ -52,6 +57,8 @@ namespace Persistencia
             eUsuario elAdmin = new eUsuario();
             elAdmin = null;
             string consultaSQL = "SELECT * FROM `usuario` WHERE `usuario`.`ci` = '" + NUAM + "';";
+
+
             MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
             
             while (fila.Read())
@@ -67,6 +74,7 @@ namespace Persistencia
                 elAdmin = null;
                 consultaSQL = "SELECT * FROM `usuario` WHERE `usuario`.`ci` = '" + unPU.ci + "';";
 
+
                 fila = ejecutarYdevolver(consultaSQL);
                 ejecutarSQL(consultaSQL);
                 while (fila.Read())
@@ -74,10 +82,16 @@ namespace Persistencia
                     elAdmin = recrearUsuario(fila);
                 }
 
+
                 if (elAdmin == null)
                 {
+                    //Tirar FK
                     String consultaFK = "ALTER TABLE usuario DROP FOREIGN KEY fK_usuario_persona;";
                     ejecutarSQL(consultaFK);
+
+                    consultaFK = "ALTER TABLE ingresa DROP FOREIGN KEY fk_ingresa_usuario;";
+                    ejecutarSQL(consultaFK);
+                    //Tirar FK
 
                     String consultaSQL2 = "UPDATE `persona` SET `ci` ='" + unPU.ci
                     + "', `nombre` = '" + unPU.nombre + "', `apellido` = '" + unPU.apellido + "' WHERE `persona`.`ci` = '" + NUAM + "';";
@@ -85,11 +99,19 @@ namespace Persistencia
 
                     consultaSQL2 = "UPDATE `usuario` SET `ci` = '" + unPU.ci
                     + "', `contra` = '" + unPU.password + "', `telefono` = '" + unPU.telefono + "' WHERE `usuario`.`ci` = '" + NUAM + "';";
-                    elAdmin = token;
                     ejecutarSQL(consultaSQL2);
 
+                    consultaSQL2 = "UPDATE `ingresa` SET `ci_usuario` = '" + unPU.ci + "' WHERE `ci_usuario`= '" + NUAM + "';";
+                    ejecutarSQL(consultaSQL2);
+
+                    //Tirarn't FK
                     consultaFK = "ALTER TABLE usuario ADD constraint fK_usuario_persona FOREIGN KEY (ci) REFERENCES persona(ci);";
                     ejecutarSQL(consultaFK);
+                    consultaFK = "ALTER TABLE ingresa ADD constraint fk_ingresa_usuario FOREIGN KEY (ci_Usuario) REFERENCES usuario(ci);";
+                    ejecutarSQL(consultaFK);
+                    //Tirarn't FK
+
+                    elAdmin = token;
                 }
             }
             else
@@ -104,19 +126,24 @@ namespace Persistencia
             eUsuario elAdmin = new eUsuario();
             elAdmin = null;
             string consultaSQL = "SELECT * FROM `usuario` WHERE `usuario`.`ci` = '" + username + "';";
+
             MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
+
             while (fila.Read())
             {
                 elAdmin = recrearUsuario(fila);
+
             }
 
             if (elAdmin != null)
             {
-                string consultaSQL2 = "DELETE FROM usuario WHERE `usuario`.`ci` = '" + username + "';";
+                string consultaSQL2 = "DELETE FROM ingresa WHERE ci_usuario = '" + username + "';";
                 ejecutarSQL(consultaSQL2);
-
+                consultaSQL2 = "DELETE FROM usuario WHERE `usuario`.`ci` = '" + username + "';";
+                ejecutarSQL(consultaSQL2);
                 consultaSQL2 = "DELETE FROM persona WHERE `persona`.`ci` = '" + username + "';";
                 ejecutarSQL(consultaSQL2);
+
             }
             return elAdmin;
         }
@@ -126,15 +153,25 @@ namespace Persistencia
             eUsuario unUsuario = new eUsuario();
             unUsuario.ci = fila.GetString("ci");
             unUsuario.password = fila.GetString("contra");
+
+
+
             return unUsuario;
         }
 
         public DataTable listarUsuario()
         {
-            DataTable dt = null;        
+            DataTable dt = null;
+            
             String consultaSQL = "SELECT persona.ci, persona.nombre, persona.apellido, usuario.contra, usuario.telefono FROM persona RIGHT JOIN `usuario` ON persona.ci = usuario.ci; ";
-             dt = listarAlgo(consultaSQL);                      
+
+             dt = listarAlgo(consultaSQL);
+           
+            
             return dt;
         }
     }
 }
+
+
+
