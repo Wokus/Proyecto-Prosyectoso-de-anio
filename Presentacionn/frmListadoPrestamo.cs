@@ -464,6 +464,45 @@ namespace Presentacionn
                     dPrestamoEquipo unDPF = new dPrestamoEquipo();
                     dgvListadoEquipo.DataSource = unDPF.listarPrestamoPorFechaAR();
 
+                    if (cbxEstadoEquipo.Text == "Armado")
+                    {
+                        tuHermana = cbxEstadoEquipo.Text;
+                        dPrestamoEquipo unDPFE = new dPrestamoEquipo();
+                        dgvListadoEquipo.DataSource = unDPFE.listarPrestamoPorFechaARE(tuHermana);
+
+                    }
+
+                    if (cbxEstadoEquipo.Text == "Levantado")
+                    {
+                        tuHermana = cbxEstadoEquipo.Text;
+                        dPrestamoEquipo unDPFE = new dPrestamoEquipo();
+                        dgvListadoEquipo.DataSource = unDPFE.listarPrestamoPorFechaARE(tuHermana);
+
+                    }
+
+                    if (cbxEstadoEquipo.Text == "Cancelado")
+                    {
+                        tuHermana = cbxEstadoEquipo.Text;
+                        dPrestamoEquipo unDPFE = new dPrestamoEquipo();
+                        dgvListadoEquipo.DataSource = unDPFE.listarPrestamoPorFechaARE(tuHermana);
+
+                    }
+
+                    if (cbxEstadoEquipo.Text == "Devuelto")
+                    {
+                        tuHermana = cbxEstadoEquipo.Text;
+                        dPrestamoEquipo unDPFE = new dPrestamoEquipo();
+                        dgvListadoEquipo.DataSource = unDPFE.listarPrestamoPorFechaARE(tuHermana);
+
+                    }
+
+                    if (cbxEstadoEquipo.Text == "En Progreso")
+                    {
+                        tuHermana = cbxEstadoEquipo.Text;
+                        dPrestamoEquipo unDPFE = new dPrestamoEquipo();
+                        dgvListadoEquipo.DataSource = unDPFE.listarPrestamoPorFechaARE(tuHermana);
+
+                    }
                 }
 
                 if (cbxFechaEquipo.Text == "De mas reciente a mas antiguo")
@@ -471,6 +510,46 @@ namespace Presentacionn
 
                     dPrestamoEquipo unDPF = new dPrestamoEquipo();
                     dgvListadoEquipo.DataSource = unDPF.listarPrestamoPorFechaRA();
+
+                    if (cbxEstadoEquipo.Text == "Armado")
+                    {
+                        tuHermana = cbxEstadoEquipo.Text;
+                        dPrestamoEquipo unDPFE = new dPrestamoEquipo();
+                        dgvListadoEquipo.DataSource = unDPFE.listarPrestamoPorFechaRAE(tuHermana);
+
+                    }
+
+                    if (cbxEstadoEquipo.Text == "Levantado")
+                    {
+                        tuHermana = cbxEstadoEquipo.Text;
+                        dPrestamoEquipo unDPFE = new dPrestamoEquipo();
+                        dgvListadoEquipo.DataSource = unDPFE.listarPrestamoPorFechaRAE(tuHermana);
+
+                    }
+
+                    if (cbxEstadoEquipo.Text == "Cancelado")
+                    {
+                        tuHermana = cbxEstadoEquipo.Text;
+                        dPrestamoEquipo unDPFE = new dPrestamoEquipo();
+                        dgvListadoEquipo.DataSource = unDPFE.listarPrestamoPorFechaRAE(tuHermana);
+
+                    }
+
+                    if (cbxEstadoEquipo.Text == "Devuelto")
+                    {
+                        tuHermana = cbxEstadoEquipo.Text;
+                        dPrestamoEquipo unDPFE = new dPrestamoEquipo();
+                        dgvListadoEquipo.DataSource = unDPFE.listarPrestamoPorFechaRAE(tuHermana);
+
+                    }
+
+                    if (cbxEstadoEquipo.Text == "En Progreso")
+                    {
+                        tuHermana = cbxEstadoEquipo.Text;
+                        dPrestamoEquipo unDPFE = new dPrestamoEquipo();
+                        dgvListadoEquipo.DataSource = unDPFE.listarPrestamoPorFechaRAE(tuHermana);
+
+                    }
 
                 }
 
