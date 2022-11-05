@@ -32,6 +32,7 @@ namespace Persistencia
         public eUsuario altaUsuario(eUsuario unPU)
         {
             eUsuario elAdmin = new eUsuario();
+            elAdmin = null;
             string consultaSQL = "SELECT * FROM `usuario` WHERE `usuario`.`ci` = '" + unPU.ci + "';";
             MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
             while (fila.Read())
@@ -84,9 +85,13 @@ namespace Persistencia
 
                 if (elAdmin == null)
                 {
-
+                    //Tirar FK
                     String consultaFK = "ALTER TABLE usuario DROP FOREIGN KEY fK_usuario_persona;";
                     ejecutarSQL(consultaFK);
+
+                    consultaFK = "ALTER TABLE ingresa DROP FOREIGN KEY fk_ingresa_usuario;";
+                    ejecutarSQL(consultaFK);
+                    //Tirar FK
 
                     String consultaSQL2 = "UPDATE `persona` SET `ci` ='" + unPU.ci
                     + "', `nombre` = '" + unPU.nombre + "', `apellido` = '" + unPU.apellido + "' WHERE `persona`.`ci` = '" + NUAM + "';";
@@ -94,13 +99,19 @@ namespace Persistencia
 
                     consultaSQL2 = "UPDATE `usuario` SET `ci` = '" + unPU.ci
                     + "', `contra` = '" + unPU.password + "', `telefono` = '" + unPU.telefono + "' WHERE `usuario`.`ci` = '" + NUAM + "';";
-                    elAdmin = token;
                     ejecutarSQL(consultaSQL2);
 
+                    consultaSQL2 = "UPDATE `ingresa` SET `ci_usuario` = '" + unPU.ci + "' WHERE `ci_usuario`= '" + NUAM + "';";
+                    ejecutarSQL(consultaSQL2);
 
+                    //Tirarn't FK
                     consultaFK = "ALTER TABLE usuario ADD constraint fK_usuario_persona FOREIGN KEY (ci) REFERENCES persona(ci);";
                     ejecutarSQL(consultaFK);
+                    consultaFK = "ALTER TABLE ingresa ADD constraint fk_ingresa_usuario FOREIGN KEY (ci_Usuario) REFERENCES usuario(ci);";
+                    ejecutarSQL(consultaFK);
+                    //Tirarn't FK
 
+                    elAdmin = token;
                 }
             }
             else
@@ -126,7 +137,9 @@ namespace Persistencia
 
             if (elAdmin != null)
             {
-                string consultaSQL2 = "DELETE FROM usuario WHERE `usuario`.`ci` = '" + username + "';";
+                string consultaSQL2 = "DELETE FROM ingresa WHERE ci_usuario = '" + username + "';";
+                ejecutarSQL(consultaSQL2);
+                consultaSQL2 = "DELETE FROM usuario WHERE `usuario`.`ci` = '" + username + "';";
                 ejecutarSQL(consultaSQL2);
                 consultaSQL2 = "DELETE FROM persona WHERE `persona`.`ci` = '" + username + "';";
                 ejecutarSQL(consultaSQL2);

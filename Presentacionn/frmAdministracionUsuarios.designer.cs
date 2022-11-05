@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.tbpModificarUsuario = new System.Windows.Forms.TabPage();
+            this.mtxtTelefonoModificar = new System.Windows.Forms.MaskedTextBox();
             this.mtxtUsernameModificar = new System.Windows.Forms.MaskedTextBox();
             this.mtxtNUAM = new System.Windows.Forms.MaskedTextBox();
             this.txtApellidoModificar = new System.Windows.Forms.TextBox();
@@ -46,7 +47,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvListarUsuario = new System.Windows.Forms.DataGridView();
             this.tbpEliminarUsuario = new System.Windows.Forms.TabPage();
-            this.txtUsernameEliminar = new System.Windows.Forms.MaskedTextBox();
+            this.mtxtUsernameEliminar = new System.Windows.Forms.MaskedTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblUsernameEliminar = new System.Windows.Forms.Label();
             this.btnOkEliminar = new System.Windows.Forms.Button();
@@ -64,7 +65,6 @@
             this.lblUsernameAgregar = new System.Windows.Forms.Label();
             this.btnOkAgregar = new System.Windows.Forms.Button();
             this.tbcUsuarios = new System.Windows.Forms.TabControl();
-            this.mtxtTelefonoModificar = new System.Windows.Forms.MaskedTextBox();
             this.tbpModificarUsuario.SuspendLayout();
             this.tbpListarUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarUsuario)).BeginInit();
@@ -96,6 +96,16 @@
             this.tbpModificarUsuario.Size = new System.Drawing.Size(388, 522);
             this.tbpModificarUsuario.TabIndex = 3;
             this.tbpModificarUsuario.Text = "Modificar";
+            // 
+            // mtxtTelefonoModificar
+            // 
+            this.mtxtTelefonoModificar.BackColor = System.Drawing.Color.White;
+            this.mtxtTelefonoModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtxtTelefonoModificar.Location = new System.Drawing.Point(178, 321);
+            this.mtxtTelefonoModificar.Mask = " 000,000,000";
+            this.mtxtTelefonoModificar.Name = "mtxtTelefonoModificar";
+            this.mtxtTelefonoModificar.Size = new System.Drawing.Size(107, 26);
+            this.mtxtTelefonoModificar.TabIndex = 27;
             // 
             // mtxtUsernameModificar
             // 
@@ -155,7 +165,6 @@
             this.lblNDAM.Size = new System.Drawing.Size(145, 20);
             this.lblNDAM.TabIndex = 20;
             this.lblNDAM.Text = "Usuario a modificar";
-            
             // 
             // txtNombreModificar
             // 
@@ -215,7 +224,6 @@
             this.lblUsernameModificar.Size = new System.Drawing.Size(146, 20);
             this.lblUsernameModificar.TabIndex = 11;
             this.lblUsernameModificar.Text = "Nombre de Usuario";
-            
             // 
             // btnOkModificar
             // 
@@ -240,7 +248,6 @@
             this.tbpListarUsuario.Size = new System.Drawing.Size(388, 522);
             this.tbpListarUsuario.TabIndex = 2;
             this.tbpListarUsuario.Text = "Listar Informacion";
-        
             // 
             // panel2
             // 
@@ -262,7 +269,7 @@
             // tbpEliminarUsuario
             // 
             this.tbpEliminarUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(228)))), ((int)(((byte)(244)))));
-            this.tbpEliminarUsuario.Controls.Add(this.txtUsernameEliminar);
+            this.tbpEliminarUsuario.Controls.Add(this.mtxtUsernameEliminar);
             this.tbpEliminarUsuario.Controls.Add(this.panel1);
             this.tbpEliminarUsuario.Controls.Add(this.lblUsernameEliminar);
             this.tbpEliminarUsuario.Controls.Add(this.btnOkEliminar);
@@ -273,15 +280,15 @@
             this.tbpEliminarUsuario.TabIndex = 1;
             this.tbpEliminarUsuario.Text = "Eliminar";
             // 
-            // txtUsernameEliminar
+            // mtxtUsernameEliminar
             // 
-            this.txtUsernameEliminar.BackColor = System.Drawing.Color.White;
-            this.txtUsernameEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsernameEliminar.Location = new System.Drawing.Point(178, 91);
-            this.txtUsernameEliminar.Mask = "0,000,000-0";
-            this.txtUsernameEliminar.Name = "txtUsernameEliminar";
-            this.txtUsernameEliminar.Size = new System.Drawing.Size(107, 26);
-            this.txtUsernameEliminar.TabIndex = 23;
+            this.mtxtUsernameEliminar.BackColor = System.Drawing.Color.White;
+            this.mtxtUsernameEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtxtUsernameEliminar.Location = new System.Drawing.Point(178, 91);
+            this.mtxtUsernameEliminar.Mask = "0,000,000-0";
+            this.mtxtUsernameEliminar.Name = "mtxtUsernameEliminar";
+            this.mtxtUsernameEliminar.Size = new System.Drawing.Size(107, 26);
+            this.mtxtUsernameEliminar.TabIndex = 23;
             // 
             // panel1
             // 
@@ -335,7 +342,6 @@
             this.tbpAgregarUsuario.Size = new System.Drawing.Size(388, 522);
             this.tbpAgregarUsuario.TabIndex = 0;
             this.tbpAgregarUsuario.Text = "Agregar";
-            
             // 
             // mtxtUsernameAgregar
             // 
@@ -381,7 +387,7 @@
             this.mtxtTelefonoAgregar.BackColor = System.Drawing.Color.White;
             this.mtxtTelefonoAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtxtTelefonoAgregar.Location = new System.Drawing.Point(177, 274);
-            this.mtxtTelefonoAgregar.Mask = " 000,000,000";
+            this.mtxtTelefonoAgregar.Mask = "000,000,000";
             this.mtxtTelefonoAgregar.Name = "mtxtTelefonoAgregar";
             this.mtxtTelefonoAgregar.Size = new System.Drawing.Size(107, 26);
             this.mtxtTelefonoAgregar.TabIndex = 10;
@@ -424,7 +430,6 @@
             this.txtPasswordAgregar.Name = "txtPasswordAgregar";
             this.txtPasswordAgregar.Size = new System.Drawing.Size(107, 26);
             this.txtPasswordAgregar.TabIndex = 4;
-            
             // 
             // lblPasswordAgregar
             // 
@@ -473,16 +478,6 @@
             this.tbcUsuarios.Size = new System.Drawing.Size(396, 548);
             this.tbcUsuarios.TabIndex = 0;
             this.tbcUsuarios.Click += new System.EventHandler(this.tbcUsuarios_Click);
-            // 
-            // mtxtTelefonoModificar
-            // 
-            this.mtxtTelefonoModificar.BackColor = System.Drawing.Color.White;
-            this.mtxtTelefonoModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtxtTelefonoModificar.Location = new System.Drawing.Point(178, 321);
-            this.mtxtTelefonoModificar.Mask = " 000,000,000";
-            this.mtxtTelefonoModificar.Name = "mtxtTelefonoModificar";
-            this.mtxtTelefonoModificar.Size = new System.Drawing.Size(107, 26);
-            this.mtxtTelefonoModificar.TabIndex = 27;
             // 
             // frmAdministracionUsuarios
             // 
@@ -542,7 +537,7 @@
         private System.Windows.Forms.MaskedTextBox mtxtNUAM;
         private System.Windows.Forms.MaskedTextBox mtxtUsernameAgregar;
         private System.Windows.Forms.MaskedTextBox mtxtUsernameModificar;
-        private System.Windows.Forms.MaskedTextBox txtUsernameEliminar;
+        private System.Windows.Forms.MaskedTextBox mtxtUsernameEliminar;
         private System.Windows.Forms.MaskedTextBox mtxtTelefonoModificar;
     }
 }
