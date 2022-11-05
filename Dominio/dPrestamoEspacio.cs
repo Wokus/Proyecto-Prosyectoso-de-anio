@@ -72,5 +72,23 @@ namespace Dominio
 
         }
 
+        public DataTable listarPrestamoPorFechaARE(string tuHermana)
+        {
+
+            pPrestamoEspacio unPPFE = new pPrestamoEspacio();
+
+            return unPPFE.listarPrestamoPorFechaARE(tuHermana);
+
+        }
+
+        public DataTable listarPrestamoPorFechaRAE(string tuHermana)
+        {
+
+            pPrestamoEspacio unPPFE = new pPrestamoEspacio();
+
+            return unPPFE.listarPrestamoPorFechaRAE(tuHermana);
+
+        }
+
     }
 }
