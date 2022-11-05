@@ -54,6 +54,7 @@
             this.dtpFechaDevolucion = new System.Windows.Forms.DateTimePicker();
             this.cbxEjercicioPEquip = new System.Windows.Forms.ComboBox();
             this.txtEquiposId = new System.Windows.Forms.TextBox();
+            this.txtEjercicio = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblProfesor
@@ -301,12 +302,21 @@
             this.txtEquiposId.Size = new System.Drawing.Size(100, 20);
             this.txtEquiposId.TabIndex = 83;
             // 
+            // txtEjercicio
+            // 
+            this.txtEjercicio.Location = new System.Drawing.Point(382, 244);
+            this.txtEjercicio.Name = "txtEjercicio";
+            this.txtEjercicio.Size = new System.Drawing.Size(100, 20);
+            this.txtEjercicio.TabIndex = 85;
+            this.txtEjercicio.Visible = false;
+            // 
             // frmAltaPrestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(228)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(494, 508);
+            this.Controls.Add(this.txtEjercicio);
             this.Controls.Add(this.cbxEjercicioPEquip);
             this.Controls.Add(this.txtEquiposId);
             this.Controls.Add(this.dtpFechaDevolucion);
@@ -368,5 +378,6 @@
         private System.Windows.Forms.DateTimePicker dtpFechaDevolucion;
         private System.Windows.Forms.ComboBox cbxEjercicioPEquip;
         private System.Windows.Forms.TextBox txtEquiposId;
+        private System.Windows.Forms.TextBox txtEjercicio;
     }
 }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.cbxRotura = new System.Windows.Forms.ComboBox();
-            this.dgvDescripcion = new System.Windows.Forms.DataGridView();
             this.btnEliminarRotura = new System.Windows.Forms.Button();
             this.lblRotura = new System.Windows.Forms.Label();
             this.lblDescripcion = new System.Windows.Forms.Label();
@@ -37,7 +36,7 @@
             this.txtIdEquipo = new System.Windows.Forms.TextBox();
             this.txtEquipoRoto = new System.Windows.Forms.TextBox();
             this.lblEquipoRoto = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDescripcion)).BeginInit();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // cbxRotura
@@ -47,14 +46,6 @@
             this.cbxRotura.Name = "cbxRotura";
             this.cbxRotura.Size = new System.Drawing.Size(121, 21);
             this.cbxRotura.TabIndex = 9;
-            // 
-            // dgvDescripcion
-            // 
-            this.dgvDescripcion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDescripcion.Location = new System.Drawing.Point(313, 120);
-            this.dgvDescripcion.Name = "dgvDescripcion";
-            this.dgvDescripcion.Size = new System.Drawing.Size(169, 110);
-            this.dgvDescripcion.TabIndex = 10;
             // 
             // btnEliminarRotura
             // 
@@ -67,6 +58,7 @@
             this.btnEliminarRotura.TabIndex = 11;
             this.btnEliminarRotura.Text = "Eliminar";
             this.btnEliminarRotura.UseVisualStyleBackColor = false;
+            this.btnEliminarRotura.Click += new System.EventHandler(this.btnEliminarRotura_Click);
             // 
             // lblRotura
             // 
@@ -101,6 +93,7 @@
             this.txtIdEquipo.Name = "txtIdEquipo";
             this.txtIdEquipo.Size = new System.Drawing.Size(100, 20);
             this.txtIdEquipo.TabIndex = 8;
+            this.txtIdEquipo.TextChanged += new System.EventHandler(this.txtIdEquipo_TextChanged);
             // 
             // txtEquipoRoto
             // 
@@ -118,24 +111,31 @@
             this.lblEquipoRoto.TabIndex = 14;
             this.lblEquipoRoto.Text = "Equipo Roto";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(307, 117);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(175, 90);
+            this.textBox1.TabIndex = 16;
+            // 
             // frmBajaRotura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(228)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(494, 508);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txtEquipoRoto);
             this.Controls.Add(this.lblEquipoRoto);
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.lblRotura);
             this.Controls.Add(this.btnEliminarRotura);
-            this.Controls.Add(this.dgvDescripcion);
             this.Controls.Add(this.cbxRotura);
             this.Controls.Add(this.txtIdEquipo);
             this.Controls.Add(this.lblIdEquipo);
             this.Name = "frmBajaRotura";
             this.Text = "frmBajaRotura";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDescripcion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,7 +143,6 @@
 
         #endregion
         private System.Windows.Forms.ComboBox cbxRotura;
-        private System.Windows.Forms.DataGridView dgvDescripcion;
         private System.Windows.Forms.Button btnEliminarRotura;
         private System.Windows.Forms.Label lblRotura;
         private System.Windows.Forms.Label lblDescripcion;
@@ -151,5 +150,6 @@
         private System.Windows.Forms.TextBox txtIdEquipo;
         private System.Windows.Forms.TextBox txtEquipoRoto;
         private System.Windows.Forms.Label lblEquipoRoto;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
