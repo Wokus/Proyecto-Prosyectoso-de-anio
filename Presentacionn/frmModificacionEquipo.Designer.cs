@@ -67,7 +67,7 @@
             // 
             this.lblObservaciones.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblObservaciones.AutoSize = true;
-            this.lblObservaciones.Location = new System.Drawing.Point(227, 261);
+            this.lblObservaciones.Location = new System.Drawing.Point(227, 260);
             this.lblObservaciones.Name = "lblObservaciones";
             this.lblObservaciones.Size = new System.Drawing.Size(72, 13);
             this.lblObservaciones.TabIndex = 92;
@@ -77,7 +77,7 @@
             // 
             this.lblTipo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTipo.AutoSize = true;
-            this.lblTipo.Location = new System.Drawing.Point(271, 212);
+            this.lblTipo.Location = new System.Drawing.Point(271, 207);
             this.lblTipo.Name = "lblTipo";
             this.lblTipo.Size = new System.Drawing.Size(28, 13);
             this.lblTipo.TabIndex = 91;
@@ -87,7 +87,7 @@
             // 
             this.lblPrecio.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(262, 161);
+            this.lblPrecio.Location = new System.Drawing.Point(262, 157);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(37, 13);
             this.lblPrecio.TabIndex = 90;
@@ -97,7 +97,7 @@
             // 
             this.lblAsegurado.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblAsegurado.AutoSize = true;
-            this.lblAsegurado.Location = new System.Drawing.Point(241, 111);
+            this.lblAsegurado.Location = new System.Drawing.Point(241, 107);
             this.lblAsegurado.Name = "lblAsegurado";
             this.lblAsegurado.Size = new System.Drawing.Size(58, 13);
             this.lblAsegurado.TabIndex = 89;
@@ -107,7 +107,7 @@
             // 
             this.lblFechaIgreso.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblFechaIgreso.AutoSize = true;
-            this.lblFechaIgreso.Location = new System.Drawing.Point(8, 261);
+            this.lblFechaIgreso.Location = new System.Drawing.Point(4, 260);
             this.lblFechaIgreso.Name = "lblFechaIgreso";
             this.lblFechaIgreso.Size = new System.Drawing.Size(90, 13);
             this.lblFechaIgreso.TabIndex = 88;
@@ -117,7 +117,7 @@
             // 
             this.lblEstado.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblEstado.AutoSize = true;
-            this.lblEstado.Location = new System.Drawing.Point(58, 212);
+            this.lblEstado.Location = new System.Drawing.Point(54, 207);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(40, 13);
             this.lblEstado.TabIndex = 87;
@@ -127,7 +127,7 @@
             // 
             this.lblNumeroSerie.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNumeroSerie.AutoSize = true;
-            this.lblNumeroSerie.Location = new System.Drawing.Point(12, 161);
+            this.lblNumeroSerie.Location = new System.Drawing.Point(8, 157);
             this.lblNumeroSerie.Name = "lblNumeroSerie";
             this.lblNumeroSerie.Size = new System.Drawing.Size(86, 13);
             this.lblNumeroSerie.TabIndex = 86;
@@ -137,7 +137,7 @@
             // 
             this.lblNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(54, 111);
+            this.lblNombre.Location = new System.Drawing.Point(50, 107);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(44, 13);
             this.lblNombre.TabIndex = 85;
@@ -174,7 +174,7 @@
             // txtObservaciones
             // 
             this.txtObservaciones.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtObservaciones.Location = new System.Drawing.Point(305, 254);
+            this.txtObservaciones.Location = new System.Drawing.Point(305, 257);
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
             this.txtObservaciones.Size = new System.Drawing.Size(100, 20);
@@ -208,11 +208,11 @@
             // 
             this.lblIdEquipoModificar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblIdEquipoModificar.AutoSize = true;
-            this.lblIdEquipoModificar.Location = new System.Drawing.Point(40, 61);
+            this.lblIdEquipoModificar.Location = new System.Drawing.Point(42, 61);
             this.lblIdEquipoModificar.Name = "lblIdEquipoModificar";
-            this.lblIdEquipoModificar.Size = new System.Drawing.Size(52, 13);
+            this.lblIdEquipoModificar.Size = new System.Drawing.Size(54, 13);
             this.lblIdEquipoModificar.TabIndex = 95;
-            this.lblIdEquipoModificar.Text = "Id Equipo";
+            this.lblIdEquipoModificar.Text = "ID Equipo";
             // 
             // dtpFecha
             // 

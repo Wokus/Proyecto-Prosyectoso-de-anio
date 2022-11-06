@@ -47,11 +47,11 @@
             // lblIdPrestamoBaja
             // 
             this.lblIdPrestamoBaja.AutoSize = true;
-            this.lblIdPrestamoBaja.Location = new System.Drawing.Point(125, 150);
+            this.lblIdPrestamoBaja.Location = new System.Drawing.Point(107, 150);
             this.lblIdPrestamoBaja.Name = "lblIdPrestamoBaja";
-            this.lblIdPrestamoBaja.Size = new System.Drawing.Size(63, 13);
+            this.lblIdPrestamoBaja.Size = new System.Drawing.Size(81, 13);
             this.lblIdPrestamoBaja.TabIndex = 2;
-            this.lblIdPrestamoBaja.Text = "Id Prestamo";
+            this.lblIdPrestamoBaja.Text = "ID del prestamo";
             // 
             // mtxtidPrestamo
             // 

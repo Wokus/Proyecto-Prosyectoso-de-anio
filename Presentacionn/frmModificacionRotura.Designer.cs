@@ -59,7 +59,7 @@
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(244, 127);
+            this.lblDescripcion.Location = new System.Drawing.Point(244, 123);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
             this.lblDescripcion.TabIndex = 39;
@@ -68,7 +68,7 @@
             // lblPrestamoRotura
             // 
             this.lblPrestamoRotura.AutoSize = true;
-            this.lblPrestamoRotura.Location = new System.Drawing.Point(25, 187);
+            this.lblPrestamoRotura.Location = new System.Drawing.Point(25, 183);
             this.lblPrestamoRotura.Name = "lblPrestamoRotura";
             this.lblPrestamoRotura.Size = new System.Drawing.Size(51, 13);
             this.lblPrestamoRotura.TabIndex = 37;
@@ -77,7 +77,7 @@
             // lblEquipoRoto
             // 
             this.lblEquipoRoto.AutoSize = true;
-            this.lblEquipoRoto.Location = new System.Drawing.Point(12, 127);
+            this.lblEquipoRoto.Location = new System.Drawing.Point(12, 123);
             this.lblEquipoRoto.Name = "lblEquipoRoto";
             this.lblEquipoRoto.Size = new System.Drawing.Size(66, 13);
             this.lblEquipoRoto.TabIndex = 36;
@@ -115,16 +115,16 @@
             // lblIdEquipo
             // 
             this.lblIdEquipo.AutoSize = true;
-            this.lblIdEquipo.Location = new System.Drawing.Point(24, 67);
+            this.lblIdEquipo.Location = new System.Drawing.Point(24, 63);
             this.lblIdEquipo.Name = "lblIdEquipo";
-            this.lblIdEquipo.Size = new System.Drawing.Size(52, 13);
+            this.lblIdEquipo.Size = new System.Drawing.Size(54, 13);
             this.lblIdEquipo.TabIndex = 42;
-            this.lblIdEquipo.Text = "Id Equipo";
+            this.lblIdEquipo.Text = "ID Equipo";
             // 
             // lblResponsableRotura
             // 
             this.lblResponsableRotura.AutoSize = true;
-            this.lblResponsableRotura.Location = new System.Drawing.Point(12, 247);
+            this.lblResponsableRotura.Location = new System.Drawing.Point(12, 243);
             this.lblResponsableRotura.Name = "lblResponsableRotura";
             this.lblResponsableRotura.Size = new System.Drawing.Size(69, 13);
             this.lblResponsableRotura.TabIndex = 38;
@@ -140,7 +140,7 @@
             // cbxIdRotura
             // 
             this.cbxIdRotura.FormattingEnabled = true;
-            this.cbxIdRotura.Location = new System.Drawing.Point(361, 60);
+            this.cbxIdRotura.Location = new System.Drawing.Point(313, 59);
             this.cbxIdRotura.Name = "cbxIdRotura";
             this.cbxIdRotura.Size = new System.Drawing.Size(121, 21);
             this.cbxIdRotura.TabIndex = 43;
@@ -149,11 +149,11 @@
             // lblIdRotura
             // 
             this.lblIdRotura.AutoSize = true;
-            this.lblIdRotura.Location = new System.Drawing.Point(304, 68);
+            this.lblIdRotura.Location = new System.Drawing.Point(256, 63);
             this.lblIdRotura.Name = "lblIdRotura";
-            this.lblIdRotura.Size = new System.Drawing.Size(51, 13);
+            this.lblIdRotura.Size = new System.Drawing.Size(53, 13);
             this.lblIdRotura.TabIndex = 16;
-            this.lblIdRotura.Text = "Id Rotura";
+            this.lblIdRotura.Text = "ID Rotura";
             // 
             // frmModificacionRotura
             // 

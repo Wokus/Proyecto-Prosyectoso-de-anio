@@ -45,19 +45,21 @@
             // 
             // cbxNewTipo
             // 
+            this.cbxNewTipo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbxNewTipo.FormattingEnabled = true;
             this.cbxNewTipo.Items.AddRange(new object[] {
             "Estudiante",
             "Profesor"});
-            this.cbxNewTipo.Location = new System.Drawing.Point(214, 220);
+            this.cbxNewTipo.Location = new System.Drawing.Point(214, 222);
             this.cbxNewTipo.Name = "cbxNewTipo";
             this.cbxNewTipo.Size = new System.Drawing.Size(100, 21);
             this.cbxNewTipo.TabIndex = 20;
             // 
             // lblCurso
             // 
+            this.lblCurso.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCurso.AutoSize = true;
-            this.lblCurso.Location = new System.Drawing.Point(171, 196);
+            this.lblCurso.Location = new System.Drawing.Point(174, 252);
             this.lblCurso.Name = "lblCurso";
             this.lblCurso.Size = new System.Drawing.Size(34, 13);
             this.lblCurso.TabIndex = 19;
@@ -65,8 +67,9 @@
             // 
             // lblTipo
             // 
+            this.lblTipo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTipo.AutoSize = true;
-            this.lblTipo.Location = new System.Drawing.Point(177, 223);
+            this.lblTipo.Location = new System.Drawing.Point(180, 225);
             this.lblTipo.Name = "lblTipo";
             this.lblTipo.Size = new System.Drawing.Size(28, 13);
             this.lblTipo.TabIndex = 18;
@@ -74,15 +77,17 @@
             // 
             // txtNewCi
             // 
-            this.txtNewCi.Location = new System.Drawing.Point(214, 115);
+            this.txtNewCi.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtNewCi.Location = new System.Drawing.Point(214, 144);
             this.txtNewCi.Name = "txtNewCi";
             this.txtNewCi.Size = new System.Drawing.Size(100, 20);
             this.txtNewCi.TabIndex = 16;
             // 
             // lblCedulaNueva
             // 
+            this.lblCedulaNueva.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCedulaNueva.AutoSize = true;
-            this.lblCedulaNueva.Location = new System.Drawing.Point(132, 118);
+            this.lblCedulaNueva.Location = new System.Drawing.Point(135, 147);
             this.lblCedulaNueva.Name = "lblCedulaNueva";
             this.lblCedulaNueva.Size = new System.Drawing.Size(73, 13);
             this.lblCedulaNueva.TabIndex = 15;
@@ -90,7 +95,8 @@
             // 
             // txtOldCi
             // 
-            this.txtOldCi.Location = new System.Drawing.Point(214, 89);
+            this.txtOldCi.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtOldCi.Location = new System.Drawing.Point(214, 118);
             this.txtOldCi.Name = "txtOldCi";
             this.txtOldCi.Size = new System.Drawing.Size(100, 20);
             this.txtOldCi.TabIndex = 14;
@@ -110,8 +116,9 @@
             // 
             // lblCedulaAmodificar
             // 
+            this.lblCedulaAmodificar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCedulaAmodificar.AutoSize = true;
-            this.lblCedulaAmodificar.Location = new System.Drawing.Point(34, 92);
+            this.lblCedulaAmodificar.Location = new System.Drawing.Point(37, 121);
             this.lblCedulaAmodificar.Name = "lblCedulaAmodificar";
             this.lblCedulaAmodificar.Size = new System.Drawing.Size(171, 13);
             this.lblCedulaAmodificar.TabIndex = 12;
@@ -125,22 +132,24 @@
             "Primero",
             "Segundo",
             "Tercero"});
-            this.cbxNewCurso.Location = new System.Drawing.Point(214, 193);
+            this.cbxNewCurso.Location = new System.Drawing.Point(214, 249);
             this.cbxNewCurso.Name = "cbxNewCurso";
             this.cbxNewCurso.Size = new System.Drawing.Size(100, 21);
             this.cbxNewCurso.TabIndex = 22;
             // 
             // txtNewNombre
             // 
-            this.txtNewNombre.Location = new System.Drawing.Point(214, 141);
+            this.txtNewNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtNewNombre.Location = new System.Drawing.Point(214, 170);
             this.txtNewNombre.Name = "txtNewNombre";
             this.txtNewNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNewNombre.TabIndex = 24;
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(161, 144);
+            this.label1.Location = new System.Drawing.Point(164, 173);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 23;
@@ -148,15 +157,17 @@
             // 
             // txtNewApellido
             // 
-            this.txtNewApellido.Location = new System.Drawing.Point(214, 167);
+            this.txtNewApellido.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtNewApellido.Location = new System.Drawing.Point(214, 196);
             this.txtNewApellido.Name = "txtNewApellido";
             this.txtNewApellido.Size = new System.Drawing.Size(100, 20);
             this.txtNewApellido.TabIndex = 26;
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(161, 170);
+            this.label2.Location = new System.Drawing.Point(164, 199);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 25;

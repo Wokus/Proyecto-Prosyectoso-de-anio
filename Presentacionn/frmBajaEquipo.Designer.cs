@@ -57,11 +57,11 @@
             // lblIdEquipo
             // 
             this.lblIdEquipo.AutoSize = true;
-            this.lblIdEquipo.Location = new System.Drawing.Point(173, 150);
+            this.lblIdEquipo.Location = new System.Drawing.Point(118, 146);
             this.lblIdEquipo.Name = "lblIdEquipo";
-            this.lblIdEquipo.Size = new System.Drawing.Size(15, 13);
+            this.lblIdEquipo.Size = new System.Drawing.Size(70, 13);
             this.lblIdEquipo.TabIndex = 2;
-            this.lblIdEquipo.Text = "id";
+            this.lblIdEquipo.Text = "ID del equipo";
             // 
             // frmBajaEquipo
             // 

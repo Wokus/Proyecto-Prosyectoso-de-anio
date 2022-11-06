@@ -40,10 +40,10 @@
             // lblCreditos
             // 
             this.lblCreditos.AutoSize = true;
-            this.lblCreditos.Font = new System.Drawing.Font("Agency FB", 28F);
+            this.lblCreditos.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F);
             this.lblCreditos.Location = new System.Drawing.Point(177, 30);
             this.lblCreditos.Name = "lblCreditos";
-            this.lblCreditos.Size = new System.Drawing.Size(113, 46);
+            this.lblCreditos.Size = new System.Drawing.Size(162, 44);
             this.lblCreditos.TabIndex = 0;
             this.lblCreditos.Text = "Creditos";
             this.lblCreditos.Click += new System.EventHandler(this.label1_Click);
@@ -51,10 +51,10 @@
             // lblProgramadores
             // 
             this.lblProgramadores.AutoSize = true;
-            this.lblProgramadores.Font = new System.Drawing.Font("Alef", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProgramadores.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProgramadores.Location = new System.Drawing.Point(12, 172);
             this.lblProgramadores.Name = "lblProgramadores";
-            this.lblProgramadores.Size = new System.Drawing.Size(180, 31);
+            this.lblProgramadores.Size = new System.Drawing.Size(187, 29);
             this.lblProgramadores.TabIndex = 1;
             this.lblProgramadores.Text = "Programadores:";
             this.lblProgramadores.Click += new System.EventHandler(this.lblProgramadores_Click);
@@ -62,41 +62,41 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Alef", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(198, 180);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 20);
+            this.label1.Size = new System.Drawing.Size(150, 18);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Mr.Doctor Q, La Cosa";
+            this.label1.Text = "Mr.cbx Man, La Cosa";
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Alef", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(198, 200);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 20);
+            this.label2.Size = new System.Drawing.Size(194, 18);
             this.label2.TabIndex = 3;
-            this.label2.Text = "y El Sol";
+            this.label2.Text = "y El macumbero de los PFD";
             // 
             // lblEncargado2
             // 
             this.lblEncargado2.AutoSize = true;
-            this.lblEncargado2.Font = new System.Drawing.Font("Alef", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEncargado2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEncargado2.Location = new System.Drawing.Point(148, 115);
             this.lblEncargado2.Name = "lblEncargado2";
-            this.lblEncargado2.Size = new System.Drawing.Size(93, 20);
+            this.lblEncargado2.Size = new System.Drawing.Size(86, 18);
             this.lblEncargado2.TabIndex = 5;
-            this.lblEncargado2.Text = "Mr.Doctor Q";
+            this.lblEncargado2.Text = "Mr.cbx Man";
             // 
             // lblEncargado
             // 
             this.lblEncargado.AutoSize = true;
-            this.lblEncargado.Font = new System.Drawing.Font("Alef", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEncargado.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEncargado.Location = new System.Drawing.Point(12, 107);
             this.lblEncargado.Name = "lblEncargado";
-            this.lblEncargado.Size = new System.Drawing.Size(130, 31);
+            this.lblEncargado.Size = new System.Drawing.Size(136, 29);
             this.lblEncargado.TabIndex = 4;
             this.lblEncargado.Text = "Encargado:";
             // 

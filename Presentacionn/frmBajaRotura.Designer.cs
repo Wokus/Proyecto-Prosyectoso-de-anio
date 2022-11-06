@@ -42,7 +42,7 @@
             // cbxRotura
             // 
             this.cbxRotura.FormattingEnabled = true;
-            this.cbxRotura.Location = new System.Drawing.Point(361, 60);
+            this.cbxRotura.Location = new System.Drawing.Point(274, 60);
             this.cbxRotura.Name = "cbxRotura";
             this.cbxRotura.Size = new System.Drawing.Size(121, 21);
             this.cbxRotura.TabIndex = 9;
@@ -63,16 +63,16 @@
             // lblRotura
             // 
             this.lblRotura.AutoSize = true;
-            this.lblRotura.Location = new System.Drawing.Point(304, 68);
+            this.lblRotura.Location = new System.Drawing.Point(217, 63);
             this.lblRotura.Name = "lblRotura";
-            this.lblRotura.Size = new System.Drawing.Size(51, 13);
+            this.lblRotura.Size = new System.Drawing.Size(53, 13);
             this.lblRotura.TabIndex = 12;
-            this.lblRotura.Text = "Id Rotura";
+            this.lblRotura.Text = "ID Rotura";
             // 
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(244, 120);
+            this.lblDescripcion.Location = new System.Drawing.Point(205, 127);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
             this.lblDescripcion.TabIndex = 13;
@@ -81,11 +81,11 @@
             // lblIdEquipo
             // 
             this.lblIdEquipo.AutoSize = true;
-            this.lblIdEquipo.Location = new System.Drawing.Point(24, 67);
+            this.lblIdEquipo.Location = new System.Drawing.Point(24, 63);
             this.lblIdEquipo.Name = "lblIdEquipo";
-            this.lblIdEquipo.Size = new System.Drawing.Size(52, 13);
+            this.lblIdEquipo.Size = new System.Drawing.Size(54, 13);
             this.lblIdEquipo.TabIndex = 7;
-            this.lblIdEquipo.Text = "Id Equipo";
+            this.lblIdEquipo.Text = "ID Equipo";
             // 
             // txtIdEquipo
             // 
@@ -97,7 +97,7 @@
             // 
             // txtEquipoRoto
             // 
-            this.txtEquipoRoto.Location = new System.Drawing.Point(82, 120);
+            this.txtEquipoRoto.Location = new System.Drawing.Point(82, 124);
             this.txtEquipoRoto.Name = "txtEquipoRoto";
             this.txtEquipoRoto.Size = new System.Drawing.Size(100, 20);
             this.txtEquipoRoto.TabIndex = 15;
@@ -105,7 +105,7 @@
             // lblEquipoRoto
             // 
             this.lblEquipoRoto.AutoSize = true;
-            this.lblEquipoRoto.Location = new System.Drawing.Point(12, 127);
+            this.lblEquipoRoto.Location = new System.Drawing.Point(10, 127);
             this.lblEquipoRoto.Name = "lblEquipoRoto";
             this.lblEquipoRoto.Size = new System.Drawing.Size(66, 13);
             this.lblEquipoRoto.TabIndex = 14;
@@ -113,7 +113,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(307, 117);
+            this.textBox1.Location = new System.Drawing.Point(274, 124);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(175, 90);
