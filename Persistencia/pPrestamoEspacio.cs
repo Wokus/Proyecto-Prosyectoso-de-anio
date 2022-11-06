@@ -26,10 +26,10 @@ namespace Persistencia
                 ejecutarSQL(consultaSQL);
 
                 
-                    consultaSQL = "INSERT INTO realiza VALUES ('" + unPRES.alumnoResponsable.ci + "','" + unPRES.id + "');";
+                    consultaSQL = "INSERT INTO realiza VALUES ('" + unPRES.alumnoResponsable.ci + "','" + id + "');";
                     ejecutarSQL(consultaSQL);
 
-                consultaSQL = "INSERT INTO profesorPrestamo VALUES ('" + unPRES.profeResponsable.ci + "','" + unPRES.id + "');";
+                consultaSQL = "INSERT INTO profesorPrestamo VALUES ('" + unPRES.profeResponsable.ci + "','" + id + "');";
                 ejecutarSQL(consultaSQL);
 
                 consultaSQL = "INSERT INTO `prestamodeespacio` VALUES('" + id + "');";

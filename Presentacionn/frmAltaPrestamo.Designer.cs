@@ -198,7 +198,7 @@
             this.cbxTipoPrestamo.Items.AddRange(new object[] {
             "De equipo(Formales)",
             "De espacio",
-            "Expontaneo"});
+            "Espontaneo"});
             this.cbxTipoPrestamo.Location = new System.Drawing.Point(361, 28);
             this.cbxTipoPrestamo.Name = "cbxTipoPrestamo";
             this.cbxTipoPrestamo.Size = new System.Drawing.Size(121, 21);
