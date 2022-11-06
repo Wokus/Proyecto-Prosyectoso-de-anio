@@ -14,9 +14,6 @@ namespace Persistencia
         public int altaPrestamo(ePrestamoEquipo unPRE)
         {
             string consultaSQL;
-            
-            int idOcupado = 0;
-            
 
             String[] locaciones = unPRE.locacion.Split(',');
             String[] equipos = unPRE.unE.nombre.Split(',');
@@ -126,7 +123,7 @@ namespace Persistencia
 
         }
 
-        public int modificacionPrestamo(ePrestamoEquipo unPRE, String IdPrestamo)
+        public int modificacionPrestamo(ePrestamoEquipo unPRE)
         {
             int token = 69;
             string consultaSQL;
@@ -218,8 +215,8 @@ namespace Persistencia
         private int verificarEstado(string alumno, string profe, String[] equipos)
         {
             int token = 0;
-
             bool tokenEquipo = corroborarEquipos(equipos);
+            
             if (tokenEquipo == true)
             {
                 String consultaSQL = "SELECT * FROM `solicitante` WHERE `solicitante`.`ci` = '" + profe + "' AND `tipo` = 'Profesor';";
@@ -230,7 +227,8 @@ namespace Persistencia
                      fila = ejecutarYdevolver(consultaSQL);
                     if (fila.Read())
                     {
-
+                       
+                        
                     }
                     else {
                         
