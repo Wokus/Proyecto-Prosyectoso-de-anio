@@ -151,6 +151,7 @@ namespace Presentacionn
         }
         private void btnModificarPrestamo_Click(object sender, EventArgs e)
         {
+            try { 
             if (cbxModificacionPrestamo.Text == "De equipo(Formales)")
             {
    
@@ -308,7 +309,8 @@ namespace Presentacionn
                     }
                 }
             }
-            //}catch
+            }
+            catch (Exception error) { MessageBox.Show(error.Message); }
         }
         private void frmModificacionPrestamo_Load(object sender, EventArgs e)
         {
