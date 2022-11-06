@@ -26,7 +26,7 @@ namespace Presentacionn
             unR.ci = txtNewCi.Text;
             unR.nombre = txtNewNombre.Text;
             unR.apellido = txtNewApellido.Text;
-            unR.curso = txtNewCi.Text;
+            unR.curso = cbxNewCurso.Text;
             unR.tipo = cbxNewTipo.Text;
            
             dResponsable unDR = new dResponsable();

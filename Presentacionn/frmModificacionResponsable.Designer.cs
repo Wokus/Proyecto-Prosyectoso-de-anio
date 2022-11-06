@@ -36,7 +36,7 @@
             this.txtOldCi = new System.Windows.Forms.TextBox();
             this.btnModiRes = new System.Windows.Forms.Button();
             this.lblCedulaAmodificar = new System.Windows.Forms.Label();
-            this.cbxCurso = new System.Windows.Forms.ComboBox();
+            this.cbxNewCurso = new System.Windows.Forms.ComboBox();
             this.txtNewNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNewApellido = new System.Windows.Forms.TextBox();
@@ -117,18 +117,18 @@
             this.lblCedulaAmodificar.TabIndex = 12;
             this.lblCedulaAmodificar.Text = "Cedula del responsable a modificar";
             // 
-            // cbxCurso
+            // cbxNewCurso
             // 
-            this.cbxCurso.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cbxCurso.FormattingEnabled = true;
-            this.cbxCurso.Items.AddRange(new object[] {
+            this.cbxNewCurso.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbxNewCurso.FormattingEnabled = true;
+            this.cbxNewCurso.Items.AddRange(new object[] {
             "Primero",
             "Segundo",
             "Tercero"});
-            this.cbxCurso.Location = new System.Drawing.Point(214, 193);
-            this.cbxCurso.Name = "cbxCurso";
-            this.cbxCurso.Size = new System.Drawing.Size(100, 21);
-            this.cbxCurso.TabIndex = 22;
+            this.cbxNewCurso.Location = new System.Drawing.Point(214, 193);
+            this.cbxNewCurso.Name = "cbxNewCurso";
+            this.cbxNewCurso.Size = new System.Drawing.Size(100, 21);
+            this.cbxNewCurso.TabIndex = 22;
             // 
             // txtNewNombre
             // 
@@ -172,7 +172,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNewNombre);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cbxCurso);
+            this.Controls.Add(this.cbxNewCurso);
             this.Controls.Add(this.cbxNewTipo);
             this.Controls.Add(this.lblCurso);
             this.Controls.Add(this.lblTipo);
@@ -198,7 +198,7 @@
         private System.Windows.Forms.TextBox txtOldCi;
         private System.Windows.Forms.Button btnModiRes;
         private System.Windows.Forms.Label lblCedulaAmodificar;
-        private System.Windows.Forms.ComboBox cbxCurso;
+        private System.Windows.Forms.ComboBox cbxNewCurso;
         private System.Windows.Forms.TextBox txtNewNombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNewApellido;
