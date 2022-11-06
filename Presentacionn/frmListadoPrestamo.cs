@@ -276,6 +276,22 @@ namespace Presentacionn
 
                 }
 
+                if (cbxFechaEspacio.Text == "De mas antiguo a mas reciente")
+                {
+
+                    dPrestamoEspacio unDPFE = new dPrestamoEspacio();
+                    dgvListadoEquipo.DataSource = unDPFE.listarPrestamoPorFechaARE(tuHermana);
+
+                }
+
+                if (cbxFechaEspacio.Text == "De mas reciente a mas antiguo")
+                {
+
+                    dPrestamoEspacio unDPFE = new dPrestamoEspacio();
+                    dgvListadoEquipo.DataSource = unDPFE.listarPrestamoPorFechaRAE(tuHermana);
+
+                }
+
             }
             catch (Exception error)
             {
@@ -327,6 +343,22 @@ namespace Presentacionn
                     tuHermana = cbxEstadoEspontaneo.Text;
                     dPrestamoExpontaneo unDPFE = new dPrestamoExpontaneo();
                     dgvListadoEquipo.DataSource = unDPFE.listarPrestamoPorEstado(tuHermana);
+
+                }
+
+                if (cbxFechaEspontaneo.Text == "De mas antiguo a mas reciente")
+                {
+
+                    dPrestamoExpontaneo unDPFE = new dPrestamoExpontaneo();
+                    dgvListadoEquipo.DataSource = unDPFE.listarPrestamoPorFechaARE(tuHermana);
+
+                }
+
+                if (cbxFechaEspontaneo.Text == "De mas reciente a mas antiguo")
+                {
+
+                    dPrestamoExpontaneo unDPFE = new dPrestamoExpontaneo();
+                    dgvListadoEquipo.DataSource = unDPFE.listarPrestamoPorFechaRAE(tuHermana);
 
                 }
 
@@ -383,6 +415,23 @@ namespace Presentacionn
                     dgvListadoEquipo.DataSource = unPEE.listarPrestamoPorEstado(tuHermana);
 
                 }
+
+                if (cbxFechaEquipo.Text == "De mas antiguo a mas reciente")
+                {
+
+                    dPrestamoEquipo unDPFE = new dPrestamoEquipo();
+                    dgvListadoEquipo.DataSource = unDPFE.listarPrestamoPorFechaARE(tuHermana);
+
+                }
+
+                if (cbxFechaEquipo.Text == "De mas reciente a mas antiguo")
+                {
+
+                    dPrestamoEquipo unDPFE = new dPrestamoEquipo();
+                    dgvListadoEquipo.DataSource = unDPFE.listarPrestamoPorFechaRAE(tuHermana);
+
+                }
+
             }
             catch (Exception error)
             {
@@ -435,6 +484,22 @@ namespace Presentacionn
                     tuHermana = cbxEstado.Text;
                     dPrestamo unPEE = new dPrestamo();
                     dgvListadoEquipo.DataSource = unPEE.listarPrestamoPorEstado(tuHermana);
+
+                }
+
+                if (cbxFecha.Text == "De mas antiguo a mas reciente")
+                {
+
+                    dPrestamo unDPFE = new dPrestamo();
+                    dgvListadoEquipo.DataSource = unDPFE.listarPrestamoPorFechaARE(tuHermana);
+
+                }
+
+                if (cbxFecha.Text == "De mas reciente a mas antiguo")
+                {
+
+                    dPrestamo unDPFE = new dPrestamo();
+                    dgvListadoEquipo.DataSource = unDPFE.listarPrestamoPorFechaRAE(tuHermana);
 
                 }
 

@@ -19,56 +19,143 @@ namespace Presentacionn
             InitializeComponent();
         }
 
-        private bool corroborarCampos()
+        private bool corroborarCampos(string tipo)
         {
             bool token = false;
-            if (cbxEstado.SelectedIndex != -1 && cbxEjercicioPEquip.SelectedIndex != -1
+            bool tokenTipo = false;
+            if (cbxEstado.SelectedIndex != -1 && cbxModificacionPrestamo.SelectedIndex != -1
                 && mtxtHoraRetiro.MaskFull && mtxtProfesor.MaskFull && mtxtIdPrestamo.Text != "")
             {
-                token = true;   
-             }
+                if (tipo == "equipo")
+                {
+                    token = corroborarCamposDeEquipo();
+
+                }
+                if (tipo == "espacio")
+                {
+                    token = corroborarCamposDeEspacio();
+
+                }
+                if (tipo == "espontaneo")
+                {
+                    token = corroborarCamposDeEspontaneo();
+
+                }
+            }
+            else { MessageBox.Show("Hay campos vacíos, incompletos o con información incorrecta"); }
 
             return token;
         }
         private bool corroborarCamposDeEquipo()
         {
             bool token = false;
-            for (int i = 0; i < txtEquiposId.Text.Length; i++)
+            bool tokenMuchoTexto = true;
+            if (cbxEjercicioPEquip.SelectedIndex != -1 && mtxtAlumno.MaskFull)
             {
-                char c = txtEquiposId.Text[i];
-                String cc = Convert.ToString(c);
-                if (cc != "1" && cc != "2" && cc != "3" && cc != "4" && cc != "5" && cc != "6" && cc != "7" && cc != "8" && cc != "9" && cc != "0" && cc != ",")
+                for (int i = 0; i < txtEquiposId.Text.Length; i++)
                 {
-                    token = false;
-                    break;
+                    char c = txtEquiposId.Text[i];
+                    String cc = Convert.ToString(c);
+                    if (cc != "1" && cc != "2" && cc != "3" && cc != "4" && cc != "5" && cc != "6" && cc != "7" && cc != "8" && cc != "9" && cc != "0" && cc != ",")
+                    {
+                        token = false;
+
+                        break;
+                    }
+                    else { token = true; }
+
+                    if (txtTransporte.Text.Length < 51)
+                    {
+                        String[] locaciones = txtLocacion.Text.Split(',');
+                        for (int e = 0; e < locaciones.Length; e++)
+                        {
+                            if (locaciones[e].Length < 151)
+                            {
+                                tokenMuchoTexto = true;
+                            }
+                            else
+                            {
+                                tokenMuchoTexto = false;
+                                break;
+                            }
+                        }
+
+                    }
+                    else { tokenMuchoTexto = false; }
                 }
-                else { token = true; }
+            }
+            if (token == false)
+            {
+                MessageBox.Show("Hay campos vacíos, incompletos o con información incorrecta");
 
             }
+            else
+            if (tokenMuchoTexto == false)
+            {
+                MessageBox.Show("Hay campos con demasiado texto");
+                token = false;
+            }
+
+
             return token;
         }
         private bool corroborarCamposDeEspacio()
         {
             bool token = false;
-            if (mtxtIDSalon.Text != "")
+            if (mtxtIDSalon.Text != "" && cbxEjercicioPEquip.SelectedIndex != -1 && mtxtAlumno.MaskFull)
             {
                 token = true;
+            }
+            else
+            {
+                MessageBox.Show("Hay campos vacíos, incompletos o con información incorrecta");
             }
 
             return token;
         }
-        private void btnModificarPrestamo_Click(object sender, EventArgs e)
+        private bool corroborarCamposDeEspontaneo()
         {
-            bool tokenCampos = corroborarCampos();
-            if (tokenCampos == false)
+            bool token = false;
+            bool tokenMuchoTexto = false;
+            if (txtEjercicio.Text != "")
             {
-                MessageBox.Show("Hay campos vacios, imcompletos o con informacion incorrecta");
+                for (int i = 0; i < txtEquiposId.Text.Length; i++)
+                {
+                    char c = txtEquiposId.Text[i];
+                    String cc = Convert.ToString(c);
+                    if (cc != "1" && cc != "2" && cc != "3" && cc != "4" && cc != "5" && cc != "6" && cc != "7" && cc != "8" && cc != "9" && cc != "0" && cc != ",")
+                    {
+                        token = false;
+                        break;
+                    }
+                    else { token = true; }
+                }
+
+                if (txtEjercicio.Text.Length > 50)
+                {
+                    tokenMuchoTexto = false;
+                }
+                else { tokenMuchoTexto = true; }
+            }
+            if (token == false)
+            {
+                MessageBox.Show("Hay campos vacíos, incompletos o con información incorrecta");
             }
             else
+            if (tokenMuchoTexto == false)
             {
-                if (cbxModificacionPrestamo.Text == "Prestamo de Equipo")
+                MessageBox.Show("Hay campos con demasiado texto");
+                token = false;
+            }
+            return token;
+        }
+        private void btnModificarPrestamo_Click(object sender, EventArgs e)
+        {
+            try { 
+            if (cbxModificacionPrestamo.Text == "De equipo(Formales)")
             {
-                bool tokenCamposEq = corroborarCamposDeEquipo();
+   
+                   bool tokenCampos = corroborarCampos("equipo");
                 if (tokenCampos == true)
                 {
                     ePrestamoEquipo unPRE = new ePrestamoEquipo();
@@ -94,15 +181,11 @@ namespace Presentacionn
 
                     dPrestamoEquipo unDPE = new dPrestamoEquipo();
 
-
-
                     int confirmacion = unDPE.modificacionPrestamo(unPRE);
 
                     if (confirmacion == 0)
                     {
                         MessageBox.Show("Prestamo modificado de manera exitosa");
-
-
                     }
                     if (confirmacion == 3)
                     {
@@ -120,140 +203,145 @@ namespace Presentacionn
                     {
                         MessageBox.Show("Prestamo no existente");
                     }
-
-                    } else {MessageBox.Show("Hay campos vacios, imcompletos o con informacion incorrecta");}
                 }
+            }
+            
+   
+            if (cbxModificacionPrestamo.Text == "De espacio")
+            {
+                bool tokenCamposEs = corroborarCampos("espacio");
+                if (tokenCamposEs == true)
+                {
 
-                if (cbxModificacionPrestamo.Text == "Prestamo de Espacio")
+                    ePrestamoEspacio unEPES = new ePrestamoEspacio();
+                    eResponsable alumno = new eResponsable();
+                    eResponsable profe = new eResponsable();
+                    eEspacio unEs = new eEspacio();
+                    unEs.nombreEspacio = mtxtIDSalon.Text;
+                    alumno.ci = mtxtAlumno.Text;
+                    profe.ci = mtxtProfesor.Text;
+                    unEPES.fechaSolicitada = dtpFechaSolicitud.Value.ToString("yyyy-MM-dd"); ;
+                    unEPES.fechaRetiro = dtpFechaRetiro.Value.ToString("yyyy-MM-dd"); ;
+                    unEPES.fechaDevolucion = dtpFechaDevolucion.Value.ToString("yyyy-MM-dd"); ;
+                    unEPES.horaRetiro = mtxtHoraRetiro.Text;
+                    unEPES.estado = cbxEstado.Text;
+                    unEPES.id = Convert.ToInt32(mtxtIdPrestamo.Text);
+                    unEPES.unEs = unEs;
+                    unEPES.alumnoResponsable = alumno;
+                    unEPES.profeResponsable = profe;
+                    dPrestamoEspacio unDPES = new dPrestamoEspacio();
+                    int token = unDPES.modificacionPrestamo(unEPES);
+
+                    if (token == 0)
                     {
-                            bool tokenCamposEs = corroborarCamposDeEspacio();
-                            if (tokenCamposEs == true)
-                            {
-
-                                ePrestamoEspacio unEPES = new ePrestamoEspacio();
-
-                        unEPES.alumnoResponsable.ci = mtxtAlumno.Text;
-
-                        unEPES.profeResponsable.ci = mtxtProfesor.Text;
-
-                        unEPES.fechaSolicitada = dtpFechaSolicitud.Value.ToString("yyyy-MM-dd"); ;
-                        unEPES.fechaRetiro = dtpFechaRetiro.Value.ToString("yyyy-MM-dd"); ;
-                        unEPES.fechaDevolucion = dtpFechaDevolucion.Value.ToString("yyyy-MM-dd"); ;
-                        unEPES.horaRetiro = mtxtHoraRetiro.Text;
-                        unEPES.estado = cbxEstado.Text;
-                        unEPES.id = Convert.ToInt32(mtxtIdPrestamo.Text);
-
-                        dPrestamoEspacio unDPES = new dPrestamoEspacio();
-                        int token = unDPES.modificacionPrestamo(unEPES);
-
-                        if (token == 0)
-                        {
-                            MessageBox.Show("Prestamo modificado de manera exitosa");
-
-
-                        }
-                        if (token == 1)
-                        {
-                            MessageBox.Show("Alumno no existente");
-                        }
-                        if (token == 2)
-                        {
-                            MessageBox.Show("Profesor no existente");
-                        }
-                        if (token == 3)
-                        {
-                            MessageBox.Show("Equipo no existente");
-                        }
-
-                    }else {MessageBox.Show("Hay campos vacios, imcompletos o con informacion incorrecta");}
+                        MessageBox.Show("Prestamo modificado de manera exitosa");
+                    }
+                    if (token == 1)
+                    {
+                        MessageBox.Show("Alumno no existente");
+                    }
+                    if (token == 2)
+                    {
+                        MessageBox.Show("Profesor no existente");
+                    }
+                    if (token == 3)
+                    {
+                        MessageBox.Show("Espacio no existente");
+                    }
+                    if (token == 69)
+                    {
+                        MessageBox.Show("Prestamo no existente");
+                    }
 
                 }
+            }
 
-                if (cbxModificacionPrestamo.Text == "Prestamo Espontaneo")
+            if (cbxModificacionPrestamo.Text == "Espontaneo")
+            {
+                bool tokenCamposEsp = corroborarCampos("espontaneo");
+                if (tokenCamposEsp == true)
+                {
+                    ePrestamoEspontaneos unEPEX = new ePrestamoEspontaneos();
+
+                    eEquipo unEq = new eEquipo();
+                    eResponsable alumno = new eResponsable();
+                    eResponsable profe = new eResponsable();
+                    alumno.ci = mtxtAlumno.Text;
+                    profe.ci = mtxtProfesor.Text;
+                    unEq.nombre = txtEquiposId.Text;
+                    unEPEX.unE= unEq;
+                    unEPEX.alumnoResponsable = alumno;
+                    unEPEX.profeResponsable = profe;
+
+                    unEPEX.fechaSolicitada = dtpFechaSolicitud.Value.ToString("yyyy-MM-dd"); ;
+                    unEPEX.fechaRetiro = dtpFechaRetiro.Value.ToString("yyyy-MM-dd"); ;
+                    unEPEX.fechaDevolucion = dtpFechaDevolucion.Value.ToString("yyyy-MM-dd"); ;
+                    unEPEX.horaRetiro = mtxtHoraRetiro.Text;
+                    unEPEX.estado = cbxEstado.Text;
+                    unEPEX.ejercicio = txtEjercicio.Text;
+                    unEPEX.id = Convert.ToInt32(mtxtIdPrestamo.Text);
+                    dPrestamoExpontaneo unDPEX = new dPrestamoExpontaneo();
+                    int token = unDPEX.modificacionPrestamo(unEPEX);
+
+                    if (token == 0)
                     {
-                            bool tokenCamposEsp = corroborarCamposDeEquipo();
-                            if (tokenCamposEsp == true)
-                            {
+                        MessageBox.Show("Prestamo modificado de manera exitosa");
 
 
+                    }
+                    if (token == 1)
+                    {
+                        MessageBox.Show("Alumno no existente");
 
 
-                                ePrestamoEspontaneos unEPEX = new ePrestamoEspontaneos();
-                        unEPEX.alumnoResponsable.ci = mtxtAlumno.Text;
-                        unEPEX.profeResponsable.ci = mtxtProfesor.Text;
-                        unEPEX.fechaSolicitada = dtpFechaSolicitud.Value.ToString("yyyy-MM-dd"); ;
-                        unEPEX.fechaRetiro = dtpFechaRetiro.Value.ToString("yyyy-MM-dd"); ;
-                        unEPEX.fechaDevolucion = dtpFechaDevolucion.Value.ToString("yyyy-MM-dd"); ;
-                        unEPEX.horaRetiro = mtxtHoraRetiro.Text;
-                        unEPEX.estado = cbxEstado.Text;
-
-                        unEPEX.id = Convert.ToInt32(mtxtIdPrestamo.Text);
-
-                        dPrestamoExpontaneo unDPEX = new dPrestamoExpontaneo();
-                        int token = unDPEX.modificacionPrestamo(unEPEX);
-
-                        if (token == 0)
-                        {
-                            MessageBox.Show("Prestamo modificado de manera exitosa");
-
-
-                        }
-                        if (token == 1)
-                        {
-                            MessageBox.Show("Alumno no existente");
-
-
-                        }
-                        if (token == 2)
-                        {
-                            MessageBox.Show("Profesor no existente");
-                        }
-                        if (token == 3)
-                        {
-                            MessageBox.Show("Equipo no existente");
-                        }
-                        }else {MessageBox.Show("Hay campos vacios, imcompletos o con informacion incorrecta");}
+                    }
+                    if (token == 2)
+                    {
+                        MessageBox.Show("Profesor no existente");
+                    }
+                    if (token == 3)
+                    {
+                        MessageBox.Show("Equipo no existente");
+                    }
+                    if (token == 69)
+                    {
+                        MessageBox.Show("Prestamo no existente");
                     }
                 }
-            
-          
-            
+            }
+            }
+            catch (Exception error) { MessageBox.Show(error.Message); }
         }
-
-
-
-
         private void frmModificacionPrestamo_Load(object sender, EventArgs e)
         {
             // Hace no visible
-            mtxtIDSalon.Visible = false;
+                mtxtIDSalon.Visible = false;
             lblIDSalon.Visible = false;
+            txtEjercicio.Visible = false;
             // Hace no visible
 
             // Hace visible
             txtTransporte.Visible = true;
             txtEquiposId.Visible = true;
             txtLocacion.Visible = true;
-            cbxEjercicioPEquip.Visible = true;
             // Hace visible
 
             // Hace visible los textos
             lblTransporte.Visible = true;
-            lblEjercicio.Visible = true;
             lblEquipoID.Visible = true;
             lblLocacion.Visible = true;
-            // Hace visible los textos
+            cbxEjercicioPEquip.Visible = true;
+            // Hace visible los texto
         }
 
         private void cbxModificacionPrestamo_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            if (cbxModificacionPrestamo.SelectedIndex == 0)
+            if (cbxModificacionPrestamo.Text == "De equipo(Formales)")
             {
-
                 // Hace no visible
                 mtxtIDSalon.Visible = false;
                 lblIDSalon.Visible = false;
+                txtEjercicio.Visible = false;
                 // Hace no visible
 
                 // Hace visible
@@ -266,16 +354,19 @@ namespace Presentacionn
                 lblTransporte.Visible = true;
                 lblEquipoID.Visible = true;
                 lblLocacion.Visible = true;
+                cbxEjercicioPEquip.Visible = true;
                 // Hace visible los textos
 
-            }
-            if (cbxModificacionPrestamo.SelectedIndex == 1)
-            {
 
+            }
+            if (cbxModificacionPrestamo.Text == "De espacio")
+            {
                 // Hace no visible
                 txtTransporte.Visible = false;
                 txtEquiposId.Visible = false;
                 txtLocacion.Visible = false;
+                txtEjercicio.Visible = false;
+
                 // Hace no visible
 
                 // Hace no visible textos
@@ -287,20 +378,23 @@ namespace Presentacionn
                 // Hace si visible textos
                 mtxtIDSalon.Visible = true;
                 lblIDSalon.Visible = true;
+                cbxEjercicioPEquip.Visible = true;
                 // Hace si visible textos
 
             }
-            if (cbxModificacionPrestamo.SelectedIndex == 2)
+            if (cbxModificacionPrestamo.Text == "Espontaneo")
             {
 
                 // Hace no visible 
                 mtxtIDSalon.Visible = false;
                 txtTransporte.Visible = false;
+                cbxEjercicioPEquip.Visible = false;
                 txtLocacion.Visible = false;
                 // Hace no visible 
 
                 // Hace no visible textos
                 lblTransporte.Visible = false;
+
                 lblLocacion.Visible = false;
                 lblIDSalon.Visible = false;
                 // Hace no visible textos
@@ -308,11 +402,12 @@ namespace Presentacionn
                 // Hace visible 
                 lblEquipoID.Visible = true;
                 txtEquiposId.Visible = true;
+                txtEjercicio.Visible = true;
                 // Hace visible 
 
-            }
 
+            
         }
-
+    }
     }
 }
