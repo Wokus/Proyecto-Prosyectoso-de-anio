@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidades;
+using Dominio;
 
 namespace Presentacionn
 {
@@ -16,15 +18,21 @@ namespace Presentacionn
         {
             InitializeComponent();
         }
-
-        private void frmAltaRotura_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void btnAgregarPrestamo_Click(object sender, EventArgs e)
         {
+            eRotura unR = new eRotura();
+            eEquipo unEq = new eEquipo();
+            eResponsable alumno = new eResponsable();
+            eResponsable profesor = new eResponsable();
+            ePrestamo unP = new ePrestamo();
 
+            unR.idRotura = Int32.Parse(txtEquipoRoto.Text);
+            unP.id = Int32.Parse(txtPrestamo.Text);
+            alumno.ci = txtAluResponsable.Text;
+            profesor.ci = txtProResponsable.Text;
+            unR.descripcion = txtDescripcion.Text;
+                
         }
     }
 }

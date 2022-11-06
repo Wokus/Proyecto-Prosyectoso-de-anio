@@ -12,6 +12,5 @@ namespace Entidades
         public string descripcion { get; set; }
         public int idEquipo { get; set; }
         public string nombreEqui { get; set; }
-
     }
 }
