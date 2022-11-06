@@ -125,10 +125,6 @@ namespace Persistencia
             int token = 69;
             string consultaSQL;
             string estado = "ICKKCK";
-
-            string consultaFK = "ALTER TABLE prestamoEspontaneo DROP FOREIGN KEY fK_prestamoEspontaneo_prestamo;";
-            ejecutarSQL(consultaFK);
-
             int existencia = corroborarExistencia(unPRESP.id, "espo");
             if (existencia == 3)
             {
@@ -138,39 +134,51 @@ namespace Persistencia
                 token = verificarEstado(unPRESP.alumnoResponsable.ci, unPRESP.profeResponsable.ci, equipos);
                 if (token == 0)
                 {
-                    string consultaSQL2 = "UPDATE prestamo SET fechaSolicitada =" + unPRESP.fechaSolicitada + ", cantidadDias ="
-                            + ", fechaRetiro = " + unPRESP.fechaRetiro + ", horaRetiro = " + unPRESP.horaRetiro + ", fechaDevolucion = " + unPRESP.fechaDevolucion + ", fechaGenuinaDevolucion = " + unPRESP.genuinoDiaDevolucion
-                            +
-                             ", estado =" + estado + "  WHERE prestamo.id = " + unPRESP.id + " ;";
+                    //FK down
+
+                    string consultaFK = "ALTER TABLE prestamoEspontaneo DROP FOREIGN KEY fK_prestamoEspontaneo_prestamo;";
+                    ejecutarSQL(consultaFK);
+
+                    //FK down
+
+                    string consultaSQL2 = "UPDATE prestamo SET fechaSolicitada ='" + unPRESP.fechaSolicitada + "',"
+                                + " fechaRetiro = '" + unPRESP.fechaRetiro + "', horaRetiro = '" + unPRESP.horaRetiro + "', fechaDevolucion = '" + unPRESP.fechaDevolucion + "', fechaGenuinaDevolucion = '" + unPRESP.genuinoDiaDevolucion
+                                + "', estado ='" + unPRESP.estado + "', prioridad = '" + unPRESP.prioridad + "', ejercicio = '" + unPRESP.ejercicio + "'  WHERE prestamo.id = '" + unPRESP.id + "' ;";
                     ejecutarSQL(consultaSQL2);
 
-                    consultaSQL = "DELETE FROM `tiene` WHERE tiene.id_PrestamoDeEquipo =" + unPRESP.id + " ;";
+                    consultaSQL = "DELETE FROM `obtieneequipoprestamoespontaneo` WHERE id_PrestamoEspontaneo  ='" + unPRESP.id + "';";
                     ejecutarSQL(consultaSQL);
                     for (int i = 0; i < equipos.Length; i++)
                     {
-                        consultaSQL = "INSERT INTO `tiene` VALUES('" + unPRESP.id + "','" + equipos[i] + "');";
+                        consultaSQL = "INSERT INTO `obtieneequipoprestamoespontaneo` VALUES('" + unPRESP.id + "','" + equipos[i] + "');";
                         ejecutarSQL(consultaSQL);
                     }
 
                     bool tokenPrestamoAlumno = corroborarPrestamoConAlumno(unPRESP.id);
-                    if (tokenPrestamoAlumno == true)
-                    {
-                        consultaSQL2 = "UPDATE realiza SET ci_Solicitante = " + unPRESP.alumnoResponsable.ci + " WHERE realiza.id_Prestamo = " + unPRESP.id + " ;";
-                        ejecutarSQL(consultaSQL2);
-                    }
-                    else
-                    {
-                        consultaSQL = "INSERT INTO `realiza` VALUES('" + unPRESP.alumnoResponsable + "','" + unPRESP.id + "');";
-                    }
-                    consultaSQL2 = "UPDATE profesorprestamo SET ci_Solicitante = " + unPRESP.profeResponsable.ci + " WHERE profesorprestamo.id_Prestamo = " + unPRESP.id + " ;";
+
+                    consultaSQL = "DELETE FROM `realiza` WHERE id_prestamo ='" + unPRESP.id + "' ;";
+                    ejecutarSQL(consultaSQL);
+                    
+                        consultaSQL = "INSERT INTO `realiza` VALUES('" + unPRESP.alumnoResponsable.ci + "','" + unPRESP.id + "');";
+                        ejecutarSQL(consultaSQL);
+                    
+                    consultaSQL = "DELETE FROM `profesorprestamo` WHERE id_prestamo ='" + unPRESP.id + "' ;";
+                    ejecutarSQL(consultaSQL);
+
+                    consultaSQL = "INSERT INTO `profesorprestamo` VALUES('" + unPRESP.profeResponsable.ci + "','" + unPRESP.id + "');";
+                    ejecutarSQL(consultaSQL);
+
+                    //FK up
+                    consultaFK = "ALTER TABLE prestamoEspontaneo ADD CONSTRAINT fK_prestamoEspontaneo_prestamo FOREIGN KEY (id_Prestamo) REFERENCES prestamo(id);";
+                    ejecutarSQL(consultaFK);
+                    //FK up
 
                 }
 
 
             }
 
-            consultaFK = "ALTER TABLE prestamoEspontaneo ADD CONSTRAINT fK_prestamoEspontaneo_prestamo FOREIGN KEY (id_Prestamo) REFERENCES prestamo(id);";
-            ejecutarSQL(consultaFK);
+            
 
       
             return token;
