@@ -46,7 +46,7 @@ namespace Persistencia
 
         public DataTable listarPrestamoDeEspacio()
         {
-            String consultaSQL = "SELECT prestamo.id, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, obtieneEspaciosPrestamoDeEspacio.nro_Espacio FROM prestamo INNER JOIN prestamoDeEspacio ON prestamo.id=prestamoDeEspacio.id_Prestamo INNER JOIN obtieneEspaciosPrestamoDeEspacio ON prestamoDeEspacio.id_Prestamo=obtieneEspaciosPrestamoDeEspacio.id_PrestamoDeEspacio;";
+            String consultaSQL = "SELECT prestamo.id, realiza.ci_Solicitante AS Solicitante, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, prestamo.ejercicio, obtieneEspaciosPrestamoDeEspacio.nro_Espacio FROM prestamo INNER JOIN realiza ON prestamo.id = realiza.id_Prestamo INNER JOIN prestamoDeEspacio ON prestamo.id=prestamoDeEspacio.id_Prestamo INNER JOIN obtieneEspaciosPrestamoDeEspacio ON prestamoDeEspacio.id_Prestamo=obtieneEspaciosPrestamoDeEspacio.id_PrestamoDeEspacio;";
 
             DataTable dt = listarAlgo(consultaSQL);
 
@@ -56,7 +56,7 @@ namespace Persistencia
         public DataTable listarPrestamoPorFechaAR()
         {
 
-            String consultaSQL = "SELECT prestamo.id, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, obtieneEspaciosPrestamoDeEspacio.nro_Espacio FROM prestamo INNER JOIN prestamoDeEspacio ON prestamo.id=prestamoDeEspacio.id_Prestamo INNER JOIN obtieneEspaciosPrestamoDeEspacio ON prestamoDeEspacio.id_Prestamo=obtieneEspaciosPrestamoDeEspacio.id_PrestamoDeEspacio ORDER BY prestamo.fechaSolicitada ASC ;";
+            String consultaSQL = "SELECT prestamo.id, realiza.ci_Solicitante AS Solicitante, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, prestamo.ejercicio, obtieneEspaciosPrestamoDeEspacio.nro_Espacio FROM prestamo INNER JOIN realiza ON prestamo.id = realiza.id_Prestamo INNER JOIN prestamoDeEspacio ON prestamo.id=prestamoDeEspacio.id_Prestamo INNER JOIN obtieneEspaciosPrestamoDeEspacio ON prestamoDeEspacio.id_Prestamo=obtieneEspaciosPrestamoDeEspacio.id_PrestamoDeEspacio ORDER BY prestamo.fechaSolicitada ASC ;";
 
             DataTable dt = listarAlgo(consultaSQL);
 
@@ -67,7 +67,7 @@ namespace Persistencia
         public DataTable listarPrestamoPorFechaRA()
         {
 
-            String consultaSQL = "SELECT prestamo.id, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, obtieneEspaciosPrestamoDeEspacio.nro_Espacio FROM prestamo INNER JOIN prestamoDeEspacio ON prestamo.id=prestamoDeEspacio.id_Prestamo INNER JOIN obtieneEspaciosPrestamoDeEspacio ON prestamoDeEspacio.id_Prestamo=obtieneEspaciosPrestamoDeEspacio.id_PrestamoDeEspacio ORDER BY prestamo.fechaSolicitada DESC ;";
+            String consultaSQL = "SELECT prestamo.id, realiza.ci_Solicitante AS Solicitante, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, prestamo.ejercicio, obtieneEspaciosPrestamoDeEspacio.nro_Espacio FROM prestamo INNER JOIN realiza ON prestamo.id = realiza.id_Prestamo INNER JOIN prestamoDeEspacio ON prestamo.id=prestamoDeEspacio.id_Prestamo INNER JOIN obtieneEspaciosPrestamoDeEspacio ON prestamoDeEspacio.id_Prestamo=obtieneEspaciosPrestamoDeEspacio.id_PrestamoDeEspacio ORDER BY prestamo.fechaSolicitada DESC ;";
 
             DataTable dt = listarAlgo(consultaSQL);
 
@@ -78,7 +78,7 @@ namespace Persistencia
         public DataTable listarPrestamoPorEstado(string tuHermana)
         {
 
-            String consultaSQL = "SELECT prestamo.id, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, obtieneEspaciosPrestamoDeEspacio.nro_Espacio FROM prestamo INNER JOIN prestamoDeEspacio ON prestamo.id=prestamoDeEspacio.id_Prestamo INNER JOIN obtieneEspaciosPrestamoDeEspacio ON prestamoDeEspacio.id_Prestamo=obtieneEspaciosPrestamoDeEspacio.id_PrestamoDeEspacio WHERE estado='" + tuHermana + "' ;";
+            String consultaSQL = "SELECT prestamo.id, realiza.ci_Solicitante AS Solicitante, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, prestamo.ejercicio, obtieneEspaciosPrestamoDeEspacio.nro_Espacio FROM prestamo INNER JOIN realiza ON prestamo.id = realiza.id_Prestamo INNER JOIN prestamoDeEspacio ON prestamo.id=prestamoDeEspacio.id_Prestamo INNER JOIN obtieneEspaciosPrestamoDeEspacio ON prestamoDeEspacio.id_Prestamo=obtieneEspaciosPrestamoDeEspacio.id_PrestamoDeEspacio WHERE estado='" + tuHermana + "' ;";
 
             DataTable dt = listarAlgo(consultaSQL);
 
@@ -89,7 +89,7 @@ namespace Persistencia
         public DataTable listarPrestamoPorFechaARE(string tuHermana)
         {
 
-            String consultaSQL = "SELECT prestamo.id, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, obtieneEspaciosPrestamoDeEspacio.nro_Espacio FROM prestamo INNER JOIN prestamoDeEspacio ON prestamo.id=prestamoDeEspacio.id_Prestamo INNER JOIN obtieneEspaciosPrestamoDeEspacio ON prestamoDeEspacio.id_Prestamo=obtieneEspaciosPrestamoDeEspacio.id_PrestamoDeEspacio WHERE estado='" + tuHermana + "' ORDER BY ASC ;";
+            String consultaSQL = "SELECT prestamo.id, realiza.ci_Solicitante AS Solicitante, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, prestamo.ejercicio, obtieneEspaciosPrestamoDeEspacio.nro_Espacio FROM prestamo INNER JOIN realiza ON prestamo.id = realiza.id_Prestamo INNER JOIN prestamoDeEspacio ON prestamo.id=prestamoDeEspacio.id_Prestamo INNER JOIN obtieneEspaciosPrestamoDeEspacio ON prestamoDeEspacio.id_Prestamo=obtieneEspaciosPrestamoDeEspacio.id_PrestamoDeEspacio WHERE estado='" + tuHermana + "' ORDER BY prestamo.fechaSolicitada ASC ;";
 
             DataTable dt = listarAlgo(consultaSQL);
 
@@ -100,12 +100,32 @@ namespace Persistencia
         public DataTable listarPrestamoPorFechaRAE(string tuHermana)
         {
 
-            String consultaSQL = "SELECT prestamo.id, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, obtieneEspaciosPrestamoDeEspacio.nro_Espacio FROM prestamo INNER JOIN prestamoDeEspacio ON prestamo.id=prestamoDeEspacio.id_Prestamo INNER JOIN obtieneEspaciosPrestamoDeEspacio ON prestamoDeEspacio.id_Prestamo=obtieneEspaciosPrestamoDeEspacio.id_PrestamoDeEspacio WHERE estado='" + tuHermana + "' ORDER BY DESC ;";
+            String consultaSQL = "SELECT prestamo.id, realiza.ci_Solicitante AS Solicitante, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, prestamo.ejercicio, obtieneEspaciosPrestamoDeEspacio.nro_Espacio FROM prestamo INNER JOIN realiza ON prestamo.id = realiza.id_Prestamo INNER JOIN prestamoDeEspacio ON prestamo.id=prestamoDeEspacio.id_Prestamo INNER JOIN obtieneEspaciosPrestamoDeEspacio ON prestamoDeEspacio.id_Prestamo=obtieneEspaciosPrestamoDeEspacio.id_PrestamoDeEspacio WHERE estado='" + tuHermana + "' ORDER BY prestamo.fechaSolicitada DESC ;";
 
             DataTable dt = listarAlgo(consultaSQL);
 
             return dt;
 
+        }
+
+        public DataTable listarPrestamoPorPrioridad(string prioridad)
+        {
+
+            String consultaSQL = "SELECT prestamo.id, realiza.ci_Solicitante AS Solicitante, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, prestamo.ejercicio, obtieneEspaciosPrestamoDeEspacio.nro_Espacio FROM prestamo INNER JOIN realiza ON prestamo.id = realiza.id_Prestamo INNER JOIN prestamoDeEspacio ON prestamo.id=prestamoDeEspacio.id_Prestamo INNER JOIN obtieneEspaciosPrestamoDeEspacio ON prestamoDeEspacio.id_Prestamo=obtieneEspaciosPrestamoDeEspacio.id_PrestamoDeEspacio ORDER BY prestamo.prioridad " + prioridad + ";";
+
+            DataTable dt = listarAlgo(consultaSQL);
+
+            return dt;
+        }
+
+        public DataTable listarPrestamoPorPrioridadE(string prioridad, string tuHermana)
+        {
+
+            string consultaSQL = "SELECT prestamo.id, realiza.ci_Solicitante AS Solicitante, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, prestamo.ejercicio, obtieneEspaciosPrestamoDeEspacio.nro_Espacio FROM prestamo INNER JOIN realiza ON prestamo.id = realiza.id_Prestamo INNER JOIN prestamoDeEspacio ON prestamo.id=prestamoDeEspacio.id_Prestamo INNER JOIN obtieneEspaciosPrestamoDeEspacio ON prestamoDeEspacio.id_Prestamo=obtieneEspaciosPrestamoDeEspacio.id_PrestamoDeEspacio WHERE estado = '" + tuHermana + "' ORDER BY prestamo.prioridad " + prioridad + " ;";
+
+            DataTable dt = listarAlgo(consultaSQL);
+
+            return dt;
         }
 
         public int bajaPrestamoDeEspacio(int idPrestamo)

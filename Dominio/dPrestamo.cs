@@ -65,6 +65,24 @@ namespace Dominio
 
         }
 
+        public DataTable listarPrestamoPorPrioridad(string prioridad)
+        {
+
+            pPrestamo unPPP = new pPrestamo();
+
+            return unPPP.listarPrestamoPorPrioridad(prioridad);
+
+        }
+
+        public DataTable listarPrestamoPorPrioridadE(string prioridad, string tuHermana)
+        {
+
+            pPrestamo unPPPE = new pPrestamo();
+
+            return unPPPE.listarPrestamoPorPrioridadE(prioridad, tuHermana);
+
+        }
+
         public int bajaPrestamoDeEquipo(int idPrestamo)
         {
             pPrestamo unPP = new pPrestamo();
