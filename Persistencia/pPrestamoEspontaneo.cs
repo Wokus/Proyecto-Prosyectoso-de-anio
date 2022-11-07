@@ -103,12 +103,32 @@ namespace Persistencia
         public DataTable listarPrestamoEspontaneoPorFechaRAE(string tuHermana)
         {
 
-            String consultaSQL = "SELECT prestamo.id, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion FROM prestamo INNER JOIN prestamoEspontaneo ON prestamo.id = prestamoEspontaneo.id_Prestamo WHERE estado='" + tuHermana + "' ORDER BY DESC ;";
+            String consultaSQL = "SELECT prestamo.id, realiza.ci_Solicitante AS Solicitante, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, prestamo.ejercicio FROM prestamo INNER JOIN prestamoEspontaneo ON prestamo.id = prestamoEspontaneo.id_Prestamo INNER JOIN realiza ON prestamo.id = realiza.id_Prestamo WHERE estado='" + tuHermana + "' ORDER BY DESC ;";
 
             DataTable dt = listarAlgo(consultaSQL);
 
             return dt;
 
+        }
+
+        public DataTable listarPrestamoPorPrioridad(string prioridad)
+        {
+
+            String consultaSQL = "SELECT prestamo.id, realiza.ci_Solicitante AS Solicitante, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, prestamo.ejercicio FROM prestamo INNER JOIN prestamoEspontaneo ON prestamo.id = prestamoEspontaneo.id_Prestamo INNER JOIN realiza ON prestamo.id = realiza.id_Prestamo ORDER BY prioridad " + prioridad + ";";
+
+            DataTable dt = listarAlgo(consultaSQL);
+
+            return dt;
+        }
+
+        public DataTable listarPrestamoPorPrioridadE(string prioridad, string tuHermana)
+        {
+
+            string consultaSQL = "SELECT prestamo.id, realiza.ci_Solicitante AS Solicitante, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, prestamo.ejercicio FROM prestamo INNER JOIN prestamoEspontaneo ON prestamo.id = prestamoEspontaneo.id_Prestamo INNER JOIN realiza ON prestamo.id = realiza.id_Prestamo WHERE estado = '" + tuHermana + "' ORDER BY prioridad " + prioridad + " ;";
+
+            DataTable dt = listarAlgo(consultaSQL);
+
+            return dt;
         }
 
         public int bajaPrestamoEspontaneo(int idPrestamo)

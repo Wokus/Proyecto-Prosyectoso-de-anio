@@ -59,18 +59,19 @@
             this.cbxTipo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbxTipo.FormattingEnabled = true;
             this.cbxTipo.Items.AddRange(new object[] {
-            "Estudiantes",
+            "Alumno",
             "Profesor"});
-            this.cbxTipo.Location = new System.Drawing.Point(244, 186);
+            this.cbxTipo.Location = new System.Drawing.Point(214, 205);
             this.cbxTipo.Name = "cbxTipo";
             this.cbxTipo.Size = new System.Drawing.Size(100, 21);
             this.cbxTipo.TabIndex = 12;
+            this.cbxTipo.SelectedIndexChanged += new System.EventHandler(this.cbxTipo_SelectedIndexChanged_1);
             // 
             // lblTipo
             // 
             this.lblTipo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTipo.AutoSize = true;
-            this.lblTipo.Location = new System.Drawing.Point(210, 189);
+            this.lblTipo.Location = new System.Drawing.Point(180, 208);
             this.lblTipo.Name = "lblTipo";
             this.lblTipo.Size = new System.Drawing.Size(28, 13);
             this.lblTipo.TabIndex = 11;
@@ -80,7 +81,7 @@
             // 
             this.lblCurso.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCurso.AutoSize = true;
-            this.lblCurso.Location = new System.Drawing.Point(204, 162);
+            this.lblCurso.Location = new System.Drawing.Point(174, 181);
             this.lblCurso.Name = "lblCurso";
             this.lblCurso.Size = new System.Drawing.Size(34, 13);
             this.lblCurso.TabIndex = 10;
@@ -90,7 +91,7 @@
             // 
             this.lblCedulaResponsable.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCedulaResponsable.AutoSize = true;
-            this.lblCedulaResponsable.Location = new System.Drawing.Point(122, 84);
+            this.lblCedulaResponsable.Location = new System.Drawing.Point(92, 103);
             this.lblCedulaResponsable.Name = "lblCedulaResponsable";
             this.lblCedulaResponsable.Size = new System.Drawing.Size(117, 13);
             this.lblCedulaResponsable.TabIndex = 9;
@@ -99,7 +100,7 @@
             // txtResCi
             // 
             this.txtResCi.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtResCi.Location = new System.Drawing.Point(244, 81);
+            this.txtResCi.Location = new System.Drawing.Point(214, 100);
             this.txtResCi.Name = "txtResCi";
             this.txtResCi.Size = new System.Drawing.Size(100, 20);
             this.txtResCi.TabIndex = 7;
@@ -112,7 +113,7 @@
             "Primero",
             "Segundo",
             "Tercero"});
-            this.cbxCurso.Location = new System.Drawing.Point(244, 159);
+            this.cbxCurso.Location = new System.Drawing.Point(214, 178);
             this.cbxCurso.Name = "cbxCurso";
             this.cbxCurso.Size = new System.Drawing.Size(100, 21);
             this.cbxCurso.TabIndex = 13;
@@ -120,7 +121,7 @@
             // txtNombreRes
             // 
             this.txtNombreRes.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNombreRes.Location = new System.Drawing.Point(244, 107);
+            this.txtNombreRes.Location = new System.Drawing.Point(214, 126);
             this.txtNombreRes.Name = "txtNombreRes";
             this.txtNombreRes.Size = new System.Drawing.Size(100, 20);
             this.txtNombreRes.TabIndex = 14;
@@ -128,7 +129,7 @@
             // txtApellidoRes
             // 
             this.txtApellidoRes.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtApellidoRes.Location = new System.Drawing.Point(244, 133);
+            this.txtApellidoRes.Location = new System.Drawing.Point(214, 152);
             this.txtApellidoRes.Name = "txtApellidoRes";
             this.txtApellidoRes.Size = new System.Drawing.Size(100, 20);
             this.txtApellidoRes.TabIndex = 15;
@@ -137,7 +138,7 @@
             // 
             this.lblNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(196, 110);
+            this.lblNombre.Location = new System.Drawing.Point(166, 129);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(44, 13);
             this.lblNombre.TabIndex = 16;
@@ -147,7 +148,7 @@
             // 
             this.lblApellido.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(194, 136);
+            this.lblApellido.Location = new System.Drawing.Point(164, 155);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(44, 13);
             this.lblApellido.TabIndex = 17;

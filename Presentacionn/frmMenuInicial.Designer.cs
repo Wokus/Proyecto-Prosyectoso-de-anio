@@ -49,22 +49,22 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(245, 171);
+            this.lblPassword.Location = new System.Drawing.Point(284, 179);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(106, 25);
+            this.lblPassword.Size = new System.Drawing.Size(123, 25);
             this.lblPassword.TabIndex = 3;
-            this.lblPassword.Text = "Password";
+            this.lblPassword.Text = "Contraseña";
             this.lblPassword.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
             this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserName.Location = new System.Drawing.Point(243, 117);
+            this.lblUserName.Location = new System.Drawing.Point(215, 125);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(113, 25);
+            this.lblUserName.Size = new System.Drawing.Size(192, 25);
             this.lblUserName.TabIndex = 4;
-            this.lblUserName.Text = "UserName";
+            this.lblUserName.Text = "Cedula del usuario";
             this.lblUserName.Click += new System.EventHandler(this.label2_Click);
             // 
             // lblTiTulo

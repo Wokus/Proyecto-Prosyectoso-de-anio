@@ -90,5 +90,23 @@ namespace Dominio
 
         }
 
+        public DataTable listarPrestamoPorPrioridad(string prioridad)
+        {
+
+            pPrestamoEspacio unPPP = new pPrestamoEspacio();
+
+            return unPPP.listarPrestamoPorPrioridad(prioridad);
+
+        }
+
+        public DataTable listarPrestamoPorPrioridadE(string prioridad, string tuHermana)
+        {
+
+            pPrestamoEspacio unPPPE = new pPrestamoEspacio();
+
+            return unPPPE.listarPrestamoPorPrioridadE(prioridad, tuHermana);
+
+        }
+
     }
 }

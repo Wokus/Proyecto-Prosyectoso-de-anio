@@ -33,12 +33,12 @@ namespace Presentacionn
             if (token == true)
             {
 
-                MessageBox.Show("el responsable ha sido agregado correctamente ");
+                MessageBox.Show("El responsable ha sido agregado correctamente ");
             }
             else
             {
 
-                MessageBox.Show("el responsable no ha sido ingresado");
+                MessageBox.Show("El responsable no ha sido ingresado");
             }
         }
 
@@ -48,6 +48,11 @@ namespace Presentacionn
         }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbxTipo_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
         }

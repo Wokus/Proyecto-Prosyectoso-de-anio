@@ -123,6 +123,26 @@ namespace Persistencia
 
         }
 
+        public DataTable listarPrestamoPorPrioridad(string prioridad)
+        {
+
+            String consultaSQL = "SELECT prestamo.id, realiza.ci_Solicitante AS Solicitante, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, prestamo.ejercicio FROM prestamo INNER JOIN prestamoDeEquipo ON prestamo.id = prestamoDeEquipo.id_Prestamo INNER JOIN realiza ON prestamo.id = realiza.id_Prestamo ORDER BY prioridad " + prioridad + ";";
+
+            DataTable dt = listarAlgo(consultaSQL);
+
+            return dt;
+        }
+
+        public DataTable listarPrestamoPorPrioridadE(string prioridad, string tuHermana)
+        {
+
+            string consultaSQL = "SELECT prestamo.id, realiza.ci_Solicitante AS Solicitante, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, prestamo.ejercicio FROM prestamo INNER JOIN prestamoDeEquipo ON prestamo.id = prestamoDeEquipo.id_Prestamo INNER JOIN realiza ON prestamo.id = realiza.id_Prestamo WHERE estado = '" + tuHermana + "' ORDER BY prioridad " + prioridad + " ;";
+
+            DataTable dt = listarAlgo(consultaSQL);
+
+            return dt;
+        }
+
         public int modificacionPrestamo(ePrestamoEquipo unPRE)
         {
             int token = 69;

@@ -23,9 +23,9 @@ namespace Presentacionn
             if (clase == false)
             {
                 
-               // sc1.Panel1Collapsed = true;
-                //panel 1=gestion de pedidos
-                //panel 2= inventario
+                sc1.Panel1Collapsed = true;
+                cbxAcciones.Hide();
+                btnMenuUsuarios.Hide();
             }
         }
         

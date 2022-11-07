@@ -223,7 +223,7 @@
             // 
             this.lblIDSalon.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblIDSalon.AutoSize = true;
-            this.lblIDSalon.Location = new System.Drawing.Point(379, 163);
+            this.lblIDSalon.Location = new System.Drawing.Point(382, 163);
             this.lblIDSalon.Name = "lblIDSalon";
             this.lblIDSalon.Size = new System.Drawing.Size(48, 13);
             this.lblIDSalon.TabIndex = 74;

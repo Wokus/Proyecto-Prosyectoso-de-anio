@@ -48,8 +48,7 @@
             // 
             // txtEliminarRes
             // 
-            this.txtEliminarRes.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtEliminarRes.Location = new System.Drawing.Point(194, 143);
+            this.txtEliminarRes.Location = new System.Drawing.Point(214, 154);
             this.txtEliminarRes.Name = "txtEliminarRes";
             this.txtEliminarRes.Size = new System.Drawing.Size(100, 20);
             this.txtEliminarRes.TabIndex = 4;
@@ -57,7 +56,7 @@
             // lblCi
             // 
             this.lblCi.AutoSize = true;
-            this.lblCi.Location = new System.Drawing.Point(71, 150);
+            this.lblCi.Location = new System.Drawing.Point(91, 157);
             this.lblCi.Name = "lblCi";
             this.lblCi.Size = new System.Drawing.Size(117, 13);
             this.lblCi.TabIndex = 3;
