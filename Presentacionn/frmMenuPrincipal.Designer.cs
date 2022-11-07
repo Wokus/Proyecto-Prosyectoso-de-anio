@@ -100,7 +100,8 @@
             "Inventario",
             "Prestamos",
             "Responsable",
-            "Roturas"});
+            "Roturas",
+            "Espacio"});
             this.cbxListados.Location = new System.Drawing.Point(887, 23);
             this.cbxListados.Name = "cbxListados";
             this.cbxListados.Size = new System.Drawing.Size(121, 21);
@@ -123,7 +124,10 @@
             "Modificar Responsable",
             "Agregar Rotura",
             "Eliminar Rotura",
-            "Modificar Rotura"});
+            "Modificar Rotura",
+            "Agregar espacio",
+            "Eliminar espacio",
+            "Modificar espacio"});
             this.cbxAcciones.Location = new System.Drawing.Point(12, 23);
             this.cbxAcciones.Name = "cbxAcciones";
             this.cbxAcciones.Size = new System.Drawing.Size(121, 21);
