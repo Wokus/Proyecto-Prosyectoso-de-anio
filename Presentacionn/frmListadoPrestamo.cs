@@ -256,7 +256,7 @@ namespace Presentacionn
 
             }
         }
-
+        //o funcionas o te mato
         private void cbxEstadoEspacio_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
