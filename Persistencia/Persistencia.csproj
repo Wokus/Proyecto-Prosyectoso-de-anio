@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="pEspacio.cs" />
     <Compile Include="pResponsable.cs" />
     <Compile Include="clsPersistencia.cs" />
     <Compile Include="pEquipo.cs" />
