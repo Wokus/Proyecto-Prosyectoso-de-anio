@@ -48,7 +48,7 @@
             this.cbxNewTipo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbxNewTipo.FormattingEnabled = true;
             this.cbxNewTipo.Items.AddRange(new object[] {
-            "Estudiante",
+            "Alumno",
             "Profesor"});
             this.cbxNewTipo.Location = new System.Drawing.Point(214, 222);
             this.cbxNewTipo.Name = "cbxNewTipo";

@@ -15,7 +15,7 @@ namespace Persistencia
         public bool altaResponsable(eResponsable unPR)
         {
             int profesor = 0;
-            int estudiante = 0;
+            int Alumno = 0;
             int Primero = 0;
             int Segundo = 0;
             int Tercero = 0;
@@ -41,7 +41,7 @@ namespace Persistencia
                 }
                 if (unPR.tipo == "Estudiante")
                 {
-                    estudiante = 1;
+                    Alumno = 1;
 
                 }
                 if (unPR.curso == "Primero")
