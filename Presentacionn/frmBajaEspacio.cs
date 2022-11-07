@@ -30,19 +30,12 @@ namespace Presentacionn
             eEspacio elAdmin = unES.bajaEspacio(txtBajaEspacio.Text);
             if (elAdmin == null)
             {
-                MessageBox.Show("El espacio es incorrecto")
+                MessageBox.Show("El espacio es incorrecto");
              }
             else
             {
-                MessageBox.Show("El espacio fue eliminado")
+                MessageBox.Show("El espacio fue eliminado");
             }
-
-
-
-
-
-               
-
         }
     }
 }

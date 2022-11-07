@@ -23,7 +23,8 @@ namespace Dominio
 
         public eEspacio bajaEspacio(string text)
         {
-            throw new NotImplementedException();
+            pEspacio unDE = new pEspacio();
+            return unDE.bajaEspacio(text);
         }
     }
 }
