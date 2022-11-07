@@ -34,7 +34,7 @@ namespace Presentacionn
             eResponsable elAdmin = unDR.modificarResponsable(unR, txtOldCi.Text);
             if (elAdmin != null)
             {
-                MessageBox.Show("Usuario modificado de manera exitosa");
+                MessageBox.Show("Responsable modificado de manera exitosa");
             }
             if (elAdmin == null)
             {

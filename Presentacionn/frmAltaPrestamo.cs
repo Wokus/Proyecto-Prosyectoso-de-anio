@@ -388,5 +388,26 @@ namespace Presentacionn
 
         }
 
+        private void frmAltaPrestamo_Load(object sender, EventArgs e)
+        {
+            // Hace no visible
+            mtxtIDSalon.Visible = false;
+            lblIDSalon.Visible = false;
+            txtEjercicio.Visible = false;
+            // Hace no visible
+
+            // Hace visible
+            txtTransporte.Visible = true;
+            txtEquiposId.Visible = true;
+            txtLocacion.Visible = true;
+            // Hace visible
+
+            // Hace visible los textos
+            lblTransporte.Visible = true;
+            lblEquipoID.Visible = true;
+            lblLocacion.Visible = true;
+            cbxEjercicioPEquip.Visible = true;
+            // Hace visible los textos
+        }
     }
 }

@@ -26,7 +26,7 @@ namespace Dominio
 
             pPrestamoEquipo unPPE = new pPrestamoEquipo();
 
-            int confirmacion = unPPE.modificacionPrestamo(unEPE, Convert.ToString(unEPE.id));
+            int confirmacion = unPPE.modificacionPrestamo(unEPE);
             return confirmacion;
 
         }

@@ -12,12 +12,12 @@ namespace Persistencia
 
     public class pUsuario : clsPersistencia
     {
-        public eUsuario login(string userName, string pass)
+        public eUsuario login(string userName, string password)
         {
 
             eUsuario elAdmin = new eUsuario();
             elAdmin = null;
-            string consultaSQL = "SELECT * FROM `usuario` WHERE `usuario`.ci` = '" + userName + "' AND `contra`='" + pass + "';";
+            string consultaSQL = "SELECT * FROM `usuario` WHERE ci = '" + userName + "' AND contra = '"+ password + "';";
 
             MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
 

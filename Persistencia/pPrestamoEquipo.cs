@@ -14,9 +14,6 @@ namespace Persistencia
         public int altaPrestamo(ePrestamoEquipo unPRE)
         {
             string consultaSQL;
-            
-            int idOcupado = 0;
-            
 
             String[] locaciones = unPRE.locacion.Split(',');
             String[] equipos = unPRE.unE.nombre.Split(',');
@@ -200,19 +197,18 @@ namespace Persistencia
                         ejecutarSQL(consultaSQL);
                     }
 
-                    bool tokenPrestamoAlumno = corroborarPrestamoConAlumno(unPRE.id);
-                    if (tokenPrestamoAlumno == true)
-                    {
-                        consultaSQL2 = "UPDATE realiza SET ci_Solicitante = '" + unPRE.alumnoResponsable.ci + "' WHERE realiza.id_Prestamo = '" + unPRE.id + "' ;";
+
+                    consultaSQL = "DELETE FROM `realiza` WHERE id_prestamo ='" + unPRE.id + "' ;";
+                    ejecutarSQL(consultaSQL);
+
+                    consultaSQL = "INSERT INTO `realiza` VALUES('" + unPRE.alumnoResponsable.ci + "','" + unPRE.id + "');";
                         ejecutarSQL(consultaSQL);
-                    }
-                    else
-                    {
-                        consultaSQL = "INSERT INTO `realiza` VALUES('" + unPRE.alumnoResponsable.ci + "','" + unPRE.id + "');";
-                        ejecutarSQL(consultaSQL);
-                    }
-                    consultaSQL2 = "UPDATE profesorprestamo SET ci_Solicitante = '" + unPRE.profeResponsable.ci + "' WHERE profesorprestamo.id_Prestamo = '" + unPRE.id + "' ;";
-                    ejecutarSQL(consultaSQL2);
+
+                    consultaSQL = "DELETE FROM `profesorprestamo` WHERE id_prestamo ='" + unPRE.id + "' ;";
+                    ejecutarSQL(consultaSQL);
+
+                    consultaSQL = "INSERT INTO `profesorprestamo` VALUES('" + unPRE.profeResponsable.ci + "','" + unPRE.id + "');";
+                    ejecutarSQL(consultaSQL);
                     if (unPRE.estado == "Devuelto")
                     {
                         DateTime thisDay = DateTime.Today;
@@ -238,8 +234,8 @@ namespace Persistencia
         private int verificarEstado(string alumno, string profe, String[] equipos)
         {
             int token = 0;
-
             bool tokenEquipo = corroborarEquipos(equipos);
+            
             if (tokenEquipo == true)
             {
                 String consultaSQL = "SELECT * FROM `solicitante` WHERE `solicitante`.`ci` = '" + profe + "' AND `tipo` = 'Profesor';";
@@ -250,7 +246,8 @@ namespace Persistencia
                      fila = ejecutarYdevolver(consultaSQL);
                     if (fila.Read())
                     {
-
+                       
+                        
                     }
                     else {
                         

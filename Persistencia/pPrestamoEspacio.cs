@@ -140,18 +140,12 @@ namespace Persistencia
 
         public int modificacionPrestamo(ePrestamoEspacio unPRES)
         {
-
-
             int token = 69;
             string consultaSQL;
-            string estado = "ICKKCK";
-
-
-
             int existencia = corroborarExistencia(unPRES.id, "espa");
             if (existencia == 2)
             {
-                 token = verificarEstado(unPRES.alumnoResponsable.ci, unPRES.profeResponsable.ci, unPRES.unEs.numeroEspacio);
+                 token = verificarEstado(unPRES.alumnoResponsable.ci, unPRES.profeResponsable.ci, Convert.ToInt32(unPRES.unEs.nombreEspacio));
                 if (token == 0)
                 {
                     //Tirar abajo FK start
@@ -164,35 +158,29 @@ namespace Persistencia
                     consultaFK = "ALTER TABLE obtieneEspaciosPrestamoDeEspacio DROP FOREIGN KEY fK_obtieneEspaciosPrestamoDeEspacio_espacio;";
                     ejecutarSQL(consultaFK);
                     //Tirar abajo FK final
-                    string consultaSQL2 = "UPDATE prestamo SET fechaSolicitada ='" + unPRES.fechaSolicitada + "', cantidadDias ='"
-                             + "', fechaRetiro = '" + unPRES.fechaRetiro + "', horaRetiro = '" + unPRES.horaRetiro + "', fechaDevolucion = '" + unPRES.fechaDevolucion + "', fechaGenuinaDevolucion = '" + unPRES.genuinoDiaDevolucion
-                             +
-                              "', estado = '" + estado + "'  WHERE prestamo.id = '" + unPRES.id + "' ;";
+                    string consultaSQL2 = "UPDATE prestamo SET fechaSolicitada ='" + unPRES.fechaSolicitada + "',"
+                                + " fechaRetiro = '" + unPRES.fechaRetiro + "', horaRetiro = '" + unPRES.horaRetiro + "', fechaDevolucion = '" + unPRES.fechaDevolucion + "', fechaGenuinaDevolucion = '" + unPRES.genuinoDiaDevolucion
+                                + "', estado ='" + unPRES.estado + "', prioridad = '" + unPRES.prioridad + "', ejercicio = '" + unPRES.ejercicio + "'  WHERE prestamo.id = '" + unPRES.id + "' ;";
                     ejecutarSQL(consultaSQL2);
 
-                    consultaSQL = "UPDATE prestamodeespacio SET id_Prestamo = '" + unPRES.id + "'  WHERE prestamo.id = '" + unPRES.id + "' ;";
+                    consultaSQL = "UPDATE prestamodeespacio SET id_Prestamo = '" + unPRES.id + "' WHERE id_Prestamo = '" + unPRES.id + "' ;";
                     ejecutarSQL(consultaSQL);
 
-                    consultaSQL2 = "UPDATE obtieneEspaciosPrestamoDeEspacio SET nro_Espacio = '" + unPRES.unEs.numeroEspacio
-                    + "' WHERE prestamoDeEspacio.id_PrestamoDeEspacio = '" + unPRES.id + "' ;";
+                    consultaSQL2 = "UPDATE obtieneEspaciosPrestamoDeEspacio SET nro_Espacio = '" + unPRES.unEs.nombreEspacio
+                    + "' WHERE id_PrestamoDeEspacio = '" + unPRES.id + "' ;";
                     ejecutarSQL(consultaSQL2);
 
-                    bool tokenPrestamoAlumno = corroborarPrestamoConAlumno(unPRES.id);
-
-                    if (tokenPrestamoAlumno == true)
-                    {
+                    
                         consultaSQL2 = "UPDATE realiza SET ci_Solicitante = '" + unPRES.alumnoResponsable.ci + "' WHERE realiza.id_Prestamo = '" + unPRES.id + "' ;";
                         ejecutarSQL(consultaSQL2);
-                    }
-                    else
-                    {
-                        consultaSQL = "INSERT INTO `realiza` VALUES('" + unPRES.alumnoResponsable + "','" + unPRES.id + "');";
-                    }
+                   
                     consultaSQL2 = "UPDATE profesorprestamo SET ci_Solicitante = '" + unPRES.profeResponsable.ci + "' WHERE profesorprestamo.id_Prestamo = '" + unPRES.id + "' ;";
+                    ejecutarSQL(consultaSQL2);
 
                     //Tirar arriba FK start
                     consultaFK = "ALTER TABLE prestamoDeEspacio ADD CONSTRAINT fK_prestamoDeEspacio_prestamo FOREIGN KEY (id_Prestamo) REFERENCES prestamo(id);";
                     ejecutarSQL(consultaFK);
+                    
 
                     consultaFK = "ALTER TABLE obtieneEspaciosPrestamoDeEspacio ADD CONSTRAINT fK_obtieneEspaciosPrestamoDeEspacio_prestamoDeEspacio FOREIGN KEY(id_PrestamoDeEspacio) REFERENCES prestamoDeEspacio(id_Prestamo);";
                     ejecutarSQL(consultaFK);
@@ -202,7 +190,7 @@ namespace Persistencia
                     //Tirar arriba FK final
                 }
             }
-            return existencia;
+            return token;
         }
         private bool verificarEspacio(int numeroEspacio)
         {

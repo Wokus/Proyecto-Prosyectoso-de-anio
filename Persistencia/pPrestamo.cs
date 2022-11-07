@@ -204,7 +204,7 @@ namespace Persistencia
 
             
             }
-            if (token == 1 && tipo != "equi" )
+          /*  if (token == 1 && tipo != "equi" )
             {
                 token = 10;
             }
@@ -215,7 +215,7 @@ namespace Persistencia
             if (token == 3 && tipo != "espo")
             {
                 token = 30;
-            }
+            }*/
             return token;
 
         }

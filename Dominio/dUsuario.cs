@@ -11,11 +11,11 @@ namespace Dominio
 {
     public class dUsuario
     {
-        public eUsuario login(String userName, String pass)
+        public eUsuario login(string userName, string password)
         {
 
             pUsuario unPU = new pUsuario();
-            return unPU.login(userName, pass);
+            return unPU.login(userName, password);
 
         }
 

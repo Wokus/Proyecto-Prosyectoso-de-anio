@@ -27,6 +27,16 @@ namespace Presentacionn
             this.v = v;
         }*/
 
+        public frmMenuInicial(bool clase)
+        {
+
+            InitializeComponent();
+            if (clase == false)
+            {
+
+            }
+        }
+
         private void label3_Click(object sender, EventArgs e)
         {
 
@@ -55,31 +65,23 @@ namespace Presentacionn
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             dUsuario unAD = new dUsuario();
-            try
-            {
 
-           
             eUsuario elAdmin = unAD.login(txtUserName.Text, txtPassword.Text);
-
 
             if (elAdmin == null)
             {
-                MessageBox.Show("Usuario y/o constraseNIa incorrecta");
+                MessageBox.Show("Usuario y/o constraseña incorrecta");
 
             }
             else
             {
-                MessageBox.Show("Usuario y constraseNIa Correcta");
+                MessageBox.Show("Usuario y constraseña Correcta");
                 frmMenuPrincipal unMP = new frmMenuPrincipal(true);
                 this.Hide();
                 unMP.Show();
                 
             }
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show("Error en la conexion con el servidor");
-            }
+            
     }
         
         private void btnInvitado_Click(object sender, EventArgs e)
@@ -87,10 +89,10 @@ namespace Presentacionn
             try
             {
 
-            
             frmMenuPrincipal unMPI = new frmMenuPrincipal(false);
             this.Hide();
             unMPI.Show();
+
             }
             catch (Exception error)
             {
