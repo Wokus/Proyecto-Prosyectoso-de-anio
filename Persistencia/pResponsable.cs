@@ -80,7 +80,7 @@ namespace Persistencia
 
         public DataTable listarResponsabletipoA()
         {
-            string aaaaaaaaa = "SELECT persona.ci,nombre,apellido,curso,tipo FROM persona INNER JOIN solicitante on persona.ci = solicitante.ci WHERE tipo = 'estudiante';";
+            string aaaaaaaaa = "SELECT persona.ci,nombre,apellido,curso,tipo FROM persona INNER JOIN solicitante on persona.ci = solicitante.ci WHERE tipo = 'Alumno';";
             DataTable hee = listarAlgo(aaaaaaaaa);
             return hee;
         }
