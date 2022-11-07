@@ -22,6 +22,7 @@ namespace Presentacionn
         private void frmListadoEspacio_Load(object sender, EventArgs e)
         {
             dEspacio unDE = new dEspacio();
+            dgvListadoEspacio.DataSource = unDE.listarEspacio();
 
 
         }
