@@ -99,7 +99,8 @@
             this.cbxListados.Items.AddRange(new object[] {
             "Inventario",
             "Prestamos",
-            "Responsable"});
+            "Responsable",
+            "Roturas"});
             this.cbxListados.Location = new System.Drawing.Point(887, 23);
             this.cbxListados.Name = "cbxListados";
             this.cbxListados.Size = new System.Drawing.Size(121, 21);

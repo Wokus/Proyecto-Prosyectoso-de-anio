@@ -83,6 +83,13 @@ namespace Presentacionn
 
             }
 
+            if (cbxListados.SelectedIndex == 3)
+            {
+
+                rellenarPanel2(new frmListadoRotura());
+
+            }
+
         }
         private void cbxAcciones_SelectedIndexChanged(object sender, EventArgs e)
         {

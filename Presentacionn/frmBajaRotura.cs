@@ -18,18 +18,40 @@ namespace Presentacionn
         {
             InitializeComponent();
         }
+        private bool corroborarCampo()
+        {
+            bool tokenCampo = false;
+            if (mtxtRotura.Text == "")
+            {
+                MessageBox.Show("Campo vacio");
 
+            }
+            else { tokenCampo = true; }
+            return tokenCampo;
+        }
         private void btnEliminarRotura_Click(object sender, EventArgs e)
         {
+            bool tokenCa = corroborarCampo();
+            if (tokenCa == true)
+            {
 
+                try
+                {
+
+
+                    dRotura unaRotD = new dRotura();
+                    bool token = unaRotD.bajaRotura(Convert.ToString(Convert.ToInt32(mtxtRotura.Text)));
+                    if (token == true)
+                    {
+                        MessageBox.Show("Rotura eliminada correctamente");
+
+                    }
+                    else { MessageBox.Show("Rotura no existente"); }
+                }
+                catch (Exception error) { MessageBox.Show(error.Message); }
+            }
         }
 
-        private void txtIdEquipo_TextChanged(object sender, EventArgs e)
-        {
-            eRotura unaRot = new eRotura();
-            dRotura unaRotD = new dRotura();
-            unaRot = unaRotD.RecrearRot(txtIdEquipo.Text);
-
-        }
+        
     }
 }

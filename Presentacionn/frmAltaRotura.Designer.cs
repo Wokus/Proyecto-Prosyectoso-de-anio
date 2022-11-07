@@ -28,32 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtEquipoRoto = new System.Windows.Forms.TextBox();
-            this.txtPrestamo = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.txtProResponsable = new System.Windows.Forms.TextBox();
             this.lblEquipoRoto = new System.Windows.Forms.Label();
-            this.lblPrestamoRotura = new System.Windows.Forms.Label();
-            this.lblResponsableRotura = new System.Windows.Forms.Label();
             this.lblDescripcion = new System.Windows.Forms.Label();
-            this.btnAgregarPrestamo = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtAluResponsable = new System.Windows.Forms.TextBox();
+            this.btnAgregarRotura = new System.Windows.Forms.Button();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.mtxtEquipoRoto = new System.Windows.Forms.MaskedTextBox();
+            this.mtxtIdPrestamo = new System.Windows.Forms.MaskedTextBox();
+            this.idPrestamo = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // txtEquipoRoto
-            // 
-            this.txtEquipoRoto.Location = new System.Drawing.Point(120, 63);
-            this.txtEquipoRoto.Name = "txtEquipoRoto";
-            this.txtEquipoRoto.Size = new System.Drawing.Size(100, 20);
-            this.txtEquipoRoto.TabIndex = 0;
-            // 
-            // txtPrestamo
-            // 
-            this.txtPrestamo.Location = new System.Drawing.Point(120, 123);
-            this.txtPrestamo.Name = "txtPrestamo";
-            this.txtPrestamo.Size = new System.Drawing.Size(100, 20);
-            this.txtPrestamo.TabIndex = 1;
             // 
             // txtDescripcion
             // 
@@ -62,13 +46,6 @@
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(169, 110);
             this.txtDescripcion.TabIndex = 2;
-            // 
-            // txtProResponsable
-            // 
-            this.txtProResponsable.Location = new System.Drawing.Point(120, 240);
-            this.txtProResponsable.Name = "txtProResponsable";
-            this.txtProResponsable.Size = new System.Drawing.Size(100, 20);
-            this.txtProResponsable.TabIndex = 4;
             // 
             // lblEquipoRoto
             // 
@@ -79,24 +56,6 @@
             this.lblEquipoRoto.TabIndex = 5;
             this.lblEquipoRoto.Text = "Equipo Roto";
             // 
-            // lblPrestamoRotura
-            // 
-            this.lblPrestamoRotura.AutoSize = true;
-            this.lblPrestamoRotura.Location = new System.Drawing.Point(63, 126);
-            this.lblPrestamoRotura.Name = "lblPrestamoRotura";
-            this.lblPrestamoRotura.Size = new System.Drawing.Size(51, 13);
-            this.lblPrestamoRotura.TabIndex = 6;
-            this.lblPrestamoRotura.Text = "Prestamo";
-            // 
-            // lblResponsableRotura
-            // 
-            this.lblResponsableRotura.AutoSize = true;
-            this.lblResponsableRotura.Location = new System.Drawing.Point(8, 243);
-            this.lblResponsableRotura.Name = "lblResponsableRotura";
-            this.lblResponsableRotura.Size = new System.Drawing.Size(106, 13);
-            this.lblResponsableRotura.TabIndex = 7;
-            this.lblResponsableRotura.Text = "Profesor responsable";
-            // 
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
@@ -106,34 +65,60 @@
             this.lblDescripcion.TabIndex = 8;
             this.lblDescripcion.Text = "Descripción";
             // 
-            // btnAgregarPrestamo
+            // btnAgregarRotura
             // 
-            this.btnAgregarPrestamo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnAgregarRotura.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgregarPrestamo.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnAgregarPrestamo.Location = new System.Drawing.Point(170, 423);
-            this.btnAgregarPrestamo.Name = "btnAgregarPrestamo";
-            this.btnAgregarPrestamo.Size = new System.Drawing.Size(144, 55);
-            this.btnAgregarPrestamo.TabIndex = 31;
-            this.btnAgregarPrestamo.Text = "Agregar";
-            this.btnAgregarPrestamo.UseVisualStyleBackColor = false;
-            this.btnAgregarPrestamo.Click += new System.EventHandler(this.btnAgregarPrestamo_Click);
+            this.btnAgregarRotura.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnAgregarRotura.Location = new System.Drawing.Point(170, 423);
+            this.btnAgregarRotura.Name = "btnAgregarRotura";
+            this.btnAgregarRotura.Size = new System.Drawing.Size(144, 55);
+            this.btnAgregarRotura.TabIndex = 31;
+            this.btnAgregarRotura.Text = "Agregar";
+            this.btnAgregarRotura.UseVisualStyleBackColor = false;
+            this.btnAgregarRotura.Click += new System.EventHandler(this.btnAgregarRotura_Click_1);
             // 
-            // label1
+            // dtpFecha
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 186);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 13);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "Alumno responsable";
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha.Location = new System.Drawing.Point(120, 123);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(100, 20);
+            this.dtpFecha.TabIndex = 34;
             // 
-            // txtAluResponsable
+            // lblFecha
             // 
-            this.txtAluResponsable.Location = new System.Drawing.Point(120, 183);
-            this.txtAluResponsable.Name = "txtAluResponsable";
-            this.txtAluResponsable.Size = new System.Drawing.Size(100, 20);
-            this.txtAluResponsable.TabIndex = 32;
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Location = new System.Drawing.Point(77, 129);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(37, 13);
+            this.lblFecha.TabIndex = 6;
+            this.lblFecha.Text = "Fecha";
+            // 
+            // mtxtEquipoRoto
+            // 
+            this.mtxtEquipoRoto.Location = new System.Drawing.Point(120, 63);
+            this.mtxtEquipoRoto.Mask = "00000000";
+            this.mtxtEquipoRoto.Name = "mtxtEquipoRoto";
+            this.mtxtEquipoRoto.Size = new System.Drawing.Size(100, 20);
+            this.mtxtEquipoRoto.TabIndex = 35;
+            // 
+            // mtxtIdPrestamo
+            // 
+            this.mtxtIdPrestamo.Location = new System.Drawing.Point(120, 183);
+            this.mtxtIdPrestamo.Mask = "00000000";
+            this.mtxtIdPrestamo.Name = "mtxtIdPrestamo";
+            this.mtxtIdPrestamo.Size = new System.Drawing.Size(100, 20);
+            this.mtxtIdPrestamo.TabIndex = 37;
+            // 
+            // idPrestamo
+            // 
+            this.idPrestamo.AutoSize = true;
+            this.idPrestamo.Location = new System.Drawing.Point(48, 186);
+            this.idPrestamo.Name = "idPrestamo";
+            this.idPrestamo.Size = new System.Drawing.Size(62, 13);
+            this.idPrestamo.TabIndex = 36;
+            this.idPrestamo.Text = "id Prestamo";
             // 
             // frmAltaRotura
             // 
@@ -141,17 +126,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(228)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(494, 508);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtAluResponsable);
-            this.Controls.Add(this.btnAgregarPrestamo);
+            this.Controls.Add(this.mtxtIdPrestamo);
+            this.Controls.Add(this.idPrestamo);
+            this.Controls.Add(this.mtxtEquipoRoto);
+            this.Controls.Add(this.dtpFecha);
+            this.Controls.Add(this.btnAgregarRotura);
             this.Controls.Add(this.lblDescripcion);
-            this.Controls.Add(this.lblResponsableRotura);
-            this.Controls.Add(this.lblPrestamoRotura);
+            this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.lblEquipoRoto);
-            this.Controls.Add(this.txtProResponsable);
             this.Controls.Add(this.txtDescripcion);
-            this.Controls.Add(this.txtPrestamo);
-            this.Controls.Add(this.txtEquipoRoto);
             this.Name = "frmAltaRotura";
             this.Text = "frmAltaRotura";
             this.ResumeLayout(false);
@@ -160,17 +143,14 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtEquipoRoto;
-        private System.Windows.Forms.TextBox txtPrestamo;
         private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.TextBox txtProResponsable;
         private System.Windows.Forms.Label lblEquipoRoto;
-        private System.Windows.Forms.Label lblPrestamoRotura;
-        private System.Windows.Forms.Label lblResponsableRotura;
         private System.Windows.Forms.Label lblDescripcion;
-        private System.Windows.Forms.Button btnAgregarPrestamo;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtAluResponsable;
+        private System.Windows.Forms.Button btnAgregarRotura;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.Label lblFecha;
+        private System.Windows.Forms.MaskedTextBox mtxtEquipoRoto;
+        private System.Windows.Forms.MaskedTextBox mtxtIdPrestamo;
+        private System.Windows.Forms.Label idPrestamo;
     }
 }

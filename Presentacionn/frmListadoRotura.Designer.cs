@@ -49,6 +49,7 @@
             this.Controls.Add(this.dgvListadoRotura);
             this.Name = "frmListadoRotura";
             this.Text = "frmListadoRotura";
+            this.Load += new System.EventHandler(this.frmListadoRotura_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoRotura)).EndInit();
             this.ResumeLayout(false);
 

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dominio;
+using Entidades;
 
 namespace Presentacionn
 {
@@ -15,6 +17,17 @@ namespace Presentacionn
         public frmListadoRotura()
         {
             InitializeComponent();
+        }
+
+        private void frmListadoRotura_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                dRotura unaDRo = new dRotura();
+                dgvListadoRotura.DataSource = unaDRo.ListaRoturas();
+            }
+            catch (Exception error) { MessageBox.Show(error.Message); }
+
         }
     }
 }

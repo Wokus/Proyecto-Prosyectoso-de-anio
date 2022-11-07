@@ -18,21 +18,60 @@ namespace Presentacionn
         {
             InitializeComponent();
         }
-        
-        private void btnAgregarPrestamo_Click(object sender, EventArgs e)
+        private bool corroborarCampos()
         {
-            eRotura unR = new eRotura();
-            eEquipo unEq = new eEquipo();
-            eResponsable alumno = new eResponsable();
-            eResponsable profesor = new eResponsable();
-            ePrestamo unP = new ePrestamo();
+            bool token = false;
+            if (txtDescripcion.Text == "" || mtxtEquipoRoto.Text == "" || mtxtIdPrestamo.Text == "")
+            {
+                MessageBox.Show("Hay campos vacios");
+            }else {
+                token = true;
 
-            unR.idRotura = Int32.Parse(txtEquipoRoto.Text);
-            unP.id = Int32.Parse(txtPrestamo.Text);
-            alumno.ci = txtAluResponsable.Text;
-            profesor.ci = txtProResponsable.Text;
-            unR.descripcion = txtDescripcion.Text;
-                
+                if (txtDescripcion.Text.Length > 200)
+                {
+                    MessageBox.Show("Descripción muy larga");
+                    token = false;
+                }
+
+            }
+            return token;
         }
+
+        private void btnAgregarRotura_Click_1(object sender, EventArgs e)
+        {
+            try { 
+            bool tokenCampos = corroborarCampos();
+            if (tokenCampos == true)
+            {
+                
+                eEquipo unEq = new eEquipo();
+                eResponsable alumno = new eResponsable();
+
+                unEq.id = Convert.ToInt32(mtxtEquipoRoto.Text);
+                unEq.rotu.descripcion = txtDescripcion.Text;
+                unEq.rotu.fecha = dtpFecha.Value.ToString("yyyy-MM-dd");
+                
+
+                dRotura dRo = new dRotura();
+                int token = dRo.altaRotura(unEq, Convert.ToString(Convert.ToInt32(mtxtIdPrestamo.Text)));
+                if (token == 0)
+                {
+                    MessageBox.Show("Rotura agregada");
+                }
+                else if(token == 1)
+                {
+                    MessageBox.Show("Rotura no agregada, equipo no existente");
+                }
+                else if (token == 2)
+                {
+                    MessageBox.Show("Rotura no agregada, prestamo no existente");
+                }
+
+            }
+            }
+            catch (Exception error) {MessageBox.Show(error.Message); }
+
+}
+
     }
 }

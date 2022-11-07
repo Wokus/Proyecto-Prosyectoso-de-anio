@@ -48,6 +48,7 @@
             // 
             // txtEliminarRes
             // 
+            this.txtEliminarRes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtEliminarRes.Location = new System.Drawing.Point(194, 143);
             this.txtEliminarRes.Name = "txtEliminarRes";
             this.txtEliminarRes.Size = new System.Drawing.Size(100, 20);

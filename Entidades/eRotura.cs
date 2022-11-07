@@ -10,7 +10,7 @@ namespace Entidades
     {
         public int idRotura { get; set; }
         public string descripcion { get; set; }
-        public int idEquipo { get; set; }
-        public string nombreEqui { get; set; }
+       
+        public String fecha { get; set; }
     }
 }

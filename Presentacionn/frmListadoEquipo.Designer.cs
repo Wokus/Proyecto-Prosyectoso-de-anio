@@ -41,7 +41,6 @@
             this.dgvEquipo.Name = "dgvEquipo";
             this.dgvEquipo.Size = new System.Drawing.Size(470, 458);
             this.dgvEquipo.TabIndex = 0;
-            this.dgvEquipo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // cbxTipo
             // 
@@ -57,7 +56,6 @@
             this.cbxTipo.Size = new System.Drawing.Size(121, 21);
             this.cbxTipo.TabIndex = 1;
             this.cbxTipo.Text = "Tipos de listado";
-            this.cbxTipo.SelectedIndexChanged += new System.EventHandler(this.cbxTipo_SelectedIndexChanged);
             // 
             // cbxEstado
             // 
@@ -72,7 +70,6 @@
             this.cbxEstado.Size = new System.Drawing.Size(121, 21);
             this.cbxEstado.TabIndex = 2;
             this.cbxEstado.Text = "Listado por estado";
-            this.cbxEstado.SelectedIndexChanged += new System.EventHandler(this.cbxEstado_SelectedIndexChanged);
             // 
             // frmListadoEquipo
             // 

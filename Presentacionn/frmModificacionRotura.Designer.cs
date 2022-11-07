@@ -32,15 +32,13 @@
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblPrestamoRotura = new System.Windows.Forms.Label();
             this.lblEquipoRoto = new System.Windows.Forms.Label();
-            this.txtPres = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.txtEquipoRoto = new System.Windows.Forms.TextBox();
-            this.txtIdEquipo = new System.Windows.Forms.TextBox();
-            this.lblIdEquipo = new System.Windows.Forms.Label();
-            this.lblResponsableRotura = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.cbxIdRotura = new System.Windows.Forms.ComboBox();
+            this.txtDescricion = new System.Windows.Forms.TextBox();
             this.lblIdRotura = new System.Windows.Forms.Label();
+            this.mtxtRotura = new System.Windows.Forms.MaskedTextBox();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.mtxtEquipo = new System.Windows.Forms.MaskedTextBox();
+            this.mtxtPrestamo = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // btnModificarRotura
@@ -59,7 +57,7 @@
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(244, 127);
+            this.lblDescripcion.Location = new System.Drawing.Point(244, 71);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
             this.lblDescripcion.TabIndex = 39;
@@ -68,7 +66,7 @@
             // lblPrestamoRotura
             // 
             this.lblPrestamoRotura.AutoSize = true;
-            this.lblPrestamoRotura.Location = new System.Drawing.Point(25, 187);
+            this.lblPrestamoRotura.Location = new System.Drawing.Point(25, 237);
             this.lblPrestamoRotura.Name = "lblPrestamoRotura";
             this.lblPrestamoRotura.Size = new System.Drawing.Size(51, 13);
             this.lblPrestamoRotura.TabIndex = 37;
@@ -83,77 +81,63 @@
             this.lblEquipoRoto.TabIndex = 36;
             this.lblEquipoRoto.Text = "Equipo Roto";
             // 
-            // txtPres
+            // txtDescricion
             // 
-            this.txtPres.Location = new System.Drawing.Point(82, 180);
-            this.txtPres.Name = "txtPres";
-            this.txtPres.Size = new System.Drawing.Size(100, 20);
-            this.txtPres.TabIndex = 35;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(313, 120);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(169, 110);
-            this.textBox3.TabIndex = 34;
-            // 
-            // txtEquipoRoto
-            // 
-            this.txtEquipoRoto.Location = new System.Drawing.Point(82, 120);
-            this.txtEquipoRoto.Name = "txtEquipoRoto";
-            this.txtEquipoRoto.Size = new System.Drawing.Size(100, 20);
-            this.txtEquipoRoto.TabIndex = 33;
-            // 
-            // txtIdEquipo
-            // 
-            this.txtIdEquipo.Location = new System.Drawing.Point(82, 60);
-            this.txtIdEquipo.Name = "txtIdEquipo";
-            this.txtIdEquipo.Size = new System.Drawing.Size(100, 20);
-            this.txtIdEquipo.TabIndex = 32;
-            // 
-            // lblIdEquipo
-            // 
-            this.lblIdEquipo.AutoSize = true;
-            this.lblIdEquipo.Location = new System.Drawing.Point(24, 67);
-            this.lblIdEquipo.Name = "lblIdEquipo";
-            this.lblIdEquipo.Size = new System.Drawing.Size(52, 13);
-            this.lblIdEquipo.TabIndex = 42;
-            this.lblIdEquipo.Text = "Id Equipo";
-            // 
-            // lblResponsableRotura
-            // 
-            this.lblResponsableRotura.AutoSize = true;
-            this.lblResponsableRotura.Location = new System.Drawing.Point(12, 247);
-            this.lblResponsableRotura.Name = "lblResponsableRotura";
-            this.lblResponsableRotura.Size = new System.Drawing.Size(69, 13);
-            this.lblResponsableRotura.TabIndex = 38;
-            this.lblResponsableRotura.Text = "Responsable";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(82, 240);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 41;
-            // 
-            // cbxIdRotura
-            // 
-            this.cbxIdRotura.FormattingEnabled = true;
-            this.cbxIdRotura.Location = new System.Drawing.Point(361, 60);
-            this.cbxIdRotura.Name = "cbxIdRotura";
-            this.cbxIdRotura.Size = new System.Drawing.Size(121, 21);
-            this.cbxIdRotura.TabIndex = 43;
-            this.cbxIdRotura.Text = "Id Rotura";
+            this.txtDescricion.Location = new System.Drawing.Point(313, 64);
+            this.txtDescricion.Multiline = true;
+            this.txtDescricion.Name = "txtDescricion";
+            this.txtDescricion.Size = new System.Drawing.Size(169, 110);
+            this.txtDescricion.TabIndex = 34;
             // 
             // lblIdRotura
             // 
             this.lblIdRotura.AutoSize = true;
-            this.lblIdRotura.Location = new System.Drawing.Point(304, 68);
+            this.lblIdRotura.Location = new System.Drawing.Point(27, 71);
             this.lblIdRotura.Name = "lblIdRotura";
             this.lblIdRotura.Size = new System.Drawing.Size(51, 13);
             this.lblIdRotura.TabIndex = 16;
             this.lblIdRotura.Text = "Id Rotura";
+            // 
+            // mtxtRotura
+            // 
+            this.mtxtRotura.Location = new System.Drawing.Point(82, 64);
+            this.mtxtRotura.Mask = "00000";
+            this.mtxtRotura.Name = "mtxtRotura";
+            this.mtxtRotura.Size = new System.Drawing.Size(100, 20);
+            this.mtxtRotura.TabIndex = 43;
+            // 
+            // dtpFecha
+            // 
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha.Location = new System.Drawing.Point(82, 177);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(100, 20);
+            this.dtpFecha.TabIndex = 45;
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Location = new System.Drawing.Point(39, 183);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(37, 13);
+            this.lblFecha.TabIndex = 44;
+            this.lblFecha.Text = "Fecha";
+            // 
+            // mtxtEquipo
+            // 
+            this.mtxtEquipo.Location = new System.Drawing.Point(82, 124);
+            this.mtxtEquipo.Mask = "00000";
+            this.mtxtEquipo.Name = "mtxtEquipo";
+            this.mtxtEquipo.Size = new System.Drawing.Size(100, 20);
+            this.mtxtEquipo.TabIndex = 46;
+            // 
+            // mtxtPrestamo
+            // 
+            this.mtxtPrestamo.Location = new System.Drawing.Point(82, 237);
+            this.mtxtPrestamo.Mask = "00000";
+            this.mtxtPrestamo.Name = "mtxtPrestamo";
+            this.mtxtPrestamo.Size = new System.Drawing.Size(100, 20);
+            this.mtxtPrestamo.TabIndex = 47;
             // 
             // frmModificacionRotura
             // 
@@ -161,19 +145,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(228)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(494, 508);
+            this.Controls.Add(this.mtxtPrestamo);
+            this.Controls.Add(this.mtxtEquipo);
+            this.Controls.Add(this.dtpFecha);
+            this.Controls.Add(this.lblFecha);
+            this.Controls.Add(this.mtxtRotura);
             this.Controls.Add(this.lblIdRotura);
-            this.Controls.Add(this.cbxIdRotura);
-            this.Controls.Add(this.lblIdEquipo);
-            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.btnModificarRotura);
             this.Controls.Add(this.lblDescripcion);
-            this.Controls.Add(this.lblResponsableRotura);
             this.Controls.Add(this.lblPrestamoRotura);
             this.Controls.Add(this.lblEquipoRoto);
-            this.Controls.Add(this.txtPres);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.txtEquipoRoto);
-            this.Controls.Add(this.txtIdEquipo);
+            this.Controls.Add(this.txtDescricion);
             this.Name = "frmModificacionRotura";
             this.Text = "frmModificacionRotura";
             this.ResumeLayout(false);
@@ -187,14 +169,12 @@
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Label lblPrestamoRotura;
         private System.Windows.Forms.Label lblEquipoRoto;
-        private System.Windows.Forms.TextBox txtPres;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox txtEquipoRoto;
-        private System.Windows.Forms.TextBox txtIdEquipo;
-        private System.Windows.Forms.Label lblIdEquipo;
-        private System.Windows.Forms.Label lblResponsableRotura;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.ComboBox cbxIdRotura;
+        private System.Windows.Forms.TextBox txtDescricion;
         private System.Windows.Forms.Label lblIdRotura;
+        private System.Windows.Forms.MaskedTextBox mtxtRotura;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.Label lblFecha;
+        private System.Windows.Forms.MaskedTextBox mtxtEquipo;
+        private System.Windows.Forms.MaskedTextBox mtxtPrestamo;
     }
 }
