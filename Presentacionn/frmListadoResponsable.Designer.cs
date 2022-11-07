@@ -48,7 +48,7 @@
             this.cbxTipo.Items.AddRange(new object[] {
             "General",
             "Profesor",
-            "Alumno"});
+            "Estudiante"});
             this.cbxTipo.Location = new System.Drawing.Point(12, 12);
             this.cbxTipo.Name = "cbxTipo";
             this.cbxTipo.Size = new System.Drawing.Size(121, 21);

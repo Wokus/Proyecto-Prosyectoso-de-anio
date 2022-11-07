@@ -59,12 +59,13 @@
             this.cbxTipo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbxTipo.FormattingEnabled = true;
             this.cbxTipo.Items.AddRange(new object[] {
-            "Estudiantes",
+            "Estudiante",
             "Profesor"});
             this.cbxTipo.Location = new System.Drawing.Point(214, 205);
             this.cbxTipo.Name = "cbxTipo";
             this.cbxTipo.Size = new System.Drawing.Size(100, 21);
             this.cbxTipo.TabIndex = 12;
+            this.cbxTipo.SelectedIndexChanged += new System.EventHandler(this.cbxTipo_SelectedIndexChanged_1);
             // 
             // lblTipo
             // 
