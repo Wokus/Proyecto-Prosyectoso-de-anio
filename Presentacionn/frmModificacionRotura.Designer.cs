@@ -32,9 +32,9 @@
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblPrestamoRotura = new System.Windows.Forms.Label();
             this.lblEquipoRoto = new System.Windows.Forms.Label();
-            this.txtPres = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.txtEquipoRoto = new System.Windows.Forms.TextBox();
+            this.mtxtPrestamo = new System.Windows.Forms.TextBox();
+            this.txtDescricion = new System.Windows.Forms.TextBox();
+            this.mtxtEquipo = new System.Windows.Forms.TextBox();
             this.txtIdEquipo = new System.Windows.Forms.TextBox();
             this.lblIdEquipo = new System.Windows.Forms.Label();
             this.lblResponsableRotura = new System.Windows.Forms.Label();
@@ -83,27 +83,27 @@
             this.lblEquipoRoto.TabIndex = 36;
             this.lblEquipoRoto.Text = "Equipo Roto";
             // 
-            // txtPres
+            // mtxtPrestamo
             // 
-            this.txtPres.Location = new System.Drawing.Point(82, 180);
-            this.txtPres.Name = "txtPres";
-            this.txtPres.Size = new System.Drawing.Size(100, 20);
-            this.txtPres.TabIndex = 35;
+            this.mtxtPrestamo.Location = new System.Drawing.Point(82, 180);
+            this.mtxtPrestamo.Name = "mtxtPrestamo";
+            this.mtxtPrestamo.Size = new System.Drawing.Size(100, 20);
+            this.mtxtPrestamo.TabIndex = 35;
             // 
-            // textBox3
+            // txtDescricion
             // 
-            this.textBox3.Location = new System.Drawing.Point(313, 120);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(169, 110);
-            this.textBox3.TabIndex = 34;
+            this.txtDescricion.Location = new System.Drawing.Point(313, 120);
+            this.txtDescricion.Multiline = true;
+            this.txtDescricion.Name = "txtDescricion";
+            this.txtDescricion.Size = new System.Drawing.Size(169, 110);
+            this.txtDescricion.TabIndex = 34;
             // 
-            // txtEquipoRoto
+            // mtxtEquipo
             // 
-            this.txtEquipoRoto.Location = new System.Drawing.Point(82, 120);
-            this.txtEquipoRoto.Name = "txtEquipoRoto";
-            this.txtEquipoRoto.Size = new System.Drawing.Size(100, 20);
-            this.txtEquipoRoto.TabIndex = 33;
+            this.mtxtEquipo.Location = new System.Drawing.Point(82, 120);
+            this.mtxtEquipo.Name = "mtxtEquipo";
+            this.mtxtEquipo.Size = new System.Drawing.Size(100, 20);
+            this.mtxtEquipo.TabIndex = 33;
             // 
             // txtIdEquipo
             // 
@@ -170,9 +170,9 @@
             this.Controls.Add(this.lblResponsableRotura);
             this.Controls.Add(this.lblPrestamoRotura);
             this.Controls.Add(this.lblEquipoRoto);
-            this.Controls.Add(this.txtPres);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.txtEquipoRoto);
+            this.Controls.Add(this.mtxtPrestamo);
+            this.Controls.Add(this.txtDescricion);
+            this.Controls.Add(this.mtxtEquipo);
             this.Controls.Add(this.txtIdEquipo);
             this.Name = "frmModificacionRotura";
             this.Text = "frmModificacionRotura";
@@ -187,9 +187,9 @@
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Label lblPrestamoRotura;
         private System.Windows.Forms.Label lblEquipoRoto;
-        private System.Windows.Forms.TextBox txtPres;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox txtEquipoRoto;
+        private System.Windows.Forms.TextBox mtxtPrestamo;
+        private System.Windows.Forms.TextBox txtDescricion;
+        private System.Windows.Forms.TextBox mtxtEquipo;
         private System.Windows.Forms.TextBox txtIdEquipo;
         private System.Windows.Forms.Label lblIdEquipo;
         private System.Windows.Forms.Label lblResponsableRotura;

@@ -28,33 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtNumeroSerie = new System.Windows.Forms.TextBox();
             this.btnAgregarEquipo = new System.Windows.Forms.Button();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblNumeroSerie = new System.Windows.Forms.Label();
             this.lblEstado = new System.Windows.Forms.Label();
             this.lblFechaIgreso = new System.Windows.Forms.Label();
-            this.lblAsegurado = new System.Windows.Forms.Label();
-            this.lblTipo = new System.Windows.Forms.Label();
-            this.cbxTipo = new System.Windows.Forms.ComboBox();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.cbxMoneda = new System.Windows.Forms.ComboBox();
-            this.lblPrecio = new System.Windows.Forms.Label();
-            this.txtObservaciones = new System.Windows.Forms.TextBox();
-            this.lblObservaciones = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
-            this.cbxAsegurado = new System.Windows.Forms.ComboBox();
             this.cbxEstado = new System.Windows.Forms.ComboBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.txtObservaciones = new System.Windows.Forms.TextBox();
+            this.cbxMoneda = new System.Windows.Forms.ComboBox();
+            this.cbxTipo = new System.Windows.Forms.ComboBox();
+            this.lblAsegurado = new System.Windows.Forms.Label();
+            this.lblPrecio = new System.Windows.Forms.Label();
+            this.lblTipo = new System.Windows.Forms.Label();
+            this.lblObservaciones = new System.Windows.Forms.Label();
+            this.cbxAsegurado = new System.Windows.Forms.ComboBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtNumeroSerie = new System.Windows.Forms.TextBox();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblNumeroSerie = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // txtNumeroSerie
-            // 
-            this.txtNumeroSerie.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNumeroSerie.Location = new System.Drawing.Point(100, 154);
-            this.txtNumeroSerie.Name = "txtNumeroSerie";
-            this.txtNumeroSerie.Size = new System.Drawing.Size(100, 20);
-            this.txtNumeroSerie.TabIndex = 2;
             // 
             // btnAgregarEquipo
             // 
@@ -68,26 +60,6 @@
             this.btnAgregarEquipo.Text = "Agregar";
             this.btnAgregarEquipo.UseVisualStyleBackColor = false;
             this.btnAgregarEquipo.Click += new System.EventHandler(this.btnAgregarEquipo_Click);
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(54, 111);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(44, 13);
-            this.lblNombre.TabIndex = 15;
-            this.lblNombre.Text = "Nombre";
-            // 
-            // lblNumeroSerie
-            // 
-            this.lblNumeroSerie.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblNumeroSerie.AutoSize = true;
-            this.lblNumeroSerie.Location = new System.Drawing.Point(12, 161);
-            this.lblNumeroSerie.Name = "lblNumeroSerie";
-            this.lblNumeroSerie.Size = new System.Drawing.Size(86, 13);
-            this.lblNumeroSerie.TabIndex = 16;
-            this.lblNumeroSerie.Text = "Numero de Serie";
             // 
             // lblEstado
             // 
@@ -109,99 +81,6 @@
             this.lblFechaIgreso.TabIndex = 18;
             this.lblFechaIgreso.Text = "Fecha de Ingreso";
             // 
-            // lblAsegurado
-            // 
-            this.lblAsegurado.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblAsegurado.AutoSize = true;
-            this.lblAsegurado.Location = new System.Drawing.Point(241, 111);
-            this.lblAsegurado.Name = "lblAsegurado";
-            this.lblAsegurado.Size = new System.Drawing.Size(58, 13);
-            this.lblAsegurado.TabIndex = 19;
-            this.lblAsegurado.Text = "Asegurado";
-            // 
-            // lblTipo
-            // 
-            this.lblTipo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTipo.AutoSize = true;
-            this.lblTipo.Location = new System.Drawing.Point(271, 212);
-            this.lblTipo.Name = "lblTipo";
-            this.lblTipo.Size = new System.Drawing.Size(28, 13);
-            this.lblTipo.TabIndex = 21;
-            this.lblTipo.Text = "Tipo";
-            // 
-            // cbxTipo
-            // 
-            this.cbxTipo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cbxTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxTipo.FormattingEnabled = true;
-            this.cbxTipo.Items.AddRange(new object[] {
-            "Fotografia",
-            "Sonido",
-            "Informatica",
-            "Otros"});
-            this.cbxTipo.Location = new System.Drawing.Point(305, 204);
-            this.cbxTipo.Name = "cbxTipo";
-            this.cbxTipo.Size = new System.Drawing.Size(100, 21);
-            this.cbxTipo.TabIndex = 14;
-            this.cbxTipo.SelectedIndexChanged += new System.EventHandler(this.cbxTipo_SelectedIndexChanged);
-            // 
-            // txtPrecio
-            // 
-            this.txtPrecio.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPrecio.Location = new System.Drawing.Point(305, 154);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(100, 20);
-            this.txtPrecio.TabIndex = 7;
-            this.txtPrecio.TextChanged += new System.EventHandler(this.txtPrecio_TextChanged);
-            // 
-            // cbxMoneda
-            // 
-            this.cbxMoneda.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cbxMoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxMoneda.FormattingEnabled = true;
-            this.cbxMoneda.Location = new System.Drawing.Point(411, 153);
-            this.cbxMoneda.Name = "cbxMoneda";
-            this.cbxMoneda.Size = new System.Drawing.Size(38, 21);
-            this.cbxMoneda.TabIndex = 13;
-            // 
-            // lblPrecio
-            // 
-            this.lblPrecio.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(262, 161);
-            this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(37, 13);
-            this.lblPrecio.TabIndex = 20;
-            this.lblPrecio.Text = "Precio";
-            // 
-            // txtObservaciones
-            // 
-            this.txtObservaciones.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtObservaciones.Location = new System.Drawing.Point(305, 254);
-            this.txtObservaciones.Multiline = true;
-            this.txtObservaciones.Name = "txtObservaciones";
-            this.txtObservaciones.Size = new System.Drawing.Size(100, 20);
-            this.txtObservaciones.TabIndex = 9;
-            // 
-            // lblObservaciones
-            // 
-            this.lblObservaciones.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblObservaciones.AutoSize = true;
-            this.lblObservaciones.Location = new System.Drawing.Point(227, 261);
-            this.lblObservaciones.Name = "lblObservaciones";
-            this.lblObservaciones.Size = new System.Drawing.Size(72, 13);
-            this.lblObservaciones.TabIndex = 22;
-            this.lblObservaciones.Text = "Observacioes";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNombre.Location = new System.Drawing.Point(100, 104);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
-            this.txtNombre.TabIndex = 1;
-            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
-            // 
             // dtpFecha
             // 
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -209,20 +88,6 @@
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(100, 20);
             this.dtpFecha.TabIndex = 24;
-            // 
-            // cbxAsegurado
-            // 
-            this.cbxAsegurado.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cbxAsegurado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxAsegurado.FormattingEnabled = true;
-            this.cbxAsegurado.Items.AddRange(new object[] {
-            "Si",
-            "No"});
-            this.cbxAsegurado.Location = new System.Drawing.Point(305, 104);
-            this.cbxAsegurado.Name = "cbxAsegurado";
-            this.cbxAsegurado.Size = new System.Drawing.Size(100, 21);
-            this.cbxAsegurado.TabIndex = 25;
-            this.cbxAsegurado.SelectedIndexChanged += new System.EventHandler(this.cbxAsegurado_SelectedIndexChanged);
             // 
             // cbxEstado
             // 
@@ -240,6 +105,141 @@
             this.cbxEstado.Name = "cbxEstado";
             this.cbxEstado.Size = new System.Drawing.Size(100, 21);
             this.cbxEstado.TabIndex = 26;
+            // 
+            // txtPrecio
+            // 
+            this.txtPrecio.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPrecio.Location = new System.Drawing.Point(305, 154);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(100, 20);
+            this.txtPrecio.TabIndex = 7;
+            this.txtPrecio.TextChanged += new System.EventHandler(this.txtPrecio_TextChanged);
+            // 
+            // txtObservaciones
+            // 
+            this.txtObservaciones.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtObservaciones.Location = new System.Drawing.Point(305, 254);
+            this.txtObservaciones.Multiline = true;
+            this.txtObservaciones.Name = "txtObservaciones";
+            this.txtObservaciones.Size = new System.Drawing.Size(100, 20);
+            this.txtObservaciones.TabIndex = 9;
+            // 
+            // cbxMoneda
+            // 
+            this.cbxMoneda.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbxMoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxMoneda.FormattingEnabled = true;
+            this.cbxMoneda.Location = new System.Drawing.Point(411, 153);
+            this.cbxMoneda.Name = "cbxMoneda";
+            this.cbxMoneda.Size = new System.Drawing.Size(38, 21);
+            this.cbxMoneda.TabIndex = 13;
+            // 
+            // cbxTipo
+            // 
+            this.cbxTipo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbxTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxTipo.FormattingEnabled = true;
+            this.cbxTipo.Items.AddRange(new object[] {
+            "Fotografia",
+            "Sonido",
+            "Informatica",
+            "Otros"});
+            this.cbxTipo.Location = new System.Drawing.Point(305, 204);
+            this.cbxTipo.Name = "cbxTipo";
+            this.cbxTipo.Size = new System.Drawing.Size(100, 21);
+            this.cbxTipo.TabIndex = 14;
+            this.cbxTipo.SelectedIndexChanged += new System.EventHandler(this.cbxTipo_SelectedIndexChanged);
+            // 
+            // lblAsegurado
+            // 
+            this.lblAsegurado.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblAsegurado.AutoSize = true;
+            this.lblAsegurado.Location = new System.Drawing.Point(241, 111);
+            this.lblAsegurado.Name = "lblAsegurado";
+            this.lblAsegurado.Size = new System.Drawing.Size(58, 13);
+            this.lblAsegurado.TabIndex = 19;
+            this.lblAsegurado.Text = "Asegurado";
+            // 
+            // lblPrecio
+            // 
+            this.lblPrecio.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblPrecio.AutoSize = true;
+            this.lblPrecio.Location = new System.Drawing.Point(262, 161);
+            this.lblPrecio.Name = "lblPrecio";
+            this.lblPrecio.Size = new System.Drawing.Size(37, 13);
+            this.lblPrecio.TabIndex = 20;
+            this.lblPrecio.Text = "Precio";
+            // 
+            // lblTipo
+            // 
+            this.lblTipo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTipo.AutoSize = true;
+            this.lblTipo.Location = new System.Drawing.Point(271, 212);
+            this.lblTipo.Name = "lblTipo";
+            this.lblTipo.Size = new System.Drawing.Size(28, 13);
+            this.lblTipo.TabIndex = 21;
+            this.lblTipo.Text = "Tipo";
+            // 
+            // lblObservaciones
+            // 
+            this.lblObservaciones.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblObservaciones.AutoSize = true;
+            this.lblObservaciones.Location = new System.Drawing.Point(227, 261);
+            this.lblObservaciones.Name = "lblObservaciones";
+            this.lblObservaciones.Size = new System.Drawing.Size(72, 13);
+            this.lblObservaciones.TabIndex = 22;
+            this.lblObservaciones.Text = "Observacioes";
+            // 
+            // cbxAsegurado
+            // 
+            this.cbxAsegurado.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbxAsegurado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxAsegurado.FormattingEnabled = true;
+            this.cbxAsegurado.Items.AddRange(new object[] {
+            "Si",
+            "No"});
+            this.cbxAsegurado.Location = new System.Drawing.Point(305, 104);
+            this.cbxAsegurado.Name = "cbxAsegurado";
+            this.cbxAsegurado.Size = new System.Drawing.Size(100, 21);
+            this.cbxAsegurado.TabIndex = 25;
+            this.cbxAsegurado.SelectedIndexChanged += new System.EventHandler(this.cbxAsegurado_SelectedIndexChanged);
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtNombre.Location = new System.Drawing.Point(100, 104);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.TabIndex = 1;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
+            // 
+            // txtNumeroSerie
+            // 
+            this.txtNumeroSerie.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtNumeroSerie.Location = new System.Drawing.Point(100, 154);
+            this.txtNumeroSerie.Name = "txtNumeroSerie";
+            this.txtNumeroSerie.Size = new System.Drawing.Size(100, 20);
+            this.txtNumeroSerie.TabIndex = 2;
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(54, 111);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.TabIndex = 15;
+            this.lblNombre.Text = "Nombre";
+            // 
+            // lblNumeroSerie
+            // 
+            this.lblNumeroSerie.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblNumeroSerie.AutoSize = true;
+            this.lblNumeroSerie.Location = new System.Drawing.Point(12, 161);
+            this.lblNumeroSerie.Name = "lblNumeroSerie";
+            this.lblNumeroSerie.Size = new System.Drawing.Size(86, 13);
+            this.lblNumeroSerie.TabIndex = 16;
+            this.lblNumeroSerie.Text = "Numero de Serie";
             // 
             // frmAltaEquipo
             // 
@@ -275,23 +275,23 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txtNumeroSerie;
         private System.Windows.Forms.Button btnAgregarEquipo;
-        private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Label lblNumeroSerie;
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Label lblFechaIgreso;
-        private System.Windows.Forms.Label lblAsegurado;
-        private System.Windows.Forms.Label lblTipo;
-        private System.Windows.Forms.ComboBox cbxTipo;
-        private System.Windows.Forms.TextBox txtPrecio;
-        private System.Windows.Forms.ComboBox cbxMoneda;
-        private System.Windows.Forms.Label lblPrecio;
-        private System.Windows.Forms.TextBox txtObservaciones;
-        private System.Windows.Forms.Label lblObservaciones;
-        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.DateTimePicker dtpFecha;
-        private System.Windows.Forms.ComboBox cbxAsegurado;
         private System.Windows.Forms.ComboBox cbxEstado;
+        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.TextBox txtObservaciones;
+        private System.Windows.Forms.ComboBox cbxMoneda;
+        private System.Windows.Forms.ComboBox cbxTipo;
+        private System.Windows.Forms.Label lblAsegurado;
+        private System.Windows.Forms.Label lblPrecio;
+        private System.Windows.Forms.Label lblTipo;
+        private System.Windows.Forms.Label lblObservaciones;
+        private System.Windows.Forms.ComboBox cbxAsegurado;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtNumeroSerie;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Label lblNumeroSerie;
     }
 }
