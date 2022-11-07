@@ -82,6 +82,12 @@
     <Compile Include="frmAltaRotura.Designer.cs">
       <DependentUpon>frmAltaRotura.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBajaEspacio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBajaEspacio.Designer.cs">
+      <DependentUpon>frmBajaEspacio.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBajaPrestamo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAltaRotura.resx">
       <DependentUpon>frmAltaRotura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBajaEspacio.resx">
+      <DependentUpon>frmBajaEspacio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBajaPrestamo.resx">
       <DependentUpon>frmBajaPrestamo.cs</DependentUpon>
