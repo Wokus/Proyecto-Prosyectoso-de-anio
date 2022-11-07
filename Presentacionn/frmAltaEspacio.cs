@@ -24,18 +24,19 @@ namespace Presentacionn
             if (txtNombre.Text != "" && txtNombre.Text.Length < 16 && mtxtNumero.Text != "")
             {
 
-            
-            eEspacio unE = new eEspacio();
-            unE.nombreEspacio = txtNombre.Text;
-            unE.numeroEspacio = Convert.ToInt32(mtxtNumero.Text);
-            dEspacio d = new dEspacio();
-            int token = d.altaEspacio(unE);
-            if (token == 0)
-            {
-                MessageBox.Show("Se agrego el espacio");
-            }else { MessageBox.Show("No se agrego el espacio"); }
 
-            }else { MessageBox.Show("Hay errores con los datos ingresados"); }
+                eEspacio unE = new eEspacio();
+                unE.nombreEspacio = txtNombre.Text;
+                unE.numeroEspacio = Convert.ToInt32(mtxtNumero.Text);
+                dEspacio d = new dEspacio();
+                //int token = d.altaEspacio(unE);
+                /*if (token == 0)
+                {
+                    MessageBox.Show("Se agrego el espacio");
+                }else { MessageBox.Show("No se agrego el espacio"); }
+
+                }else { MessageBox.Show("Hay errores con los datos ingresados"); }*/
+            }
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
