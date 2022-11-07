@@ -53,8 +53,7 @@ namespace Presentacionn
 
                     unEq.id = Convert.ToInt32(mtxtEquipo.Text);
                     unEq.rotu.descripcion = txtDescricion.Text;
-                    unEq.rotu.fecha = dtpFecha.Value.ToString("yyyy-MM-dd");
-                    unEq.rotu.idRotura = Convert.ToInt32(mtxtRotura.Text);
+                    unEq.rotu.idRotura = Convert.ToInt32(cbxIdRotura.Text);
 
 
                     dRotura dRo = new dRotura();
