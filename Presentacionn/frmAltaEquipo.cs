@@ -24,32 +24,53 @@ namespace Presentacionn
             MessageBox.Show(Convert.ToString(cbxTipo.SelectedIndex));
         }
 
-
+        private bool corroborarCampos()
+        {
+            bool token = true;
+            if (txtNombre.Text == "" || txtNumeroSerie.Text == "" || cbxAsegurado.SelectedIndex == -1 ||
+                cbxMoneda.SelectedIndex == -1 || cbxAsegurado.SelectedIndex == -1 || cbxTipo.SelectedIndex == -1 || txtPrecio.Text == "")
+            {
+                token = false;
+            }else if(txtNombre.Text.Length > 50 || txtPrecio.Text.Length > 9 || txtObservaciones.Text.Length > 100)
+            {
+                MessageBox.Show("Hay campos con mucho texto");
+            }
+            if (token == false)
+            {
+                MessageBox.Show("Hay campos vacios");
+            }
+            return token;
+        }
 
         private void btnAgregarEquipo_Click(object sender, EventArgs e)
         {
-            bool pija = true;
-            
-            eEquipo unE = new eEquipo();
-            unE.nombre = txtNombre.Text;
-            unE.numeroSerie = txtNumeroSerie.Text;
-            unE.estado = cbxEstado.Text;
-            unE.fechaIngreso = dtpFecha.Value.ToString("yyyy-MM-dd");
-            unE.asegurado = cbxAsegurado.Text;
-            unE.precio = txtPrecio.Text + cbxMoneda.Text;
-            unE.tipo = cbxTipo.Text;
-            unE.observacion = txtObservaciones.Text;
+            bool pija = true; // total mente fundamental para el programa 
+            bool token = corroborarCampos();
+            if (token == true)
+            {
+                try
+                {
+                    eEquipo unE = new eEquipo();
+                    unE.nombre = txtNombre.Text;
+                    unE.numeroSerie = txtNumeroSerie.Text;
+                    unE.estado = cbxEstado.Text;
+                    unE.fechaIngreso = dtpFecha.Value.ToString("yyyy-MM-dd");
+                    unE.asegurado = cbxAsegurado.Text;
+                    unE.precio = txtPrecio.Text + cbxMoneda.Text;
+                    unE.tipo = cbxTipo.Text;
+                    unE.observacion = txtObservaciones.Text;
 
-            dEquipo unDE = new dEquipo();
-            try
-            {
-            bool productoCreado = unDE.altaEquipo(unE);
-            if (productoCreado == true)
-            {
-                MessageBox.Show("Equipo agregado de manera exitosa");
-            }else { MessageBox.Show("Numero de serie repetido"); }
+                    dEquipo unDE = new dEquipo();
+
+                    bool productoCreado = unDE.altaEquipo(unE);
+                    if (productoCreado == true)
+                    {
+                        MessageBox.Show("Equipo agregado de manera exitosa");
+                    }
+                    else { MessageBox.Show("Numero de serie repetido"); }
+                }
+                catch (Exception error) { MessageBox.Show(error.Message); }
             }
-            catch (Exception error) { MessageBox.Show(error.Message); }
 
         }
 
