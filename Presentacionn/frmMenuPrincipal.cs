@@ -90,6 +90,13 @@ namespace Presentacionn
 
             }
 
+            if (cbxListados.SelectedIndex == 4)
+            {
+
+                rellenarPanel2(new frmListadoEspacio());
+
+            }
+
         }
         private void cbxAcciones_SelectedIndexChanged(object sender, EventArgs e)
         {
