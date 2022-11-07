@@ -143,7 +143,7 @@ namespace Persistencia
             return dt;
         }
 
-        public int modificacionPrestamo(ePrestamoEquipo unPRE, String IdPrestamo)
+        public int modificacionPrestamo(ePrestamoEquipo unPRE)
         {
             int token = 69;
             string consultaSQL;
