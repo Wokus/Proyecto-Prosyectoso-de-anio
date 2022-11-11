@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Entidades;
 using System.Data;
 using MySql.Data.MySqlClient;
-/*
+
 namespace Persistencia
 {
     public class pEspacio : clsPersistencia
@@ -20,6 +20,7 @@ namespace Persistencia
             DataTable dt = listarAlgo(consultaSQL);
 
             return dt;
+
         }
 
         public eEspacio bajaEspacio(string text)
@@ -42,13 +43,58 @@ namespace Persistencia
 
 
             }
+        }
 
-            public eEspacio recrearResponsable(MySqlDataReader fila)
-            {
+        public eEspacio recrearResponsable(MySqlDataReader fila)
+        {
             eEspacio unEspacio = new eEspacio();
-            unEspacio.numeroEspacio = fila.GetString()
+            unEspacio.numeroEspacio = fila.GetString();
+
+         }
+
+        public int altaEspacio(eEspacio unE, int troken)
+        {
+            bool token = queNoEsista(unE.numeroEspacio);
+
+            troken = 0;
+
+            if (token = false)
+            {
+                string consultaSQL = "INSERT INTO espacio VALUES('" + unE.numeroEspacio + "', '" + unE.nombreEspacio + "');";
+
+                ejecutarSQL(consultaSQL);
+
+            }else
+            {
+
+                troken = 1;
 
             }
+          
+
+            return troken;
+        }
+
+        public bool queNoEsista(int numeroEspacio)
+        {
+
+            bool token = false;
+
+            string consultaSQL = "SELECT * FROM `espacio` WHERE `nro` = '" + numeroEspacio + "';";
+            MySqlDataReader fila = ejecutarYdevolver(consultaSQL);
+            if (fila.Read())
+            {
+
+                token = true;
+
+            }
+            else
+            {
+
+            }
+
+            return token;
+
+        }
     }
 }
-*/

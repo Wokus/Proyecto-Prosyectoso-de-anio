@@ -51,10 +51,6 @@ namespace Persistencia
                 consultaSQL = "INSERT INTO profesorPrestamo VALUES ('" + unPRE.profeResponsable.ci + "'," + id + ");";
                 ejecutarSQL(consultaSQL);
 
-
-               
-
-
             }
             return token;
         }

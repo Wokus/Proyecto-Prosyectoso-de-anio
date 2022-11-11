@@ -26,5 +26,16 @@ namespace Dominio
             pEspacio unDE = new pEspacio();
             return unDE.bajaEspacio(text);
         }
+
+        public int altaEspacio(eEspacio unE)
+        {
+
+            pEspacio unPE = new pEspacio();
+
+            bool corroborarExistencia = unPE.altaEspacio(unPE);
+
+            return corroborarExistencia;
+
+        }
     }
 }
