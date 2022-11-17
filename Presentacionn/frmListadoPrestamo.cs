@@ -405,19 +405,19 @@ namespace Presentacionn
 
                 }
 
-                if (cbxPrioridadEspacio.Text == "De menor a mayor")
+                if (cbxPrioridadEspontaneo.Text == "De menor a mayor")
                 {
 
                     prioridad = "ASC";
                     dPrestamoExpontaneo unDPP = new dPrestamoExpontaneo();
-                    dgvListadoEquipo.DataSource = unDPP.listarPrestamoPorPrioridadE(prioridad, tuHermana);
+                    dgvListadoEquipo.DataSource = unDPP.listarPrestamoPorPrioridadE(tuHermana, prioridad);
                 }
-                if (cbxPrioridadEspacio.Text == "De mayor a menor")
+                if (cbxPrioridadEspontaneo.Text == "De mayor a menor")
                 {
 
                     prioridad = "DESC";
                     dPrestamoExpontaneo unDPP = new dPrestamoExpontaneo();
-                    dgvListadoEquipo.DataSource = unDPP.listarPrestamoPorPrioridadE(prioridad, tuHermana);
+                    dgvListadoEquipo.DataSource = unDPP.listarPrestamoPorPrioridadE(tuHermana, prioridad);
 
                 }
 
@@ -491,19 +491,19 @@ namespace Presentacionn
 
                 }
 
-                if (cbxPrioridadEspacio.Text == "De menor a mayor")
+                if (cbxPrioridadEquipo.Text == "De menor a mayor")
                 {
 
                     prioridad = "ASC";
                     dPrestamoEquipo unDPP = new dPrestamoEquipo();
-                    dgvListadoEquipo.DataSource = unDPP.listarPrestamoPorPrioridadE(prioridad, tuHermana);
+                    dgvListadoEquipo.DataSource = unDPP.listarPrestamoPorPrioridadE(tuHermana, prioridad);
                 }
-                if (cbxPrioridadEspacio.Text == "De mayor a menor")
+                if (cbxPrioridadEquipo.Text == "De mayor a menor")
                 {
 
                     prioridad = "DESC";
                     dPrestamoEquipo unDPP = new dPrestamoEquipo();
-                    dgvListadoEquipo.DataSource = unDPP.listarPrestamoPorPrioridadE(prioridad, tuHermana);
+                    dgvListadoEquipo.DataSource = unDPP.listarPrestamoPorPrioridadE(tuHermana, prioridad);
 
                 }
 
@@ -583,14 +583,14 @@ namespace Presentacionn
 
                     prioridad = "ASC";
                     dPrestamo unDPP = new dPrestamo();
-                    dgvListadoEquipo.DataSource = unDPP.listarPrestamoPorPrioridadE(prioridad, tuHermana);
+                    dgvListadoEquipo.DataSource = unDPP.listarPrestamoPorPrioridadE(tuHermana, prioridad);
                 }
-                if (cbxPrioridadEspacio.Text == "De mayor a menor")
+                if (cbxPrioridad.Text == "De mayor a menor")
                 {
 
                     prioridad = "DESC";
                     dPrestamo unDPP = new dPrestamo();
-                    dgvListadoEquipo.DataSource = unDPP.listarPrestamoPorPrioridadE(prioridad, tuHermana);
+                    dgvListadoEquipo.DataSource = unDPP.listarPrestamoPorPrioridadE(tuHermana, prioridad);
 
                 }
 
@@ -1056,7 +1056,7 @@ namespace Presentacionn
                     if (cbxEstadoEquipo.SelectedIndex == 0)
                     {
 
-                        tuHermana = cbxEstado.Text;
+                        tuHermana = cbxEstadoEquipo.Text;
                         dPrestamoEquipo unPEE = new dPrestamoEquipo();
                         dgvListadoEquipo.DataSource = unPEE.listarPrestamoPorPrioridadE(tuHermana, prioridad);
 
@@ -1064,7 +1064,7 @@ namespace Presentacionn
 
                     if (cbxEstadoEquipo.SelectedIndex == 1)
                     {
-                        tuHermana = cbxEstado.Text;
+                        tuHermana = cbxEstadoEquipo.Text;
                         dPrestamoEquipo unPEE = new dPrestamoEquipo();
                         dgvListadoEquipo.DataSource = unPEE.listarPrestamoPorPrioridadE(tuHermana, prioridad);
 
@@ -1072,7 +1072,7 @@ namespace Presentacionn
 
                     if (cbxEstadoEquipo.SelectedIndex == 2)
                     {
-                        tuHermana = cbxEstado.Text;
+                        tuHermana = cbxEstadoEquipo.Text;
                         dPrestamoEquipo unPEE = new dPrestamoEquipo();
                         dgvListadoEquipo.DataSource = unPEE.listarPrestamoPorPrioridadE(tuHermana, prioridad);
 
@@ -1080,7 +1080,7 @@ namespace Presentacionn
 
                     if (cbxEstadoEquipo.SelectedIndex == 3)
                     {
-                        tuHermana = cbxEstado.Text;
+                        tuHermana = cbxEstadoEquipo.Text;
                         dPrestamoEquipo unPEE = new dPrestamoEquipo();
                         dgvListadoEquipo.DataSource = unPEE.listarPrestamoPorPrioridadE(tuHermana, prioridad);
 
@@ -1088,7 +1088,7 @@ namespace Presentacionn
 
                     if (cbxEstadoEquipo.SelectedIndex == 4)
                     {
-                        tuHermana = cbxEstado.Text;
+                        tuHermana = cbxEstadoEquipo.Text;
                         dPrestamoEquipo unPEE = new dPrestamoEquipo();
                         dgvListadoEquipo.DataSource = unPEE.listarPrestamoPorPrioridadE(tuHermana, prioridad);
 
@@ -1105,7 +1105,7 @@ namespace Presentacionn
                     if (cbxEstadoEquipo.SelectedIndex == 0)
                     {
 
-                        tuHermana = cbxEstado.Text;
+                        tuHermana = cbxEstadoEquipo.Text;
                         dPrestamoEquipo unPEE = new dPrestamoEquipo();
                         dgvListadoEquipo.DataSource = unPEE.listarPrestamoPorPrioridadE(tuHermana, prioridad);
 
@@ -1113,7 +1113,7 @@ namespace Presentacionn
 
                     if (cbxEstadoEquipo.SelectedIndex == 1)
                     {
-                        tuHermana = cbxEstado.Text;
+                        tuHermana = cbxEstadoEquipo.Text;
                         dPrestamoEquipo unPEE = new dPrestamoEquipo();
                         dgvListadoEquipo.DataSource = unPEE.listarPrestamoPorPrioridadE(tuHermana, prioridad);
 
@@ -1121,7 +1121,7 @@ namespace Presentacionn
 
                     if (cbxEstadoEquipo.SelectedIndex == 2)
                     {
-                        tuHermana = cbxEstado.Text;
+                        tuHermana = cbxEstadoEquipo.Text;
                         dPrestamoEquipo unPEE = new dPrestamoEquipo();
                         dgvListadoEquipo.DataSource = unPEE.listarPrestamoPorPrioridadE(tuHermana, prioridad);
 
@@ -1129,7 +1129,7 @@ namespace Presentacionn
 
                     if (cbxEstadoEquipo.SelectedIndex == 3)
                     {
-                        tuHermana = cbxEstado.Text;
+                        tuHermana = cbxEstadoEquipo.Text;
                         dPrestamoEquipo unPEE = new dPrestamoEquipo();
                         dgvListadoEquipo.DataSource = unPEE.listarPrestamoPorPrioridadE(tuHermana, prioridad);
 
@@ -1137,7 +1137,7 @@ namespace Presentacionn
 
                     if (cbxEstadoEquipo.SelectedIndex == 4)
                     {
-                        tuHermana = cbxEstado.Text;
+                        tuHermana = cbxEstadoEquipo.Text;
                         dPrestamoEquipo unPEE = new dPrestamoEquipo();
                         dgvListadoEquipo.DataSource = unPEE.listarPrestamoPorPrioridadE(tuHermana, prioridad);
 
@@ -1167,7 +1167,7 @@ namespace Presentacionn
                     if (cbxEstadoEspontaneo.SelectedIndex == 0)
                     {
 
-                        tuHermana = cbxEstado.Text;
+                        tuHermana = cbxEstadoEspontaneo.Text;
                         dPrestamoExpontaneo unPEE = new dPrestamoExpontaneo();
                         dgvListadoEquipo.DataSource = unPEE.listarPrestamoPorPrioridadE(tuHermana, prioridad);
 
@@ -1175,7 +1175,7 @@ namespace Presentacionn
 
                     if (cbxEstadoEspontaneo.SelectedIndex == 1)
                     {
-                        tuHermana = cbxEstado.Text;
+                        tuHermana = cbxEstadoEspontaneo.Text;
                         dPrestamoExpontaneo unPEE = new dPrestamoExpontaneo();
                         dgvListadoEquipo.DataSource = unPEE.listarPrestamoPorPrioridadE(tuHermana, prioridad);
 
@@ -1183,7 +1183,7 @@ namespace Presentacionn
 
                     if (cbxEstadoEspontaneo.SelectedIndex == 2)
                     {
-                        tuHermana = cbxEstado.Text;
+                        tuHermana = cbxEstadoEspontaneo.Text;
                         dPrestamoExpontaneo unPEE = new dPrestamoExpontaneo();
                         dgvListadoEquipo.DataSource = unPEE.listarPrestamoPorPrioridadE(tuHermana, prioridad);
 
@@ -1191,7 +1191,7 @@ namespace Presentacionn
 
                     if (cbxEstadoEspontaneo.SelectedIndex == 3)
                     {
-                        tuHermana = cbxEstado.Text;
+                        tuHermana = cbxEstadoEspontaneo.Text;
                         dPrestamoExpontaneo unPEE = new dPrestamoExpontaneo();
                         dgvListadoEquipo.DataSource = unPEE.listarPrestamoPorPrioridadE(tuHermana, prioridad);
 
@@ -1199,7 +1199,7 @@ namespace Presentacionn
 
                     if (cbxEstadoEspontaneo.SelectedIndex == 4)
                     {
-                        tuHermana = cbxEstado.Text;
+                        tuHermana = cbxEstadoEspontaneo.Text;
                         dPrestamoExpontaneo unPEE = new dPrestamoExpontaneo();
                         dgvListadoEquipo.DataSource = unPEE.listarPrestamoPorPrioridadE(tuHermana, prioridad);
 
@@ -1216,7 +1216,7 @@ namespace Presentacionn
                     if (cbxEstadoEspontaneo.SelectedIndex == 0)
                     {
 
-                        tuHermana = cbxEstado.Text;
+                        tuHermana = cbxEstadoEspontaneo.Text;
                         dPrestamoExpontaneo unPEE = new dPrestamoExpontaneo();
                         dgvListadoEquipo.DataSource = unPEE.listarPrestamoPorPrioridadE(tuHermana, prioridad);
 
@@ -1224,7 +1224,7 @@ namespace Presentacionn
 
                     if (cbxEstadoEspontaneo.SelectedIndex == 1)
                     {
-                        tuHermana = cbxEstado.Text;
+                        tuHermana = cbxEstadoEspontaneo.Text;
                         dPrestamoExpontaneo unPEE = new dPrestamoExpontaneo();
                         dgvListadoEquipo.DataSource = unPEE.listarPrestamoPorPrioridadE(tuHermana, prioridad);
 
@@ -1232,7 +1232,7 @@ namespace Presentacionn
 
                     if (cbxEstadoEspontaneo.SelectedIndex == 2)
                     {
-                        tuHermana = cbxEstado.Text;
+                        tuHermana = cbxEstadoEspontaneo.Text;
                         dPrestamoExpontaneo unPEE = new dPrestamoExpontaneo();
                         dgvListadoEquipo.DataSource = unPEE.listarPrestamoPorPrioridadE(tuHermana, prioridad);
 
@@ -1240,7 +1240,7 @@ namespace Presentacionn
 
                     if (cbxEstadoEspontaneo.SelectedIndex == 3)
                     {
-                        tuHermana = cbxEstado.Text;
+                        tuHermana = cbxEstadoEspontaneo.Text;
                         dPrestamoExpontaneo unPEE = new dPrestamoExpontaneo();
                         dgvListadoEquipo.DataSource = unPEE.listarPrestamoPorPrioridadE(tuHermana, prioridad);
 
@@ -1248,7 +1248,7 @@ namespace Presentacionn
 
                     if (cbxEstadoEspontaneo.SelectedIndex == 4)
                     {
-                        tuHermana = cbxEstado.Text;
+                        tuHermana = cbxEstadoEspontaneo.Text;
                         dPrestamoExpontaneo unPEE = new dPrestamoExpontaneo();
                         dgvListadoEquipo.DataSource = unPEE.listarPrestamoPorPrioridadE(tuHermana, prioridad);
 
@@ -1279,7 +1279,7 @@ namespace Presentacionn
                     if (cbxEstadoEspacio.SelectedIndex == 0)
                     {
 
-                        tuHermana = cbxEstado.Text;
+                        tuHermana = cbxEstadoEspacio.Text;
                         dPrestamoEspacio unPEE = new dPrestamoEspacio();
                         dgvListadoEquipo.DataSource = unPEE.listarPrestamoPorPrioridadE(tuHermana, prioridad);
 
@@ -1287,7 +1287,7 @@ namespace Presentacionn
 
                     if (cbxEstadoEspacio.SelectedIndex == 1)
                     {
-                        tuHermana = cbxEstado.Text;
+                        tuHermana = cbxEstadoEspacio.Text;
                         dPrestamoEspacio unPEE = new dPrestamoEspacio();
                         dgvListadoEquipo.DataSource = unPEE.listarPrestamoPorPrioridadE(tuHermana, prioridad);
 
@@ -1295,7 +1295,7 @@ namespace Presentacionn
 
                     if (cbxEstadoEspacio.SelectedIndex == 2)
                     {
-                        tuHermana = cbxEstado.Text;
+                        tuHermana = cbxEstadoEspacio.Text;
                         dPrestamoEspacio unPEE = new dPrestamoEspacio();
                         dgvListadoEquipo.DataSource = unPEE.listarPrestamoPorPrioridadE(tuHermana, prioridad);
 
@@ -1303,7 +1303,7 @@ namespace Presentacionn
 
                     if (cbxEstadoEspacio.SelectedIndex == 3)
                     {
-                        tuHermana = cbxEstado.Text;
+                        tuHermana = cbxEstadoEspacio.Text;
                         dPrestamoEspacio unPEE = new dPrestamoEspacio();
                         dgvListadoEquipo.DataSource = unPEE.listarPrestamoPorPrioridadE(tuHermana, prioridad);
 
@@ -1311,7 +1311,7 @@ namespace Presentacionn
 
                     if (cbxEstadoEspacio.SelectedIndex == 4)
                     {
-                        tuHermana = cbxEstado.Text;
+                        tuHermana = cbxEstadoEspacio.Text;
                         dPrestamoEspacio unPEE = new dPrestamoEspacio();
                         dgvListadoEquipo.DataSource = unPEE.listarPrestamoPorPrioridadE(tuHermana, prioridad);
 
@@ -1328,7 +1328,7 @@ namespace Presentacionn
                     if (cbxEstadoEspacio.SelectedIndex == 0)
                     {
 
-                        tuHermana = cbxEstado.Text;
+                        tuHermana = cbxEstadoEspacio.Text;
                         dPrestamoEspacio unPEE = new dPrestamoEspacio();
                         dgvListadoEquipo.DataSource = unPEE.listarPrestamoPorPrioridadE(tuHermana, prioridad);
 
@@ -1336,7 +1336,7 @@ namespace Presentacionn
 
                     if (cbxEstadoEspacio.SelectedIndex == 1)
                     {
-                        tuHermana = cbxEstado.Text;
+                        tuHermana = cbxEstadoEspacio.Text;
                         dPrestamoEspacio unPEE = new dPrestamoEspacio();
                         dgvListadoEquipo.DataSource = unPEE.listarPrestamoPorPrioridadE(tuHermana, prioridad);
 
@@ -1344,7 +1344,7 @@ namespace Presentacionn
 
                     if (cbxEstadoEspacio.SelectedIndex == 2)
                     {
-                        tuHermana = cbxEstado.Text;
+                        tuHermana = cbxEstadoEspacio.Text;
                         dPrestamoEspacio unPEE = new dPrestamoEspacio();
                         dgvListadoEquipo.DataSource = unPEE.listarPrestamoPorPrioridadE(tuHermana, prioridad);
 
@@ -1352,7 +1352,7 @@ namespace Presentacionn
 
                     if (cbxEstadoEspacio.SelectedIndex == 3)
                     {
-                        tuHermana = cbxEstado.Text;
+                        tuHermana = cbxEstadoEspacio.Text;
                         dPrestamoEspacio unPEE = new dPrestamoEspacio();
                         dgvListadoEquipo.DataSource = unPEE.listarPrestamoPorPrioridadE(tuHermana, prioridad);
 
@@ -1360,7 +1360,7 @@ namespace Presentacionn
 
                     if (cbxEstadoEspacio.SelectedIndex == 4)
                     {
-                        tuHermana = cbxEstado.Text;
+                        tuHermana = cbxEstadoEspacio.Text;
                         dPrestamoEspacio unPEE = new dPrestamoEspacio();
                         dgvListadoEquipo.DataSource = unPEE.listarPrestamoPorPrioridadE(tuHermana, prioridad);
 
