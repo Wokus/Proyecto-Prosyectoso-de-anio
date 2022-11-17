@@ -23,7 +23,7 @@ namespace Persistencia
 
         }
 
-        public eEspacio bajaEspacio(string text)
+        /*public eEspacio bajaEspacio(string text)
         {
             eEspacio elAdmin = new eEspacio();
             elAdmin = null;
@@ -95,6 +95,6 @@ namespace Persistencia
 
             return token;
 
-        }
+        }*/
     }
 }

@@ -118,7 +118,7 @@ namespace Persistencia
             return dt;
         }
 
-        public DataTable listarPrestamoPorPrioridadE(string prioridad, string tuHermana)
+        public DataTable listarPrestamoPorPrioridadE(string tuHermana, string prioridad)
         {
 
             string consultaSQL = "SELECT prestamo.id, realiza.ci_Solicitante AS Solicitante, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, prestamo.ejercicio, obtieneEspaciosPrestamoDeEspacio.nro_Espacio FROM prestamo INNER JOIN realiza ON prestamo.id = realiza.id_Prestamo INNER JOIN prestamoDeEspacio ON prestamo.id=prestamoDeEspacio.id_Prestamo INNER JOIN obtieneEspaciosPrestamoDeEspacio ON prestamoDeEspacio.id_Prestamo=obtieneEspaciosPrestamoDeEspacio.id_PrestamoDeEspacio WHERE estado = '" + tuHermana + "' ORDER BY prestamo.prioridad " + prioridad + " ;";

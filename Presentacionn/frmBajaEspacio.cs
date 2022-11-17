@@ -26,7 +26,7 @@ namespace Presentacionn
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dEspacio unES = new dEspacio();
+            /*dEspacio unES = new dEspacio();
             eEspacio elAdmin = unES.bajaEspacio(txtBajaEspacio.Text);
             if (elAdmin == null)
             {
@@ -35,7 +35,7 @@ namespace Presentacionn
             else
             {
                 MessageBox.Show("El espacio fue eliminado");
-            }
+            }*/
         }
     }
 }

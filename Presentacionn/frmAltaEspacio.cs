@@ -21,7 +21,7 @@ namespace Presentacionn
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (txtNombre.Text != "" && txtNombre.Text.Length < 16 && mtxtNumero.Text != "")
+            /*if (txtNombre.Text != "" && txtNombre.Text.Length < 16 && mtxtNumero.Text != "")
             {
 
                 eEspacio unE = new eEspacio();
@@ -48,7 +48,7 @@ namespace Presentacionn
 
                 MessageBox.Show("Hay errores con los datos ingresados");
 
-            }
+            }*/
         }
     }
 }

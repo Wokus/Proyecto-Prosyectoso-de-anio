@@ -20,109 +20,110 @@ namespace Presentacionn
         }
 
         string tuHermana;
-        string prioridad;    
+        string prioridad;
 
         private void cbxListadosPrestamos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {           
-            if (cbxTipo.SelectedIndex == 0)
-            {
+            try {
+                if (cbxTipo.SelectedIndex == 0)
+                {
 
-                dPrestamo unDP = new dPrestamo();
-                dgvListadoEquipo.DataSource = unDP.listarPrestamo();
+                    dPrestamo unDP = new dPrestamo();
+                    dgvListadoEquipo.DataSource = unDP.listarPrestamo();
 
-            cbxFecha.Visible = true;
-            cbxFechaEquipo.Visible = false;
-            cbxFechaEspacio.Visible = false;
-            cbxFechaEspontaneo.Visible = false;
+                    cbxFecha.Visible = true;
+                    cbxFechaEquipo.Visible = false;
+                    cbxFechaEspacio.Visible = false;
+                    cbxFechaEspontaneo.Visible = false;
 
-            cbxEstado.Visible = true;
-            cbxEstadoEquipo.Visible = false;
-            cbxEstadoEspacio.Visible = false;
-            cbxEstadoEspontaneo.Visible = false;
+                    cbxEstado.Visible = true;
+                    cbxEstadoEquipo.Visible = false;
+                    cbxEstadoEspacio.Visible = false;
+                    cbxEstadoEspontaneo.Visible = false;
 
-            cbxPrioridad.Visible = true;
-            cbxPrioridadEquipo.Visible = false;
-            cbxPrioridadEspacio.Visible = false;
-            cbxPrioridadEspontaneo.Visible = false;
-
-                }
-
-            if (cbxTipo.SelectedIndex == 1)
-            {
-
-                dPrestamoEquipo unDP = new dPrestamoEquipo();
-                dgvListadoEquipo.DataSource = unDP.listarPrestamoDeEquipo();
-
-                cbxFecha.Visible = false;
-                cbxFechaEquipo.Visible = true;
-                cbxFechaEspacio.Visible = false;
-                cbxFechaEspontaneo.Visible = false;
-
-                cbxEstado.Visible = false;
-                cbxEstadoEquipo.Visible = true;
-                cbxEstadoEspacio.Visible = false;
-                cbxEstadoEspontaneo.Visible = false;
-
-                cbxPrioridad.Visible = false;
-                cbxPrioridadEquipo.Visible = true;
-                cbxPrioridadEspacio.Visible = false;
-                cbxPrioridadEspontaneo.Visible = false;
+                    cbxPrioridad.Visible = true;
+                    cbxPrioridadEquipo.Visible = false;
+                    cbxPrioridadEspacio.Visible = false;
+                    cbxPrioridadEspontaneo.Visible = false;
 
                 }
 
-            if (cbxTipo.SelectedIndex == 3)
-            {
+                if (cbxTipo.SelectedIndex == 1)
+                {
 
-                dPrestamoEspacio unDP = new dPrestamoEspacio();
-                dgvListadoEquipo.DataSource = unDP.listarPrestamoDeEspacio();
+                    dPrestamoEquipo unDP = new dPrestamoEquipo();
+                    dgvListadoEquipo.DataSource = unDP.listarPrestamoDeEquipo();
 
-                cbxFecha.Visible = false;
-                cbxFechaEquipo.Visible = false;
-                cbxFechaEspacio.Visible = true;
-                cbxFechaEspontaneo.Visible = false;
+                    cbxFecha.Visible = false;
+                    cbxFechaEquipo.Visible = true;
+                    cbxFechaEspacio.Visible = false;
+                    cbxFechaEspontaneo.Visible = false;
 
-                cbxEstado.Visible = false;
-                cbxEstadoEquipo.Visible = false;
-                cbxEstadoEspacio.Visible = true;
-                cbxEstadoEspontaneo.Visible = false;
+                    cbxEstado.Visible = false;
+                    cbxEstadoEquipo.Visible = true;
+                    cbxEstadoEspacio.Visible = false;
+                    cbxEstadoEspontaneo.Visible = false;
 
-                cbxPrioridad.Visible = false;
-                cbxPrioridadEquipo.Visible = false;
-                cbxPrioridadEspacio.Visible = true;
-                cbxPrioridadEspontaneo.Visible = false;
+                    cbxPrioridad.Visible = false;
+                    cbxPrioridadEquipo.Visible = true;
+                    cbxPrioridadEspacio.Visible = false;
+                    cbxPrioridadEspontaneo.Visible = false;
+
+                }
+
+                if (cbxTipo.SelectedIndex == 3)
+                {
+
+                    dPrestamoEspacio unDP = new dPrestamoEspacio();
+                    dgvListadoEquipo.DataSource = unDP.listarPrestamoDeEspacio();
+
+                    cbxFecha.Visible = false;
+                    cbxFechaEquipo.Visible = false;
+                    cbxFechaEspacio.Visible = true;
+                    cbxFechaEspontaneo.Visible = false;
+
+                    cbxEstado.Visible = false;
+                    cbxEstadoEquipo.Visible = false;
+                    cbxEstadoEspacio.Visible = true;
+                    cbxEstadoEspontaneo.Visible = false;
+
+                    cbxPrioridad.Visible = false;
+                    cbxPrioridadEquipo.Visible = false;
+                    cbxPrioridadEspacio.Visible = true;
+                    cbxPrioridadEspontaneo.Visible = false;
 
                 }
 
-            if (cbxTipo.SelectedIndex == 2)
-            {
+                if (cbxTipo.SelectedIndex == 2)
+                {
 
-                dPrestamoExpontaneo unDP = new dPrestamoExpontaneo();
-                dgvListadoEquipo.DataSource = unDP.listarPrestamoEspontaneo();
+                    dPrestamoExpontaneo unDP = new dPrestamoExpontaneo();
+                    dgvListadoEquipo.DataSource = unDP.listarPrestamoEspontaneo();
 
-                cbxFecha.Visible = false;
-                cbxFechaEquipo.Visible = false;
-                cbxFechaEspacio.Visible = false;
-                cbxFechaEspontaneo.Visible = true;
+                    cbxFecha.Visible = false;
+                    cbxFechaEquipo.Visible = false;
+                    cbxFechaEspacio.Visible = false;
+                    cbxFechaEspontaneo.Visible = true;
 
-                cbxEstado.Visible = false;
-                cbxEstadoEquipo.Visible = false;
-                cbxEstadoEspacio.Visible = false;
-                cbxEstadoEspontaneo.Visible = true;
+                    cbxEstado.Visible = false;
+                    cbxEstadoEquipo.Visible = false;
+                    cbxEstadoEspacio.Visible = false;
+                    cbxEstadoEspontaneo.Visible = true;
 
-                cbxPrioridad.Visible = false;
-                cbxPrioridadEquipo.Visible = false;
-                cbxPrioridadEspacio.Visible = false;
-                cbxPrioridadEspontaneo.Visible = true;
+                    cbxPrioridad.Visible = false;
+                    cbxPrioridadEquipo.Visible = false;
+                    cbxPrioridadEspacio.Visible = false;
+                    cbxPrioridadEspontaneo.Visible = true;
 
                 }
-            }
-            catch (Exception error)
+            } catch (Exception error)
             {
+
                 MessageBox.Show(error.Message);
+
             }
-        }
+            }
+            
 
         private void frmListadoPrestamo_Load(object sender, EventArgs e)
         {
@@ -250,13 +251,13 @@ namespace Presentacionn
 
             }
             catch (Exception error)
-            {
+            { 
 
-                MessageBox.Show(error.Message);
+               MessageBox.Show(error.Message);
 
             }
         }
-        //o funcionas o te mato
+
         private void cbxEstadoEspacio_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -323,19 +324,19 @@ namespace Presentacionn
 
                     prioridad = "ASC";
                     dPrestamoEspacio unDPP = new dPrestamoEspacio();
-                    dgvListadoEquipo.DataSource = unDPP.listarPrestamoPorPrioridadE(prioridad, tuHermana);
+                    dgvListadoEquipo.DataSource = unDPP.listarPrestamoPorPrioridadE(tuHermana, prioridad);
                 }
                 if (cbxPrioridadEspacio.Text == "De mayor a menor")
                 {
 
                     prioridad = "DESC";
                     dPrestamoEspacio unDPP = new dPrestamoEspacio();
-                    dgvListadoEquipo.DataSource = unDPP.listarPrestamoPorPrioridadE(prioridad, tuHermana);
+                    dgvListadoEquipo.DataSource = unDPP.listarPrestamoPorPrioridadE(tuHermana, prioridad);
 
                 }
 
-                }
-            catch (Exception error)
+            }
+           catch (Exception error)
             {
 
                 MessageBox.Show(error.Message);
@@ -597,7 +598,7 @@ namespace Presentacionn
             catch (Exception error)
             {
 
-                MessageBox.Show(error.Message);
+               MessageBox.Show(error.Message);
 
             }
         }
@@ -1030,7 +1031,7 @@ namespace Presentacionn
 
                     }
                 }
-                              
+
             }
             catch (Exception error)
             {
@@ -1254,7 +1255,7 @@ namespace Presentacionn
                     }
                 }
             }
-            catch(Exception error)
+            catch (Exception error)
             {
 
                 MessageBox.Show(error.Message);
@@ -1375,5 +1376,5 @@ namespace Presentacionn
 
         }
     }
-        
 }
+        
