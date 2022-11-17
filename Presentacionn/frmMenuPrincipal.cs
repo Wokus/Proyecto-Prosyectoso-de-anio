@@ -93,7 +93,7 @@ namespace Presentacionn
             if (cbxListados.SelectedIndex == 4)
             {
 
-                //rellenarPanel2(new frmListadoEspacio());
+                rellenarPanel2(new frmListadoEspacio());
 
             }
 
