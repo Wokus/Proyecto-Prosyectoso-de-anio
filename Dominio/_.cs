@@ -87,26 +87,9 @@ namespace Dominio
 
             pPrestamoEspontaneo unPPFE = new pPrestamoEspontaneo();
 
-            return unPPFE.listarPrestamoEspontaneoPorFechaARE(tuHermana);
+            return unPPFE.listarPrestamoEspontaneoPorFechaRAE(tuHermana);
 
         }
 
-        public DataTable listarPrestamoPorPrioridad(string prioridad)
-        {
-
-            pPrestamoEspontaneo unPPP = new pPrestamoEspontaneo();
-
-            return unPPP.listarPrestamoPorPrioridad(prioridad);
-
-        }
-
-        public DataTable listarPrestamoPorPrioridadE(string prioridad, string tuHermana)
-        {
-
-            pPrestamoEspontaneo unPPPE = new pPrestamoEspontaneo();
-
-            return unPPPE.listarPrestamoPorPrioridadE(prioridad, tuHermana);
-
-        }
     }
 }
