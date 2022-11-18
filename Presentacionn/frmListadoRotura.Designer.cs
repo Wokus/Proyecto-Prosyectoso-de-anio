@@ -35,9 +35,9 @@
             // dgvListadoRotura
             // 
             this.dgvListadoRotura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListadoRotura.Location = new System.Drawing.Point(12, 39);
+            this.dgvListadoRotura.Location = new System.Drawing.Point(10, 12);
             this.dgvListadoRotura.Name = "dgvListadoRotura";
-            this.dgvListadoRotura.Size = new System.Drawing.Size(474, 457);
+            this.dgvListadoRotura.Size = new System.Drawing.Size(474, 484);
             this.dgvListadoRotura.TabIndex = 3;
             // 
             // frmListadoRotura

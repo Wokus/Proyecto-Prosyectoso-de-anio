@@ -36,6 +36,9 @@
             // 
             // dgvEquipo
             // 
+            this.dgvEquipo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvEquipo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEquipo.Location = new System.Drawing.Point(12, 38);
             this.dgvEquipo.Name = "dgvEquipo";
@@ -44,6 +47,7 @@
             // 
             // cbxTipo
             // 
+            this.cbxTipo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbxTipo.FormattingEnabled = true;
             this.cbxTipo.Items.AddRange(new object[] {
             "Todos los equipos",
@@ -59,6 +63,7 @@
             // 
             // cbxEstado
             // 
+            this.cbxEstado.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbxEstado.FormattingEnabled = true;
             this.cbxEstado.Items.AddRange(new object[] {
             "Disponible",

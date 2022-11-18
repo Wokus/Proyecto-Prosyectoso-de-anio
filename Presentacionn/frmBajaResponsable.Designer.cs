@@ -48,6 +48,7 @@
             // 
             // txtEliminarRes
             // 
+            this.txtEliminarRes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtEliminarRes.Location = new System.Drawing.Point(214, 154);
             this.txtEliminarRes.Name = "txtEliminarRes";
             this.txtEliminarRes.Size = new System.Drawing.Size(100, 20);
@@ -55,6 +56,7 @@
             // 
             // lblCi
             // 
+            this.lblCi.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCi.AutoSize = true;
             this.lblCi.Location = new System.Drawing.Point(91, 157);
             this.lblCi.Name = "lblCi";

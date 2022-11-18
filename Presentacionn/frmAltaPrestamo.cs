@@ -145,7 +145,6 @@ namespace Presentacionn
             }
             return token;
         }
-
         private void btnAgregarPrestamo_Click(object sender, EventArgs e)
         {
             ePrestamoEquipo unPRE = new ePrestamoEquipo();
@@ -220,7 +219,7 @@ namespace Presentacionn
                         eEspacio unEs = new eEspacio();
                         alumno.ci = mtxtAlumno.Text;
                         profe.ci = mtxtProfesor.Text;
-                        unEs.numeroEspacio = Int32.Parse(mtxtIDSalon.Text);
+                        unEs.numeroEspacio = mtxtIDSalon.Text;
                         unPRES.unEs = unEs;
                         unPRES.alumnoResponsable = alumno;
                         unPRES.profeResponsable = profe;
@@ -381,11 +380,6 @@ namespace Presentacionn
 
 
             }
-
-
-
-
-
         }
 
         private void frmAltaPrestamo_Load(object sender, EventArgs e)

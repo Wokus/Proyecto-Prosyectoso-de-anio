@@ -53,7 +53,7 @@ namespace Presentacionn
 
                     unEq.id = Convert.ToInt32(mtxtEquipo.Text);
                     unEq.rotu.descripcion = txtDescricion.Text;
-                    unEq.rotu.idRotura = Convert.ToInt32(cbxIdRotura.Text);
+                    unEq.rotu.idRotura = Convert.ToInt32(mtxtRotura.Text);
 
 
                     dRotura dRo = new dRotura();
@@ -75,6 +75,21 @@ namespace Presentacionn
  }
 
         }
+        }
+
+        private void mtxtEquipo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mtxtIdEquipo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmModificacionRotura_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -48,6 +48,7 @@
             // 
             // lblIdEquipo
             // 
+            this.lblIdEquipo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblIdEquipo.AutoSize = true;
             this.lblIdEquipo.Location = new System.Drawing.Point(156, 146);
             this.lblIdEquipo.Name = "lblIdEquipo";
@@ -57,6 +58,7 @@
             // 
             // mtxtRotura
             // 
+            this.mtxtRotura.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mtxtRotura.Location = new System.Drawing.Point(217, 138);
             this.mtxtRotura.Mask = "000000";
             this.mtxtRotura.Name = "mtxtRotura";

@@ -41,6 +41,7 @@
             // 
             // txtDescripcion
             // 
+            this.txtDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDescripcion.Location = new System.Drawing.Point(298, 60);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
@@ -49,6 +50,7 @@
             // 
             // lblEquipoRoto
             // 
+            this.lblEquipoRoto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblEquipoRoto.AutoSize = true;
             this.lblEquipoRoto.Location = new System.Drawing.Point(48, 66);
             this.lblEquipoRoto.Name = "lblEquipoRoto";
@@ -58,6 +60,7 @@
             // 
             // lblDescripcion
             // 
+            this.lblDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Location = new System.Drawing.Point(229, 63);
             this.lblDescripcion.Name = "lblDescripcion";
@@ -80,6 +83,7 @@
             // 
             // dtpFecha
             // 
+            this.dtpFecha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFecha.Location = new System.Drawing.Point(120, 123);
             this.dtpFecha.Name = "dtpFecha";
@@ -88,6 +92,7 @@
             // 
             // lblFecha
             // 
+            this.lblFecha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblFecha.AutoSize = true;
             this.lblFecha.Location = new System.Drawing.Point(77, 129);
             this.lblFecha.Name = "lblFecha";
@@ -97,6 +102,7 @@
             // 
             // mtxtEquipoRoto
             // 
+            this.mtxtEquipoRoto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mtxtEquipoRoto.Location = new System.Drawing.Point(120, 63);
             this.mtxtEquipoRoto.Mask = "00000000";
             this.mtxtEquipoRoto.Name = "mtxtEquipoRoto";
@@ -105,6 +111,7 @@
             // 
             // mtxtIdPrestamo
             // 
+            this.mtxtIdPrestamo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mtxtIdPrestamo.Location = new System.Drawing.Point(120, 183);
             this.mtxtIdPrestamo.Mask = "00000000";
             this.mtxtIdPrestamo.Name = "mtxtIdPrestamo";
@@ -113,6 +120,7 @@
             // 
             // idPrestamo
             // 
+            this.idPrestamo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.idPrestamo.AutoSize = true;
             this.idPrestamo.Location = new System.Drawing.Point(48, 186);
             this.idPrestamo.Name = "idPrestamo";

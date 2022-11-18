@@ -65,8 +65,9 @@ namespace Presentacionn
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             dUsuario unAD = new dUsuario();
-
-            eUsuario elAdmin = unAD.login(txtUserName.Text, txtPassword.Text);
+            try
+            {
+            eUsuario elAdmin = unAD.login(mtxtUserName.Text, txtPassword.Text);
 
             if (elAdmin == null)
             {
@@ -78,11 +79,12 @@ namespace Presentacionn
                 MessageBox.Show("Usuario y constraseña Correcta");
                 frmMenuPrincipal unMP = new frmMenuPrincipal(true);
                 this.Hide();
+                unMP.frmInicial = this;
                 unMP.Show();
                 
             }
-            
-    }
+           } catch (Exception error) { MessageBox.Show(error.Message); }
+        }
         
         private void btnInvitado_Click(object sender, EventArgs e)
         {

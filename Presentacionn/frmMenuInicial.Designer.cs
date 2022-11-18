@@ -35,9 +35,9 @@
             this.lblTiTulo = new System.Windows.Forms.Label();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtUserName = new System.Windows.Forms.TextBox();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.btnInvitado = new System.Windows.Forms.Button();
+            this.mtxtUserName = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -93,16 +93,6 @@
             this.txtPassword.Size = new System.Drawing.Size(218, 37);
             this.txtPassword.TabIndex = 12;
             // 
-            // txtUserName
-            // 
-            this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserName.Location = new System.Drawing.Point(412, 117);
-            this.txtUserName.Margin = new System.Windows.Forms.Padding(2);
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(218, 37);
-            this.txtUserName.TabIndex = 11;
-            this.txtUserName.TextChanged += new System.EventHandler(this.txtUserName_TextChanged);
-            // 
             // btnIngresar
             // 
             this.btnIngresar.Location = new System.Drawing.Point(376, 255);
@@ -123,15 +113,24 @@
             this.btnInvitado.UseVisualStyleBackColor = true;
             this.btnInvitado.Click += new System.EventHandler(this.btnInvitado_Click);
             // 
+            // mtxtUserName
+            // 
+            this.mtxtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F);
+            this.mtxtUserName.Location = new System.Drawing.Point(412, 117);
+            this.mtxtUserName.Mask = "0,000,000-0";
+            this.mtxtUserName.Name = "mtxtUserName";
+            this.mtxtUserName.Size = new System.Drawing.Size(218, 37);
+            this.mtxtUserName.TabIndex = 15;
+            // 
             // frmMenuInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1060, 524);
+            this.Controls.Add(this.mtxtUserName);
             this.Controls.Add(this.btnInvitado);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.lblTiTulo);
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.lblPassword);
@@ -149,8 +148,8 @@
         private System.Windows.Forms.Label lblTiTulo;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.Button btnInvitado;
+        private System.Windows.Forms.MaskedTextBox mtxtUserName;
     }
 }

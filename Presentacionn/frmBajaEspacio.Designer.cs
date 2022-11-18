@@ -28,34 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnBaja = new System.Windows.Forms.Button();
+            this.lblNroEsp = new System.Windows.Forms.Label();
             this.txtBajaEspacio = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // button1
+            // btnBaja
             // 
-            this.button1.Location = new System.Drawing.Point(158, 376);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(166, 55);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Borrar espacio";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnBaja.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBaja.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnBaja.Location = new System.Drawing.Point(170, 423);
+            this.btnBaja.Name = "btnBaja";
+            this.btnBaja.Size = new System.Drawing.Size(144, 55);
+            this.btnBaja.TabIndex = 0;
+            this.btnBaja.Text = "Eliminar";
+            this.btnBaja.UseVisualStyleBackColor = false;
+            this.btnBaja.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label1
+            // lblNroEsp
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(119, 98);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Numero de espacio";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lblNroEsp.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblNroEsp.AutoSize = true;
+            this.lblNroEsp.Location = new System.Drawing.Point(89, 146);
+            this.lblNroEsp.Name = "lblNroEsp";
+            this.lblNroEsp.Size = new System.Drawing.Size(99, 13);
+            this.lblNroEsp.TabIndex = 1;
+            this.lblNroEsp.Text = "Numero de espacio";
+            this.lblNroEsp.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtBajaEspacio
             // 
-            this.txtBajaEspacio.Location = new System.Drawing.Point(224, 95);
+            this.txtBajaEspacio.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtBajaEspacio.Location = new System.Drawing.Point(194, 143);
             this.txtBajaEspacio.Name = "txtBajaEspacio";
             this.txtBajaEspacio.Size = new System.Drawing.Size(100, 20);
             this.txtBajaEspacio.TabIndex = 2;
@@ -64,10 +69,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(228)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(494, 508);
             this.Controls.Add(this.txtBajaEspacio);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lblNroEsp);
+            this.Controls.Add(this.btnBaja);
             this.Name = "frmBajaEspacio";
             this.Text = "frmBajaEspacio";
             this.ResumeLayout(false);
@@ -77,8 +83,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnBaja;
+        private System.Windows.Forms.Label lblNroEsp;
         private System.Windows.Forms.TextBox txtBajaEspacio;
     }
 }

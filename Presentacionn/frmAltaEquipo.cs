@@ -21,7 +21,6 @@ namespace Presentacionn
 
         private void frmAgregarEquipo_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(Convert.ToString(cbxTipo.SelectedIndex));
         }
 
         private bool corroborarCampos()

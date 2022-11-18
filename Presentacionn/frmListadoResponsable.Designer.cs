@@ -36,6 +36,9 @@
             // 
             // dgvResponsable
             // 
+            this.dgvResponsable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvResponsable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvResponsable.Location = new System.Drawing.Point(12, 39);
             this.dgvResponsable.Name = "dgvResponsable";
@@ -44,6 +47,7 @@
             // 
             // cbxTipo
             // 
+            this.cbxTipo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbxTipo.FormattingEnabled = true;
             this.cbxTipo.Items.AddRange(new object[] {
             "General",
@@ -58,6 +62,7 @@
             // 
             // cbxCurso
             // 
+            this.cbxCurso.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbxCurso.FormattingEnabled = true;
             this.cbxCurso.Items.AddRange(new object[] {
             "Audiovisual 1",

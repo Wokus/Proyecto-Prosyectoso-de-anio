@@ -16,9 +16,10 @@ namespace Presentacionn
 {
     public partial class frmMenuPrincipal : Form
     {
+        public Form frmInicial;
         public frmMenuPrincipal(bool clase)
         {
-            
+             
             InitializeComponent();
             if (clase == false)
             {
@@ -159,6 +160,18 @@ namespace Presentacionn
             {
                 rellenarPanel1(new frmModificacionRotura());
             }
+            if (cbxAcciones.SelectedIndex == 12)
+            {
+                rellenarPanel1(new frmAltaEspacio());
+            }
+            if (cbxAcciones.SelectedIndex == 13)
+            {
+                rellenarPanel1(new frmBajaEspacio());
+            }
+            if (cbxAcciones.SelectedIndex == 14)
+            {
+                rellenarPanel1(new frmModificacionEspacio());
+            }
 
 
 
@@ -228,6 +241,16 @@ namespace Presentacionn
         private void pnl1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void frmMenuPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmMenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            frmInicial.Close();
         }
     }
 }

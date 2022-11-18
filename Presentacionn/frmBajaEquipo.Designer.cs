@@ -48,6 +48,7 @@
             // 
             // txtId
             // 
+            this.txtId.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtId.Location = new System.Drawing.Point(194, 143);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(100, 20);
@@ -56,6 +57,7 @@
             // 
             // lblIdEquipo
             // 
+            this.lblIdEquipo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblIdEquipo.AutoSize = true;
             this.lblIdEquipo.Location = new System.Drawing.Point(118, 146);
             this.lblIdEquipo.Name = "lblIdEquipo";

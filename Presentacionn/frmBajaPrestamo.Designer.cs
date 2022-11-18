@@ -35,6 +35,8 @@
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEliminar.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnEliminar.Location = new System.Drawing.Point(170, 423);
             this.btnEliminar.Name = "btnEliminar";
@@ -46,6 +48,7 @@
             // 
             // lblIdPrestamoBaja
             // 
+            this.lblIdPrestamoBaja.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblIdPrestamoBaja.AutoSize = true;
             this.lblIdPrestamoBaja.Location = new System.Drawing.Point(107, 150);
             this.lblIdPrestamoBaja.Name = "lblIdPrestamoBaja";
@@ -55,6 +58,7 @@
             // 
             // mtxtidPrestamo
             // 
+            this.mtxtidPrestamo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mtxtidPrestamo.Location = new System.Drawing.Point(194, 147);
             this.mtxtidPrestamo.Mask = "0000000";
             this.mtxtidPrestamo.Name = "mtxtidPrestamo";

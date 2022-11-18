@@ -15,7 +15,7 @@ namespace Persistencia
         {
             string consultaSQL;
 
-            int token = verificarEstado(unPRES.alumnoResponsable.ci, unPRES.profeResponsable.ci , unPRES.unEs.numeroEspacio);
+            int token = verificarEstado(unPRES.alumnoResponsable.ci, unPRES.profeResponsable.ci , Convert.ToInt32(unPRES.unEs.numeroEspacio));
           
             if (token == 0)
             {

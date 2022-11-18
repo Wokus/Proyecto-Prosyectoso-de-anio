@@ -99,6 +99,7 @@
             // 
             // mtxtTelefonoModificar
             // 
+            this.mtxtTelefonoModificar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mtxtTelefonoModificar.BackColor = System.Drawing.Color.White;
             this.mtxtTelefonoModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtxtTelefonoModificar.Location = new System.Drawing.Point(178, 321);
@@ -109,6 +110,7 @@
             // 
             // mtxtUsernameModificar
             // 
+            this.mtxtUsernameModificar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mtxtUsernameModificar.BackColor = System.Drawing.Color.White;
             this.mtxtUsernameModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtxtUsernameModificar.Location = new System.Drawing.Point(177, 134);
@@ -119,6 +121,7 @@
             // 
             // mtxtNUAM
             // 
+            this.mtxtNUAM.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mtxtNUAM.BackColor = System.Drawing.Color.White;
             this.mtxtNUAM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtxtNUAM.Location = new System.Drawing.Point(177, 88);
@@ -129,6 +132,7 @@
             // 
             // txtApellidoModificar
             // 
+            this.txtApellidoModificar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtApellidoModificar.BackColor = System.Drawing.Color.White;
             this.txtApellidoModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellidoModificar.Location = new System.Drawing.Point(178, 272);
@@ -138,6 +142,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(106, 278);
@@ -158,6 +163,7 @@
             // 
             // lblNDAM
             // 
+            this.lblNDAM.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNDAM.AutoSize = true;
             this.lblNDAM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNDAM.Location = new System.Drawing.Point(26, 94);
@@ -168,6 +174,7 @@
             // 
             // txtNombreModificar
             // 
+            this.txtNombreModificar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNombreModificar.BackColor = System.Drawing.Color.White;
             this.txtNombreModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreModificar.Location = new System.Drawing.Point(178, 226);
@@ -177,6 +184,7 @@
             // 
             // lblTelefonoModificar
             // 
+            this.lblTelefonoModificar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTelefonoModificar.AutoSize = true;
             this.lblTelefonoModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTelefonoModificar.Location = new System.Drawing.Point(99, 324);
@@ -188,6 +196,7 @@
             // 
             // lblNombreModificar
             // 
+            this.lblNombreModificar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNombreModificar.AutoSize = true;
             this.lblNombreModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreModificar.Location = new System.Drawing.Point(99, 232);
@@ -198,6 +207,7 @@
             // 
             // txtPasswordModificar
             // 
+            this.txtPasswordModificar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPasswordModificar.BackColor = System.Drawing.Color.White;
             this.txtPasswordModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPasswordModificar.Location = new System.Drawing.Point(178, 180);
@@ -207,6 +217,7 @@
             // 
             // lblPasswordModificar
             // 
+            this.lblPasswordModificar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPasswordModificar.AutoSize = true;
             this.lblPasswordModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPasswordModificar.Location = new System.Drawing.Point(80, 187);
@@ -217,6 +228,7 @@
             // 
             // lblUsernameModificar
             // 
+            this.lblUsernameModificar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUsernameModificar.AutoSize = true;
             this.lblUsernameModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsernameModificar.Location = new System.Drawing.Point(26, 137);
@@ -227,7 +239,7 @@
             // 
             // btnOkModificar
             // 
-            this.btnOkModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOkModificar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnOkModificar.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnOkModificar.Location = new System.Drawing.Point(103, 370);
             this.btnOkModificar.Name = "btnOkModificar";
@@ -260,6 +272,9 @@
             // 
             // dgvListarUsuario
             // 
+            this.dgvListarUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvListarUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListarUsuario.Location = new System.Drawing.Point(28, 101);
             this.dgvListarUsuario.Name = "dgvListarUsuario";
@@ -282,6 +297,7 @@
             // 
             // mtxtUsernameEliminar
             // 
+            this.mtxtUsernameEliminar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mtxtUsernameEliminar.BackColor = System.Drawing.Color.White;
             this.mtxtUsernameEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtxtUsernameEliminar.Location = new System.Drawing.Point(178, 91);
@@ -301,6 +317,7 @@
             // 
             // lblUsernameEliminar
             // 
+            this.lblUsernameEliminar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUsernameEliminar.AutoSize = true;
             this.lblUsernameEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsernameEliminar.Location = new System.Drawing.Point(26, 94);
@@ -311,7 +328,7 @@
             // 
             // btnOkEliminar
             // 
-            this.btnOkEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOkEliminar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnOkEliminar.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnOkEliminar.Location = new System.Drawing.Point(103, 370);
             this.btnOkEliminar.Name = "btnOkEliminar";
@@ -345,6 +362,7 @@
             // 
             // mtxtUsernameAgregar
             // 
+            this.mtxtUsernameAgregar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mtxtUsernameAgregar.BackColor = System.Drawing.Color.White;
             this.mtxtUsernameAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtxtUsernameAgregar.Location = new System.Drawing.Point(178, 91);
@@ -355,6 +373,7 @@
             // 
             // txtApellidoAgregar
             // 
+            this.txtApellidoAgregar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtApellidoAgregar.BackColor = System.Drawing.Color.White;
             this.txtApellidoAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellidoAgregar.Location = new System.Drawing.Point(177, 232);
@@ -364,6 +383,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(100, 280);
@@ -384,6 +404,7 @@
             // 
             // mtxtTelefonoAgregar
             // 
+            this.mtxtTelefonoAgregar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mtxtTelefonoAgregar.BackColor = System.Drawing.Color.White;
             this.mtxtTelefonoAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtxtTelefonoAgregar.Location = new System.Drawing.Point(177, 274);
@@ -394,6 +415,7 @@
             // 
             // txtNombreAgregar
             // 
+            this.txtNombreAgregar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNombreAgregar.BackColor = System.Drawing.Color.White;
             this.txtNombreAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreAgregar.Location = new System.Drawing.Point(178, 186);
@@ -403,6 +425,7 @@
             // 
             // lblTelefonoAgregar
             // 
+            this.lblTelefonoAgregar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTelefonoAgregar.AutoSize = true;
             this.lblTelefonoAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTelefonoAgregar.Location = new System.Drawing.Point(101, 232);
@@ -414,6 +437,7 @@
             // 
             // lblNombreCompletoAgregar
             // 
+            this.lblNombreCompletoAgregar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNombreCompletoAgregar.AutoSize = true;
             this.lblNombreCompletoAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreCompletoAgregar.Location = new System.Drawing.Point(99, 186);
@@ -424,6 +448,7 @@
             // 
             // txtPasswordAgregar
             // 
+            this.txtPasswordAgregar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPasswordAgregar.BackColor = System.Drawing.Color.White;
             this.txtPasswordAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPasswordAgregar.Location = new System.Drawing.Point(178, 140);
@@ -433,6 +458,7 @@
             // 
             // lblPasswordAgregar
             // 
+            this.lblPasswordAgregar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPasswordAgregar.AutoSize = true;
             this.lblPasswordAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPasswordAgregar.Location = new System.Drawing.Point(80, 140);
@@ -443,6 +469,7 @@
             // 
             // lblUsernameAgregar
             // 
+            this.lblUsernameAgregar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUsernameAgregar.AutoSize = true;
             this.lblUsernameAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsernameAgregar.Location = new System.Drawing.Point(26, 94);
@@ -453,7 +480,7 @@
             // 
             // btnOkAgregar
             // 
-            this.btnOkAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOkAgregar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnOkAgregar.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnOkAgregar.Location = new System.Drawing.Point(103, 370);
             this.btnOkAgregar.Name = "btnOkAgregar";

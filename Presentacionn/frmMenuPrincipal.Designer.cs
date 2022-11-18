@@ -175,6 +175,8 @@
             this.Controls.Add(this.pnl1);
             this.Name = "frmMenuPrincipal";
             this.Text = "frmMenuPrincipal";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMenuPrincipal_FormClosing);
+            this.Load += new System.EventHandler(this.frmMenuPrincipal_Load);
             this.pnl1.ResumeLayout(false);
             this.pnl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sc1)).EndInit();

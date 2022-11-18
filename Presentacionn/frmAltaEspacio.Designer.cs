@@ -70,6 +70,7 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNombre.Location = new System.Drawing.Point(214, 91);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
@@ -77,6 +78,7 @@
             // 
             // mtxtNumero
             // 
+            this.mtxtNumero.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mtxtNumero.Location = new System.Drawing.Point(214, 141);
             this.mtxtNumero.Mask = "0000000";
             this.mtxtNumero.Name = "mtxtNumero";

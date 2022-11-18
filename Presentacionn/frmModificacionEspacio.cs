@@ -21,6 +21,10 @@ namespace Presentacionn
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            try
+            {
+
+           
             if (txtNombre.Text != "" && txtNombre.Text.Length < 16 && mtxtNumero.Text != "" && mtxtNumeroCam.Text != "")
             {
 
@@ -57,7 +61,8 @@ namespace Presentacionn
                 MessageBox.Show("Hay errores con los datos ingresados");
 
             }
-
+            }
+            catch (Exception error) { MessageBox.Show(error.Message); }
         }
     }
 }

@@ -42,7 +42,7 @@ namespace Dominio
         public int modificarEspacio(eEspacio unE, String nmroMod)
         {
             pEspacio unPE = new pEspacio();
-           return unPE.modificarEspacio(unE,nmroMod)
+            return unPE.modificarEspacio(unE, nmroMod);
 
         }
     }
