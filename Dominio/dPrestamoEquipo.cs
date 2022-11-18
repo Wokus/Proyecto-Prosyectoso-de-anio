@@ -92,12 +92,12 @@ namespace Dominio
 
         }
 
-        public DataTable listarPrestamoPorPrioridadE(string prioridad, string tuHermana)
+        public DataTable listarPrestamoPorPrioridadE(string tuHermana, string prioridad)
         {
 
             pPrestamoEquipo unPPPE = new pPrestamoEquipo();
 
-            return unPPPE.listarPrestamoPorPrioridadE(prioridad, tuHermana);
+            return unPPPE.listarPrestamoPorPrioridadE(tuHermana, prioridad);
 
         }
     }

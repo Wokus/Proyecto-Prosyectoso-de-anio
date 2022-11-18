@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Dominio;
 using Entidades;
+using Dominio;
 
 namespace Presentacionn
 {
@@ -21,9 +21,9 @@ namespace Presentacionn
 
         private void frmListadoEspacio_Load(object sender, EventArgs e)
         {
+
             dEspacio unDE = new dEspacio();
             dgvListadoEspacio.DataSource = unDE.listarEspacio();
-
 
         }
     }

@@ -71,6 +71,8 @@ namespace Persistencia
             return dt;
         }
 
+
+
         public DataTable listarResponsabletipoP()
         {
             string consultaSQL = "SELECT persona.ci,nombre,apellido,curso,tipo FROM persona INNER JOIN solicitante on persona.ci = solicitante.ci WHERE tipo = 'Profesor';";
@@ -87,25 +89,44 @@ namespace Persistencia
 
         public DataTable listarResponsableCP()
         {
-            string CP = "SELECT persona.ci,nombre,apellido,curso,tipo FROM persona INNER JOIN solicitante on persona.ci = solicitante.ci WHERE Curso = 'Primero';";
+            string CP = "SELECT persona.ci,nombre,apellido,curso,tipo FROM persona INNER JOIN solicitante on persona.ci = solicitante.ci WHERE Curso = 'Audiovisual 1';";
             DataTable heehee = listarAlgo(CP);
             return heehee;
         }
 
         public DataTable listarResponsableCS()
         {
-            string CS = "SELECT persona.ci,nombre,apellido,curso,tipo FROM persona INNER JOIN solicitante on persona.ci = solicitante.ci WHERE Curso = 'Segundo';";
+            string CS = "SELECT persona.ci,nombre,apellido,curso,tipo FROM persona INNER JOIN solicitante on persona.ci = solicitante.ci WHERE Curso = 'Audiovisual 2';";
             DataTable boys = listarAlgo(CS);
             return boys;
         }
 
         public DataTable listarResponsableCT()
         {
-            string CT = "SELECT persona.ci,nombre,apellido,curso,tipo FROM persona INNER JOIN solicitante on persona.ci = solicitante.ci WHERE Curso = 'Tercero';";
+            string CT = "SELECT persona.ci,nombre,apellido,curso,tipo FROM persona INNER JOIN solicitante on persona.ci = solicitante.ci WHERE Curso = 'Audiovisual 3';";
             DataTable women = listarAlgo(CT);
             return women;
         }
+        public object listarResponsableTT()
+        {
+            string FT = "SELECT persona.ci,nombre,apellido,curso,tipo FROM persona INNER JOIN solicitante on persona.ci = solicitante.ci WHERE Curso = 'Tecnicatura 1';";
+            DataTable finest = listarAlgo(FT);
+            return finest;
+        }
 
+        public object listarResponsableTTT()
+        {
+            string TT = "SELECT persona.ci,nombre,apellido,curso,tipo FROM persona INNER JOIN solicitante on persona.ci = solicitante.ci WHERE Curso = 'Tecnicatura 2';";
+            DataTable tec = listarAlgo(TT);
+            return tec;
+        }
+
+        public object listarResponsableFT()
+        {
+            string TTT = "SELECT persona.ci,nombre,apellido,curso,tipo FROM persona INNER JOIN solicitante on persona.ci = solicitante.ci WHERE Curso = 'Finest';";
+            DataTable tec2 = listarAlgo(TTT);
+            return tec2;
+        }
         public eResponsable bajaResponsable(string EliminarRes)
         {
             eResponsable elAdmin = new eResponsable();

@@ -35,9 +35,9 @@
             // dgvListadoEspacio
             // 
             this.dgvListadoEspacio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListadoEspacio.Location = new System.Drawing.Point(12, 39);
+            this.dgvListadoEspacio.Location = new System.Drawing.Point(10, 12);
             this.dgvListadoEspacio.Name = "dgvListadoEspacio";
-            this.dgvListadoEspacio.Size = new System.Drawing.Size(474, 457);
+            this.dgvListadoEspacio.Size = new System.Drawing.Size(474, 484);
             this.dgvListadoEspacio.TabIndex = 2;
             // 
             // frmListadoEspacio

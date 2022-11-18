@@ -129,9 +129,12 @@
             this.cbxNewCurso.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbxNewCurso.FormattingEnabled = true;
             this.cbxNewCurso.Items.AddRange(new object[] {
-            "Primero",
-            "Segundo",
-            "Tercero"});
+            "Audiovisual 1",
+            "Audiovisual 2",
+            "Audiovisual 3",
+            "Finest",
+            "Tecnicatura 1",
+            "Tecnicatura 2"});
             this.cbxNewCurso.Location = new System.Drawing.Point(214, 249);
             this.cbxNewCurso.Name = "cbxNewCurso";
             this.cbxNewCurso.Size = new System.Drawing.Size(100, 21);

@@ -36,13 +36,6 @@ namespace Presentacionn
             {
                 MessageBox.Show("El espacio fue eliminado");
             }
-
-
-
-
-
-               
-
         }
     }
 }

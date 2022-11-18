@@ -60,9 +60,12 @@
             // 
             this.cbxCurso.FormattingEnabled = true;
             this.cbxCurso.Items.AddRange(new object[] {
-            "Primero",
-            "Segundo",
-            "Tercero"});
+            "Audiovisual 1",
+            "Audiovisual 2",
+            "Audiovisual 3",
+            "Finest",
+            "Tecnicatura 1",
+            "Tecnicatura 2"});
             this.cbxCurso.Location = new System.Drawing.Point(138, 12);
             this.cbxCurso.Name = "cbxCurso";
             this.cbxCurso.Size = new System.Drawing.Size(121, 21);

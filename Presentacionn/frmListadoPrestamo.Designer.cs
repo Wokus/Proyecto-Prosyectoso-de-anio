@@ -40,7 +40,6 @@
             this.cbxEstadoEspontaneo = new System.Windows.Forms.ComboBox();
             this.cbxPrioridad = new System.Windows.Forms.ComboBox();
             this.cbxPrioridadEspacio = new System.Windows.Forms.ComboBox();
-            this.cbxPrioridadEspontaneo = new System.Windows.Forms.ComboBox();
             this.cbxPrioridadEquipo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoEquipo)).BeginInit();
             this.SuspendLayout();
@@ -205,19 +204,6 @@
             this.cbxPrioridadEspacio.Text = "Listado por prioridad";
             this.cbxPrioridadEspacio.SelectedIndexChanged += new System.EventHandler(this.cbxPrioridadEspacio_SelectedIndexChanged);
             // 
-            // cbxPrioridadEspontaneo
-            // 
-            this.cbxPrioridadEspontaneo.FormattingEnabled = true;
-            this.cbxPrioridadEspontaneo.Items.AddRange(new object[] {
-            "De mayor a menor",
-            "De menor a mayor"});
-            this.cbxPrioridadEspontaneo.Location = new System.Drawing.Point(365, 12);
-            this.cbxPrioridadEspontaneo.Name = "cbxPrioridadEspontaneo";
-            this.cbxPrioridadEspontaneo.Size = new System.Drawing.Size(117, 21);
-            this.cbxPrioridadEspontaneo.TabIndex = 17;
-            this.cbxPrioridadEspontaneo.Text = "Listado por prioridad";
-            this.cbxPrioridadEspontaneo.SelectedIndexChanged += new System.EventHandler(this.cbxPrioridadEspontaneo_SelectedIndexChanged);
-            // 
             // cbxPrioridadEquipo
             // 
             this.cbxPrioridadEquipo.FormattingEnabled = true;
@@ -238,7 +224,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(228)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(494, 508);
             this.Controls.Add(this.cbxPrioridadEquipo);
-            this.Controls.Add(this.cbxPrioridadEspontaneo);
             this.Controls.Add(this.cbxPrioridadEspacio);
             this.Controls.Add(this.cbxPrioridad);
             this.Controls.Add(this.cbxEstadoEspacio);
@@ -272,7 +257,6 @@
         private System.Windows.Forms.ComboBox cbxEstadoEspontaneo;
         private System.Windows.Forms.ComboBox cbxPrioridad;
         private System.Windows.Forms.ComboBox cbxPrioridadEspacio;
-        private System.Windows.Forms.ComboBox cbxPrioridadEspontaneo;
         private System.Windows.Forms.ComboBox cbxPrioridadEquipo;
     }
 }
