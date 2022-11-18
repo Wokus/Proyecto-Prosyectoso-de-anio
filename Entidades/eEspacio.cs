@@ -9,7 +9,7 @@ namespace Entidades
     public class eEspacio
     {
 
-        public int numeroEspacio { get; set; }
+        public String numeroEspacio { get; set; }
         public String nombreEspacio { get; set; }
 
     }

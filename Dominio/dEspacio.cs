@@ -21,7 +21,7 @@ namespace Dominio
 
         }
 
-        /*public eEspacio bajaEspacio(string text)
+        public eEspacio bajaEspacio(string text)
         {
             pEspacio unDE = new pEspacio();
             return unDE.bajaEspacio(text);
@@ -36,6 +36,6 @@ namespace Dominio
 
             return corroborarExistencia;
 
-        }*/
+        }
     }
 }

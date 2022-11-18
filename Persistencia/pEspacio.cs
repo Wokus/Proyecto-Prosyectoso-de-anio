@@ -23,7 +23,7 @@ namespace Persistencia
 
         }
 
-        /*public eEspacio bajaEspacio(string text)
+        public eEspacio bajaEspacio(string text)
         {
             eEspacio elAdmin = new eEspacio();
             elAdmin = null;
@@ -33,23 +33,26 @@ namespace Persistencia
             ejecutarSQL(consultaSQL);
             while (fila.Read())
             {
-                elAdmin = recrearResponsable(fila);
+                elAdmin = recrearespacio(fila);
 
             }
 
             if (elAdmin != null)
             {
 
-
-
+                string consultaSQL2 = "SELECT * FROM espacio WHERE espacio.nro='" + text + "';";
+                ejecutarSQL(consultaSQL2);
             }
+            return elAdmin;
         }
 
-        public eEspacio recrearResponsable(MySqlDataReader fila)
+        public eEspacio recrearespacio(MySqlDataReader fila)
         {
             eEspacio unEspacio = new eEspacio();
-            unEspacio.numeroEspacio = fila.GetString();
+            unEspacio.numeroEspacio = fila.GetString("nro");
+            unEspacio.nombreEspacio = fila.GetString("nombre");
 
+            return unEspacio;
          }
 
         public int altaEspacio(eEspacio unE, int troken)
@@ -95,6 +98,6 @@ namespace Persistencia
 
             return token;
 
-        }*/
+        }
     }
 }
