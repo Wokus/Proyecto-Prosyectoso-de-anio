@@ -57,7 +57,7 @@ namespace Persistencia
        
         public DataTable listarPrestamoDeEquipo()
         {
-            String consultaSQL = "SELECT prestamo.id, realiza.ci_Solicitante AS Solicitante, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, prestamo.ejercicio, tiene.id_Equipo FROM prestamo INNER JOIN prestamoDeEquipo ON prestamo.id=prestamoDeEquipo.id_Prestamo INNER JOIN tiene ON prestamoDeEquipo.id_Prestamo=tiene.id_PrestamoDeEquipo INNER JOIN realiza ON prestamo.id = realiza.id_Prestamo;";
+            String consultaSQL = "SELECT prestamo.id, realiza.ci_Solicitante AS AlumnoSolicitante, profesorPrestamo.ci_Solicitante AS ProfesorSolicitante, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, prestamo.ejercicio, tiene.id_Equipo, prestamoDeEquipoLocacion.locacion FROM prestamo INNER JOIN prestamoDeEquipo ON prestamo.id=prestamoDeEquipo.id_Prestamo INNER JOIN tiene ON prestamoDeEquipo.id_Prestamo=tiene.id_PrestamoDeEquipo INNER JOIN realiza ON prestamo.id = realiza.id_Prestamo INNER JOIN prestamoDeEquipoLocacion ON prestamoDeEquipo.id_Prestamo = prestamoDeEquipoLocacion.id_PrestamoDeEquipo INNER JOIN profesorPrestamo ON prestamo.id = profesorPrestamo.id_Prestamo;";
 
             DataTable dt = listarAlgo(consultaSQL);
 
@@ -67,7 +67,7 @@ namespace Persistencia
         public DataTable listarPrestamoPorFechaAR()
         {
 
-            String consultaSQL = "SELECT prestamo.id, realiza.ci_Solicitante AS Solicitante, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, prestamo.ejercicio, tiene.id_Equipo FROM prestamo INNER JOIN prestamoDeEquipo ON prestamo.id=prestamoDeEquipo.id_Prestamo INNER JOIN tiene ON prestamoDeEquipo.id_Prestamo=tiene.id_PrestamoDeEquipo INNER JOIN realiza ON prestamo.id = realiza.id_Prestamo ORDER BY prestamo.fechaSolicitada ASC ;";
+            String consultaSQL = "SELECT prestamo.id, realiza.ci_Solicitante AS AlumnoSolicitante, profesorPrestamo.ci_Solicitante AS ProfesorSolicitante, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, prestamo.ejercicio, tiene.id_Equipo, prestamoDeEquipoLocacion.locacion FROM prestamo INNER JOIN prestamoDeEquipo ON prestamo.id=prestamoDeEquipo.id_Prestamo INNER JOIN tiene ON prestamoDeEquipo.id_Prestamo=tiene.id_PrestamoDeEquipo INNER JOIN realiza ON prestamo.id = realiza.id_Prestamo INNER JOIN prestamoDeEquipoLocacion ON prestamoDeEquipo.id_Prestamo = prestamoDeEquipoLocacion.id_PrestamoDeEquipo INNER JOIN profesorPrestamo ON prestamo.id = profesorPrestamo.id_Prestamo ORDER BY prestamo.fechaSolicitada ASC ;";
 
             DataTable dt = listarAlgo(consultaSQL);
 
@@ -78,7 +78,7 @@ namespace Persistencia
         public DataTable listarPrestamoPorFechaRA()
         {
 
-            String consultaSQL = "SELECT prestamo.id, realiza.ci_Solicitante AS Solicitante, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, prestamo.ejercicio, tiene.id_Equipo FROM prestamo INNER JOIN prestamoDeEquipo ON prestamo.id=prestamoDeEquipo.id_Prestamo INNER JOIN tiene ON prestamoDeEquipo.id_Prestamo=tiene.id_PrestamoDeEquipo INNER JOIN realiza ON prestamo.id = realiza.id_Prestamo ORDER BY prestamo.fechaSolicitada DESC ;";
+            String consultaSQL = "SELECT prestamo.id, realiza.ci_Solicitante AS AlumnoSolicitante, profesorPrestamo.ci_Solicitante AS ProfesorSolicitante, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, prestamo.ejercicio, tiene.id_Equipo, prestamoDeEquipoLocacion.locacion FROM prestamo INNER JOIN prestamoDeEquipo ON prestamo.id=prestamoDeEquipo.id_Prestamo INNER JOIN tiene ON prestamoDeEquipo.id_Prestamo=tiene.id_PrestamoDeEquipo INNER JOIN realiza ON prestamo.id = realiza.id_Prestamo INNER JOIN prestamoDeEquipoLocacion ON prestamoDeEquipo.id_Prestamo = prestamoDeEquipoLocacion.id_PrestamoDeEquipo INNER JOIN profesorPrestamo ON prestamo.id = profesorPrestamo.id_Prestamo ORDER BY prestamo.fechaSolicitada DESC ;";
 
             DataTable dt = listarAlgo(consultaSQL);
 
@@ -89,7 +89,7 @@ namespace Persistencia
         public DataTable listarPrestamoPorFechaEstado(string tuHermana)
         {
 
-            String consultaSQL = "SELECT prestamo.id, realiza.ci_Solicitante AS Solicitante, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, prestamo.ejercicio, tiene.id_Equipo FROM prestamo INNER JOIN prestamoDeEquipo ON prestamo.id=prestamoDeEquipo.id_Prestamo INNER JOIN tiene ON prestamoDeEquipo.id_Prestamo=tiene.id_PrestamoDeEquipo INNER JOIN realiza ON prestamo.id = realiza.id_Prestamo WHERE estado = '" + tuHermana + "' ;";
+            String consultaSQL = "SELECT prestamo.id, realiza.ci_Solicitante AS AlumnoSolicitante, profesorPrestamo.ci_Solicitante AS ProfesorSolicitante, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, prestamo.ejercicio, tiene.id_Equipo, prestamoDeEquipoLocacion.locacion FROM prestamo INNER JOIN prestamoDeEquipo ON prestamo.id=prestamoDeEquipo.id_Prestamo INNER JOIN tiene ON prestamoDeEquipo.id_Prestamo=tiene.id_PrestamoDeEquipo INNER JOIN realiza ON prestamo.id = realiza.id_Prestamo INNER JOIN prestamoDeEquipoLocacion ON prestamoDeEquipo.id_Prestamo = prestamoDeEquipoLocacion.id_PrestamoDeEquipo INNER JOIN profesorPrestamo ON prestamo.id = profesorPrestamo.id_Prestamo WHERE estado = '" + tuHermana + "' ;";
 
             DataTable dt = listarAlgo(consultaSQL);
 
@@ -100,7 +100,7 @@ namespace Persistencia
         public DataTable listarPrestamoPorFechaARE(string tuHermana)
         {
 
-            String consultaSQL = "SELECT prestamo.id, realiza.ci_Solicitante AS Solicitante, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, prestamo.ejercicio, tiene.id_Equipo FROM prestamo INNER JOIN prestamoDeEquipo ON prestamo.id=prestamoDeEquipo.id_Prestamo INNER JOIN tiene ON prestamoDeEquipo.id_Prestamo=tiene.id_PrestamoDeEquipo INNER JOIN realiza ON prestamo.id = realiza.id_Prestamo WHERE estado = '" + tuHermana + "' ORDER BY prestamo.fechaSolicitada ASC ;";
+            String consultaSQL = "SELECT prestamo.id, realiza.ci_Solicitante AS AlumnoSolicitante, profesorPrestamo.ci_Solicitante AS ProfesorSolicitante, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, prestamo.ejercicio, tiene.id_Equipo, prestamoDeEquipoLocacion.locacion FROM prestamo INNER JOIN prestamoDeEquipo ON prestamo.id=prestamoDeEquipo.id_Prestamo INNER JOIN tiene ON prestamoDeEquipo.id_Prestamo=tiene.id_PrestamoDeEquipo INNER JOIN realiza ON prestamo.id = realiza.id_Prestamo INNER JOIN prestamoDeEquipoLocacion ON prestamoDeEquipo.id_Prestamo = prestamoDeEquipoLocacion.id_PrestamoDeEquipo INNER JOIN profesorPrestamo ON prestamo.id = profesorPrestamo.id_Prestamo WHERE estado = '" + tuHermana + "' ORDER BY prestamo.fechaSolicitada ASC ;";
 
             DataTable dt = listarAlgo(consultaSQL);
 
@@ -111,7 +111,7 @@ namespace Persistencia
         public DataTable listarPrestamoPorRAE(string tuHermana)
         {
 
-            String consultaSQL = "SELECT prestamo.id, realiza.ci_Solicitante AS Solicitante, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, prestamo.ejercicio, tiene.id_Equipo FROM prestamo INNER JOIN prestamoDeEquipo ON prestamo.id=prestamoDeEquipo.id_Prestamo INNER JOIN tiene ON prestamoDeEquipo.id_Prestamo=tiene.id_PrestamoDeEquipo INNER JOIN realiza ON prestamo.id = realiza.id_Prestamo WHERE estado = '" + tuHermana + "' ORDER BY prestamo.fechaSolicitada DESC ;";
+            String consultaSQL = "SELECT prestamo.id, realiza.ci_Solicitante AS AlumnoSolicitante, profesorPrestamo.ci_Solicitante AS ProfesorSolicitante, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, prestamo.ejercicio, tiene.id_Equipo, prestamoDeEquipoLocacion.locacion FROM prestamo INNER JOIN prestamoDeEquipo ON prestamo.id=prestamoDeEquipo.id_Prestamo INNER JOIN tiene ON prestamoDeEquipo.id_Prestamo=tiene.id_PrestamoDeEquipo INNER JOIN realiza ON prestamo.id = realiza.id_Prestamo INNER JOIN prestamoDeEquipoLocacion ON prestamoDeEquipo.id_Prestamo = prestamoDeEquipoLocacion.id_PrestamoDeEquipo INNER JOIN profesorPrestamo ON prestamo.id = profesorPrestamo.id_Prestamo WHERE estado = '" + tuHermana + "' ORDER BY prestamo.fechaSolicitada DESC ;";
 
             DataTable dt = listarAlgo(consultaSQL);
 
@@ -122,7 +122,7 @@ namespace Persistencia
         public DataTable listarPrestamoPorPrioridad(string prioridad)
         {
 
-            String consultaSQL = "SELECT prestamo.id, realiza.ci_Solicitante AS Solicitante, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, prestamo.ejercicio, tiene.id_Equipo FROM prestamo INNER JOIN prestamoDeEquipo ON prestamo.id = prestamoDeEquipo.id_Prestamo INNER JOIN tiene ON prestamoDeEquipo.id_Prestamo = tiene.id_PrestamoDeEquipo INNER JOIN realiza ON prestamo.id = realiza.id_Prestamo ORDER BY prioridad " + prioridad + ";";
+            String consultaSQL = "SELECT prestamo.id, realiza.ci_Solicitante AS AlumnoSolicitante, profesorPrestamo.ci_Solicitante AS ProfesorSolicitante, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, prestamo.ejercicio, tiene.id_Equipo, prestamoDeEquipoLocacion.locacion FROM prestamo INNER JOIN prestamoDeEquipo ON prestamo.id = prestamoDeEquipo.id_Prestamo INNER JOIN tiene ON prestamoDeEquipo.id_Prestamo = tiene.id_PrestamoDeEquipo INNER JOIN realiza ON prestamo.id = realiza.id_Prestamo INNER JOIN prestamoDeEquipoLocacion ON prestamoDeEquipo.id_Prestamo = prestamoDeEquipoLocacion.id_PrestamoDeEquipo INNER JOIN profesorPrestamo ON prestamo.id = profesorPrestamo.id_Prestamo ORDER BY prioridad " + prioridad + ";";
 
             DataTable dt = listarAlgo(consultaSQL);
 
@@ -132,7 +132,7 @@ namespace Persistencia
         public DataTable listarPrestamoPorPrioridadE(string tuHermana, string prioridad)
         {
 
-            string consultaSQL = "SELECT prestamo.id, realiza.ci_Solicitante AS Solicitante, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, prestamo.ejercicio, tiene.id_Equipo FROM prestamo INNER JOIN prestamoDeEquipo ON prestamo.id = prestamoDeEquipo.id_Prestamo INNER JOIN tiene ON prestamoDeEquipo.id_Prestamo = tiene.id_PrestamoDeEquipo INNER JOIN realiza ON prestamo.id = realiza.id_Prestamo WHERE estado = '" + tuHermana + "' ORDER BY prioridad " + prioridad + " ;";
+            string consultaSQL = "SELECT prestamo.id, realiza.ci_Solicitante AS AlumnoSolicitante, profesorPrestamo.ci_Solicitante AS ProfesorSolicitante, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, prestamo.ejercicio, tiene.id_Equipo, prestamoDeEquipoLocacion.locacion FROM prestamo INNER JOIN prestamoDeEquipo ON prestamo.id = prestamoDeEquipo.id_Prestamo INNER JOIN tiene ON prestamoDeEquipo.id_Prestamo = tiene.id_PrestamoDeEquipo INNER JOIN realiza ON prestamo.id = realiza.id_Prestamo INNER JOIN prestamoDeEquipoLocacion ON prestamoDeEquipo.id_Prestamo = prestamoDeEquipoLocacion.id_PrestamoDeEquipo INNER JOIN profesorPrestamo ON prestamo.id = profesorPrestamo.id_Prestamo WHERE estado = '" + tuHermana + "' ORDER BY prioridad " + prioridad + " ;";
 
             DataTable dt = listarAlgo(consultaSQL);
 
