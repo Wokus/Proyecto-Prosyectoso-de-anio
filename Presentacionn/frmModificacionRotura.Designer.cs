@@ -133,6 +133,7 @@
             // 
             // mtxtEquipo
             // 
+            this.mtxtEquipo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mtxtEquipo.Location = new System.Drawing.Point(82, 120);
             this.mtxtEquipo.Mask = "000000";
             this.mtxtEquipo.Name = "mtxtEquipo";
@@ -141,6 +142,7 @@
             // 
             // mtxtIdEquipo
             // 
+            this.mtxtIdEquipo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mtxtIdEquipo.Location = new System.Drawing.Point(82, 60);
             this.mtxtIdEquipo.Mask = "000000";
             this.mtxtIdEquipo.Name = "mtxtIdEquipo";
@@ -159,6 +161,7 @@
             // 
             // mtxtRotura
             // 
+            this.mtxtRotura.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mtxtRotura.Location = new System.Drawing.Point(313, 60);
             this.mtxtRotura.Mask = "000000";
             this.mtxtRotura.Name = "mtxtRotura";

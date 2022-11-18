@@ -83,6 +83,7 @@
             // 
             // dtpFecha
             // 
+            this.dtpFecha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFecha.Location = new System.Drawing.Point(100, 255);
             this.dtpFecha.Name = "dtpFecha";

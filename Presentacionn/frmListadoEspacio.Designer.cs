@@ -47,6 +47,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(228)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(494, 508);
             this.Controls.Add(this.dgvListadoEspacio);
             this.Name = "frmListadoEspacio";

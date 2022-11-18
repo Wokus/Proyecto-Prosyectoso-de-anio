@@ -46,7 +46,7 @@
             // 
             // cbxTipo
             // 
-            this.cbxTipo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbxTipo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbxTipo.FormattingEnabled = true;
             this.cbxTipo.Items.AddRange(new object[] {
             "Prestamos generales",
@@ -73,7 +73,7 @@
             // 
             // cbxFecha
             // 
-            this.cbxFecha.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbxFecha.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbxFecha.FormattingEnabled = true;
             this.cbxFecha.Items.AddRange(new object[] {
             "De mas antiguo a mas reciente",
@@ -87,7 +87,7 @@
             // 
             // cbxEstado
             // 
-            this.cbxEstado.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbxEstado.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbxEstado.FormattingEnabled = true;
             this.cbxEstado.Items.AddRange(new object[] {
             "Armado",
@@ -104,7 +104,7 @@
             // 
             // cbxFechaEquipo
             // 
-            this.cbxFechaEquipo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbxFechaEquipo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbxFechaEquipo.Items.AddRange(new object[] {
             "De mas antiguo a mas reciente",
             "De mas reciente a mas antiguo"});
@@ -117,7 +117,7 @@
             // 
             // cbxFechaEspontaneo
             // 
-            this.cbxFechaEspontaneo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbxFechaEspontaneo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbxFechaEspontaneo.Items.AddRange(new object[] {
             "De mas antiguo a mas reciente",
             "De mas reciente a mas antiguo"});
@@ -130,7 +130,7 @@
             // 
             // cbxFechaEspacio
             // 
-            this.cbxFechaEspacio.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbxFechaEspacio.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbxFechaEspacio.Items.AddRange(new object[] {
             "De mas antiguo a mas reciente",
             "De mas reciente a mas antiguo"});
@@ -143,7 +143,7 @@
             // 
             // cbxEstadoEquipo
             // 
-            this.cbxEstadoEquipo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbxEstadoEquipo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbxEstadoEquipo.Items.AddRange(new object[] {
             "Armado",
             "Levantado",
@@ -159,7 +159,7 @@
             // 
             // cbxEstadoEspacio
             // 
-            this.cbxEstadoEspacio.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbxEstadoEspacio.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbxEstadoEspacio.FormattingEnabled = true;
             this.cbxEstadoEspacio.Items.AddRange(new object[] {
             "Armado",
@@ -176,7 +176,7 @@
             // 
             // cbxEstadoEspontaneo
             // 
-            this.cbxEstadoEspontaneo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbxEstadoEspontaneo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbxEstadoEspontaneo.Items.AddRange(new object[] {
             "Armado",
             "Levantado",
@@ -192,7 +192,7 @@
             // 
             // cbxPrioridad
             // 
-            this.cbxPrioridad.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbxPrioridad.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbxPrioridad.FormattingEnabled = true;
             this.cbxPrioridad.Items.AddRange(new object[] {
             "De mayor a menor",
@@ -206,7 +206,7 @@
             // 
             // cbxPrioridadEspacio
             // 
-            this.cbxPrioridadEspacio.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbxPrioridadEspacio.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbxPrioridadEspacio.FormattingEnabled = true;
             this.cbxPrioridadEspacio.Items.AddRange(new object[] {
             "De mayor a menor",
@@ -220,7 +220,7 @@
             // 
             // cbxPrioridadEquipo
             // 
-            this.cbxPrioridadEquipo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbxPrioridadEquipo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbxPrioridadEquipo.FormattingEnabled = true;
             this.cbxPrioridadEquipo.Items.AddRange(new object[] {
             "De mayor a menor",

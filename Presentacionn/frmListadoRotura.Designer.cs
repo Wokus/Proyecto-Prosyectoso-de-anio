@@ -34,6 +34,9 @@
             // 
             // dgvListadoRotura
             // 
+            this.dgvListadoRotura.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvListadoRotura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListadoRotura.Location = new System.Drawing.Point(10, 12);
             this.dgvListadoRotura.Name = "dgvListadoRotura";

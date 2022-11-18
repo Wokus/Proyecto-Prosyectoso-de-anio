@@ -47,7 +47,7 @@
             // 
             // cbxTipo
             // 
-            this.cbxTipo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbxTipo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbxTipo.FormattingEnabled = true;
             this.cbxTipo.Items.AddRange(new object[] {
             "General",
@@ -62,7 +62,7 @@
             // 
             // cbxCurso
             // 
-            this.cbxCurso.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbxCurso.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbxCurso.FormattingEnabled = true;
             this.cbxCurso.Items.AddRange(new object[] {
             "Audiovisual 1",

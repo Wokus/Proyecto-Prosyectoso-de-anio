@@ -47,7 +47,7 @@
             // 
             // cbxTipo
             // 
-            this.cbxTipo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbxTipo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbxTipo.FormattingEnabled = true;
             this.cbxTipo.Items.AddRange(new object[] {
             "Todos los equipos",
@@ -63,7 +63,7 @@
             // 
             // cbxEstado
             // 
-            this.cbxEstado.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbxEstado.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbxEstado.FormattingEnabled = true;
             this.cbxEstado.Items.AddRange(new object[] {
             "Disponible",

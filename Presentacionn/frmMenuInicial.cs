@@ -93,6 +93,7 @@ namespace Presentacionn
 
             frmMenuPrincipal unMPI = new frmMenuPrincipal(false);
             this.Hide();
+                unMPI.frmInicial = this;
             unMPI.Show();
 
             }
