@@ -65,5 +65,24 @@ namespace Dominio
             pResponsable unPR = new pResponsable();
             return unPR.listarResponsableCT();
         }
+
+        public object ListarResponsableFT()
+        {
+            pResponsable unPR = new pResponsable();
+            return unPR.listarResponsableFT();
+        }
+
+        public object ListarResponsableTT()
+        {
+            pResponsable unPR = new pResponsable();
+            return unPR.listarResponsableTT();
+
+        }
+
+        public object ListarResponsableTTT()
+        {
+            pResponsable unPR = new pResponsable();
+            return unPR.listarResponsableTTT();
+        }
     }
 }

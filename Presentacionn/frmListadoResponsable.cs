@@ -82,6 +82,22 @@ namespace Presentacionn
                 dResponsable unDR = new dResponsable();
                 dgvResponsable.DataSource = unDR.ListarResponsableCT();
             }
+            if (cbxCurso.SelectedIndex == 3)
+            {
+                dResponsable unDR = new dResponsable();
+                dgvResponsable.DataSource = unDR.ListarResponsableFT();
+            }
+            if (cbxCurso.SelectedIndex == 4)
+            {
+                dResponsable unDR = new dResponsable();
+                dgvResponsable.DataSource = unDR.ListarResponsableTT();
+            }
+            if (cbxCurso.SelectedIndex == 5)
+            {
+                dResponsable unDR = new dResponsable();
+                dgvResponsable.DataSource = unDR.ListarResponsableTTT();
+            }
+
         }
     }
 }
