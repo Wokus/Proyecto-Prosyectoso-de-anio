@@ -24,12 +24,12 @@ namespace Presentacionn
             if (txtNombre.Text != "" && txtNombre.Text.Length < 16 && mtxtNumero.Text != "")
             {
 
-            
+                int token = 1;
             eEspacio unE = new eEspacio();
             unE.nombreEspacio = txtNombre.Text;
             unE.numeroEspacio = Convert.ToInt32(mtxtNumero.Text);
             dEspacio d = new dEspacio();
-            int token = d.altaEspacio(unE);
+            //int token = d.altaEspacio(unE);
             if (token == 0)
             {
                 MessageBox.Show("Se agrego el espacio");

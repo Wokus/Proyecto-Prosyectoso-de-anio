@@ -304,7 +304,7 @@ namespace Persistencia
             {
                 prioridad = prioridad + 2;
             }
-            if (curso == "FINEST")
+            if (curso == "Finest")
             {
                 prioridad = prioridad + 3;
             }
