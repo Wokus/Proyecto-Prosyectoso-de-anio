@@ -184,6 +184,12 @@
     <Compile Include="frmModificacionEquipo.Designer.cs">
       <DependentUpon>frmModificacionEquipo.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmModificacionEspacio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificacionEspacio.Designer.cs">
+      <DependentUpon>frmModificacionEspacio.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmModificacionPrestamo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmModificacionEquipo.resx">
       <DependentUpon>frmModificacionEquipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificacionEspacio.resx">
+      <DependentUpon>frmModificacionEspacio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmModificacionPrestamo.resx">
       <DependentUpon>frmModificacionPrestamo.cs</DependentUpon>

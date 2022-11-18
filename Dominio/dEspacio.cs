@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Persistencia;
 using Entidades;
 using System.Data;
+using System.Windows.Forms;
 
 namespace Dominio
 {
@@ -27,21 +28,22 @@ namespace Dominio
             return unDE.bajaEspacio(text);
         }
 
-        public int altaEspacio(eEspacio unE)
+        public bool altaEspacio(eEspacio unE)
         {
 
             pEspacio unPE = new pEspacio();
 
-            bool corroborarExistencia = unPE.altaEspacio(unPE);
+            bool corroborarExistencia = unPE.altaEspacio(unE);
 
             return corroborarExistencia;
 
         }
-       
 
-       
-        
+        public int modificarEspacio(eEspacio unE, String nmroMod)
+        {
+            pEspacio unPE = new pEspacio();
+           return unPE.modificarEspacio(unE,nmroMod)
 
-
+        }
     }
 }

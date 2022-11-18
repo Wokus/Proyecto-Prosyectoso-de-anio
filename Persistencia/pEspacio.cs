@@ -46,6 +46,38 @@ namespace Persistencia
             return elAdmin;
         }
 
+        public int modificarEspacio(eEspacio unE, String nmroMod)
+        {
+            int token = 0;
+            bool tokenEx = queNoEsista(Convert.ToInt32(nmroMod));
+            if (tokenEx == true)
+            {
+                tokenEx = queNoEsista(Convert.ToInt32(unE.numeroEspacio));
+                if (tokenEx == false)
+                {
+                    //Sacar FK
+                    String consultaFK = "ALTER TABLE obtieneEspaciosPrestamoDeEspacio DROP FOREIGN KEY fK_obtieneEspaciosPrestamoDeEspacio_espacio;";
+                    ejecutarSQL(consultaFK);
+                    //Sacar FK
+
+                    String consultaSQL = "UPDATE espacio SET nro = '" + unE.numeroEspacio + "', `nombre` = '" + unE.nombreEspacio + "' WHERE nro = '" + nmroMod + "' ;";
+                    ejecutarSQL(consultaSQL);
+
+                    consultaSQL = "UPDATE obtieneEspaciosPrestamoDeEspacio SET nro_Espacio = '" + unE.numeroEspacio
+                    + "' WHERE nro_Espacio = '" + nmroMod + "' ;";
+                    ejecutarSQL(consultaSQL);
+
+                    //Poner FK
+                    consultaFK = "ALTER TABLE obtieneEspaciosPrestamoDeEspacio ADD CONSTRAINT fK_obtieneEspaciosPrestamoDeEspacio_espacio FOREIGN KEY(nro_Espacio) REFERENCES espacio(nro);";
+                    ejecutarSQL(consultaFK);
+                    //Poner FK
+
+                }else { token = 2; }
+            }else { token = 1; }
+            return token;
+        }
+
+
         public eEspacio recrearespacio(MySqlDataReader fila)
         {
             eEspacio unEspacio = new eEspacio();
@@ -55,27 +87,23 @@ namespace Persistencia
             return unEspacio;
          }
 
-        public int altaEspacio(eEspacio unE, int troken)
+        public bool altaEspacio(eEspacio unE)
         {
-            bool token = queNoEsista(unE.numeroEspacio);
-
-            troken = 0;
-
-            if (token = false)
+            bool token = queNoEsista(Convert.ToInt32(unE.numeroEspacio));
+            if (token == false)
             {
                 string consultaSQL = "INSERT INTO espacio VALUES('" + unE.numeroEspacio + "', '" + unE.nombreEspacio + "');";
-
                 ejecutarSQL(consultaSQL);
 
             }else
             {
 
-                troken = 1;
+                token = true;
 
             }
           
 
-            return troken;
+            return token;
         }
 
         public bool queNoEsista(int numeroEspacio)
@@ -89,10 +117,6 @@ namespace Persistencia
             {
 
                 token = true;
-
-            }
-            else
-            {
 
             }
 

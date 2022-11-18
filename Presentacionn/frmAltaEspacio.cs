@@ -21,17 +21,17 @@ namespace Presentacionn
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            /*if (txtNombre.Text != "" && txtNombre.Text.Length < 16 && mtxtNumero.Text != "")
+            if (txtNombre.Text != "" && txtNombre.Text.Length < 16 && mtxtNumero.Text != "")
             {
 
                 eEspacio unE = new eEspacio();
                 unE.nombreEspacio = txtNombre.Text;
-                unE.numeroEspacio = Convert.ToInt32(mtxtNumero.Text);
+                unE.numeroEspacio = mtxtNumero.Text;
 
                 dEspacio unDE = new dEspacio();
                 bool altaEspacio = unDE.altaEspacio(unE);
                 
-                if (altaEspacio == 0)
+                if (altaEspacio == false)
                 {
 
                     MessageBox.Show("Se agrego el espacio");
@@ -48,7 +48,7 @@ namespace Presentacionn
 
                 MessageBox.Show("Hay errores con los datos ingresados");
 
-            }*/
+            }
         }
     }
 }
