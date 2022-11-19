@@ -60,21 +60,24 @@
             this.cbxTipo.Size = new System.Drawing.Size(121, 21);
             this.cbxTipo.TabIndex = 1;
             this.cbxTipo.Text = "Tipos de listado";
+            this.cbxTipo.SelectedIndexChanged += new System.EventHandler(this.cbxTipo_SelectedIndexChanged);
             // 
             // cbxEstado
             // 
             this.cbxEstado.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbxEstado.FormattingEnabled = true;
             this.cbxEstado.Items.AddRange(new object[] {
-            "Disponible",
-            "Reparacion",
+            "Todos los estados",
+            "En uso",
+            "Sin usar",
             "Roto",
-            "En uso"});
+            "En reparación"});
             this.cbxEstado.Location = new System.Drawing.Point(139, 12);
             this.cbxEstado.Name = "cbxEstado";
             this.cbxEstado.Size = new System.Drawing.Size(121, 21);
             this.cbxEstado.TabIndex = 2;
             this.cbxEstado.Text = "Listado por estado";
+            this.cbxEstado.SelectedIndexChanged += new System.EventHandler(this.cbxEstado_SelectedIndexChanged);
             // 
             // frmListadoEquipo
             // 

@@ -21,13 +21,14 @@ namespace Presentacionn
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
+            // Se corrobora que el campo este lleno, luego se convierte en un int el masked text para llamar a la id de dicho prestamo 
+            // luego se mostara un mensaje dependiendo de lo que se halla agregado en programa 
             dPrestamo unDP = new dPrestamo();
             bool tokenCampos = corroborarCampo();
             if (tokenCampos == true)
             {     
             try
-            {
+            {   
                 int token = unDP.bajaPrestamoDeEquipo(Convert.ToInt16(mtxtidPrestamo.Text));
 
                 if (token == 1)
@@ -51,7 +52,7 @@ namespace Presentacionn
             } else { MessageBox.Show("Campo vacio"); }
 
         }
-
+        //Se crea un metodo para corroborrar si hay campos vacios en el programa
         private bool corroborarCampo()
         {
             bool token = true;

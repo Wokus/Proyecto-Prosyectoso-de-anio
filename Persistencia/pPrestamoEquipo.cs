@@ -20,7 +20,7 @@ namespace Persistencia
 
            
             int token = verificarEstado(unPRE.alumnoResponsable.ci, unPRE.profeResponsable.ci, equipos);
-
+            //Verificar estado, verifica si el alumno, profesor y equipo existen
 
             if (token == 0)
             {
@@ -164,27 +164,30 @@ namespace Persistencia
 
                     consultaFK = "ALTER TABLE prestamoDeEquipoLocacion DROP FOREIGN KEY fK_prestamoDeEquipoLocacion_PrestamoDeEquipo;";
                     ejecutarSQL(consultaFK);
-
                     //Tirar abajo as FK final
+
+                    // Actualiza la informacion de la clase padre prestamo
                     string consultaSQL2 = "UPDATE prestamo SET fechaSolicitada ='" + unPRE.fechaSolicitada + "',"
                                 + " fechaRetiro = '" + unPRE.fechaRetiro + "', horaRetiro = '" + unPRE.horaRetiro + "', fechaDevolucion = '" + unPRE.fechaDevolucion + "', fechaGenuinaDevolucion = '" + unPRE.genuinoDiaDevolucion
                                 + "', estado ='" + unPRE.estado + "', prioridad = '" + unPRE.prioridad + "', ejercicio = '" + unPRE.ejercicio + "'  WHERE prestamo.id = '" + unPRE.id + "' ;";
 
                     ejecutarSQL(consultaSQL2);
-
+                    // Actualiza la informacion de la clase hijo prestamoEquipo
                     consultaSQL2 = "UPDATE prestamoDeEquipo SET transporte = '" + unPRE.transporte
                      + "' WHERE prestamoDeEquipo.id_Prestamo = '" + unPRE.id + "' ;";
                     ejecutarSQL(consultaSQL2);
 
+                    // Eliminta la info de prestamoequipoLocacion para poder ingresarla otra vez
                     consultaSQL = "DELETE FROM `prestamodeequipolocacion` WHERE prestamodeequipolocacion.id_PrestamoDeEquipo ='" + unPRE.id + "' ;";
                     ejecutarSQL(consultaSQL);
 
+                    //Ingresa la informacion de la clase hijo prestamodeequipolocacion, ya que locacion es un atributo multivaluado.
                     for (int i = 0; i < locaciones.Length; i++)
                     {
                         consultaSQL = "INSERT INTO `prestamodeequipolocacion` VALUES('" + unPRE.id + "','" + locaciones[i] + "');";
                         ejecutarSQL(consultaSQL);
                     }
-
+                    //Elimina y agrega "tiene","realiza" y "profesorprestamo" para evitar tirrar abajo las fk
                     consultaSQL = "DELETE FROM `tiene` WHERE tiene.id_PrestamoDeEquipo ='" + unPRE.id + "' ;";
                     ejecutarSQL(consultaSQL);
                     for (int i = 0; i < equipos.Length; i++)
@@ -193,7 +196,7 @@ namespace Persistencia
                         ejecutarSQL(consultaSQL);
                     }
 
-
+                    
                     consultaSQL = "DELETE FROM `realiza` WHERE id_prestamo ='" + unPRE.id + "' ;";
                     ejecutarSQL(consultaSQL);
 
@@ -205,6 +208,8 @@ namespace Persistencia
 
                     consultaSQL = "INSERT INTO `profesorprestamo` VALUES('" + unPRE.profeResponsable.ci + "','" + unPRE.id + "');";
                     ejecutarSQL(consultaSQL);
+
+                    //Corrobora si el nuevo estado es "Devuelto", para poder ingresar la fecha definitiva de devolucion
                     if (unPRE.estado == "Devuelto")
                     {
                         DateTime thisDay = DateTime.Today;
@@ -230,6 +235,7 @@ namespace Persistencia
         private int verificarEstado(string alumno, string profe, String[] equipos)
         {
             int token = 0;
+            //Corrobora si LOS equipos existen
             bool tokenEquipo = corroborarEquipos(equipos);
             
             if (tokenEquipo == true)
@@ -247,11 +253,12 @@ namespace Persistencia
                     }
                     else {
                         
-                            token = 3;
+                            token = 3; // token = 3 si el alumno no existe
                     } 
                 }
-                else { token = 2; }
-            }else { token = 1; }
+                else { token = 2; }// token = 2 si el profe uno no existe
+            }
+            else { token = 1; }// token = 1 si uno de los euipos no existe
             return token;
         }
 
@@ -321,7 +328,9 @@ namespace Persistencia
 
         private bool corroborarEquipos(String[] equipos)
         {
+
             bool tokenEquipo = true;
+            //Como un prestamo de equipo puede tener muchos equipos, el programa corrobora cada uno con un for
             for (int i = 0; i < equipos.Length; i++)
                 
             {

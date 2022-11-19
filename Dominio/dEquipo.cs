@@ -37,6 +37,24 @@ namespace Dominio
             return unPE.listarEquipo1();
         }
 
+        public DataTable listarEquipoT(string tipo)
+        {
+
+            pEquipo unPE = new pEquipo();
+
+            return unPE.listarEquipoT(tipo);
+
+        }
+
+        public DataTable listarEquipoE(string estado)
+        {
+
+            pEquipo unPE = new pEquipo();
+
+            return unPE.listarEquipoE(estado);
+
+        }
+
         public bool modificacionEquipo(eEquipo unE)
         {
             pEquipo unPE = new pEquipo();

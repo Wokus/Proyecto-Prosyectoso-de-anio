@@ -14,24 +14,22 @@ namespace Persistencia
 
         public DataTable listarPrestamo()
         {
-            String consultaSQL = "SELECT prestamo.id, realiza.ci_Solicitante AS Solicitante, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, prestamo.ejercicio FROM prestamo INNER JOIN realiza ON prestamo.id = realiza.id_Prestamo;";
+            String consultaSQL = "SELECT prestamo.id, realiza.ci_Solicitante AS AlumnoSolicitante, profesorPrestamo.ci_Solicitante AS ProfesorSolicitante, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, prestamo.ejercicio FROM prestamo INNER JOIN realiza ON prestamo.id = realiza.id_Prestamo INNER JOIN profesorPrestamo ON prestamo.id = profesorPrestamo.id_Prestamo;";
 
             DataTable dt = listarAlgo(consultaSQL);
 
             return dt;
         }
-
         public DataTable listarPrestamoPorFechaAR()
         {
 
-            String consultaSQL = "SELECT prestamo.id, realiza.ci_Solicitante AS Solicitante, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, prestamo.ejercicio FROM prestamo INNER JOIN realiza ON prestamo.id = realiza.id_Prestamo ORDER BY fechaSolicitada ASC ;";
+            String consultaSQL = "SELECT prestamo.id, realiza.ci_Solicitante AS AlumnoSolicitante, profesorPrestamo.ci_Solicitante AS ProfesorSolicitante, prestamo.fechaSolicitada, prestamo.fechaRetiro, prestamo.horaRetiro, prestamo.fechaDevolucion, prestamo.estado, prestamo.prioridad, prestamo.fechaGenuinaDevolucion, prestamo.ejercicio FROM prestamo INNER JOIN realiza ON prestamo.id = realiza.id_Prestamo INNER JOIN profesorPrestamo ON prestamo.id = profesorPrestamo.id_Prestamo ORDER BY fechaSolicitada ASC ;";
 
             DataTable dt = listarAlgo(consultaSQL);
 
             return dt;
 
         }
-
         public DataTable listarPrestamoPorFechaRA()
         {
 
@@ -42,7 +40,6 @@ namespace Persistencia
             return dt;
 
         }
-
         public DataTable listarPrestamoPorEstado(string tuHermana)
         {
 
@@ -53,7 +50,6 @@ namespace Persistencia
             return dt;
 
         }
-
         public DataTable listarPrestamoPorFechaARE(String tuHermana)
         {
 
@@ -63,7 +59,6 @@ namespace Persistencia
 
             return dt;
         }
-
         public DataTable listarPrestamoPorFechaRAE(String tuHermana)
         {
 
@@ -73,7 +68,6 @@ namespace Persistencia
 
             return dt;
         }
-
         public DataTable listarPrestamoPorPrioridad(string prioridad)
         {
 
@@ -83,7 +77,6 @@ namespace Persistencia
 
             return dt;
         }
-
         public DataTable listarPrestamoPorPrioridadE(string tuHermana, string prioridad)
         {
 
@@ -93,7 +86,6 @@ namespace Persistencia
 
             return dt;
         }
-
         public int bajaPrestamo(int idPrestamo)
         {
             int token = 0;
@@ -111,7 +103,8 @@ namespace Persistencia
                 consultaSQL = "SELECT * FROM prestamoDeEquipo WHERE prestamoDeEquipo.id_Prestamo = " + idPrestamo + ";";
                 fila = ejecutarYdevolver(consultaSQL);
                
-                //Prestamo de equipo
+                //Se borra el prestamo de la base de datos buscandolo por la id y una vez que la encunetra se borra de las diferentes tablas 
+                //luego se ejecuta el metodo "ejecutar y devolver"
                 if (fila.Read())
                 {
                     consultaSQL = "DELETE FROM tiene WHERE id_PrestamoDeEquipo  =" + idPrestamo + " ;" ;
@@ -124,9 +117,9 @@ namespace Persistencia
                 }
                 consultaSQL = "SELECT * FROM prestamoDeEspacio WHERE prestamoDeEspacio.id_Prestamo = " + idPrestamo + ";";
                 MySqlDataReader fila2 = ejecutarYdevolver(consultaSQL);
-                //Prestamo de equipo
+               
 
-                //Prestamo de espacio
+                
                 if (fila2.Read())
                 {
                     consultaSQL = "DELETE FROM obtieneespaciosprestamodeespacio WHERE id_PrestamoDeEspacio  =" + idPrestamo + " ;";
@@ -134,12 +127,12 @@ namespace Persistencia
                     consultaSQL = "DELETE FROM prestamoDeEspacio WHERE prestamoDeEspacio.id_Prestamo = " + idPrestamo + ";";
                     ejecutarSQL(consultaSQL);
                 }
-                //Prestamo de espacio
+                
 
                 consultaSQL = "SELECT * FROM prestamoEspontaneo WHERE prestamoEspontaneo.id_Prestamo = " + idPrestamo + ";";
                 MySqlDataReader fila3 = ejecutarYdevolver(consultaSQL);
 
-                //Prestamo espontaneo
+                
                 if (fila3.Read())
                 {
                     consultaSQL = "DELETE FROM obtieneequipoprestamoespontaneo WHERE id_PrestamoEspontaneo  =" + idPrestamo + " ;";
@@ -147,11 +140,12 @@ namespace Persistencia
                     consultaSQL = "DELETE FROM prestamoEspontaneo WHERE prestamoEspontaneo.id_Prestamo = " + idPrestamo + ";";
                     ejecutarSQL(consultaSQL);
                 }
-                //Prestamo espontaneo
+                
                 consultaSQL = "DELETE FROM prestamo WHERE prestamo.id = " + idPrestamo + ";";
                 ejecutarSQL(consultaSQL);
                 token = 1;
             }
+            //No se comento lo demas codigos debido a que se repetiria el mismo proceso
 
             return token;
         }

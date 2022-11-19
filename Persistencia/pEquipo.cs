@@ -114,6 +114,29 @@ namespace Persistencia
 
             return dt;
         }
+
+        public DataTable listarEquipoT(string tipo)
+        {
+
+            string consultaSQL = "SELECT * FROM equipo WHERE tipo = '" + tipo + "' ;";
+
+            DataTable dt = listarAlgo(consultaSQL);
+
+            return dt;
+
+        }
+
+        public DataTable listarEquipoE(string estado)
+        {
+
+            string consultaSQL = "SELECT * FROM equipo WHERE estado = '" + estado + "' ;";
+
+            DataTable dt = listarAlgo(consultaSQL);
+
+            return dt;
+
+        }
+
         public int calculoID()
         {
             int id = 0;

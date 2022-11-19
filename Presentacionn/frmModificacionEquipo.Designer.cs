@@ -164,8 +164,8 @@
             this.cbxMoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxMoneda.FormattingEnabled = true;
             this.cbxMoneda.Items.AddRange(new object[] {
-            "$",
-            "$UY"});
+            "U$S",
+            "UYU"});
             this.cbxMoneda.Location = new System.Drawing.Point(411, 153);
             this.cbxMoneda.Name = "cbxMoneda";
             this.cbxMoneda.Size = new System.Drawing.Size(38, 21);

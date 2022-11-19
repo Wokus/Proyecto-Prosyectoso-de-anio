@@ -96,12 +96,10 @@
             this.cbxEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxEstado.FormattingEnabled = true;
             this.cbxEstado.Items.AddRange(new object[] {
-            "En Progreso",
-            "Armado",
-            "Levantado",
-            "Cancelado",
-            "Devuelto",
-            "Atrasado"});
+            "En uso",
+            "Sin usar",
+            "Roto",
+            "En reparación"});
             this.cbxEstado.Location = new System.Drawing.Point(100, 204);
             this.cbxEstado.Name = "cbxEstado";
             this.cbxEstado.Size = new System.Drawing.Size(100, 21);
@@ -130,6 +128,9 @@
             this.cbxMoneda.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbxMoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxMoneda.FormattingEnabled = true;
+            this.cbxMoneda.Items.AddRange(new object[] {
+            "U$S",
+            "UYU"});
             this.cbxMoneda.Location = new System.Drawing.Point(411, 153);
             this.cbxMoneda.Name = "cbxMoneda";
             this.cbxMoneda.Size = new System.Drawing.Size(38, 21);
@@ -141,7 +142,7 @@
             this.cbxTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTipo.FormattingEnabled = true;
             this.cbxTipo.Items.AddRange(new object[] {
-            "Fotografia",
+            "Video",
             "Sonido",
             "Informatica",
             "Otros"});

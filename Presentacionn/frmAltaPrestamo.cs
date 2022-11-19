@@ -22,10 +22,10 @@ namespace Presentacionn
         private bool corroborarCampos(string tipo)
         {
             bool token = false;
-            bool tokenTipo = false;
             if (cbxEstado.SelectedIndex != -1 && cbxTipoPrestamo.SelectedIndex != -1
-                && mtxtHoraRetiro.MaskFull && mtxtProfesor.MaskFull)
+                && mtxtHoraRetiro.MaskFull && mtxtProfesor.MaskFull) // Corrobora que todos los campos necesarios(Que todos los tipos de prestamo tienen en comun) esten llenos
             {
+                //Dependiendo del tipo corrobora los campos del tipo
                 if (tipo == "equipo")
                 {
                     token = corroborarCamposDeEquipo();
@@ -150,18 +150,21 @@ namespace Presentacionn
             ePrestamoEquipo unPRE = new ePrestamoEquipo();
             ePrestamoEspacio unPRES = new ePrestamoEspacio();
             ePrestamoEspontaneos unPREX = new ePrestamoEspontaneos();
-             try
-             {
+            //Corroborar conexion
+            try
+            {
                 bool tokenCampos;
                 if (cbxTipoPrestamo.Text == "De equipo(Formales)")
                 {
                     tokenCampos = corroborarCampos("equipo");
+                    //Corroborar campos
                     if (tokenCampos == false)
                     {
                         
                     }
                     else
                     {
+                        //Se llena la la instancia de eEquipo con la informacion de los campos
                         eEquipo unEq = new eEquipo();
                         eResponsable alumno = new eResponsable();
                         eResponsable profe = new eResponsable();
@@ -182,7 +185,7 @@ namespace Presentacionn
 
                         dPrestamoEquipo unDPRE = new dPrestamoEquipo();
                         int token = unDPRE.altaPrestamo(unPRE);
-
+                        //Dependiendo del valor de token es el mensaje que se muestra, el valor de token varia dependiendo del comando sql ejecutado
                         if (token == 0)
                         {
                             MessageBox.Show("Prestamo agregado de manera exitosa");
@@ -204,7 +207,8 @@ namespace Presentacionn
                     }
 
                 }
-
+                //Todo el comentado de "Prestamo de equipo" funciona con todos los demas tipos
+                //Corroborar campos solo se comento en esta clase ya que es basicamente lo mismo en todas las clases de prestamo
 
                 if (cbxTipoPrestamo.Text == "De espacio")
                 {
